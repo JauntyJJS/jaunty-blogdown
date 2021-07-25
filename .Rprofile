@@ -1,3 +1,4 @@
+source("renv/activate.R")
 # run the global .Rprofile if it exists (you may configure blogdown options
 # there, too, so they apply to any blogdown projects)
 if (file.exists("~/.Rprofile")) {

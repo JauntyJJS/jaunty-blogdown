@@ -1,12 +1,11 @@
 ---
-title: Talks that Last
-description: |
-  This is a list for your talks, workshops, or other events with a time, date, and place.
-author: "The R Markdown Team @RStudio"
+title: Talks
+description: ""
+author: ""
 show_post_thumbnail: true
-show_author_byline: true
+show_author_byline: false
 show_post_date: true
-show_post_time: true
+show_post_time: false
 # for listing page layout
 layout: list # list, list-sidebar
 
@@ -27,7 +26,7 @@ sidebar:
 
 # set up common front matter for all pages inside blog/
 cascade:
-  author: "The R Markdown Team @RStudio"
+  author: "Jeremy Selva"
   show_author_byline: true
   show_post_date: true
   show_post_time: true

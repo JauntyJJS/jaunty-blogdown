@@ -1,6 +1,6 @@
 ---
-title: My Project Portfolio
-description: "Here are some of my open-source software development projects"
+title: Project Portfolio
+description: ""
 author: ""
 show_post_thumbnail: true
 show_author_byline: true

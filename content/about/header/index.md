@@ -3,8 +3,10 @@
 text_align_right: false
 show_title_as_headline: false
 headline: |
-  Hi, my name is Jeremy Selva. Nice to meet you.
+  About Myself
 ---
 
 <!-- this is a subheadline -->
-Here are some things that I am working on recently.
+Currently, I am a research assistant Working for the [Singapore Lipidomics Incubator](https://sling.sg/) (SLING) at the National University of Singapore. 
+
+My work focus on making research software to automate some lipidomics analysis workflow.

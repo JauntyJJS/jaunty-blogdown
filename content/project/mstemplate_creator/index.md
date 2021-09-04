@@ -20,5 +20,3 @@ links:
   name: code
   url: https://github.com/SLINGhub/MSTemplate_Creator
 ---
-
-{{< here >}}

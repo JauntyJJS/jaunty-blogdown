@@ -13,6 +13,7 @@ paginate = 5
 preserveTaxonomyNames = true
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 enableEmoji = true
+pygmentsUseClasses = true
 
 [markup]
   defaultMarkdownHandler = "goldmark"
@@ -54,7 +55,7 @@ enableEmoji = true
   # the custom scss file must be in the assets/ folder
   # add the filename name here, without extension
   # to use hex colors instead of named tachyons colors, include "hex" in filename
-  custom_theme = "mycustom" 
+  custom_theme = "mycustom-hex" 
   
   # use an embedded font-family
   # serif options: Fraunces / EB Garamond / Bitter
@@ -117,6 +118,11 @@ enableEmoji = true
     name = "Projects"
     title = "Project Portfolio"
     url = "/project/"
+    weight = 3
+  [[menu.header]]
+    name = "Talks"
+    title = "Talks"
+    url = "/talk/"
     weight = 3
     
   # Configure footer  

@@ -1,3 +1,27 @@
+// Override this file to add your own SCSS styling.
+
+// basic color options: use only color names as shown in the
+// "Color Palette" section of https://tachyons.io/docs/themes/skins/
+$siteBgColorCustom: #F6FFFE;
+$textColorCustom: #000000;
+
+$sidebarBgColorCustom: #fff6f7;
+$sidebarTextColorCustom: #000000;
+$sidebarLinkColorCustom: #a530ba;
+
+$headlineColorCustom: #000000;
+$headingColorCustom: #000000;
+
+$bodyLinkColorCustom: #0060db;
+$navLinkColorCustom: #0060db;
+
+$footerTextColorCustom: #918f8d;
+$buttonTextColorCustom: #f7f7f4;
+$buttonHoverTextColorCustom: #f9f9f8;
+$buttonBgColorCustom: #103742;
+$buttonHoverBgColorCustom: #c4001a;
+$borderColorCustom: #c2b9c4;
+
 .post-body,
 .page-body {
 

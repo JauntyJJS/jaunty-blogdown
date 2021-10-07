@@ -4,12 +4,13 @@ subtitle: "Testing change in rmarkdown"
 excerpt: "Testing out some r packages"
 date: 2021-05-26
 author: "JauntyJJS"
-draft: true
+draft: false
 images:
 series:
 tags:
 categories:
 layout: single
+output: hugodown::md_document()
 ---
 
 ```{r setup, echo=FALSE}
@@ -91,7 +92,7 @@ decorate("how_to_plotly") %>%
   
 ```
 
-```{r how_to_plotly_print, echo = FALSE}
+```{r how_to_plotly_print, echo = FALSE, eval = FALSE}
 plotly::ggplotly(p)
 ```
 
@@ -136,7 +137,7 @@ decorate("how_to_ggplot") %>%
 <details>
   <summary>Click to expand!</summary>
 
-```{r}
+```{r mtcars}
 mtcars[1:5, "mpg"]
 ```
 

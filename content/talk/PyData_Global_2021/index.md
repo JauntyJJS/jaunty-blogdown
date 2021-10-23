@@ -1,6 +1,6 @@
 ---
 title: "Tips and advice when creating a python software for lab members to use in academia."
-subtitle: ""
+subtitle: "Testing"
 excerpt: "Here is a talk i gave on PyData Global 2021."
 date: 2021-10-29
 date_end: "2021-10-29"
@@ -13,7 +13,7 @@ draft: false
 # layout options: single, single-sidebar
 layout: single
 categories:
-- talk
+- workshop
 links:
 - icon: door-open
   icon_pack: fas

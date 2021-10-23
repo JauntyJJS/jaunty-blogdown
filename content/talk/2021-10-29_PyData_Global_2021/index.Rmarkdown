@@ -23,28 +23,14 @@ links:
   url: https://github.com/JauntyJJS/PyDataGlobal2021Talk
 ---
 
-```{r setup, echo=FALSE}
-library(xaringanExtra)
-
-knitr::opts_chunk$set(fig.align = "center")
-
-htmltools::tagList(
-  xaringanExtra::use_clipboard(
-    button_text = "<i class=\"fa fa-clipboard\"></i> Copy Code",
-    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i> Copied!",
-  ),
-  rmarkdown::html_dependency_font_awesome()
-)
-```
-
 Stay tuned for video and slides.
 
-```{r, echo=FALSE}
-
-xaringanExtra::embed_xaringan(
-  url = "https://jauntyjjs.github.io/PyDataGlobal2021Talk",
-  ratio = "16:9"
-)
-
-```
+#```{r, echo=FALSE}
+#
+#xaringanExtra::embed_xaringan(
+#  url = "https://jauntyjjs.github.io/PyDataGlobal2021Talk",
+#  ratio = "16:9"
+#)
+#
+#```
 

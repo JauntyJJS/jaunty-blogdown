@@ -3,6 +3,7 @@ title: "Tips and advice when creating a python software for lab members to use i
 subtitle: ""
 excerpt: "Here is a talk i gave on PyData Global 2021."
 date: 2021-10-29
+date_end: "2021-10-29"
 show_post_time: false
 event: "PyData Global 2021"
 event_url: https://pydata.org/global2021
@@ -11,6 +12,8 @@ location: "A Virtual Conference, Anywhere On Earth"
 draft: false
 # layout options: single, single-sidebar
 layout: single
+categories:
+- talk
 links:
 - icon: door-open
   icon_pack: fas

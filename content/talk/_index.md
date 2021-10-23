@@ -4,7 +4,7 @@ description: |
   Here are a list of my talks.
 author: "Jeremy Selva"
 show_post_thumbnail: true
-show_author_byline: true
+show_author_byline: false
 show_post_date: true
 show_post_time: true
 # for listing page layout

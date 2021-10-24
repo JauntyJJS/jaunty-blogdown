@@ -13,12 +13,12 @@ draft: false
 # layout options: single, single-sidebar
 layout: single
 categories:
-- workshop
+- talk
 links:
 - icon: door-open
   icon_pack: fas
   name: website
-  url: hhttps://jauntyjjs.github.io/PyDataGlobal2021Talk
+  url: https://jauntyjjs.github.io/PyDataGlobal2021Talk
 - icon: github
   icon_pack: fab
   name: code

@@ -25,15 +25,11 @@ links:
   url: https://github.com/JauntyJJS/PyDataGlobal2021Talk
 ---
 
+<script src="{{< blogdown/postref >}}index_files/fitvids/fitvids.min.js"></script>
 
 Stay tuned for video and slides.
 
-#```{r, echo=FALSE}
-#
-#xaringanExtra::embed_xaringan(
-#  url = "https://jauntyjjs.github.io/PyDataGlobal2021Talk",
-#  ratio = "16:9"
-#)
-#
-#```
-
+<div class="shareagain" style="min-width:300px;margin:1em auto;">
+<iframe src="https://jauntyjjs.github.io/PyDataGlobal2021Talk" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<script>fitvids('.shareagain', {players: 'iframe'});</script>
+</div>

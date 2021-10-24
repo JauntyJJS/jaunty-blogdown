@@ -28,12 +28,12 @@ links:
 
 Stay tuned for video and slides.
 
-#```{r, echo=FALSE}
-#
-#xaringanExtra::embed_xaringan(
-#  url = "https://jauntyjjs.github.io/PyDataGlobal2021Talk",
-#  ratio = "16:9"
-#)
-#
-#```
+```{r, echo=FALSE}
+
+xaringanExtra::embed_xaringan(
+  url = "https://jauntyjjs.github.io/PyDataGlobal2021Talk",
+  ratio = "16:9"
+)
+
+```
 

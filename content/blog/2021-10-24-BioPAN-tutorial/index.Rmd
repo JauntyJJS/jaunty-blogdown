@@ -3,7 +3,7 @@ title: "BioPAN Tutorial"
 subtitle: ""
 excerpt: "This post helps to explain how the number displayed in the BioPAN software are calculated using a small dataset as an example."
 date: 2021-10-24
-author: "JauntyJJS"
+author: "Jeremy Selva"
 draft: false
 images:
 series:

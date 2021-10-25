@@ -4,7 +4,7 @@ subtitle: "Testing change in rmarkdown"
 excerpt: "Testing out some r packages"
 date: 2021-05-26
 author: "JauntyJJS"
-draft: false
+draft: true
 images:
 series:
 tags:
@@ -64,37 +64,9 @@ hi <i class="fas fa-hands-helping"></i>
 library(flair)
 library(dplyr)
 library(ggplot2)
-library(plotly)
 ```
 
 ## Introduction
-
-### plotly
-
-```{r how_to_plotly, results = FALSE, include = FALSE, eval = FALSE}
-
-p <- ggplot(iris, aes(x = Sepal.Length, 
-                 y = Petal.Length, 
-                color = Species)) +
-  geom_point()
-
-plotly::ggplotly(p)
-
-```
-
-```{r with_flair_plotly, echo = FALSE}
-
-decorate("how_to_plotly") %>%
-  flair_args(color = "CornflowerBlue") %>%
-  flair_funs(color = "Coral", underline = TRUE) %>%
-  flair_input_vals(background = "Aquamarine") %>%
-  flair_rx("[A-z]*\\.Length", background = "pink")
-  
-```
-
-```{r how_to_plotly_print, echo = FALSE, eval = FALSE}
-plotly::ggplotly(p)
-```
 
 ### ggplot
 

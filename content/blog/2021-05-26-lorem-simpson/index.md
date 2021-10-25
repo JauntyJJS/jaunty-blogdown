@@ -4,7 +4,7 @@ subtitle: "Testing change in rmarkdown"
 excerpt: "Testing out some r packages"
 date: 2021-05-26
 author: "JauntyJJS"
-draft: false
+draft: true
 images:
 series:
 tags:
@@ -37,19 +37,9 @@ hi <i class="fas fa-hands-helping"></i>
 library(flair)
 library(dplyr)
 library(ggplot2)
-library(plotly)
 ```
 
 ## Introduction
-
-### plotly
-
-
-
-
-<pre><code class='language-r'><code>p <- <span style="color:Coral;text-decoration:underline">ggplot</span>(<span style="background-color:Aquamarine">iris</span>, <span style="color:Coral;text-decoration:underline">aes</span>(<span style="color:CornflowerBlue">x</span> = <span style="background-color:Aquamarine"><span style="background-color:pink">Sepal.Length</span></span>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y = <span style="background-color:Aquamarine"><span style="background-color:pink">Petal.Length</span></span>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color = <span style="background-color:Aquamarine">Species</span>)) +<br>&nbsp;&nbsp;<span style="color:Coral;text-decoration:underline">geom_point</span>()<br><br>plotly::<span style="color:Coral;text-decoration:underline">ggplotly</span>(<span style="background-color:Aquamarine">p</span>)</code></code></pre>
-
-
 
 ### ggplot
 

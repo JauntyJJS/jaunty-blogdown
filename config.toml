@@ -89,10 +89,10 @@ pygmentsUseClasses = true
   #    icon      = "instagram" # icon name without the 'fa-'
   #    icon_pack = "fab"
   #    url       = "https://www.instagram.com/explore/tags/apero/"
-  #[[params.social]]
-  #    icon      = "twitter" # icon name without the 'fa-'
-  #    icon_pack = "fab"
-  #    url       = "https://twitter.com/hashtag/apéro"
+  [[params.social]]
+      icon      = "twitter" # icon name without the 'fa-'
+      icon_pack = "fab"
+      url       = "https://twitter.com/jauntyjjs"
   #[[params.social]]
   #    icon      = "rss" # icon name without the 'fa-'
   #    icon_pack = "fas"

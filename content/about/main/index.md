@@ -8,7 +8,7 @@ intro: |
   Preparing a talk for an online conference: [PyData Global 2021](https://pydata.org/global2021/) 
 show_outro: true
 outro: |
-  <i class="fas fa-dove pr2"></i>“I can do things you cannot, you can do things I cannot; together we can do great things.” Mother Teresa
+  <i class="fas fa-dove pr2"></i>“I can do things you cannot, you can do things I cannot; together we can do great things.” Saint Teresa of Calcutta
 ---
 
 ** index doesn't contain a body, just front matter above.

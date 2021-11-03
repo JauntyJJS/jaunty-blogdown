@@ -44,12 +44,13 @@ pygmentsUseClasses = true
   # Place image file in `static` folder and specify image name here.
   sharing_image = "/img/papillons.jpg"
   # Twitter username (without @). Used when a visitor shares your site on Twitter.
-  twitter = "apreshill"
+  twitter = "JauntyJJS"
   
   # use a built-in color theme
   # one of: forest / grayscale / peach / plum /
   #         poppy / sky / violet / water 
   theme = ""
+  
   # or, leave theme empty & make your own palette
   # see docs at https://hugo-apero.netlify.app/blog/color-themes/
   # the custom scss file must be in the assets/ folder
@@ -61,12 +62,12 @@ pygmentsUseClasses = true
   # serif options: Fraunces / EB Garamond / Bitter
   # sans-serif options: Commissioner / Alegreya Sans / Metropolis
   # if you import your own fonts, name them here too
-  customtextFontFamily = "EB Garamond"
-  customheadingFontFamily = "EB Garamond"
+  customtextFontFamily = "Metropolis"
+  customheadingFontFamily = "Commissioner"
   # alternatively, leave empty and select basic font options: sans-serif or serif
   # for more http://tachyons.io/docs/typography/font-family/
   textFontFamily = "sans-serif"
-  headingFontFamily = "serif"
+  headingFontFamily = "sans-serif"
   
   # Social icons may appear on homepage and in site header or footer
   # Configure show/hide above - add as many as you like below
@@ -106,7 +107,7 @@ pygmentsUseClasses = true
 [menu]
   [[menu.header]]
     name = "About"
-    title = "About Blogophonic"
+    title = "About me"
     url = "/about/"
     weight = 1
   [[menu.header]]

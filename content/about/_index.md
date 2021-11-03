@@ -1,7 +1,7 @@
 ---
-title: "About"
+title: "About Jeremy"
 description: |
-  A Hugo theme made for R Markdown users.
+  Short introduction about Jeremy Selva.
 show_header: true
 sidebar_left: false
 # Keep this! Do not edit.

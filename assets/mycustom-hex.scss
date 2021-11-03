@@ -24,7 +24,12 @@ $borderColorCustom: #c2b9c4;
 
 .post-body,
 .page-body {
-
+  
+  p {
+  font-size:16px;
+  }
+  
+  //Code box
   pre {
     font-family:"Source Code Pro",monospace;
     background-color:white!important;
@@ -44,6 +49,7 @@ $borderColorCustom: #c2b9c4;
     font-weight: bold;
   }
   
+  //The box in each line of code
   pre code {
     font-size: 1rem;
     display:inline;
@@ -57,12 +63,12 @@ $borderColorCustom: #c2b9c4;
     white-space: -pre-wrap;      /* Opera 4-6 */
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
-
-}
+    
+  }
   
   code {
      font-size:1em;
-     color:#606060;
+     color:black;
      display:inline-block;
      margin:1px 5px;
      padding:1px 4px;
@@ -70,26 +76,6 @@ $borderColorCustom: #c2b9c4;
      border-radius:3px;
      border:0px solid #e4e4e4
   }
-  
-  img, iframe, video { max-width: 100%; }
-  main { hyphens: auto; }
-  
-  blockquote {
-     font-style: italic;
-     border-left: 5px solid #ffa500;
-     padding: 3px 1em 3px;
-    
-  }
-  
-  table {
-     margin: auto;
-     border-top: 1px solid #666;
-     border-bottom: 1px solid #666;
-    
-  }
-  table thead th { border-bottom: 1px solid #ddd; }
-  th, td { padding: 5px; }
-  tr:nth-child(even) { background: #eee }
   
   a:link {
      color: #268bd2; /*#1d49a0;*/
@@ -103,16 +89,6 @@ $borderColorCustom: #c2b9c4;
 
   a:visited {
     color: #ffa500;
-  }
-  
-  .threed:hover {
-        box-shadow:
-                1px 1px #53a7ea,
-                2px 2px #53a7ea,
-                3px 3px #53a7ea;
-        -webkit-transform: translateX(-3px);
-        transform: translateX(-3px);
-    
   }
   
 

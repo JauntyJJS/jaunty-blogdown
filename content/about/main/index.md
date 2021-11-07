@@ -5,7 +5,7 @@ title: "What I'm up to lately" # leave blank to exclude
 # number_categories: 3 # set to zero to exclude
 show_intro: true
 intro: |
-  Preparing a talk for an online conference: [PyData Global 2021](https://pydata.org/global2021/) 
+  Currently attending my reservist. Will be back soon.
 show_outro: true
 outro: |
   <i class="fas fa-dove pr2"></i>“I can do things you cannot, you can do things I cannot; together we can do great things.” Saint Teresa of Calcutta

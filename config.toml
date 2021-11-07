@@ -31,7 +31,7 @@ pygmentsUseClasses = true
 [params]
   orgName = "Jeremy Selva"
   orgLocal = "Singapore"
-  description = "A modern, beautiful, and easily configurable blog theme for Hugo."
+  description = "Personal website of Jeremy Selva."
   favicon = "/img/favicon.ico"
   logo = "/img/dove-with-olive-branch.png"
   mainSections = ["blog", "project", "talk"]

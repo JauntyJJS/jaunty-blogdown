@@ -27,46 +27,20 @@ htmltools::tagList(
 )
 ```
 
-
-```{css, eval=FALSE, echo=FALSE}
-
-pre.watch-out {
-  background-color: yellow;
-  border: 3px solid red;
-  font-weight: bold;
-}
-
-pre {
-  background-color: white;
-  font-size: 14px;
-}
-
-code {
-  white-space : pre-wrap !important;
-}
-
-mark.black_red {
-    background-color: black;
-    color: white;
-    border: 5px solid red;
-}
-```
-
 ## Some code to <mark class="black_red">start</mark>
 
 Some test `text09` 
 
 hi <i class="fas fa-hands-helping"></i>
-
 <p class="blue">This is a paragraph</p>
+
+### Libraries Used
 
 ```{r, message=FALSE}
 library(flair)
 library(dplyr)
 library(ggplot2)
 ```
-
-## Introduction
 
 ### ggplot
 
@@ -144,4 +118,5 @@ mtcars[1:5, "mpg"]
 ```
 
 </details>
+
 

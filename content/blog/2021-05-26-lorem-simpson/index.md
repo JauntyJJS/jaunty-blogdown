@@ -21,16 +21,14 @@ output: hugodown::md_document()
 
 
 
-
-
-
 ## Some code to <mark class="black_red">start</mark>
 
 Some test `text09` 
 
 hi <i class="fas fa-hands-helping"></i>
-
 <p class="blue">This is a paragraph</p>
+
+### Libraries Used
 
 
 ```r
@@ -38,8 +36,6 @@ library(flair)
 library(dplyr)
 library(ggplot2)
 ```
-
-## Introduction
 
 ### ggplot
 
@@ -125,4 +121,5 @@ mtcars[1:5, "mpg"]
 ```
 
 </details>
+
 

@@ -10,7 +10,7 @@ series:
 tags:
 categories:
 layout: single
-output: hugodown::md_document()
+output: md_document
 ---
 <script src="{{< blogdown/postref >}}index_files/clipboard/clipboard.min.js"></script>
 <link href="{{< blogdown/postref >}}index_files/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
@@ -56,7 +56,7 @@ iris %>%
 ```
 
 
-<pre><code class='language-r'><code>iris <span style="background-color:#ffff7f">%>%</span><br>&nbsp;&nbsp;<span style="color:brown">group_by</span>(Species) <span style="background-color:#ffff7f">%>%</span><br>&nbsp;&nbsp;<span style="color:brown">summarize</span>(<span style="color:brown">mean</span>(Sepal.Length))</code></code></pre>
+<pre><code class='language-r'><code>iris <span style='background-color:#ffff7f'>%>%</span><br>&nbsp;&nbsp;<span style='color:brown'>group_by</span>(Species) <span style='background-color:#ffff7f'>%>%</span><br>&nbsp;&nbsp;<span style='color:brown'>summarize</span>(<span style='color:brown'>mean</span>(Sepal.Length))</code></code></pre>
 
 ```
 
@@ -73,10 +73,10 @@ iris %>%
 
 
 
-<pre><code class='language-r'><code><span style="color:Coral;text-decoration:underline">ggplot</span>(<span style="background-color:Aquamarine">iris</span>, <span style="color:Coral;text-decoration:underline">aes</span>(<span style="color:CornflowerBlue">x</span> = <span style="background-color:Aquamarine"><span style="background-color:pink">Sepal.Length</span></span>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y = <span style="background-color:Aquamarine"><span style="background-color:pink">Petal.Length</span></span>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color = <span style="background-color:Aquamarine">Species</span>)) +<br>&nbsp;&nbsp;<span style="color:Coral;text-decoration:underline">geom_point</span>()</code></code></pre>
+<pre><code class='language-r'><code><span style='color:Coral;underline:text-decoration'>ggplot</span>(<span style='background-color:Aquamarine'>iris</span>, <span style='color:Coral;underline:text-decoration'>aes</span>(<span style='color:CornflowerBlue'>x</span> = <span style='background-color:Aquamarine'><span style='background-color:pink'>Sepal.Length</span></span>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y = <span style='background-color:Aquamarine'><span style='background-color:pink'>Petal.Length</span></span>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color = <span style='background-color:Aquamarine'>Species</span>)) +<br>&nbsp;&nbsp;<span style='color:Coral;underline:text-decoration'>geom_point</span>()</code></code></pre>
 
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/how_to_ggplot-flaired-1.png" width="672" style="display: block; margin: auto;" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" />
 
 <details>
   <summary>Click to expand!</summary>

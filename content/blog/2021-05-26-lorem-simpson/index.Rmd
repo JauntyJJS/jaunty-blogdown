@@ -10,7 +10,7 @@ series:
 tags:
 categories:
 layout: single
-output: hugodown::md_document()
+output: md_document
 ---
 
 ```{r setup, echo=FALSE}
@@ -56,7 +56,8 @@ iris %>%
 
 decorate("how_to_pipe") %>% 
   flair("%>%") %>%
-  flair_funs(color = "brown")
+  flair_funs(color = "brown") %>%
+  flair::knit_print.with_flair()
   
 ```
 
@@ -76,7 +77,8 @@ decorate("how_to_ggplot") %>%
   flair_args(color = "CornflowerBlue") %>%
   flair_funs(color = "Coral", underline = TRUE) %>%
   flair_input_vals(background = "Aquamarine") %>%
-  flair_rx("[A-z]*\\.Length", background = "pink")
+  flair_rx("[A-z]*\\.Length", background = "pink") %>%
+  flair::knit_print.with_flair()
   
 ```
 

@@ -24,18 +24,126 @@ Here, I would like to highlight some lipid annotations that my workplace uses an
 
 Here are the list of lipid names to clean
 
-| Given Name             | Clean Name | Precursor Ion | Product Ion |
-|------------------------|------------|---------------|-------------|
-| LPC 13:0 (ISTD) (a)    | LPC 13:0   | 454.3         | 184.1       |
-| LPC 13:0 (ISTD) (a\\b) | LPC 13:0   | 454.3         | 184.1       |
-| LPC 13:0 (ISTD) (b)    | LPC 13:0   | 454.3         | 184.1       |
-| LPC 17:1 (a)           | LPC 17:1   | 468.3         | 184.1       |
-| LPC 17:1 (a\/b\/c)     | LPC 17:1   | 468.3         | 184.1       |
-| LPC 17:1 (b)           | LPC 17:1   | 468.3         | 184.1       |
-| LPC 17:1 (c)           | LPC 17:1   | 468.3         | 184.1       |
+| Given Name              | Clean Name | Precursor Ion | Product Ion |
+|-------------------------|------------|---------------|-------------|
+| LPC 13:0 (ISTD) (a)     | LPC 13:0   | 454.3         | 184.1       |
+| LPC 13:0 (ISTD) (a\\b)  | LPC 13:0   | 454.3         | 184.1       |
+| LPC 13:0 (ISTD) (b)     | LPC 13:0   | 454.3         | 184.1       |
+| LPC 15:0-d5 (IS) (a)    | LPC 15:0   | 487.4         | 304.3       |
+| LPC 15:0-d5 (IS) (a\\b) | LPC 15:0   | 487.4         | 304.3       |
+| LPC 15:0-d5 (IS) (b)    | LPC 15:0   | 487.4         | 304.3       |
+| LPC 17:1 (a)            | LPC 17:1   | 508.3         | 184.1       |
+| LPC 17:1 (a/b/c)        | LPC 17:1   | 508.3         | 184.1       |
+| LPC 17:1 (b)            | LPC 17:1   | 508.3         | 184.1       |
+| LPC 17:1 (c)            | LPC 17:1   | 508.3         | 184.1       |
 
-<https://metabolomics.baker.edu.au/method/mrm/TG566NL225>
+The task is to remove the variations of (ISTD), (a\\b\\c\\d) and the -d5
 
-Selected Ion Monitoring (SIM)
+### Libraries Used
+
+```{r, message=FALSE}
+library("flair")
+library("reactable")
+library("here")
+library("readxl")
+library("magrittr")
+library("stringr")
+```
+
+### Read Data
+
+```{r read_data, warning=FALSE, message=FALSE}
+annotation_data <- readxl::read_excel(
+  path = here::here("content", 
+                    "blog",
+                    "2022-01-22-Clean-Lipid-Names-1",
+                    "Annotation.xlsx"),
+  sheet = "Transition_Name_Annot"
+  )
+
+reactable::reactable(annotation_data, defaultPageSize = 5)
+```
+
+# The Plan
+
+We will do the following in order
+
+1.  Remove the -d5
+
+2.  Remove the ISTD and its variations
+
+3.  Remove the (a\\b\\c) and its variations
+
+The idea is to first use `stringr::str_view` to check what the matched pattern is. Once the matched pattern is correct, we can use `stringr::str_remove` function to clean up the matched pattern.
+
+# Remove -d5
+
+Here is an example to remove the -d5 using `stringr::str_view`. Simply just set the pattern as "-d5"
+
+```{r, warning=FALSE, message=FALSE}
+stringr::str_view("LPC 15:0-d5 (IS) (a)", pattern = "-d5")
+stringr::str_remove("LPC 15:0-d5 (IS) (a)", pattern = "-d5")
+```
+
+# Remove the ISTD variation
+
+The first challenge is to create a pattern that is able to remove variations of ISTD such as `(ISTD)` and `(IS)`
+
+## Detect the word ISTD
+
+To detect the word ISTD, we can do this in R
+
+```{r, warning=FALSE, message=FALSE}
+stringr::str_view("LPC 13:0 (ISTD) (a)", pattern = "ISTD")
+```
+
+Unfortunately, this will not work with the word IS
+
+```{r, warning=FALSE, message=FALSE}
+stringr::str_view("LPC 15:0-d5 (IS) (a)", pattern = "ISTD")
+```
+
+Alternatively to detect the word IS, we can do this in R
+
+```{r, warning=FALSE, message=FALSE}
+stringr::str_view("LPC 15:0-d5 (IS) (a)", pattern = "IS")
+```
+
+This time, this will not work with the word ISTD
+
+```{r, warning=FALSE, message=FALSE}
+stringr::str_view("LPC 13:0 (ISTD) (a)", pattern = "IS")
+```
+
+To detect words of the form IS and ISTD, we can make use of the fact that the group "TD" in "ISTD" appear zero or one time. Referring to the cheat sheet of `stringr`, we can make use of parentheses to create a group.
+
+Hence, adding the group to the existing pattern, we have the form `IS(TD)`.
+
+Next, we inform `stringr` that the group `(TD)` can appear zero or one time. Referring to the cheat sheet of `stringr`, we can make use of the `?` symbol
+
+This give our updated pattern to `IS(TD)?`
+
+Putting this to our existing list of words, we have
+
+```{r, warning=FALSE, message=FALSE}
+stringr::str_view(annotation_data$Transition_Name, pattern = "IS(TD)?")
+```
+
+## Detect Parenthesis
+
+The way to detect `(` and `)` is unfortunately not as simple as `stringr::str_view_all("LPC 13:0 (ISTD) (a)", pattern = "(")`, giving rise to this error message.
+
+This is because `(` and `)` fall under a group called "meta characters" that have other functions in regular expression. In fact, we have just explained what it does earlier which is to group characters together.
+
+```{r detect_parenthesis, warning=FALSE, message=FALSE}
+
+stringr::str_view_all("LPC 13:0 (ISTD) (a)", pattern = "\\(")
+stringr::str_view_all(annotation_data$Transition_Name, pattern = "\\)")
+```
+
+```{r clean_istd, warning=FALSE, message=FALSE}
+
+stringr::str_view_all(annotation_data$Transition_Name, pattern = "\\s*\\(IS(TD)?\\)\\s*")
+```
 
 # References

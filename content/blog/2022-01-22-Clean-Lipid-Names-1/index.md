@@ -193,7 +193,17 @@ stringr::str_view(annotation_data$Transition_Name, pattern = "IS(TD)?")
 
 The way to detect `(` and `)` is unfortunately not as simple as `stringr::str_view_all("LPC 13:0 (ISTD) (a)", pattern = "(")`, giving rise to this error message.
 
+``` r
+stringr::str_view_all("LPC 13:0 (ISTD) (a)", pattern = "(")
+```
+
+    ## Error in stri_locate_all_regex(string, pattern, omit_no_match = TRUE, : Incorrectly nested parentheses in regex pattern. (U_REGEX_MISMATCHED_PAREN, context=`(`)
+
 This is because `(` and `)` fall under a group called “meta characters” that have other functions in regular expression. In fact, we have just explained what it does earlier which is to group characters together.
+
+To inform that we want to search for the pattern `(` and `)` explicitly. We need to add two escape character `\\` as indicated in the stringr cheat sheet.
+
+![parenthesis](parenthesis.jpg)
 
 ``` r
 stringr::str_view_all("LPC 13:0 (ISTD) (a)", pattern = "\\(")
@@ -203,17 +213,39 @@ stringr::str_view_all("LPC 13:0 (ISTD) (a)", pattern = "\\(")
 <script type="application/json" data-for="htmlwidget-8">{"x":{"html":"<ul>\n  <li>LPC 13:0 <span class='match'>(<\/span>ISTD) <span class='match'>(<\/span>a)<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 
 ``` r
-stringr::str_view_all(annotation_data$Transition_Name, pattern = "\\)")
+stringr::str_view_all("LPC 13:0 (ISTD) (a)", pattern = "\\)")
 ```
 
 <div id="htmlwidget-9" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9">{"x":{"html":"<ul>\n  <li>LPC 13:0 (ISTD<span class='match'>)<\/span> (a<span class='match'>)<\/span><\/li>\n  <li>LPC 13:0 (ISTD<span class='match'>)<\/span> (a\\b<span class='match'>)<\/span><\/li>\n  <li>LPC 13:0 (ISTD<span class='match'>)<\/span> (b<span class='match'>)<\/span><\/li>\n  <li>LPC 15:0-d5 (IS<span class='match'>)<\/span> (a<span class='match'>)<\/span><\/li>\n  <li>LPC 15:0-d5 (IS<span class='match'>)<\/span> (a\\b<span class='match'>)<\/span><\/li>\n  <li>LPC 15:0-d5 (IS<span class='match'>)<\/span> (b<span class='match'>)<\/span><\/li>\n  <li>LPC 17:1 (a<span class='match'>)<\/span><\/li>\n  <li>LPC 17:1 (a/b/c<span class='match'>)<\/span><\/li>\n  <li>LPC 17:1 (b<span class='match'>)<\/span><\/li>\n  <li>LPC 17:1 (c<span class='match'>)<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-9">{"x":{"html":"<ul>\n  <li>LPC 13:0 (ISTD<span class='match'>)<\/span> (a<span class='match'>)<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+
+Putting it all together, we have the pattern `\\(IS(TD)?\\)"`
 
 ``` r
-stringr::str_view_all(annotation_data$Transition_Name, pattern = "\\s*\\(IS(TD)?\\)\\s*")
+stringr::str_view_all(annotation_data$Transition_Name, pattern = "\\(IS(TD)?\\)")
 ```
 
 <div id="htmlwidget-10" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-10">{"x":{"html":"<ul>\n  <li>LPC 13:0<span class='match'> (ISTD) <\/span>(a)<\/li>\n  <li>LPC 13:0<span class='match'> (ISTD) <\/span>(a\\b)<\/li>\n  <li>LPC 13:0<span class='match'> (ISTD) <\/span>(b)<\/li>\n  <li>LPC 15:0-d5<span class='match'> (IS) <\/span>(a)<\/li>\n  <li>LPC 15:0-d5<span class='match'> (IS) <\/span>(a\\b)<\/li>\n  <li>LPC 15:0-d5<span class='match'> (IS) <\/span>(b)<\/li>\n  <li>LPC 17:1 (a)<\/li>\n  <li>LPC 17:1 (a/b/c)<\/li>\n  <li>LPC 17:1 (b)<\/li>\n  <li>LPC 17:1 (c)<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-10">{"x":{"html":"<ul>\n  <li>LPC 13:0 <span class='match'>(ISTD)<\/span> (a)<\/li>\n  <li>LPC 13:0 <span class='match'>(ISTD)<\/span> (a\\b)<\/li>\n  <li>LPC 13:0 <span class='match'>(ISTD)<\/span> (b)<\/li>\n  <li>LPC 15:0-d5 <span class='match'>(IS)<\/span> (a)<\/li>\n  <li>LPC 15:0-d5 <span class='match'>(IS)<\/span> (a\\b)<\/li>\n  <li>LPC 15:0-d5 <span class='match'>(IS)<\/span> (b)<\/li>\n  <li>LPC 17:1 (a)<\/li>\n  <li>LPC 17:1 (a/b/c)<\/li>\n  <li>LPC 17:1 (b)<\/li>\n  <li>LPC 17:1 (c)<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+
+# Remove (a\\b\\c) and its variations
+
+The second challenge is to create a pattern to remove variations of (a\\b\\c).
+
+Things that are consistent is that they are written in small letters.
+
+However, the main issue I faced when dealing with this variation
+
+-   The letter does not necessary start with `a`
+
+-   The list can expand indefinitely. For example, it can be
+
+    -   (a\\b\\…\\f)
+
+    -   (b\\d\\f)
+
+Here is what I have done to resolve the above issues.
+
+## Does not start with `a`
 
 # References

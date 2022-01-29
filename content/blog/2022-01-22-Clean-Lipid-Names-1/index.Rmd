@@ -133,17 +133,49 @@ stringr::str_view(annotation_data$Transition_Name, pattern = "IS(TD)?")
 
 The way to detect `(` and `)` is unfortunately not as simple as `stringr::str_view_all("LPC 13:0 (ISTD) (a)", pattern = "(")`, giving rise to this error message.
 
+```{r, error=TRUE}
+stringr::str_view_all("LPC 13:0 (ISTD) (a)", pattern = "(")
+```
+
 This is because `(` and `)` fall under a group called "meta characters" that have other functions in regular expression. In fact, we have just explained what it does earlier which is to group characters together.
+
+To inform that we want to search for the pattern `(` and `)` explicitly. We need to add two escape character `\\` as indicated in the stringr cheat sheet.
+
+![parenthesis](parenthesis.jpg)
 
 ```{r detect_parenthesis, warning=FALSE, message=FALSE}
 
 stringr::str_view_all("LPC 13:0 (ISTD) (a)", pattern = "\\(")
-stringr::str_view_all(annotation_data$Transition_Name, pattern = "\\)")
+stringr::str_view_all("LPC 13:0 (ISTD) (a)", pattern = "\\)")
 ```
+
+Putting it all together, we have the pattern `\\(IS(TD)?\\)"`
 
 ```{r clean_istd, warning=FALSE, message=FALSE}
 
-stringr::str_view_all(annotation_data$Transition_Name, pattern = "\\s*\\(IS(TD)?\\)\\s*")
+stringr::str_view_all(annotation_data$Transition_Name, pattern = "\\(IS(TD)?\\)")
 ```
+
+# Remove (a\\b\\c) and its variations
+
+The second challenge is to create a pattern to remove variations of (a\\b\\c).
+
+Things that are consistent is that they are written in small letters.
+
+However, the main issue I faced when dealing with this variation
+
+-   The letter does not necessary start with `a`
+
+-   The list can expand indefinitely. For example, it can be
+
+    -   (a\\b\\...\\f)
+
+    -   (b\\d\\f)
+
+Here is what I have done to resolve the above issues.
+
+## Does not start with `a`
+
+
 
 # References

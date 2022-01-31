@@ -2,19 +2,32 @@
 title: "Cleaning Lipid Names Part 1"
 subtitle: ""
 excerpt: "This post provides some tips on how to clean lipid names input suited for some current nomenclature tools using R"
-date: 2022-01-22
+date: 2022-01-30
 author: "Jeremy Selva"
-draft: true
+draft: false
 images:
 series:
 tags:
 categories:
 layout: single
+output: md_document
 bibliography: utils/bibliography.bib
 csl: utils/f1000research.csl
 ---
 
+```{r setup, echo=FALSE}
+library(xaringanExtra)
 
+knitr::opts_chunk$set(fig.align = "center")
+
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i> Copy Code",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i> Copied!",
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
 
 ## Introduction
 
@@ -39,7 +52,27 @@ Here are the list of lipid names to clean
 | LPC 17:1 (b)            | LPC 17:1   | 508.3         | 184.1       |
 | LPC 17:1 (c)            | LPC 17:1   | 508.3         | 184.1       |
 
-The task is to remove the variations of (ISTD), (a\\b\\c\\d) and the -d5
+The (a\\b) in this case refers to which lipid isomer is integrated. Here is an example with LPC 17:1
+
+![LPC_17_1\_a](LPC_17_1_a.jpg)
+
+![LPC_17_1\_abc](LPC_17_1_abc.jpg)
+
+![LPC_17_1\_b](LPC_17_1_b.jpg)
+
+![LPC_17_1\_c](LPC_17_1_c.jpg)
+
+The identity of such isomers is still an ongoing research process for most lipids. Thankfully for the case of LPC 17:1. The identity can be found in these links.
+
+-   [LPC 17:1 (a)](https://metabolomics.baker.edu.au/method/mrm/LPC171sn2a)
+
+-   [LPC 17:1 (b)](https://metabolomics.baker.edu.au/method/mrm/LPC171sn1aLPC171sn2b)
+
+-   [LPC 17:1 (c)](https://metabolomics.baker.edu.au/method/mrm/LPC171sn1b)
+
+Unfortunately lipid annotations converter tools like Goslin is unable to parse these given names and they must be clean up
+
+The task is to remove the variations of (ISTD), (a\\b) and the -d5
 
 ## Libraries Used
 
@@ -227,18 +260,17 @@ The pattern therefore is `[\\\\|/]` as we are looking for one of `/` or `\`
 stringr::str_view_all(c("LPC 13:0 (ISTD) (a\\b)", "LPC 17:1 (a/b/c)"), pattern = "[\\\\|/]")
 ```
 
-
 ### List can expand indefinitely
 
-This one is a bit tricky. The pattern (a\\b\\...\\f) and (a/b/c) can be viewed as 
+This one is a bit tricky. The pattern (a\\b\\...\\f) and (a/b/c) can be viewed as
 
-([some small letter]`[\ or /][some small letter]`)
+(\[some small letter\]`[\ or /][some small letter]`)
 
 where the whole pattern `[\ or /][some small letter]` appears zero or more times.
 
 To add the element of zero or more times, we use the `*` character
 
-![zero_or_more](zero_or_more.jpg) 
+![zero_or_more](zero_or_more.jpg)
 
 This gives the pattern `([\\\\|/][a-z])*`. The parenthesis `()` is to ensure the whole pattern `{\ or /}{some small letter}` appears zero or more times.
 
@@ -268,8 +300,7 @@ annotation_data %>%
 ```
 
 ## Package References
+
 ```{r warning=FALSE, message=TRUE, results='asis'}
 report::cite_packages(sessionInfo())
 ```
-
-## References

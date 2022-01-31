@@ -2,18 +2,25 @@
 title: "Cleaning Lipid Names Part 1"
 subtitle: ""
 excerpt: "This post provides some tips on how to clean lipid names input suited for some current nomenclature tools using R"
-date: 2022-01-22
+date: 2022-01-30
 author: "Jeremy Selva"
-draft: true
+draft: false
 images:
 series:
 tags:
 categories:
 layout: single
+output: md_document
 bibliography: utils/bibliography.bib
 csl: utils/f1000research.csl
 ---
 
+<script src="{{< blogdown/postref >}}index_files/clipboard/clipboard.min.js"></script>
+<link href="{{< blogdown/postref >}}index_files/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+<script src="{{< blogdown/postref >}}index_files/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+<script>window.xaringanExtraClipboard(null, {"button":"<i class=\"fa fa-clipboard\"><\/i> Copy Code","success":"<i class=\"fa fa-check\" style=\"color: #90BE6D\"><\/i> Copied!","error":"Press Ctrl+C to Copy"})</script>
+<link href="{{< blogdown/postref >}}index_files/font-awesome/css/all.css" rel="stylesheet" />
+<link href="{{< blogdown/postref >}}index_files/font-awesome/css/v4-shims.css" rel="stylesheet" />
 <script src="{{< blogdown/postref >}}index_files/core-js/shim.min.js"></script>
 <script src="{{< blogdown/postref >}}index_files/react/react.min.js"></script>
 <script src="{{< blogdown/postref >}}index_files/react/react-dom.min.js"></script>
@@ -86,7 +93,27 @@ Here are the list of lipid names to clean
 | LPC 17:1 (b)            | LPC 17:1   | 508.3         | 184.1       |
 | LPC 17:1 (c)            | LPC 17:1   | 508.3         | 184.1       |
 
-The task is to remove the variations of (ISTD), (a\\b\\c\\d) and the -d5
+The (a\\b) in this case refers to which lipid isomer is integrated. Here is an example with LPC 17:1
+
+![LPC_17_1\_a](LPC_17_1_a.jpg)
+
+![LPC_17_1\_abc](LPC_17_1_abc.jpg)
+
+![LPC_17_1\_b](LPC_17_1_b.jpg)
+
+![LPC_17_1\_c](LPC_17_1_c.jpg)
+
+The identity of such isomers is still an ongoing research process for most lipids. Thankfully for the case of LPC 17:1. The identity can be found in these links.
+
+-   [LPC 17:1 (a)](https://metabolomics.baker.edu.au/method/mrm/LPC171sn2a)
+
+-   [LPC 17:1 (b)](https://metabolomics.baker.edu.au/method/mrm/LPC171sn1aLPC171sn2b)
+
+-   [LPC 17:1 (c)](https://metabolomics.baker.edu.au/method/mrm/LPC171sn1b)
+
+Unfortunately lipid annotations converter tools like Goslin is unable to parse these given names and they must be clean up
+
+The task is to remove the variations of (ISTD), (a\\b) and the -d5
 
 ## Libraries Used
 
@@ -98,10 +125,7 @@ library("magrittr")
 library("stringr")
 library("dplyr")
 library("report")
-summary(report::report(sessionInfo()))
 ```
-
-The analysis was done using the R Statistical language (v4.1.2; R Core Team, 2021) on Windows 10 x64, using the packages reactable (v0.2.3), stringr (v1.4.0), readxl (v1.3.1), dplyr (v1.0.7), here (v1.0.1), report (v0.5.0) and magrittr (v2.0.1).
 
 ## Read Data
 
@@ -387,6 +411,7 @@ annotation_data %>%
 report::cite_packages(sessionInfo())
 ```
 
+-   Garrick Aden-Buie and Matthew T. Warkentin (2022). xaringanExtra: Extras And Extensions for Xaringan Slides. R package version 0.5.5. https://github.com/gadenbuie/xaringanExtra
 -   Greg Lin (2020). reactable: Interactive Data Tables Based on ‘React Table.’ R package version 0.2.3. https://CRAN.R-project.org/package=reactable
 -   Hadley Wickham (2019). stringr: Simple, Consistent Wrappers for Common String Operations. R package version 1.4.0. https://CRAN.R-project.org/package=stringr
 -   Hadley Wickham and Jennifer Bryan (2019). readxl: Read Excel Files. R package version 1.3.1. https://CRAN.R-project.org/package=readxl
@@ -395,5 +420,3 @@ report::cite_packages(sessionInfo())
 -   Makowski, D., Ben-Shachar, M.S., Patil, I. & Lüdecke, D. (2020). Automated Results Reporting as a Practical Tool to Improve Reproducibility and Methodological Best Practices Adoption. CRAN. Available from https://github.com/easystats/report. doi: .
 -   R Core Team (2021). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
 -   Stefan Milton Bache and Hadley Wickham (2020). magrittr: A Forward-Pipe Operator for R. R package version 2.0.1. https://CRAN.R-project.org/package=magrittr
-
-## References

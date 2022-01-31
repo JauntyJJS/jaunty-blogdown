@@ -26,7 +26,11 @@ links:
 ---
 
 
-Stay tuned for video and slides.
+Here are the video and slides.
+
+I am the second speaker in this lightning talk and it begins at 9:40. 
+
+<iframe width="710" height="390" src="https://www.youtube.com/embed/Ni6-HRKwP4w" frameborder="0" allowfullscreen></iframe>
 
 ```{r, echo=FALSE}
 
@@ -37,3 +41,6 @@ xaringanExtra::embed_xaringan(
 
 ```
 
+Images by [Amonrat Rungreangfangsai](https://www.vecteezy.com/members/amy1313)
+
+[Xaringan](https://github.com/yihui/xaringan) Slide Template by [Sharla Gelfand](https://github.com/sharlagelfand/sharstudioconf)

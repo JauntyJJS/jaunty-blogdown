@@ -27,9 +27,17 @@ links:
 
 <script src="{{< blogdown/postref >}}index_files/fitvids/fitvids.min.js"></script>
 
-Stay tuned for video and slides.
+Here are the video and slides.
 
+I am the second speaker in this lightning talk and it begins at 9:40.
+
+<iframe width="710" height="390" src="https://www.youtube.com/embed/Ni6-HRKwP4w" frameborder="0" allowfullscreen>
+</iframe>
 <div class="shareagain" style="min-width:300px;margin:1em auto;">
 <iframe src="https://jauntyjjs.github.io/PyDataGlobal2021Talk" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
+
+Images by [Amonrat Rungreangfangsai](https://www.vecteezy.com/members/amy1313)
+
+[Xaringan](https://github.com/yihui/xaringan) Slide Template by [Sharla Gelfand](https://github.com/sharlagelfand/sharstudioconf)

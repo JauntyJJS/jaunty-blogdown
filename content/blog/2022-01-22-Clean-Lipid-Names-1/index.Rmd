@@ -14,13 +14,15 @@ bibliography: utils/bibliography.bib
 csl: utils/f1000research.csl
 ---
 
-# Introduction
+
+
+## Introduction
 
 Despite efforts made to unified lipids shorthand notations and the rise of software dedicated to standardise lipid annotations, lipid names still remains diverse. This is due to limited ways lipid software may label a lipid and/or researchers' personal preferences to annotate them.
 
 Here, I would like to highlight some lipid annotations that my workplace uses and show how to modify them in R such that it can be processed by lipid annotations converter tools.
 
-# Labels to clean
+## Labels to clean
 
 Here are the list of lipid names to clean
 
@@ -39,18 +41,19 @@ Here are the list of lipid names to clean
 
 The task is to remove the variations of (ISTD), (a\\b\\c\\d) and the -d5
 
-### Libraries Used
+## Libraries Used
 
-```{r, message=FALSE}
-library("flair")
+```{r message=FALSE}
 library("reactable")
 library("here")
 library("readxl")
 library("magrittr")
 library("stringr")
+library("dplyr")
+library("report")
 ```
 
-### Read Data
+## Read Data
 
 ```{r read_data, warning=FALSE, message=FALSE}
 annotation_data <- readxl::read_excel(
@@ -64,7 +67,7 @@ annotation_data <- readxl::read_excel(
 reactable::reactable(annotation_data, defaultPageSize = 5)
 ```
 
-# The Plan
+## The Plan
 
 We will do the following in order
 
@@ -76,7 +79,7 @@ We will do the following in order
 
 The idea is to first use `stringr::str_view` to check what the matched pattern is. Once the matched pattern is correct, we can use `stringr::str_remove` function to clean up the matched pattern.
 
-# Remove -d5
+## Remove -d5
 
 Here is an example to remove the -d5 using `stringr::str_view`. Simply just set the pattern as "-d5"
 
@@ -85,11 +88,11 @@ stringr::str_view("LPC 15:0-d5 (IS) (a)", pattern = "-d5")
 stringr::str_remove("LPC 15:0-d5 (IS) (a)", pattern = "-d5")
 ```
 
-# Remove the ISTD variation
+## Remove the ISTD variation
 
 The first challenge is to create a pattern that is able to remove variations of ISTD such as `(ISTD)` and `(IS)`
 
-## Detect the word ISTD
+### Detect the word ISTD
 
 To detect the word ISTD, we can do this in R
 
@@ -126,10 +129,10 @@ This give our updated pattern to `IS(TD)?`
 Putting this to our existing list of words, we have
 
 ```{r, warning=FALSE, message=FALSE}
-stringr::str_view(annotation_data$Transition_Name, pattern = "IS(TD)?")
+stringr::str_view(annotation_data$`Given Name`, pattern = "IS(TD)?")
 ```
 
-## Detect Parenthesis
+### Detect Parenthesis
 
 The way to detect `(` and `)` is unfortunately not as simple as `stringr::str_view_all("LPC 13:0 (ISTD) (a)", pattern = "(")`, giving rise to this error message.
 
@@ -149,14 +152,14 @@ stringr::str_view_all("LPC 13:0 (ISTD) (a)", pattern = "\\(")
 stringr::str_view_all("LPC 13:0 (ISTD) (a)", pattern = "\\)")
 ```
 
-Putting it all together, we have the pattern `\\(IS(TD)?\\)"`
+Putting it all together, we have the pattern `\\(IS(TD)?\\)`
 
 ```{r clean_istd, warning=FALSE, message=FALSE}
 
-stringr::str_view_all(annotation_data$Transition_Name, pattern = "\\(IS(TD)?\\)")
+stringr::str_view_all(annotation_data$`Given Name`, pattern = "\\(IS(TD)?\\)")
 ```
 
-# Remove (a\\b\\c) and its variations
+## Remove (a\\b\\c) and its variations
 
 The second challenge is to create a pattern to remove variations of (a\\b\\c).
 
@@ -164,7 +167,9 @@ Things that are consistent is that they are written in small letters.
 
 However, the main issue I faced when dealing with this variation
 
--   The letter does not necessary start with `a`
+-   The letter does not always start with `a`
+
+-   The list of letters can be separated by `\` or `/`
 
 -   The list can expand indefinitely. For example, it can be
 
@@ -174,8 +179,97 @@ However, the main issue I faced when dealing with this variation
 
 Here is what I have done to resolve the above issues.
 
-## Does not start with `a`
+### Letter does not always start with `a`
+
+To create a pattern that matches small letters from a to z, we can use the square brackets `[` and `]` and hyphen `-` as indicated in the stringr cheat sheet.
+
+![range](range.jpg)
+
+Applying what we have learnt, we have the pattern `\\([a-z]\\)`. The `a-z` means the range from a to z. The square brackets `[` and `]` means one of. Hence `[a-z]` is telling the software to look for one of the letters ranging from a to z.
+
+```{r start_with_a, warning=FALSE, message=FALSE}
+
+stringr::str_view_all(annotation_data$`Given Name`, pattern = "\\([a-z]\\)")
+```
+
+### The list of letters can be separated by `\` or `/`
+
+Matching `/` is easy.
+
+```{r pattern_frontslash, warning=FALSE, message=FALSE}
+
+stringr::str_view_all("LPC 17:1 (a/b/c)", pattern = "/")
+```
+
+but not so for `\`
+
+```{r, error=TRUE}
+stringr::str_view_all("LPC 13:0 (ISTD) (a\\b)", pattern = "\")
+```
+
+`\` also fall under a group called "meta characters". Referring to the stringr cheat sheet, to search for the pattern `/` explicitly. We use four escape characters `\\\\`
+
+![backslash](backslash.jpg)
+
+```{r pattern_backslash, warning=FALSE, message=FALSE}
+
+stringr::str_view_all("LPC 13:0 (ISTD) (a\\b)", pattern = "\\\\")
+```
+
+The question now is how do we incorporate "or" into the pattern. Referring again to the stringr cheat sheet, it is `|`
+
+![or](or.jpg)
+
+The pattern therefore is `[\\\\|/]` as we are looking for one of `/` or `\`
+
+```{r pattern_backslash_or_frontslash, warning=FALSE, message=FALSE}
+
+stringr::str_view_all(c("LPC 13:0 (ISTD) (a\\b)", "LPC 17:1 (a/b/c)"), pattern = "[\\\\|/]")
+```
 
 
+### List can expand indefinitely
 
-# References
+This one is a bit tricky. The pattern (a\\b\\...\\f) and (a/b/c) can be viewed as 
+
+([some small letter]`[\ or /][some small letter]`)
+
+where the whole pattern `[\ or /][some small letter]` appears zero or more times.
+
+To add the element of zero or more times, we use the `*` character
+
+![zero_or_more](zero_or_more.jpg) 
+
+This gives the pattern `([\\\\|/][a-z])*`. The parenthesis `()` is to ensure the whole pattern `{\ or /}{some small letter}` appears zero or more times.
+
+Putting the three solution altogether, we have the pattern `\\([a-z]([\\\\|/][a-z])*\\)`
+
+```{r list_expand_indefinitely, warning=FALSE, message=FALSE}
+
+stringr::str_view_all(annotation_data$`Given Name`, pattern = "\\([a-z]([\\\\|/][a-z])*\\)")
+```
+
+## Plan Execution
+
+With the three removal plan set, we can clean the transition name as follows.
+
+```{r plan_execution, warning=FALSE, message=FALSE}
+
+annotation_data %>%
+  # Create a new column with the Clean Names
+  dplyr::mutate(`Clean Name` = .data[["Given Name"]] %>%
+                  stringr::str_remove(pattern = "-d5") %>%
+                  stringr::str_remove(pattern = "\\(IS(TD)?\\)") %>%
+                  stringr::str_remove(pattern = "\\([a-z]([\\\\|/][a-z])*\\)") %>%
+                  stringr::str_trim()
+  ) %>%
+  # Make Given Name and Clean Name the first two columns
+  dplyr::relocate(dplyr::any_of(c("Given Name","Clean Name")))
+```
+
+## Package References
+```{r warning=FALSE, message=TRUE, results='asis'}
+report::cite_packages(sessionInfo())
+```
+
+## References

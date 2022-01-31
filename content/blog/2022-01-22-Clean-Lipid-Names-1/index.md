@@ -127,7 +127,7 @@ The (a\\b) in this case refers to which lipid isomer is integrated. Here is an e
 
 ![LPC_17_1\_c](LPC_17_1_c.jpg)
 
-The identity of such isomers is still an ongoing research process for most lipids. Thankfully for the case of LPC 17:1 in human plasma. The identity can be found in these links.
+The identity of such isomers is still an ongoing research process for most lipids. Thankfully for the case of LPC 17:1 in human plasma, the identity can be found in these links.
 
 -   [LPC 17:1 (a)](https://metabolomics.baker.edu.au/method/mrm/LPC171sn2a)
 

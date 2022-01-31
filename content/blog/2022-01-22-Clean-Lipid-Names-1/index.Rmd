@@ -1,5 +1,5 @@
 ---
-title: "Cleaning Lipid Names Part 1"
+title: "Cleaning Lipid Names for Annotation Part 1"
 subtitle: ""
 excerpt: "This post provides some tips on how to clean lipid names input suited for some current nomenclature tools using R"
 date: 2022-01-30
@@ -10,14 +10,11 @@ series:
 tags:
 categories:
 layout: single
-output: md_document
 bibliography: utils/bibliography.bib
 csl: utils/f1000research.csl
 ---
 
 ```{r setup, echo=FALSE}
-library(xaringanExtra)
-
 knitr::opts_chunk$set(fig.align = "center")
 
 htmltools::tagList(
@@ -33,25 +30,38 @@ htmltools::tagList(
 
 Despite efforts made to unified lipids shorthand notations and the rise of software dedicated to standardise lipid annotations, lipid names still remains diverse. This is due to limited ways lipid software may label a lipid and/or researchers' personal preferences to annotate them.
 
-Here, I would like to highlight some lipid annotations that my workplace uses and show how to modify them in R such that it can be processed by lipid annotations converter tools.
+Here, I would like to highlight some lipid annotations that my workplace uses and show how to modify them in R such that it can be processed by lipid annotations converter tools like [Goslin](https://lifs-tools.org/goslin) [@GOSLIN] and [RefMet](https://metabolomicsworkbench.org/databases/refmet/index.php) [@Fahy2020].
+
+## R Packages Used
+
+```{r message=FALSE}
+library("rgoslin")
+library("reactable")
+library("here")
+library("readxl")
+library("magrittr")
+library("stringr")
+library("dplyr")
+library("report")
+```
 
 ## Labels to clean
 
 Here are the list of lipid names to clean
 
-| Given Name              | Clean Name | Precursor Ion | Product Ion |
-|-------------------------|------------|---------------|-------------|
-| LPC 13:0 (ISTD) (a)     | LPC 13:0   | 454.3         | 184.1       |
-| LPC 13:0 (ISTD) (a\\b)  | LPC 13:0   | 454.3         | 184.1       |
-| LPC 13:0 (ISTD) (b)     | LPC 13:0   | 454.3         | 184.1       |
-| LPC 15:0-d5 (IS) (a)    | LPC 15:0   | 487.4         | 304.3       |
-| LPC 15:0-d5 (IS) (a\\b) | LPC 15:0   | 487.4         | 304.3       |
-| LPC 15:0-d5 (IS) (b)    | LPC 15:0   | 487.4         | 304.3       |
-| LPC 17:1 (a)            | LPC 17:1   | 508.3         | 184.1       |
-| LPC 17:1 (a/b/c)        | LPC 17:1   | 508.3         | 184.1       |
-| LPC 17:1 (b)            | LPC 17:1   | 508.3         | 184.1       |
-| LPC 17:1 (c)            | LPC 17:1   | 508.3         | 184.1       |
-
+| Given Name              | Clean Name For Annotation | Precursor Ion | Product Ion |
+|-------------------------|---------------------------|---------------|-------------|
+| LPC 13:0 (ISTD) (a)     | LPC 13:0                  | 454.3         | 184.1       |
+| LPC 13:0 (ISTD) (a\\b)  | LPC 13:0                  | 454.3         | 184.1       |
+| LPC 13:0 (ISTD) (b)     | LPC 13:0                  | 454.3         | 184.1       |
+| LPC 15:0-d5 (IS) (a)    | LPC 15:0                  | 487.4         | 304.3       |
+| LPC 15:0-d5 (IS) (a\\b) | LPC 15:0                  | 487.4         | 304.3       |
+| LPC 15:0-d5 (IS) (b)    | LPC 15:0                  | 487.4         | 304.3       |
+| LPC 17:1 (a)            | LPC 17:1                  | 508.3         | 184.1       |
+| LPC 17:1 (a/b/c)        | LPC 17:1                  | 508.3         | 184.1       |
+| LPC 17:1 (b)            | LPC 17:1                  | 508.3         | 184.1       |
+| LPC 17:1 (c)            | LPC 17:1                  | 508.3         | 184.1       |
+               
 The (a\\b) in this case refers to which lipid isomer is integrated. Here is an example with LPC 17:1
 
 ![LPC_17_1\_a](LPC_17_1_a.jpg)
@@ -70,21 +80,25 @@ The identity of such isomers is still an ongoing research process for most lipid
 
 -   [LPC 17:1 (c)](https://metabolomics.baker.edu.au/method/mrm/LPC171sn1b)
 
-Unfortunately lipid annotations converter tools like Goslin is unable to parse these given names and they must be clean up
+Unfortunately lipid annotations converter tools like Goslin and RetMet is unable to parse these given names
+
+```{r message=FALSE}
+c("LPC 13:0 (ISTD) (a\\b)",
+  "LPC 15:0-d5 (IS) (a\\b)",
+  "LPC 17:1 (a/b/c) ") %>%
+  rgoslin::parseLipidNames()
+```
+
+They must be clean up accordingly
+
+```{r message=FALSE}
+c("LPC 13:0","LPC 15:0","LPC 17:1") %>%
+  rgoslin::parseLipidNames() %>%
+  reactable::reactable(defaultPageSize = 5)
+```
 
 The task is to remove the variations of (ISTD), (a\\b) and the -d5
 
-## Libraries Used
-
-```{r message=FALSE}
-library("reactable")
-library("here")
-library("readxl")
-library("magrittr")
-library("stringr")
-library("dplyr")
-library("report")
-```
 
 ## Read Data
 
@@ -125,7 +139,7 @@ stringr::str_remove("LPC 15:0-d5 (IS) (a)", pattern = "-d5")
 
 The first challenge is to create a pattern that is able to remove variations of ISTD such as `(ISTD)` and `(IS)`
 
-### Detect the word ISTD
+##### Detect the word ISTD
 
 To detect the word ISTD, we can do this in R
 
@@ -237,7 +251,7 @@ stringr::str_view_all("LPC 17:1 (a/b/c)", pattern = "/")
 but not so for `\`
 
 ```{r, error=TRUE}
-stringr::str_view_all("LPC 13:0 (ISTD) (a\\b)", pattern = "\")
+stringr::str_view_all("LPC 13:0 (ISTD) (a\\b)", pattern = "\\")
 ```
 
 `\` also fall under a group called "meta characters". Referring to the stringr cheat sheet, to search for the pattern `/` explicitly. We use four escape characters `\\\\`
@@ -287,16 +301,20 @@ With the three removal plan set, we can clean the transition name as follows.
 
 ```{r plan_execution, warning=FALSE, message=FALSE}
 
+Clean_Name <- annotation_data[["Given Name"]] %>%
+  stringr::str_remove(pattern = "-d5") %>%
+  stringr::str_remove(pattern = "\\(IS(TD)?\\)") %>%
+  stringr::str_remove(pattern = "\\([a-z]([\\\\|/][a-z])*\\)") %>%
+  stringr::str_trim()
+
 annotation_data %>%
   # Create a new column with the Clean Names
-  dplyr::mutate(`Clean Name` = .data[["Given Name"]] %>%
-                  stringr::str_remove(pattern = "-d5") %>%
-                  stringr::str_remove(pattern = "\\(IS(TD)?\\)") %>%
-                  stringr::str_remove(pattern = "\\([a-z]([\\\\|/][a-z])*\\)") %>%
-                  stringr::str_trim()
-  ) %>%
+  dplyr::mutate(`Clean Name For Annotation` = Clean_Name) %>%
   # Make Given Name and Clean Name the first two columns
-  dplyr::relocate(dplyr::any_of(c("Given Name","Clean Name")))
+  dplyr::relocate(
+    dplyr::any_of(c("Given Name","Clean Name For Annotation"))
+    ) %>%
+  reactable::reactable(defaultPageSize = 5)
 ```
 
 ## Package References
@@ -304,3 +322,5 @@ annotation_data %>%
 ```{r warning=FALSE, message=TRUE, results='asis'}
 report::cite_packages(sessionInfo())
 ```
+
+## References

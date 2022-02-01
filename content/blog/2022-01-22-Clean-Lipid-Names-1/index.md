@@ -218,7 +218,7 @@ stringr::str_remove("LPC 15:0-d5 (IS) (a)", pattern = "-d5")
 
 The first challenge is to create a pattern that is able to remove variations of ISTD such as `(ISTD)` and `(IS)`
 
-##### Detect the word ISTD
+### Detect the word ISTD
 
 To detect the word ISTD, we can do this in R
 

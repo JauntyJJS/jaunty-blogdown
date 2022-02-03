@@ -117,6 +117,16 @@ Here are the list of lipid names to clean
 | LPC 17:1 (b)            | LPC 17:1                  | 508.3         | 184.1       |
 | LPC 17:1 (c)            | LPC 17:1                  | 508.3         | 184.1       |
 
+The word (IS) or (ISTD) stands for [internal standards](https://en.wikipedia.org/wiki/Internal_standard).
+
+The word -d5 means the compound contains five [deuterium](https://en.wikipedia.org/wiki/Deuterium) instead of hydrogen.
+
+These internal standards can be purchased via these links
+
+-   [LPC 13:0 (ISTD)](https://avantilipids.com/product/855476)
+
+-   [LPC 15:0-d5](https://avantilipids.com/product/870309)
+
 The (a\\b) in this case refers to which lipid isomer is integrated. Here is an example with LPC 17:1
 
 ![LPC_17_1\_a](LPC_17_1_a.jpg)

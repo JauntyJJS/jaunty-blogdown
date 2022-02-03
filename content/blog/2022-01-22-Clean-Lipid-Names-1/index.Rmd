@@ -70,7 +70,7 @@ These internal standards can be purchased via these links
 
 -   [LPC 13:0 (ISTD)](https://avantilipids.com/product/855476)
 
--   [LPC 15:0-d5 ](https://avantilipids.com/product/870309)
+-   [LPC 15:0-d5 (IS)](https://avantilipids.com/product/870309)
 
 The (a\\b) in this case refers to which lipid isomer is integrated. Here is an example with LPC 17:1
 

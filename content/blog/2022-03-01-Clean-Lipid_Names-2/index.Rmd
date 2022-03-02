@@ -1,0 +1,74 @@
+---
+title: "Cleaning Lipid Names for Annotation Part 2"
+subtitle: ""
+excerpt: "This post provides some tips on how to clean lipid names input suited for some current nomenclature tools using R"
+date: 2022-03-01
+author: "Jeremy Selva"
+draft: true
+images:
+series:
+tags:
+categories:
+layout: single
+bibliography: utils/bibliography.bib
+csl: utils/f1000research.csl
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(fig.align = "center")
+
+```
+
+## Introduction
+
+In this blog, I will introduce another set of lipid annotations that my workplace uses that require to be cleaned up and modified so that they can be processed by lipid annotations converter tools like [Goslin](https://lifs-tools.org/goslin) [@GOSLIN] and [RefMet](https://metabolomicsworkbench.org/databases/refmet/index.php) [@Fahy2020].
+
+## R Packages Used
+
+```{r message=FALSE}
+library("rgoslin")
+library("reactable")
+library("here")
+library("readxl")
+library("magrittr")
+library("stringr")
+library("dplyr")
+library("report")
+```
+
+## Labels to clean
+
+Here are the list of lipid names to clean
+
+| Given Name             | Clean Name For Annotation | Precursor Ion | Product Ion |
+|------------------------|---------------------------|---------------|-------------|
+| DG 32:0 \[-16:0\]      | DG 16:0_16:0              | 586.5         | 313.3       |
+| DG 36:1 \[NL-18:1\]    | LPC(O-18:1)               | 640.6         | 341.3       |
+| TG 54:3 \[-18:1\]      | LPC(P-18:1)               | 902.8         | 603.5       |
+| TG 54:3 \[NL-18:2\]    | LPE 18:1                  | 902.8         | 605.5       |
+| TG 54:3 \[SIM\]        | LPE(P-18:1)               | 902.8         | 902.8       |
+| TG(O-50:2) \[-18:1\]   | PC 32:0                   | 834.8         | 535.5       |
+| TG(O-50:2) \[NL-18:2\] | PC(O-32:0)                | 834.8         | 537.5       |
+| TG(O-50:2) \[SIM\]     | PC(P-32:0)                | 834.8         | 834.8       |
+
+Unfortunately lipid annotations converter tools like Goslin and RetMet is unable to parse these given names
+
+```{r message=FALSE}
+c("DG 32:0 [-16:0]",
+  "TG 54:3 [NL-18:2]",
+  "TG(O-50:2) [NL-18:2]") %>%
+  rgoslin::parseLipidNames()
+```
+
+They must be clean up accordingly
+
+```{r message=FALSE}
+c("DG 16:0_16:0",
+  "TG 18:2_36:1",
+  "TG (O-18:0_36:0)") %>%
+  rgoslin::parseLipidNames() %>%
+  reactable::reactable(defaultPageSize = 5)
+```
+
+
+## References

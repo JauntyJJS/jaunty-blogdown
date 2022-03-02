@@ -9,6 +9,7 @@ images:
 series:
 tags:
 categories:
+output: md_document #needed for flair to work
 layout: single
 bibliography: utils/bibliography.bib
 csl: utils/f1000research.csl
@@ -36,6 +37,7 @@ In this blog, I will introduce another set of lipid annotations that my workplac
 ``` r
 library("rgoslin")
 library("reactable")
+library("flair")
 library("here")
 library("readxl")
 library("magrittr")
@@ -125,6 +127,18 @@ We now need to do the following steps to clean such transition names.
 -   Get the total number of double bond of the measured fatty acid chain.
 
 -   Use the tools above to clean the transition name.
+
+We begin with an empty generic function
+
+``` r
+clean_acyl <- function(input_acyl = "DG 30:0 [NL-15:0]") {
+  return(input_acyl)
+}
+```
+
+## Remove \[SIM\] at the end
+
+<pre><code class='language-r'><code>clean_acyl <- function(input_acyl = "DG 30:0 [NL-15:0]") {<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;# If we have a sum composition labelled as [SIM] at the end,<br>&nbsp;&nbsp;# remove it and return the results<br>&nbsp;&nbsp;if (isTRUE(stringr::str_detect(string = input_acyl,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='background-color:#ffff7f'>pattern = "\\s*\\[SIM\\]\\s*$"</span>)))<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;input_acyl <- input_acyl %>%<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stringr::str_remove(<span style='background-color:#ffff7f'>pattern = "\\s*\\[SIM\\]\\s*$"</span>)<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;return(input_acyl)<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;return(input_acyl)<br>}</code></code></pre>
 
 Putting it all together, we have the following function and corresponding documentation.
 

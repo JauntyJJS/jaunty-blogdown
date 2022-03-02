@@ -9,6 +9,7 @@ images:
 series:
 tags:
 categories:
+output: md_document #needed for flair to work
 layout: single
 bibliography: utils/bibliography.bib
 csl: utils/f1000research.csl
@@ -28,6 +29,7 @@ In this blog, I will introduce another set of lipid annotations that my workplac
 ```{r message=FALSE}
 library("rgoslin")
 library("reactable")
+library("flair")
 library("here")
 library("readxl")
 library("magrittr")
@@ -103,6 +105,46 @@ We now need to do the following steps to clean such transition names.
 -   Get the total number of double bond of the measured fatty acid chain.
 
 -   Use the tools above to clean the transition name.
+
+We begin with an empty generic function
+
+```{r message=FALSE}
+
+clean_acyl <- function(input_acyl = "DG 30:0 [NL-15:0]") {
+  return(input_acyl)
+}
+
+```
+
+## Remove [SIM] at the end
+
+```{r remove_sim, message=FALSE, include = FALSE}
+
+clean_acyl <- function(input_acyl = "DG 30:0 [NL-15:0]") {
+  
+  # If we have a sum composition labelled as [SIM] at the end,
+  # remove it and return the results
+  if (isTRUE(stringr::str_detect(string = input_acyl,
+                                 pattern = "\\s*\\[SIM\\]\\s*$")))
+  {
+    input_acyl <- input_acyl %>%
+      stringr::str_remove(pattern = "\\s*\\[SIM\\]\\s*$")
+    
+    return(input_acyl)
+  }
+  
+  return(input_acyl)
+}
+
+```
+
+```{r, echo = FALSE}
+
+flair::decorate("remove_sim") %>% 
+  flair::flair('pattern = \"\\\\s*\\\\[SIM\\\\]\\\\s*$\"') %>% 
+  flair::knit_print.with_flair()
+  
+```
 
 Putting it all together, we have the following function and corresponding documentation.
 

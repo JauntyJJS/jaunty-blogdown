@@ -108,13 +108,13 @@ reactable::reactable(annotation_data, defaultPageSize = 5)
 
 ## The Plan
 
-We can split the task in the following steps
+We can split this complex task in the following steps
 
 -   Find those transition names that ends with \[SIM\], remove the \[SIM\] and return it
 
 Transition names from here on should only be those that are measuring neutral loss a particular fatty acid chain.
 
-We now need to do the following steps to clean such transition names.
+We then need to do the following steps to clean such transition names.
 
 -   Get the acyl class of the transition.
 
@@ -131,12 +131,71 @@ We now need to do the following steps to clean such transition names.
 We begin with an empty generic function
 
 ``` r
-clean_acyl <- function(input_acyl = "DG 30:0 [NL-15:0]") {
+clean_acyl <- function(input_acyl = "DG 32:0 [NL-16:0]") {
   return(input_acyl)
 }
 ```
 
 ## Remove \[SIM\] at the end
+
+The square brackets `[` and `]` means one of in regular expression. For example, pattern `[a-z]` is telling the software to look for one of the letters ranging from a to z.
+
+### Remember the backslash `\`
+
+To allow the software to look explicitly for the pattern `[` and `]`, we need to use the backslash `\` giving us `\[` and `\]`. However, whenever `\` appears in a regular expression, we must write as `\\` instead in R. Doing so gives us `\\[` and `\\]`
+
+Using `TG 54:3 [SIM]` as an example, we have
+
+``` r
+stringr::str_remove(string = "TG 54:3 [SIM]" ,pattern = "\\[SIM\\]")
+```
+
+    ## [1] "TG 54:3 "
+
+### Removing the whitespaces
+
+Now here you can see that the white spaces is not removed. One way is to use `stringr::str_trim()`
+
+``` r
+stringr::str_remove(string = "TG 54:3 [SIM]" ,pattern = "\\[SIM\\]") %>%
+  stringr::str_trim()
+```
+
+    ## [1] "TG 54:3"
+
+Another way is to add white spaces in our pattern `\\[SIM\\]`. Taking a look at the stringr cheat sheet, we can try to use `\\s`.
+
+![whitespace](whitespace.jpg)
+
+To show that we need to remove zero of more whitespaces, we add the “\*”
+
+![zero_or_more](zero_or_more.jpg)
+
+This expands the pattern to `\\s*\\[SIM\\]\\s*`
+
+``` r
+stringr::str_remove(string = "TG 54:3 [SIM]  " ,pattern = "\\s*\\[SIM\\]\\s*") %>%
+  stringr::str_trim()
+```
+
+    ## [1] "TG 54:3"
+
+### Indicating the end of a string
+
+To be more specific that we need to remove “\[SIM\]” only at the end of the string. We add `$` at the end of the pattern: `\\s*\\[SIM\\]\\s*$`
+
+![end_of_string](end_of_string.jpg)
+
+``` r
+stringr::str_remove(string = c ("TG 54:3 [SIM]  ",
+                                " [SIM] TG 54:3"),
+                    pattern = "\\s*\\[SIM\\]\\s*$") %>%
+  stringr::str_trim()
+```
+
+    ## [1] "TG 54:3"       "[SIM] TG 54:3"
+
+### Using `isTRUE` in an if statement
 
 <pre><code class='language-r'><code>clean_acyl <- function(input_acyl = "DG 30:0 [NL-15:0]") {<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;# If we have a sum composition labelled as [SIM] at the end,<br>&nbsp;&nbsp;# remove it and return the results<br>&nbsp;&nbsp;if (isTRUE(stringr::str_detect(string = input_acyl,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='background-color:#ffff7f'>pattern = "\\s*\\[SIM\\]\\s*$"</span>)))<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;input_acyl <- input_acyl %>%<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stringr::str_remove(<span style='background-color:#ffff7f'>pattern = "\\s*\\[SIM\\]\\s*$"</span>)<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;return(input_acyl)<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;return(input_acyl)<br>}</code></code></pre>
 

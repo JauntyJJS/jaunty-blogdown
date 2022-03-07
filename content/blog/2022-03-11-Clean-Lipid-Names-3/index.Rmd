@@ -1,0 +1,49 @@
+---
+title: "Cleaning Lipid Names for Annotation Part 3"
+subtitle: ""
+excerpt: "This post provides some tips on how to clean lipid names input suited for some current nomenclature tools using R"
+date: 2022-03-07
+author: "Jeremy Selva"
+draft: true
+images:
+series:
+tags:
+categories:
+output: md_document #needed for flair to work
+layout: single
+bibliography: utils/bibliography.bib
+csl: utils/f1000research.csl
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(fig.align = "center")
+
+```
+
+## Introduction
+
+In this blog, I will introduce another set of lipid annotations that my workplace uses that require to be cleaned up and modified so that they can be processed by lipid annotations converter tools like [Goslin](https://lifs-tools.org/goslin) [@GOSLIN] and [RefMet](https://metabolomicsworkbench.org/databases/refmet/index.php) [@Fahy2020].
+
+## R Packages Used
+
+```{r message=FALSE}
+library("rgoslin")
+library("reactable")
+library("flair")
+library("here")
+library("readxl")
+library("magrittr")
+library("stringr")
+library("dplyr")
+library("report")
+```
+
+## Labels to clean
+
+## Package References
+
+```{r warning=FALSE, message=TRUE, results='asis'}
+report::cite_packages(sessionInfo())
+```
+
+## References

@@ -40,6 +40,107 @@ library("report")
 
 ## Labels to clean
 
+Putting it all together, we have the following function and corresponding documentation.
+
+```{r message=FALSE}
+#' @title Clean Acyl Lipids
+#' @description Clean Acyl Lipids for `rgoslin` input
+#' @param input_acyl A character string highlighting a lipid,
+#' Default: 'DG 30:0 \[NL-15:0\]'
+#' @return A acyl lipid that `rgoslin` can accept
+#' @details We only accept DG, DAG, TG, TAG for now.
+#' Input Acyl Lipid is of the form
+#' {acyl_class} {total_C}:{total_DB} \[NL-{measured_C}:{measured_DB}\]
+#' where C is carbon and DB is double bond
+#' Output Acyl Lipid is of the form
+#' {acyl_class} {measured_C}:{measured_DB}_{remaining_C}:{remaining_DB}
+#' where {remaining_C} is {total_C - measured_C}
+#' and {remaining_DB} is {total_DB - measured_DB}
+#' @examples
+#' clean_acyl_dynamo(input_acyl = "DG 32:0 [-16:0]")
+#' @rdname clean_acyl
+#' @export
+clean_acyl <- function(input_acyl = "DG 32:0 [NL-16:0]") {
+
+  # If we have a sum composition labelled as [SIM] at the end
+  # after removing the (a\b) and (ISTD)
+  if(isTRUE(stringr::str_detect(string = input_acyl,
+                         pattern = "\\s*\\[SIM\\]\\s*$"))) {
+
+    input_acyl <- input_acyl %>%
+      stringr::str_remove(pattern = "\\s*\\[SIM\\]\\s*$")
+
+    return(input_acyl)
+
+  }
+
+  # If we have no neutral loss labeling
+  if(!isTRUE(stringr::str_detect(string = input_acyl,
+                                pattern = "\\s*(\\[)?(NL)?-\\s*\\d+:\\d+(\\])?\\s*$"))) {
+
+    return(input_acyl)
+
+  }
+
+  # From here all should end with [NL-XX:X]
+
+  acyl_class <- input_acyl %>%
+    stringr::str_extract(pattern = "^[D|T]A?G")
+
+  total_C <- input_acyl %>%
+    stringr::str_remove(pattern = stringr::str_glue("{acyl_class}\\s*")) %>%
+    stringr::str_extract(pattern = "^\\d+:\\d+") %>%
+    stringr::str_extract(pattern = "^\\d+")
+
+  total_DB <- input_acyl %>%
+    stringr::str_remove(pattern = stringr::str_glue("{acyl_class}\\s*")) %>%
+    stringr::str_extract(pattern = "^\\d+:\\d+") %>%
+    stringr::str_extract(pattern = "\\d+$")
+
+  measured_C <- input_acyl %>%
+    stringr::str_remove(pattern = stringr::str_glue("{acyl_class}\\s*")) %>%
+    stringr::str_extract(pattern = "-\\s*\\d+:\\d+") %>%
+    stringr::str_remove(pattern = "-") %>%
+    stringr::str_extract(pattern = "^\\d+")
+
+  measured_DB <- input_acyl %>%
+    stringr::str_remove(pattern = stringr::str_glue("{acyl_class}\\s*")) %>%
+    stringr::str_extract(pattern = "-\\s*\\d+:\\d+") %>%
+    stringr::str_remove(pattern = "-") %>%
+    stringr::str_extract(pattern = "\\d+$")
+
+  if(!isTRUE(stringr::str_detect(total_C, "^[0-9]+$"))) {
+    stop(glue::glue("Extracting total carbon in {input_acyl} has failed"))
+  }
+
+  if(!isTRUE(stringr::str_detect(total_DB, "^[0-9]+$"))) {
+    stop(glue::glue("Extracting total double bond in {input_acyl} has failed"))
+  }
+
+  if(!isTRUE(stringr::str_detect(measured_C, "^[0-9]+$"))) {
+    stop(glue::glue("Extracting measured carbon in {input_acyl} has failed"))
+  }
+
+  if(!isTRUE(stringr::str_detect(measured_DB, "^[0-9]+$"))) {
+    stop(glue::glue("Extracting measured double bond in {input_acyl} has failed"))
+  }
+
+  remaining_C <- (as.numeric(total_C) - as.numeric(measured_C)) %>%
+    as.character()
+
+  remaining_DB <- (as.numeric(total_DB) - as.numeric(measured_DB)) %>%
+    as.character()
+
+  clean_acyl <- stringr::str_glue(
+    "{acyl_class} {measured_C}:{measured_DB}_{remaining_C}:{remaining_DB}"
+  ) %>%
+    as.character()
+
+  return(clean_acyl)
+
+}
+```
+
 ## Package References
 
 ```{r warning=FALSE, message=TRUE, results='asis'}

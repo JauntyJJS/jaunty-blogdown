@@ -90,7 +90,7 @@ The identity of such isomers is still an ongoing research process for most lipid
 
 -   [LPC 17:1 (c)](https://metabolomics.baker.edu.au/method/mrm/LPC171sn1b)
 
-Unfortunately lipid annotations converter tools like Goslin and RetMet is unable to parse these given names
+Unfortunately lipid annotations converter tools like [Goslin](https://lifs-tools.org/goslin) and [RefMet](https://metabolomicsworkbench.org/databases/refmet/index.php) are unable to parse these given names
 
 ```{r message=FALSE}
 c("LPC 13:0 (ISTD) (a\\b)",

@@ -7,7 +7,7 @@ $textColorCustom: #000000;
 
 $sidebarBgColorCustom: #fff6f7;
 $sidebarTextColorCustom: #000000;
-$sidebarLinkColorCustom: #a530ba;
+$sidebarLinkColorCustom: #134a42;
 
 $headlineColorCustom: #000000;
 $headingColorCustom: #000000;
@@ -21,6 +21,46 @@ $buttonHoverTextColorCustom: #f9f9f8;
 $buttonBgColorCustom: #103742;
 $buttonHoverBgColorCustom: #c4001a;
 $borderColorCustom: #c2b9c4;
+
+// styles h1 and h2
+nav#TableOfContents ul li {
+  @extend .f5, .lh-title-ns;
+  // all links
+  a {
+    @extend .no-underline;
+    //transition: all 50mx ease-in-out;
+  }
+  // active list items
+  &.active {
+    @extend .pl3, .bg-#{$siteBgColor}, .bl, .b--#{$borderColor}, .bw1;
+  }
+  // non-active list items
+  &:not(.active) {
+    @extend .pl3, .bl, .bw1, .b--transparent;
+  }
+  // hovering over active links
+  &:hover.active a {
+    @extend .underline;
+  }
+  // hovering over non-active links
+  &:hover:not(.active) a {
+   @extend .underline;
+  }
+  &a:hover {
+    @extend .br;
+  }
+  // within nested list items
+  li {
+    // hovering over active links
+    &:hover.active a {
+      //@extend .dim;
+    }
+    // hovering over non-active links
+    &:hover:not(.active) a {
+      @extend .underline; //.dim;
+    }
+  }
+}
 
 .post-body,
 .page-body {

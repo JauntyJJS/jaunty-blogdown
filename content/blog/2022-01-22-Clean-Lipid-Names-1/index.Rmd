@@ -9,7 +9,7 @@ images:
 series:
 tags:
 categories:
-layout: single
+layout: single-sidebar
 bibliography: utils/bibliography.bib
 csl: utils/f1000research.csl
 ---

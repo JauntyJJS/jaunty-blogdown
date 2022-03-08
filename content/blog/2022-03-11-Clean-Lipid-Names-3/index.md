@@ -10,7 +10,7 @@ series:
 tags:
 categories:
 output: md_document #needed for flair to work
-layout: single
+layout: single-sidebar
 bibliography: utils/bibliography.bib
 csl: utils/f1000research.csl
 ---

@@ -31,6 +31,7 @@ cascade:
   show_author_byline: true
   show_post_date: true
   show_post_time: true
+  show_comments: true # see utterances comments
   show_disqus_comments: false # see disqusShortname in site config
   # for single-sidebar layout
   sidebar:

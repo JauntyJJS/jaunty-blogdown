@@ -7,7 +7,6 @@ show_post_thumbnail: true
 thumbnail_left: false # for list-sidebar only
 show_author_byline: false
 show_post_date: true
-show_comments: true
 
 # for listing page layout
 layout: list-sidebar # list, list-sidebar, list-grid
@@ -28,6 +27,7 @@ cascade:
   author: "Jeremy Selva"
   show_author_byline: true
   show_post_date: true
+  show_comments: true
   show_disqus_comments: false # see disqusShortname in site config
   # for single-sidebar layout
   sidebar:

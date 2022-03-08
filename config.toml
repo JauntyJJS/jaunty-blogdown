@@ -69,6 +69,14 @@ pygmentsUseClasses = true
   textFontFamily = "sans-serif"
   headingFontFamily = "sans-serif"
   
+  # Configuration of https://utteranc.es/ for comments
+  [params.utterances]
+    use_utterances = true
+    repo_name = "JauntyJJS/jaunty-blogdown"
+    issue_term = "title" # url, pathname, or title
+    theme = "boxy-light"
+    label = "comments :crystal_ball:"
+  
   # Social icons may appear on homepage and in site header or footer
   # Configure show/hide above - add as many as you like below
   # Icon pack "fab" includes brand icons, see: https://fontawesome.com/icons?d=gallery&s=brands&m=free

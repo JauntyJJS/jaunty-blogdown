@@ -98,7 +98,7 @@ c("DG 16:0_16:0",
 annotation_data <- readxl::read_excel(
   path = here::here("content", 
                     "blog",
-                    "2022-03-01-Clean-Lipid_Names-2",
+                    "2022-03-07-Clean-Lipid-Names-2",
                     "Annotation.xlsx"),
   sheet = "Transition_Name_Annot"
   )

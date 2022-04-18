@@ -2,7 +2,7 @@
 title: "Chapter 6: Linear Model Selection and Regularization"
 subtitle: ""
 excerpt: "Here is a talk I gave for the R for Data Science book club on An Introduction to Statistical Learning: With Applications in R Second Edition"
-date: 2022-04-17T22:00:00
+date: 2022-04-18T22:00:00
 show_post_time: false
 event: "R for Data Science ISLR Book Club Cohort 3"
 event_url: https://www.youtube.com/watch?v=cXjTKOoN6aU&list=PL3x6DOfs2NGisLSs09v1NQUQaxuE8nbOO

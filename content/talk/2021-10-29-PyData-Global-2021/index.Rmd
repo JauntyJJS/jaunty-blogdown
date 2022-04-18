@@ -1,7 +1,7 @@
 ---
 title: "Tips and advice when creating a python software for lab members to use in academia"
 subtitle: ""
-excerpt: "Here is a talk i gave on PyData Global 2021."
+excerpt: "Here is a talk I gave on PyData Global 2021."
 date: 2021-10-28
 date_end: "2021-10-30"
 show_post_time: false

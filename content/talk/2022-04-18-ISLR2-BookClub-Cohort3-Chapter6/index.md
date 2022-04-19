@@ -34,6 +34,13 @@ links:
 
 <script src="{{< blogdown/postref >}}index_files/fitvids/fitvids.min.js"></script>
 
+Here are the videos.
+
+I am the second speaker in this video and it begins at around 33:18.
+
+<iframe width="710" height="390" src="https://www.youtube.com/embed/b--hZlZqJ6I" frameborder="0" allowfullscreen>
+</iframe>
+
 Here are the slides.
 
 <div class="shareagain" style="min-width:300px;margin:1em auto;">

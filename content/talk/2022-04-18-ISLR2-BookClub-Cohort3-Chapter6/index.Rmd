@@ -32,6 +32,11 @@ links:
   url: https://github.com/JauntyJJS/islr2-bookclub-cohort3-chapter6-lab
 ---
 
+Here are the videos.
+
+I am the second speaker in this video and it begins at around 33:18. 
+
+<iframe width="710" height="390" src="https://www.youtube.com/embed/b--hZlZqJ6I" frameborder="0" allowfullscreen></iframe>
 
 Here are the slides.
 

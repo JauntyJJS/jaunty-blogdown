@@ -13,6 +13,8 @@ output: md_document #needed for flair to work
 layout: single-sidebar
 bibliography: utils/bibliography.bib
 csl: utils/f1000research.csl
+editor_options: 
+  chunk_output_type: console
 ---
 
 <script src="{{< blogdown/postref >}}index_files/core-js/shim.min.js"></script>
@@ -108,12 +110,18 @@ reactable::reactable(annotation_data, defaultPageSize = 5)
 
 ## Get the acyl class
 
-To do this task,
+To extract the (DG or DAG) or (TG or TAG) in the front of the transition name, we first add the `^` to indicate the software to look at the beginning of the string. Next, as the first letter can only be a D or T, we use the pattern `[D|T]`. Recall that `|` means or. As A is optional (appear zero or one time), we add a `?` add the end of the pattern `A`. Finally we simply add the G at the end.
+
+This gives the final pattern to be `^[D|T]A?G`
 
 ``` r
-acyl_class <- "TG 54:3 [SIM]" %>%
+acyl_class <- "TG 54:3" %>%
     stringr::str_extract(pattern = "^[D|T]A?G")
+
+acyl_class
 ```
+
+    ## [1] "TG"
 
 ## Labels to clean
 

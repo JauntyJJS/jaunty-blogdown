@@ -280,14 +280,14 @@ report::cite_packages(sessionInfo())
 
 -   Greg Lin (2020). reactable: Interactive Data Tables Based on ‘React Table.’ R package version 0.2.3. https://CRAN.R-project.org/package=reactable
 -   Hadley Wickham (2019). stringr: Simple, Consistent Wrappers for Common String Operations. R package version 1.4.0. https://CRAN.R-project.org/package=stringr
--   Hadley Wickham and Jennifer Bryan (2019). readxl: Read Excel Files. R package version 1.3.1. https://CRAN.R-project.org/package=readxl
--   Hadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr
+-   Hadley Wickham and Jennifer Bryan (2022). readxl: Read Excel Files. R package version 1.4.0. https://CRAN.R-project.org/package=readxl
+-   Hadley Wickham, Romain François, Lionel Henry and Kirill Müller (2022). dplyr: A Grammar of Data Manipulation. R package version 1.0.8. https://CRAN.R-project.org/package=dplyr
 -   Kelly Bodwin and Hunter Glanz (2020). flair: Highlight, Annotate, and Format your R Source Code. R package version 0.0.2. https://CRAN.R-project.org/package=flair
 -   Kirill Müller (2020). here: A Simpler Way to Find Your Files. R package version 1.0.1. https://CRAN.R-project.org/package=here
 -   Makowski, D., Ben-Shachar, M.S., Patil, I. & Lüdecke, D. (2020). Automated Results Reporting as a Practical Tool to Improve Reproducibility and Methodological Best Practices Adoption. CRAN. Available from https://github.com/easystats/report. doi: .
 -   Nils Hoffmann and Dominik Kopczynski (2022). rgoslin: Lipid Shorthand Name Parsing and Normalization. R package version 0.99.3. https://github.com/lifs-tools/rgoslin
--   R Core Team (2021). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
--   Stefan Milton Bache and Hadley Wickham (2022). magrittr: A Forward-Pipe Operator for R. R package version 2.0.2. https://CRAN.R-project.org/package=magrittr
+-   R Core Team (2022). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
+-   Stefan Milton Bache and Hadley Wickham (2022). magrittr: A Forward-Pipe Operator for R. R package version 2.0.3. https://CRAN.R-project.org/package=magrittr
 
 ## References
 

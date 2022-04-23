@@ -375,7 +375,6 @@ Here is how it looks like when the function is utilised.
 ```{r plan_execution, warning=FALSE, message=FALSE}
 
 clean_acyl("TG 54:3 [SIM]")
-
 ```
 
 Stay tuned for the next part where we will expand the function to deal with the second part of the plan which is to deal with transitions that indicate a neutral loss of fatty acid chains.

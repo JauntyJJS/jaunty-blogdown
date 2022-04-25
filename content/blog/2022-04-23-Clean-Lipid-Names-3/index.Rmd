@@ -25,7 +25,7 @@ knitr::opts_chunk$set(fig.align = "center")
 ```{r message=FALSE, include=FALSE}
 library("rgoslin")
 library("reactable")
-library("flair")
+#library("flair")
 library("here")
 library("readxl")
 library("magrittr")
@@ -58,7 +58,7 @@ clean_acyl <- function(input_acyl = "DG 32:0 [NL-16:0]") {
 
 ```
 
-```{r plan_execution, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE}
 
 clean_acyl("TG 54:3 [SIM]")
 
@@ -67,11 +67,15 @@ clean_acyl("TG 54:3 [SIM]")
 We continue the cleaning task for these transitions.
 
 | Given Name          | Clean Name For Annotation | Precursor Ion | Product Ion |
-|---------------------|---------------------------|---------------|-------------|
-| DG 32:0 \[-16:0\]   | DG 16:0_16:0              | 586.5         | 313.3       |
-| DG 36:1 \[NL-18:1\] | DG 18:1_18:0              | 640.6         | 341.3       |
-| TG 54:3 \[-18:1\]   | TG 18:1_36:2              | 902.8         | 603.5       |
-| TG 54:3 \[NL-18:2\] | TG 18:2_36:1              | 902.8         | 605.5       |
+|------------------|-----------------------|----------------|----------------|
+| DG 32:0 $$-16:0$$   | DG 16:0_16:0              | 586.5         | 313.3       |
+| DG 36:1 $$NL-18:1$$ | DG 18:1_18:0              | 640.6         | 341.3       |
+| TG 54:3 $$-18:1$$   | TG 18:1_36:2              | 902.8         | 603.5       |
+| TG 54:3 $$NL-18:2$$ | TG 18:2_36:1              | 902.8         | 605.5       |
+
+Just to recall, these transition names measure the amount of fatty acyl chain attached to the given DG or TG. For example, TG 54:3 [NL-18:1] measures the amount of fatty acyl chain 18:1 attached to TG 54:3 while TG 54:3 [-18:2] measures the amount of fatty acyl chain 18:2 attached to TG 54:3 instead.
+
+In general, they are in the form {acyl_class} {total_C}:{total_DB} [NL-{measured_C}:{measured_DB}]. We need to transform into the form {acyl_class} {measured_C}:{measured_DB}\_{remaining_C}:{remaining_DB} where {remaining_C} is {total_C - measured_C} and {remaining_DB} is {total_DB - measured_DB}
 
 ## R Packages Used
 
@@ -91,15 +95,15 @@ library("report")
 
 We recall the following steps needed to clean such transition names.
 
--   Get the acyl class of the transition.
+-   Get the acyl class of the transition. {acyl_class}
 
--   Get the total carbon number of the transition.
+-   Get the total carbon number of the transition. {total_C}
 
--   Get the total number of double bond of the transition
+-   Get the total number of double bond of the transition {total_DB}
 
--   Get the total carbon number of the measured fatty acid chain.
+-   Get the total carbon number of the measured fatty acid chain. {measured_C}
 
--   Get the total number of double bond of the measured fatty acid chain.
+-   Get the total number of double bond of the measured fatty acid chain. {measured_DB}
 
 -   Use the tools above to clean the transition name.
 
@@ -117,25 +121,198 @@ annotation_data <- readxl::read_excel(
 reactable::reactable(annotation_data, defaultPageSize = 5)
 ```
 
-## Get the acyl class
+## Get the acyl class {acyl_class}
 
-To extract the (DG or DAG) or (TG or TAG) in the front of the transition name, we first add the `^` to indicate the software to look at the beginning of the string. Next, as the first letter can only be a D or T, we use the pattern `[D|T]`. Recall that `|` means or. As A is optional (appear zero or one time), we add a `?` add the end of the pattern `A`. Finally we simply add the G at the end. 
+We now try to get {acyl_class} from {acyl_class} {total_C}:{total_DB} [NL-{measured_C}:{measured_DB}].
+
+To extract the (DG or DAG) or (TG or TAG) in the front of the transition name, we first add the `^` to indicate the software to look at the beginning of the string. Next, as the first letter can only be a D or T, we use the pattern `[D|T]`. Recall that `|` means or. As A is optional (appear zero or one time), we add a `?` add the end of the pattern `A`. Finally we simply add the G at the end.
 
 This gives the final pattern to be `^[D|T]A?G`
 
-```{r}
+```{r message=FALSE}
 
-acyl_class <- "TG 54:3" %>%
+acyl_class <- "TG 54:3 [NL-18:1]" %>%
     stringr::str_extract(pattern = "^[D|T]A?G")
 
 acyl_class
 ```
 
+## Get the total carbon number of the transition. {total_C}
 
+The next step is to extract the total carbon number of the given transition or to get {total_C} from {acyl_class} {total_C}:{total_DB} [NL-{measured_C}:{measured_DB}]. In the case of TG 54:3 [NL-18:1], the total carbon number to 54. The key is to remove the {acyl_class} on the front first and then extract the total carbon.
 
-## Labels to clean
+To do this, we will need to make use of the {acyl_class} extracted earlier as a pattern and remove them using [`stringr::str_remove`](https://stringr.tidyverse.org/reference/str_remove.html).
 
-Putting it all together, we have the following function and corresponding documentation.
+For me, I use [`stringr::str_glue`](https://stringr.tidyverse.org/reference/str_glue.html) to achieve this pattern. `\\s*` is just a pattern to find white spaces and remove them.
+
+```{r message=FALSE}
+
+total_C_step_1 <- "TG 54:3 [NL-18:1]" %>%
+    stringr::str_remove(pattern = stringr::str_glue("{acyl_class}\\s*"))
+
+total_C_step_1
+```
+
+After removing the {acyl_class} on the front, we will extract the pattern {total_C}:{total_DB} with using the pattern `^\\d+:\\d+`. This works when the digits are the first character of the string. Remember that `^` tells the software to look at the start of the string.
+
+```{r message=FALSE}
+
+total_C_step_2 <- "TG 54:3 [NL-18:1]" %>%
+    stringr::str_remove(pattern = stringr::str_glue("{acyl_class}\\s*")) %>%
+    stringr::str_extract(pattern = "^\\d+:\\d+")
+
+total_C_step_2
+```
+
+From {total_C}:{total_DB}, we can then extract {total_C} using the pattern `^\\d+`
+
+```{r message=FALSE}
+
+total_C <- "TG 54:3 [NL-18:1]" %>%
+    stringr::str_remove(pattern = stringr::str_glue("{acyl_class}\\s*")) %>%
+    stringr::str_extract(pattern = "^\\d+:\\d+") %>%
+    stringr::str_extract(pattern = "^\\d+")
+
+total_C
+```
+
+## Get the total number of double bond of the transition {total_DB}
+
+The next step is to extract the total double bond number of the given transition or to get {total_DB} from {acyl_class} {total_C}:{total_DB} [NL-{measured_C}:{measured_DB}]. In the case of TG 54:3 [NL-18:1], the total number of double bonds is 3.
+
+The extraction process is similar to the previous task. The only difference is that during the stage when we have obtained {total_C}:{total_DB}, we can extract {total_DB} using the pattern `\\d+$` instead. Recall that `$` tells the software to look at the end of the string.
+
+```{r message=FALSE}
+
+total_DB <- "TG 54:3 [NL-18:1]" %>%
+    stringr::str_remove(pattern = stringr::str_glue("{acyl_class}\\s*")) %>%
+    stringr::str_extract(pattern = "^\\d+:\\d+") %>%
+    stringr::str_extract(pattern = "\\d+$")
+
+total_DB
+```
+
+## Get the total carbon number of the measured fatty acid chain. {measured_C}
+
+We now try to get {measured_C} from {acyl_class} {total_C}:{total_DB} [NL-{measured_C}:{measured_DB}]. To do this, first, we again remove the acyl class on the front, giving us {total_C}:{total_DB} [NL-{measured_C}:{measured_DB}]. In the case of TG 54:3 [NL-18:1], the total number of measured carbon bonds is 18.
+
+```{r message=FALSE}
+measured_C_step1 <- "TG 54:3 [NL-18:1]" %>%
+  stringr::str_remove(pattern = stringr::str_glue("{acyl_class}\\s*"))
+  
+measured_C_step1
+```
+
+As the measured fatty acid chain comes with a `-`, we extract -{measured_C}:{measured_DB} from {total_C}:{total_DB} [NL-{measured_C}:{measured_DB}]. This is done by using the pattern `-\\s*\\d+:\\d+`
+
+```{r message=FALSE}
+measured_C_step2 <- "TG 54:3 [NL-18:1]" %>%
+  stringr::str_remove(pattern = stringr::str_glue("{acyl_class}\\s*")) %>%
+  stringr::str_extract(pattern = "-\\s*\\d+:\\d+")
+  
+measured_C_step2
+```
+
+We proceed to remove the `-` from -{measured_C}:{measured_DB}, giving us {measured_C}:{measured_DB}
+
+```{r message=FALSE}
+measured_C_step3 <- "TG 54:3 [NL-18:1]" %>%
+  stringr::str_remove(pattern = stringr::str_glue("{acyl_class}\\s*")) %>%
+  stringr::str_extract(pattern = "-\\s*\\d+:\\d+") %>%
+  stringr::str_remove(pattern = "-")
+  
+measured_C_step3
+```
+
+Finally, we again use the pattern `^\\d+` to extract the {measured_C}
+
+```{r message=FALSE}
+measured_C <- "TG 54:3 [NL-18:1]" %>%
+  stringr::str_remove(pattern = stringr::str_glue("{acyl_class}\\s*")) %>%
+  stringr::str_extract(pattern = "-\\s*\\d+:\\d+") %>%
+  stringr::str_remove(pattern = "-") %>%
+  stringr::str_extract(pattern = "^\\d+")
+
+measured_C
+```
+
+## Get the total number of double bond of the measured fatty acid chain. {measured_DB}
+
+We now try to get {measured_DB} from {acyl_class} {total_C}:{total_DB} [NL-{measured_C}:{measured_DB}]. In the case of TG 54:3 [NL-18:1], the total number of measured double bonds is 1.
+
+The process is similar to the previous section, the difference is that during the stage when we have obtained {measured_C}:{measured_DB}, we can extract {measured_DB} using the pattern `\\d+$` instead.
+
+```{r message=FALSE}
+measured_DB <- "TG 54:3 [NL-18:1]" %>%
+    stringr::str_remove(pattern = stringr::str_glue("{acyl_class}\\s*")) %>%
+    stringr::str_extract(pattern = "-\\s*\\d+:\\d+") %>%
+    stringr::str_remove(pattern = "-") %>%
+    stringr::str_extract(pattern = "\\d+$")
+
+measured_DB 
+```
+
+## Check if extraction is successful
+
+There will be situation when the extraction will fail due to a new input of transitions that the function has not encountered before. To check for this issue, we have the following.
+
+```{r message=FALSE}
+input_acyl <- "TG 54:3 [NL-18:1]"
+
+if (!isTRUE(stringr::str_detect(total_C, "^[0-9]+$"))) {
+  stop(glue::glue("Extracting total carbon in {input_acyl} has failed"))
+}
+
+if (!isTRUE(stringr::str_detect(total_DB, "^[0-9]+$"))) {
+  stop(glue::glue("Extracting total double bond in {input_acyl} has failed"))
+}
+
+if (!isTRUE(stringr::str_detect(measured_C, "^[0-9]+$"))) {
+  stop(glue::glue("Extracting measured carbon in {input_acyl} has failed"))
+}
+
+if (!isTRUE(stringr::str_detect(measured_DB, "^[0-9]+$"))) {
+  stop(glue::glue("Extracting measured double bond in {input_acyl} has failed"))
+}
+```
+
+The reason we use `isTRUE` is to ensure that only TRUE and FALSE is returned. It is possible for `stringr::str_detect` to return `NA`. Take a look at this [Win Vector LLC blog post](https://win-vector.com/2018/06/11/r-tip-use-istrue) for more information.
+
+## Use the tools above to clean the transition name
+
+With the {acyl_class}, {total_C}, {total_DB}, {measured_C} and {measured_DB} extracted successfully, we can proceed to calculate
+
+-   {remaining_C} as {total_C - measured_C}
+-   {remaining_DB} as {total_DB - measured_DB}
+
+```{r message=FALSE}
+remaining_C <- (as.numeric(total_C) - as.numeric(measured_C)) %>%
+    as.character()
+
+remaining_C
+```
+
+```{r message=FALSE}
+remaining_DB <- (as.numeric(total_DB) - as.numeric(measured_DB)) %>%
+  as.character()
+
+remaining_DB
+```
+
+Lastly, we use [`stringr::str_glue`](https://stringr.tidyverse.org/reference/str_glue.html) to construct {acyl_class} {measured_C}:{measured_DB}\_{remaining_C}:{remaining_DB}
+
+```{r message=FALSE}
+clean_acyl <- stringr::str_glue(
+    "{acyl_class} {measured_C}:{measured_DB}_{remaining_C}:{remaining_DB}"
+  ) %>%
+    as.character()
+
+clean_acyl
+```
+
+## Putting it all together
+
+Combining what we have accomplished from the previous and this section, we have the following function and corresponding documentation.
 
 ```{r message=FALSE}
 #' @title Clean Acyl Lipids
@@ -152,7 +329,7 @@ Putting it all together, we have the following function and corresponding docume
 #' where {remaining_C} is {total_C - measured_C}
 #' and {remaining_DB} is {total_DB - measured_DB}
 #' @examples
-#' clean_acyl_dynamo(input_acyl = "DG 32:0 [-16:0]")
+#' clean_acyl(input_acyl = "DG 32:0 [-16:0]")
 #' @rdname clean_acyl
 #' @export
 clean_acyl <- function(input_acyl = "DG 32:0 [NL-16:0]") {
@@ -226,14 +403,41 @@ clean_acyl <- function(input_acyl = "DG 32:0 [NL-16:0]") {
   remaining_DB <- (as.numeric(total_DB) - as.numeric(measured_DB)) %>%
     as.character()
 
-  clean_acyl <- stringr::str_glue(
+  output_acyl <- stringr::str_glue(
     "{acyl_class} {measured_C}:{measured_DB}_{remaining_C}:{remaining_DB}"
   ) %>%
     as.character()
 
-  return(clean_acyl)
+  return(output_acyl)
 
 }
+```
+
+## Plan Execution
+
+Here is how it looks like when the function is utilised.
+
+```{r plan_execution, warning=FALSE, message=FALSE}
+
+cleaned_data <- annotation_data %>% 
+  dplyr::mutate(
+    `Clean Name For Annotation` = purrr::map(.data[["Given Name"]],
+                                             clean_acyl
+                                             ) )%>% 
+  # Make Given Name and Clean Name the first two columns
+  dplyr::relocate(
+    dplyr::any_of(c("Given Name","Clean Name For Annotation"))
+    ) 
+
+cleaned_data %>%
+  reactable::reactable(defaultPageSize = 5)
+
+```
+
+```{r}
+cleaned_data[["Clean Name For Annotation"]] %>% 
+  rgoslin::parseLipidNames() %>%
+  reactable::reactable(defaultPageSize = 5)
 ```
 
 ## Package References
@@ -241,5 +445,3 @@ clean_acyl <- function(input_acyl = "DG 32:0 [NL-16:0]") {
 ```{r warning=FALSE, message=TRUE, results='asis'}
 report::cite_packages(sessionInfo())
 ```
-
-## References

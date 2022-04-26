@@ -4,7 +4,7 @@ subtitle: ""
 excerpt: "This post provides some tips on how to clean lipid names input suited for some current nomenclature tools using R"
 date: 2022-04-23
 author: "Jeremy Selva"
-draft: true
+draft: false
 images:
 series:
 tags:

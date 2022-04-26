@@ -20,6 +20,13 @@ editor_options:
 ```{r setup, echo=FALSE}
 knitr::opts_chunk$set(fig.align = "center")
 
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i> Copy Code",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i> Copied!",
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
 ```
 
 ```{r message=FALSE, include=FALSE}

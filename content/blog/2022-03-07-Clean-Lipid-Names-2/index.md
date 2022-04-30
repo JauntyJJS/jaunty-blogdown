@@ -50,7 +50,10 @@ library("magrittr")
 library("stringr")
 library("dplyr")
 library("report")
+summary(report::report(sessionInfo()))
 ```
+
+    ## The analysis was done using the R Statistical language (v4.2.0; R Core Team, 2022) on Windows 10 x64, using the packages rgoslin (v1.0.0), report (v0.5.1), dplyr (v1.0.9), flair (v0.0.2), here (v1.0.1), magrittr (v2.0.3), reactable (v0.2.3), readxl (v1.4.0) and stringr (v1.4.0).
 
 ## Labels to clean
 
@@ -80,16 +83,14 @@ c("DG 32:0 [-16:0]",
   rgoslin::parseLipidNames()
 ```
 
-    ## Warning in rcpp_parse_lipid_name(as.character(lipidNames[[i]])): Parsing of
-    ## lipid name 'DG 32:0 [-16:0]' caused an exception: Lipid not found
-
-    ## Warning in rcpp_parse_lipid_name(as.character(lipidNames[[i]])): Parsing of
-    ## lipid name 'TG 54:3 [NL-18:2]' caused an exception: Lipid not found
-
-    ## Warning in rcpp_parse_lipid_name(as.character(lipidNames[[i]])): Parsing of
-    ## lipid name 'TG 54:3 [SIM]' caused an exception: Lipid not found
-
-    ## data frame with 0 columns and 0 rows
+    ##   Normalized.Name     Original.Name       Grammar
+    ## 1              NA   DG 32:0 [-16:0] NOT_PARSEABLE
+    ## 2              NA TG 54:3 [NL-18:2] NOT_PARSEABLE
+    ## 3              NA     TG 54:3 [SIM] NOT_PARSEABLE
+    ##                                                        Message
+    ## 1 Expecting a single string value: [type=character; extent=4].
+    ## 2 Expecting a single string value: [type=character; extent=4].
+    ## 3 Expecting a single string value: [type=character; extent=4].
 
 ![refmet_negative_results](refmet_negative_results.jpg)
 
@@ -110,7 +111,7 @@ c("DG 16:0_16:0",
 <div id="htmlwidget-1" class="reactable html-widget" style="width:auto;height:auto;"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Normalized.Name":["DG 16:0_16:0","TG 18:2_36:1","TG 54:3"],"Original.Name":["DG 16:0_16:0","TG 18:2_36:1","TG 54:3"],"Grammar":["Shorthand2020","Shorthand2020","Shorthand2020"],"Message":["NA","NA","NA"],"Adduct":["NA","NA","NA"],"Adduct.Charge":[0,0,0],"Lipid.Maps.Category":["GL","GL","GL"],"Lipid.Maps.Main.Class":["DG","TG","TG"],"Species.Name":["DG 32:0","TG 54:3","TG 54:3"],"Molecular.Species.Name":["DG 16:0_16:0","TG 18:2_36:1","NA"],"Sn.Position.Name":["NA","NA","NA"],"Structure.Defined.Name":["NA","NA","NA"],"Full.Structure.Name":["NA","NA","NA"],"Functional.Class.Abbr":["[DG]","[TG]","[TG]"],"Functional.Class.Synonyms":["[DG, DAG]","[TG, TAG]","[TG, TAG]"],"Level":["MOLECULAR_SPECIES","MOLECULAR_SPECIES","SPECIES"],"Total.C":[32,54,54],"Total.OH":[0,0,0],"Total.DB":[0,3,3],"Mass":[568.50667553,870.80402686,884.78329142],"Sum.Formula":["C35H68O5","C57H106O5","C57H104O6"],"FA1.Position":[-1,-1,"NA"],"FA1.C":[16,18,"NA"],"FA1.OH":[0,0,"NA"],"FA1.DB":[0,2,"NA"],"FA1.Bond.Type":["ESTER","ESTER",null],"FA1.DB.Positions":["[]","[]",null],"FA2.Position":[-1,-1,"NA"],"FA2.C":[16,36,"NA"],"FA2.OH":[0,0,"NA"],"FA2.DB":[0,1,"NA"],"FA2.Bond.Type":["ESTER","ESTER",null],"FA2.DB.Positions":["[]","[]",null],"LCB.Position":["NA","NA","NA"],"LCB.C":["NA","NA","NA"],"LCB.OH":["NA","NA","NA"],"LCB.DB":["NA","NA","NA"],"LCB.Bond.Type":[null,null,null],"LCB.DB.Positions":[null,null,null],"FA3.Position":[-1,-1,"NA"],"FA3.C":[0,0,"NA"],"FA3.OH":[0,0,"NA"],"FA3.DB":[0,0,"NA"],"FA3.Bond.Type":["ESTER","ESTER",null],"FA3.DB.Positions":["[]","[]",null],"FA4.Position":["NA","NA","NA"],"FA4.C":["NA","NA","NA"],"FA4.OH":["NA","NA","NA"],"FA4.DB":["NA","NA","NA"],"FA4.Bond.Type":[null,null,null],"FA4.DB.Positions":[null,null,null]},"columns":[{"accessor":"Normalized.Name","name":"Normalized.Name","type":"character"},{"accessor":"Original.Name","name":"Original.Name","type":"character"},{"accessor":"Grammar","name":"Grammar","type":"character"},{"accessor":"Message","name":"Message","type":"character"},{"accessor":"Adduct","name":"Adduct","type":"character"},{"accessor":"Adduct.Charge","name":"Adduct.Charge","type":"numeric"},{"accessor":"Lipid.Maps.Category","name":"Lipid.Maps.Category","type":"character"},{"accessor":"Lipid.Maps.Main.Class","name":"Lipid.Maps.Main.Class","type":"character"},{"accessor":"Species.Name","name":"Species.Name","type":"character"},{"accessor":"Molecular.Species.Name","name":"Molecular.Species.Name","type":"character"},{"accessor":"Sn.Position.Name","name":"Sn.Position.Name","type":"character"},{"accessor":"Structure.Defined.Name","name":"Structure.Defined.Name","type":"character"},{"accessor":"Full.Structure.Name","name":"Full.Structure.Name","type":"character"},{"accessor":"Functional.Class.Abbr","name":"Functional.Class.Abbr","type":"character"},{"accessor":"Functional.Class.Synonyms","name":"Functional.Class.Synonyms","type":"character"},{"accessor":"Level","name":"Level","type":"character"},{"accessor":"Total.C","name":"Total.C","type":"numeric"},{"accessor":"Total.OH","name":"Total.OH","type":"numeric"},{"accessor":"Total.DB","name":"Total.DB","type":"numeric"},{"accessor":"Mass","name":"Mass","type":"numeric"},{"accessor":"Sum.Formula","name":"Sum.Formula","type":"character"},{"accessor":"FA1.Position","name":"FA1.Position","type":"numeric"},{"accessor":"FA1.C","name":"FA1.C","type":"numeric"},{"accessor":"FA1.OH","name":"FA1.OH","type":"numeric"},{"accessor":"FA1.DB","name":"FA1.DB","type":"numeric"},{"accessor":"FA1.Bond.Type","name":"FA1.Bond.Type","type":"character"},{"accessor":"FA1.DB.Positions","name":"FA1.DB.Positions","type":"character"},{"accessor":"FA2.Position","name":"FA2.Position","type":"numeric"},{"accessor":"FA2.C","name":"FA2.C","type":"numeric"},{"accessor":"FA2.OH","name":"FA2.OH","type":"numeric"},{"accessor":"FA2.DB","name":"FA2.DB","type":"numeric"},{"accessor":"FA2.Bond.Type","name":"FA2.Bond.Type","type":"character"},{"accessor":"FA2.DB.Positions","name":"FA2.DB.Positions","type":"character"},{"accessor":"LCB.Position","name":"LCB.Position","type":"numeric"},{"accessor":"LCB.C","name":"LCB.C","type":"numeric"},{"accessor":"LCB.OH","name":"LCB.OH","type":"numeric"},{"accessor":"LCB.DB","name":"LCB.DB","type":"numeric"},{"accessor":"LCB.Bond.Type","name":"LCB.Bond.Type","type":"character"},{"accessor":"LCB.DB.Positions","name":"LCB.DB.Positions","type":"character"},{"accessor":"FA3.Position","name":"FA3.Position","type":"numeric"},{"accessor":"FA3.C","name":"FA3.C","type":"numeric"},{"accessor":"FA3.OH","name":"FA3.OH","type":"numeric"},{"accessor":"FA3.DB","name":"FA3.DB","type":"numeric"},{"accessor":"FA3.Bond.Type","name":"FA3.Bond.Type","type":"character"},{"accessor":"FA3.DB.Positions","name":"FA3.DB.Positions","type":"character"},{"accessor":"FA4.Position","name":"FA4.Position","type":"numeric"},{"accessor":"FA4.C","name":"FA4.C","type":"numeric"},{"accessor":"FA4.OH","name":"FA4.OH","type":"numeric"},{"accessor":"FA4.DB","name":"FA4.DB","type":"numeric"},{"accessor":"FA4.Bond.Type","name":"FA4.Bond.Type","type":"character"},{"accessor":"FA4.DB.Positions","name":"FA4.DB.Positions","type":"character"}],"defaultPageSize":5,"paginationType":"numbers","showPageInfo":true,"minRows":1,"dataKey":"d5af72bf19e3c5afba5565fdb1c04cab","key":"d5af72bf19e3c5afba5565fdb1c04cab"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 
-![refmet_positive_results](refmet_positive_results.jpg) ## Read Data
+![refmet_positive_results](refmet_positive_results.jpg) \## Read Data
 
 ## Read Data
 
@@ -275,19 +276,56 @@ Stay tuned for the next part where we will expand the function to deal with the 
 ## Package References
 
 ``` r
-report::cite_packages(sessionInfo())
+get_citation <- function(package_name) {
+  transform_name <- package_name %>% 
+    citation() %>% 
+    format(style="text")
+  return(transform_name)
+} 
+
+packages <- c("base","rgoslin", "reactable", "flair",
+              "here", "readxl", "magrittr",
+              "stringr", "dplyr", "report")
+
+table <- tibble::tibble(Packages = packages)
+
+table %>%
+  dplyr::mutate(
+    transform_name = purrr::map_chr(.data[["Packages"]],
+                                    get_citation)
+  ) %>% 
+  dplyr::pull(.data[["transform_name"]]) %>% 
+  report::as.report_parameters()
 ```
 
--   Greg Lin (2020). reactable: Interactive Data Tables Based on ‘React Table.’ R package version 0.2.3. https://CRAN.R-project.org/package=reactable
--   Hadley Wickham (2019). stringr: Simple, Consistent Wrappers for Common String Operations. R package version 1.4.0. https://CRAN.R-project.org/package=stringr
--   Hadley Wickham and Jennifer Bryan (2022). readxl: Read Excel Files. R package version 1.4.0. https://CRAN.R-project.org/package=readxl
--   Hadley Wickham, Romain François, Lionel Henry and Kirill Müller (2022). dplyr: A Grammar of Data Manipulation. R package version 1.0.8. https://CRAN.R-project.org/package=dplyr
--   Kelly Bodwin and Hunter Glanz (2020). flair: Highlight, Annotate, and Format your R Source Code. R package version 0.0.2. https://CRAN.R-project.org/package=flair
--   Kirill Müller (2020). here: A Simpler Way to Find Your Files. R package version 1.0.1. https://CRAN.R-project.org/package=here
--   Makowski, D., Ben-Shachar, M.S., Patil, I. & Lüdecke, D. (2020). Automated Results Reporting as a Practical Tool to Improve Reproducibility and Methodological Best Practices Adoption. CRAN. Available from https://github.com/easystats/report. doi: .
--   Nils Hoffmann and Dominik Kopczynski (2022). rgoslin: Lipid Shorthand Name Parsing and Normalization. R package version 0.99.3. https://github.com/lifs-tools/rgoslin
--   R Core Team (2022). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
--   Stefan Milton Bache and Hadley Wickham (2022). magrittr: A Forward-Pipe Operator for R. R package version 2.0.3. https://CRAN.R-project.org/package=magrittr
+-   R Core Team (2022). *R: A Language and Environment for Statistical
+    Computing*. R Foundation for Statistical Computing, Vienna, Austria.
+    <https://www.R-project.org/>.
+-   Kopczynski D, Hoffmann N, Peng B, Ahrends R (2020). “Goslin: A Grammar
+    of Succinct Lipid Nomenclature.” *Analytical Chemistry*, *92*(16),
+    10957-10960. <https://pubs.acs.org/doi/10.1021/acs.analchem.0c01690>.
+-   Lin G (2020). *reactable: Interactive Data Tables Based on ‘React
+    Table’*. R package version 0.2.3,
+    <https://CRAN.R-project.org/package=reactable>.
+-   Bodwin K, Glanz H (2020). *flair: Highlight, Annotate, and Format your
+    R Source Code*. R package version 0.0.2,
+    <https://CRAN.R-project.org/package=flair>.
+-   Müller K (2020). *here: A Simpler Way to Find Your Files*. R package
+    version 1.0.1, <https://CRAN.R-project.org/package=here>.
+-   Wickham H, Bryan J (2022). *readxl: Read Excel Files*. R package
+    version 1.4.0, <https://CRAN.R-project.org/package=readxl>.
+-   Bache S, Wickham H (2022). *magrittr: A Forward-Pipe Operator for R*. R
+    package version 2.0.3, <https://CRAN.R-project.org/package=magrittr>.
+-   Wickham H (2019). *stringr: Simple, Consistent Wrappers for Common
+    String Operations*. R package version 1.4.0,
+    <https://CRAN.R-project.org/package=stringr>.
+-   Wickham H, François R, Henry L, Müller K (2022). *dplyr: A Grammar of
+    Data Manipulation*. R package version 1.0.9,
+    <https://CRAN.R-project.org/package=dplyr>.
+-   Makowski D, Ben-Shachar M, Patil I, Lüdecke D (2021). “Automated
+    Results Reporting as a Practical Tool to Improve Reproducibility and
+    Methodological Best Practices Adoption.” *CRAN*.
+    <https://github.com/easystats/report>.
 
 ## References
 

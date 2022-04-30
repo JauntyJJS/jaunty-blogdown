@@ -206,10 +206,10 @@
     },
     "dplyr": {
       "Package": "dplyr",
-      "Version": "1.0.8",
+      "Version": "1.0.9",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "ef47665e64228a17609d6df877bf86f2",
+      "Hash": "f0bda1627a7f5d3f9a0b5add931596ac",
       "Requirements": [
         "R6",
         "generics",
@@ -456,10 +456,10 @@
     },
     "knitr": {
       "Package": "knitr",
-      "Version": "1.38",
+      "Version": "1.39",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "10b3dc3c6acb925910edda5d0543b3a2",
+      "Hash": "029ab7c4badd3cf8af69016b2ba27493",
       "Requirements": [
         "evaluate",
         "highr",
@@ -727,13 +727,13 @@
     },
     "rgoslin": {
       "Package": "rgoslin",
-      "Version": "0.99.12",
+      "Version": "1.0.0",
       "Source": "Bioconductor",
       "git_url": "https://git.bioconductor.org/packages/rgoslin",
-      "git_branch": "master",
-      "git_last_commit": "37b2404",
-      "git_last_commit_date": "2022-04-12",
-      "Hash": "a926a7a10000f4ae329a14fff7727195",
+      "git_branch": "RELEASE_3_15",
+      "git_last_commit": "8a6e1ff",
+      "git_last_commit_date": "2022-04-26",
+      "Hash": "4863d6ad3fc9019149d2d4fb63097d48",
       "Requirements": [
         "Rcpp",
         "dplyr"

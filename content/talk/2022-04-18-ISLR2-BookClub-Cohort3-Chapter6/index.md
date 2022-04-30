@@ -41,6 +41,11 @@ I am the second speaker in this video and it begins at around 33:18.
 <iframe width="710" height="390" src="https://www.youtube.com/embed/b--hZlZqJ6I" frameborder="0" allowfullscreen>
 </iframe>
 
+For this video, I was going through the lab session
+
+<iframe width="710" height="390" src="https://www.youtube.com/embed/TPg7sAhUYV4" frameborder="0" allowfullscreen>
+</iframe>
+
 Here are the slides.
 
 <div class="shareagain" style="min-width:300px;margin:1em auto;">

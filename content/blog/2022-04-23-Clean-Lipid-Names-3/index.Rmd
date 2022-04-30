@@ -108,6 +108,7 @@ library("stringr")
 library("dplyr")
 library("purrr")
 library("report")
+summary(report::report(sessionInfo()))
 ```
 
 ## The plan

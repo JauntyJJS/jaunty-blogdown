@@ -43,6 +43,7 @@ library("magrittr")
 library("stringr")
 library("dplyr")
 library("report")
+summary(report::report(sessionInfo()))
 ```
 
 ## Labels to clean
@@ -330,7 +331,26 @@ annotation_data %>%
 ## Package References
 
 ```{r warning=FALSE, message=TRUE, results='asis'}
-report::cite_packages(sessionInfo())
+get_citation <- function(package_name) {
+  transform_name <- package_name %>% 
+    citation() %>% 
+    format(style="text")
+  return(transform_name)
+} 
+
+packages <- c("base","rgoslin", "reactable",
+              "here", "readxl", "magrittr",
+              "stringr", "dplyr", "report")
+
+table <- tibble::tibble(Packages = packages)
+
+table %>%
+  dplyr::mutate(
+    transform_name = purrr::map_chr(.data[["Packages"]],
+                                    get_citation)
+  ) %>% 
+  dplyr::pull(.data[["transform_name"]]) %>% 
+  report::as.report_parameters()
 ```
 
 ## References

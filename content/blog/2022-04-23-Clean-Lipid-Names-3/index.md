@@ -106,7 +106,10 @@ library("stringr")
 library("dplyr")
 library("purrr")
 library("report")
+summary(report::report(sessionInfo()))
 ```
+
+    ## The analysis was done using the R Statistical language (v4.2.0; R Core Team, 2022) on Windows 10 x64, using the packages rgoslin (v1.0.0), report (v0.5.1), dplyr (v1.0.9), flair (v0.0.2), here (v1.0.1), magrittr (v2.0.3), purrr (v0.3.4), reactable (v0.2.3), readxl (v1.4.0) and stringr (v1.4.0).
 
 ## The plan
 
@@ -462,7 +465,7 @@ table %>%
     String Operations*. R package version 1.4.0,
     <https://CRAN.R-project.org/package=stringr>.
 -   Wickham H, François R, Henry L, Müller K (2022). *dplyr: A Grammar of
-    Data Manipulation*. R package version 1.0.8,
+    Data Manipulation*. R package version 1.0.9,
     <https://CRAN.R-project.org/package=dplyr>.
 -   Makowski D, Ben-Shachar M, Patil I, Lüdecke D (2021). “Automated
     Results Reporting as a Practical Tool to Improve Reproducibility and

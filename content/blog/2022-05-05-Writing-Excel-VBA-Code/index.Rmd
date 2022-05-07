@@ -98,6 +98,8 @@ One downside of running this code is that files will be overwritten without givi
 
 With the VBA codes exported as text files, we can track it using [git](https://git-scm.com/) and display them on [GitHub](https://github.com/). For me, I use [RStudio IDE](https://www.rstudio.com/products/rstudio/download/) to run git and submit my codes to GitHub
 
+### MSTemplate_Creator example
+
 Here is the [MSTemplate_Creator example](https://github.com/SLINGhub/MSTemplate_Creator/tree/main/src)
 
 ## Unit testing
@@ -138,12 +140,67 @@ To initialise it, click on "Pending" at the Rubberduck VBA toolbar
 
 When it appears as “Ready”, you can start the Rubberduck VBA tools like unit testing
 
-![rubberduck_initialised](images/rubberduck_initialised)
-### Function and corresponding unit test example
+![rubberduck_initialised](images/rubberduck_initialised.png)
+If it appears like this, it means you have a syntax error (Should be “Dim FileThere” instead of “DimFileThere”) and Rubberduck VBA clearly cannot proceed with unit testing on codes with bugs.
 
-Ensure that the following Excel VBA reference list are checked, especially the
+![rubberduck_initialise_error](images/rubberduck_initialise_error.png)
+### Function example
 
-The function we are using to create the unit test is called `Is_EQC` and is created in the `Sample_Type_Identifier` module. 
+We now create a function and a unit test to show how it works
+
+Firstly, we need to ensure some Excel VBA references are used. To open the reference box, go to Tools and then References
+
+![find_reference](images/find_reference.png)
+
+Ensure that the following Excel VBA reference list are checked, especially Microsoft VBScript Regular Expression 5.5 as our function to test involves the use of regular expression.
+
+![correct_refererences](images/correct_refererences.png)
+
+The function we are using to create the unit test is called `Is_EQC` and is created in the `Sample_Type_Identifier` module. What the `Is_EQC` function does is to give a boolean True if the input string contains the word "EQC", "Eqc" or "eqc".
+
+![is_eqc_function](images/is_eqc_function.png)
+### Adding a new unit test module
+
+Now to test the function we create a unit test using Rubberduck VBA.
+
+To start the unit testing, click on Rubberduck, Unit tests and then Test Explorer.
+
+![rubberduck_getting_to_test_explorer](images/rubberduck_getting_to_test_explorer.png)
+This will open up the Test Explorer table. To create a simple test module click on Add and then Test Module
+
+![test_module_creation.png](images/test_module_creation.png)
+
+![test_module_created.png](images/test_module_created.png)
+
+You may refer to the resources that I have provided earlier to see how to write a unit test properly. 
+
+### Unit test function example
+
+The unit test function for this example is called `Is_EQC_Test` and is created in the `Sample_Type_Identifier_Test` module. It provides the `Is_EQC` function created with some test input string from `EQCTestArray` and test if the output is True.
+
+![is_eqc_test_function](images/is_eqc_test_function.png)
+
+Click on the refresh button to update the Test Explorer to find any newly created unit test
+
+![test_explorer_refresh_button](images/test_explorer_refresh_button.png)
+
+If the above example is used, the test explorer table should look like this
+
+![test_explorer_example](images/test_explorer_example.png)
+
+To run all the unit test, Click on Run, then all test
+
+![test_explorer_all_tests_button](images/test_explorer_all_tests_button.png)
+
+A few message boxes will pop up. Just click Ok. When it is done, it should look like this. 
+
+![test_explorer_completed_test](images/test_explorer_completed_test.png)
+### MSTemplate_Creator example
+
+Here is the MSTemplate_Creator example
+
+![test_explorer_MSTemplate_Creator_example](images/test_explorer_MSTemplate_Creator_example.png)
+
 
 ## Excel Module Code
 
@@ -267,6 +324,120 @@ NextCode:
     Set Folder = Nothing
 End Function
 
+```
+{{< /panel >}}
+{{< panel name="Sample_Type_Identifier 🔍" >}}
+```r
+Option Explicit
+
+'@Folder("QC_Sample_Type_Identification")
+
+'' Function: Is_EQC
+''
+'' Description:
+''
+'' Check is the input string (sample name) is an EQC.
+''
+'' Parameters:
+''
+''    FileName - Input string to check if it is an EQC
+''
+'' Returns:
+''    A boolean (True or False). Return True if
+''    the input string contains "EQC", "Eqc", "eqc"
+''
+'' Examples:
+''
+'' --- Code
+''    Dim EQCTestArray As Variant
+''    Dim arrayIndex As Integer
+''
+''    EQCTestArray = Array("EQC", "001_EQC_TQC prerun 01")
+''
+''    For arrayIndex = 0 To UBound(EQCTestArray) - LBound(EQCTestArray)
+''        Debug.Print Sample_Type_Identifier.Is_EQC(CStr(EQCTestArray(arrayIndex))) & ": " & _
+''                    EQCTestArray(arrayIndex)
+''    Next
+'' ---
+Public Function Is_EQC(ByVal FileName As String) As Boolean
+    Dim NonLettersRegEx As RegExp
+    Set NonLettersRegEx = New RegExp
+    Dim EQCRegEx As RegExp
+    Set EQCRegEx = New RegExp
+    Dim OnlyLettersText As String
+    NonLettersRegEx.Pattern = "[^A-Za-z]"
+    NonLettersRegEx.Global = True
+    
+    EQCRegEx.Pattern = "(EQC|[Ee]qc)"
+    OnlyLettersText = Trim$(NonLettersRegEx.Replace(FileName, " "))
+    Is_EQC = EQCRegEx.Test(OnlyLettersText)
+    
+End Function
+```
+{{< /panel >}}
+{{< panel name="Sample_Type_Identifier_Test 📝" >}}
+```r
+Option Explicit
+Option Private Module
+
+'@TestModule
+'@Folder("Tests")
+
+Private Assert As Object
+'Private Fakes As Object
+
+'@ModuleInitialize
+Public Sub ModuleInitialize()
+    'this method runs once per module.
+    Set Assert = CreateObject("Rubberduck.AssertClass")
+    'Set Fakes = CreateObject("Rubberduck.FakesProvider")
+End Sub
+
+'@ModuleCleanup
+Public Sub ModuleCleanup()
+    'this method runs once per module.
+    Set Assert = Nothing
+    'Set Fakes = Nothing
+End Sub
+
+'@TestMethod("Get QC Sample Type")
+
+'' Function: Is_EQC_Test
+''
+'' Description:
+''
+'' Function used to test if the function
+'' Sample_Type_Identifier.Is_EQC is working
+''
+'' Test data are
+''
+''  - A string array EQCTestArray
+''
+'' Function will assert if Sample_Type_Identifier.Is_EQC gives
+'' True to all entries in EQCTestArray
+''
+Public Sub Is_EQC_Test()
+    On Error GoTo TestFail
+    
+    Dim EQCTestArray As Variant
+    Dim arrayIndex As Integer
+    
+    EQCTestArray = Array("EQC", "001_EQC_TQC prerun 01")
+           
+    For arrayIndex = 0 To UBound(EQCTestArray) - LBound(EQCTestArray)
+        'Debug.Print Sample_Type_Identifier.Is_EQC(CStr(EQCTestArray(arrayIndex))) & ": " & _
+                     EQCTestArray(arrayIndex)
+        MsgBox Sample_Type_Identifier.Is_EQC(CStr(EQCTestArray(arrayIndex))) & ": " & _
+                     EQCTestArray(arrayIndex)
+        Assert.IsTrue (Sample_Type_Identifier.Is_EQC(CStr(EQCTestArray(arrayIndex))))
+    Next
+
+    GoTo TestExit
+TestExit:
+    Exit Sub
+TestFail:
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+End Sub
 ```
 {{< /panel >}}
 {{< /panelset >}}

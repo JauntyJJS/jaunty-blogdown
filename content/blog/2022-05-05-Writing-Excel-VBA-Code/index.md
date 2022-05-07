@@ -154,7 +154,9 @@ Ensure that the following Excel VBA reference list are checked, especially Micro
 
 The function we are using to create the unit test is called `Is_EQC` and is created in the `Sample_Type_Identifier` module. What the `Is_EQC` function does is to give a boolean True if the input string contains the word "EQC", "Eqc" or "eqc".
 
-![is_eqc_function](images/is_eqc_function.png)
+![is_eqc_function](images/is_eqc_function.png
+
+A good summary of how to do regular expression in VBA code in Excel can be found in this [stackoverflow question](https://stackoverflow.com/questions/22542834/how-to-use-regular-expressions-regex-in-microsoft-excel-both-in-cell-and-loops)
 ### Adding a new unit test module
 
 Now to test the function we create a unit test using Rubberduck VBA.
@@ -193,10 +195,24 @@ A few message boxes will pop up. Just click Ok. When it is done, it should look 
 ![test_explorer_completed_test](images/test_explorer_completed_test.png)
 ### MSTemplate_Creator example
 
-Here is the MSTemplate_Creator example
+Here is the MSTemplate_Creator unit test example
 
 ![test_explorer_MSTemplate_Creator_example](images/test_explorer_MSTemplate_Creator_example.png)
+In addition, I also created a function that does an integration test as well.
 
+![integration_test_MSTemplate_Creator_example](images/integration_test_MSTemplate_Creator_example.png)
+
+## Code documenation
+
+After some online searching and trial and errors, I managed to create the code documentation using Natural Docs(https://www.naturaldocs.org/). Here is how I do it.
+
+### Getting started with Natural Docs
+
+
+
+### MSTemplate_Creator example
+
+Here is the [MSTemplate_Creator example](https://slinghub.github.io/MSTemplate_Creator/)
 
 ## Excel Module Code
 

@@ -288,7 +288,7 @@ The references of each configuration file can be found as follows:
 
 In this project example, I have made to following important changes.
 
-In `Project.txt`,
+In `Project.txt`, I have stated the title, subtitle, copyright, source folder in which Natural Docs will look for input files, image folder in which Natural Docs will look to get the image file to link in the code documentation, HTML Output folder in which Natural Docs will output the code documentation files.
 
 ```r
 Format: 2.2
@@ -324,7 +324,9 @@ HTML Output Folder: ..\docs
 
 ```
 
-In `Languages.txt`,
+In `Languages.txt`, I have stated the programming language name, the line comment symbol to tell Natural Docs which part of the excel VBA file is the code documentation, the excel VBA line extender symbol and indicate that excel VBA is case sensitive.
+
+While `'` is the actual line comment symbol for excel VBA, we use `''` instead to represent code documentation to differentiate between general comments and `'@` used by Rubberduck.
 
 ```r
 # Languages
@@ -339,6 +341,10 @@ Language: Excel VBA
 ```
 
 No modification is made in `Comments.txt`
+
+### Code documentation
+
+Take a look at 
 
 
 ### MSTemplate_Creator example

@@ -204,10 +204,137 @@ In addition, I also created a function that does an integration test as well.
 
 ## Code documenation
 
-After some online searching and trial and errors, I managed to create the code documentation using Natural Docs(https://www.naturaldocs.org/). Here is how I do it.
+After some online searching and trial and errors, I managed to create the code documentation using [Natural Docs](https://www.naturaldocs.org/). Here is how I do it in Windows 10.
 
-### Getting started with Natural Docs
+### Natural Docs installation
 
+Go to Natural Docs download web page [web page](https://www.naturaldocs.org/download/) to download the installer and install the program.
+
+If you encounter this in Windows 10 during installation,
+
+![protected_PC_popup](images/protected_PC_popup.png)
+
+Follow the instructions provided in this [web page](https://www.thewindowsclub.com/microsoft-defender-smartscreen-prevented-an-unrecognized-app-from-starting), by right clicking on the installation file and go to Properties.
+
+![natural_docs_properties](images/natural_docs_properties.png)
+Check the box Unblock and click Apply, then Ok.
+
+![natural_docs_unblock](images/natural_docs_unblock.png)
+The setup wizard should appear when the installer file is double clicked.
+
+![natural_docs_setup_wizard](images/natural_docs_setup_wizard.png)
+
+A successful installation should look like this
+
+![natural_docs_successful_installation](images/natural_docs_successful_installation.png)
+
+### Natural Docs setting up
+
+Referring to the instruction provided in the Natural Docs Getting Started [web page](https://www.naturaldocs.org/getting_started/)
+
+First, create a folder that will contain configuration files for Natural Docs. In the example below, an empty folder called `naturaldocs_config` in the project folder `Excel_VBA_Project_Example`
+
+![natural_docs_configuration_folder](images/natural_docs_configuration_folder.png)
+
+Next, go to the folder where Natural Docs is installed and create a shortcut to the Natural Docs.exe file.
+
+![natural_docs_create_shortcut](images/natural_docs_create_shortcut.png)
+
+The shortcut should be created in the Desktop. Move the shortcut file in the project folder.
+
+![natural_docs_shortcut_created](images/natural_docs_shortcut_created.png)
+
+Open the shortcut properties.
+
+![natural_docs_shortcut_find_properties](images/natural_docs_shortcut_find_properties.png)
+
+In the Target section, fill in the command lines.
+
+`"C:\Program Files (x86)\Natural Docs\NaturalDocs.exe" naturaldocs_config --pause-before-exit`
+
+Or
+
+`{Pathway to NaturalDocs exe file} {Pathway to Configuration folder} -- pause-before-exit`
+
+In the Start in section, fill in the file path where the project folder is
+
+![natural_docs_shortcut_properties](images/natural_docs_shortcut_properties.png)
+
+Double clicking on the shortcut exe file will give the following.
+
+![natural_docs_configuration_command_line](images/natural_docs_configuration_command_line.png)
+
+Three configuration file should be created.
+
+![natural_docs_configuration_files_created](images/natural_docs_configuration_files_created.png)
+
+Lastly, create an empty folder called `docs` in the project folder `Excel_VBA_Project_Example`. This is where the Natural Docs will output the code documentation.
+
+![natural_docs_docs_folder](images/natural_docs_docs_folder.png)
+
+### Natural Docs configuration files
+
+Now it is time to edit the configuration files to tell Natural Docs some critical information for it to run properly.
+
+The references of each configuration file can be found as follows:
+
+-   [`Project.txt`](https://www.naturaldocs.org/reference/project.txt/)
+-   [`Languages.txt`](https://www.naturaldocs.org/reference/languages.txt/)
+-   [`Comments.txt`](hhttps://www.naturaldocs.org/reference/comments.txt/)
+
+In this project example, I have made to following important changes.
+
+In `Project.txt`,
+
+```r
+Format: 2.2
+
+# This is the main file you use to configure Natural Docs for your project.
+
+
+# Project Information
+# ------------------------------------------------------------------------
+
+Title: My Project Name
+Subtitle: Version 0.0.0.9000
+
+Copyright: Copyright © 2022 My Name, My Affiliation
+
+Timestamp: Last updated 5 6, 2022
+
+# Source Code
+# ------------------------------------------------------------------------
+
+Source Folder: ..\src
+   Name: BlogPost
+   
+# Images
+# ------------------------------------------------------------------------
+
+Image Folder: ..\figures\code_documentation
+
+# Generated Documentation
+# ------------------------------------------------------------------------
+
+HTML Output Folder: ..\docs
+
+```
+
+In `Languages.txt`,
+
+```r
+# Languages
+# ------------------------------------------------------------------------
+# The syntax reference is after the definitions.
+
+Language: Excel VBA
+
+   Line Comment: ''
+   Line Extender: _
+   Case Sensitive: Yes
+```
+
+No modification is made in `Comments.txt`
 
 
 ### MSTemplate_Creator example

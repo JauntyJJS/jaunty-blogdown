@@ -2,9 +2,9 @@
 title: "Writing Better VBA Code in Excel"
 subtitle: ""
 excerpt: "This post provides some ideas on how to write better VBA code in Excel using [Rubberduck](https://rubberduckvba.com/) and [Natural Docs](https://www.naturaldocs.org/) to make it more open source, maintainable and contributor friendly."
-date: 2022-05-05
+date: 2022-05-08
 author: "Jeremy Selva"
-draft: true
+draft: false
 images:
 series:
 tags:
@@ -44,7 +44,11 @@ Another barrier is writing good code documentation for a function in Excel VBA c
 
 For someone who knows how to create code documentation in R using [Roxygen2](https://roxygen2.r-lib.org/articles/rd.html) and display them online using [pkgdown](https://pkgdown.r-lib.org/), it will be very nice if I am able to do the same thing for Excel VBA. From this [issue post](https://github.com/rubberduck-vba/Rubberduck/issues/5017), I am indeed not the first who wanted this feature for VBA code in Excel.
 
-The key for me to resolve these issues is to use [Rubberduck](https://rubberduckvba.com/) and [Natural Docs](https://www.naturaldocs.org/). I tries to provide a step-by-step to help users adapt to these good practices easily rather than just plain trial and error. Source codes can be found at the end of this blog. I also have placed the small example in this Github [page](https://github.com/JauntyJJS/Write_Better_Excel_VBA_Project_Example).
+The key for me to resolve these issues is to use [Rubberduck](https://rubberduckvba.com/) and [Natural Docs](https://www.naturaldocs.org/). I tries to provide a step-by-step to help users adapt to these good practices easily rather than just plain trial and error. 
+
+Source codes can be found at the end of this blog. 
+
+I also have placed a small example in this Github [page](https://github.com/JauntyJJS/Write_Better_Excel_VBA_Project_Example).
 
 ## Installation
 
@@ -128,6 +132,8 @@ Alternatively, we can use Rubberduck VBA to export the files.
 ![rubberduck_export_project](images/rubberduck_export_project.png)
 
 ![rubberduck_export_project_folder](images/rubberduck_export_project_folder.png)
+
+However, unlike the first method, this method is unable to export the cls files.
 
 ### MSTemplate_Creator example
 

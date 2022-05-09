@@ -1,7 +1,7 @@
 ---
 title: "Writing Better VBA Code in Excel"
 subtitle: ""
-excerpt: "This post provides some ideas on how to write better VBA code in Excel using [Rubberduck](https://rubberduckvba.com/) and [Natural Docs](https://www.naturaldocs.org/)"
+excerpt: "This post provides some ideas on how to write better VBA code in Excel using [Rubberduck](https://rubberduckvba.com/) and [Natural Docs](https://www.naturaldocs.org/) to make it more open source, maintainable and contributor friendly."
 date: 2022-05-05
 author: "Jeremy Selva"
 draft: true
@@ -22,10 +22,6 @@ editor_options:
 
 
 
-## Short summary
-
-There are many good resources on how to write good VBA code for Excel. However, during my experiences in working on VBA code in Excel, I realise some issues that makes it hard for such code to be open source, maintainable and contributor friendly. Nevertheless, I have managed to find alternative ways to tackle these problems using [Rubberduck](https://rubberduckvba.com/) and [Natural Docs](https://www.naturaldocs.org/). Hope that my suggestions may be useful for you. Source codes can be found at the end of this blog.
-
 ## Introduction
 
 Finding resources to learn and write VBA code in Excel is relatively simple. [Guru99](https://www.guru99.com/vba-tutorial.html) and [DevTut](https://devtut.github.io/excelvba/) are good places to start.
@@ -40,8 +36,6 @@ With the knowledge gained, I have managed to created a workable Excel macro file
 
 When it comes to making it open source, maintainable and contributor friendly, I was faced with several major setbacks which makes it hard to achieve these objectives. Resources to help meet these objectives, turn out to be [limited](https://www.excelforum.com/excel-programming-vba-macros/862789-good-coding-sustainable-projects-how-to.html#post2943927)
 
-## The issues
-
 The first one is that I have no idea how to export the VBA code in Excel as text files so that I can use version control via [git](https://git-scm.com/) and display them on [GitHub](https://github.com/)
 
 The second one is that I have no clue how to create unit tests in VBA code in Excel. This makes the Excel macro file vulnerable to coding related bugs when changes are made to the VBA code. As the number of features increase and more codes are written, it starts to get hard to manage and maintain.
@@ -50,7 +44,7 @@ Another barrier is writing good code documentation for a function in Excel VBA c
 
 For someone who knows how to create code documentation in R using [Roxygen2](https://roxygen2.r-lib.org/articles/rd.html) and display them online using [pkgdown](https://pkgdown.r-lib.org/), it will be very nice if I am able to do the same thing for Excel VBA. From this [issue post](https://github.com/rubberduck-vba/Rubberduck/issues/5017), I am indeed not the first who wanted this feature for VBA code in Excel.
 
-The key for me to resolve these issues is to use [Rubberduck](https://rubberduckvba.com/) and [Natural Docs](https://www.naturaldocs.org/). I tries to provide a step-by-step to help users adapt to these good practices easily rather than just plain trial and error. Source codes can be found at the end of this blog.
+The key for me to resolve these issues is to use [Rubberduck](https://rubberduckvba.com/) and [Natural Docs](https://www.naturaldocs.org/). I tries to provide a step-by-step to help users adapt to these good practices easily rather than just plain trial and error. Source codes can be found at the end of this blog. I also have placed the small example in this Github [page](https://github.com/JauntyJJS/Write_Better_Excel_VBA_Project_Example).
 
 ## Installation
 
@@ -89,8 +83,6 @@ A successful installation should look like this
 
 ## Version control
 
-### Version control resources 
-
 There are a few resources that has been developed to allow version control for Excel. Here are a few that I am aware of:
 
 -   [SheetGit](http://spreadsheetsunl.github.io/sheetgit/)
@@ -99,7 +91,7 @@ There are a few resources that has been developed to allow version control for E
 
 SheetGit is an add-in for Excel to track spreadsheets but it is unable to track VBA codes in Excel. On the other hand, while XLTools and xltrail does track VBA codes in Excel, it may not be suited for academia labs with limited financial resources to afford commercial software.
 
-### Export VBA code (Method 1) implementation 
+### Export VBA code (Method 1)
 
 Thankfully, Steve Jansen has provided [VBA codes](https://gist.github.com/steve-jansen/7589478) to export VBA code in Excel to text file. I have modified the code such that it does not use the status bar `Application.StatusBar` and file system object `fso`. The modified `Export_Visual_Basic_Code` function can be found in the `Export_VBA` module
 
@@ -116,8 +108,6 @@ As for the use of `fso` to check if a folder exists and create a folder automati
 and in the `Export_Visual_Basic_Code`, I call it using `Utilities.Get_Folder`
 
 ![get_folder_function](images/call_get_folder_function.png)
-
-### Export VBA code (Method 1) execution
 
 With the implementation complete, I now run the `Export_Visual_Basic_Code` using the Run Sub button. Ensure that the cursor is located somewhere **inside** the macro function `Export_Visual_Basic_Code` before clicking this button, else the macro will not run.
 
@@ -141,13 +131,11 @@ Alternatively, we can use Rubberduck VBA to export the files.
 
 ### MSTemplate_Creator example
 
-Here is the [MSTemplate_Creator example](https://github.com/SLINGhub/MSTemplate_Creator/tree/main/src) in Github
+Here is the `MSTemplate_Creator` [example](https://github.com/SLINGhub/MSTemplate_Creator/tree/main/src) in Github
 
 ## Unit testing
 
 Unit testing is crucial to ensure that the program remains functional when codes are extended or refactored. For Excel VBA in Excel, we can use [Rubberduck VBA](https://rubberduckvba.com/) to create a fully integrated test environment.
-
-### Getting started with Rubberduck VBA
 
 Here are the links to learn how to create unit tests using Rubberduck VBA
 
@@ -248,30 +236,7 @@ In addition, I also created a function that does an integration test as well.
 
 After some online searching and trial and errors, I managed to create the code documentation using [Natural Docs](https://www.naturaldocs.org/). Here is how I do it in Windows 10.
 
-### Natural Docs installation
-
-Go to Natural Docs download web page [web page](https://www.naturaldocs.org/download/) to download the installer and install the program.
-
-If you encounter this in Windows 10 during installation,
-
-![protected_PC_popup](images/protected_PC_popup.png)
-
-Follow the instructions provided in this [web page](https://www.thewindowsclub.com/microsoft-defender-smartscreen-prevented-an-unrecognized-app-from-starting), by right clicking on the installation file and go to Properties.
-
-![natural_docs_properties](images/natural_docs_properties.png)
-Check the box Unblock and click Apply, then Ok.
-
-![natural_docs_unblock](images/natural_docs_unblock.png)
-
-The setup wizard should appear when the installer file is double clicked.
-
-![natural_docs_setup_wizard](images/natural_docs_setup_wizard.png)
-
-A successful installation should look like this
-
-![natural_docs_successful_installation](images/natural_docs_successful_installation.png)
-
-### Natural Docs setting up
+### Natural Docs configuration set up
 
 Referring to the instruction provided in the Natural Docs Getting Started [web page](https://www.naturaldocs.org/getting_started/)
 
@@ -311,11 +276,9 @@ Three configuration file should be created.
 
 ![natural_docs_configuration_files_created](images/natural_docs_configuration_files_created.png)
 
-Lastly, create an empty folder called `docs` in the project folder `Excel_VBA_Project_Example`. This is where the Natural Docs will output the code documentation.
+Create an empty folder called `docs` in the project folder `Excel_VBA_Project_Example`. This is where the Natural Docs will output the code documentation.
 
 ![natural_docs_docs_folder](images/natural_docs_docs_folder.png)
-
-### Natural Docs configuration files
 
 Now it is time to edit the configuration files to tell Natural Docs some critical information for it to run properly.
 
@@ -329,7 +292,7 @@ In this project example, I have made to following important changes.
 
 In `Project.txt`, I have stated the title, subtitle, copyright, source folder in which Natural Docs will look for input files, image folder in which Natural Docs will look to get the image file to link in the code documentation, HTML Output folder in which Natural Docs will output the code documentation files.
 
-```r
+<pre style="height: 300px; overflow: scroll;">
 Format: 2.2
 
 # This is the main file you use to configure Natural Docs for your project.
@@ -360,8 +323,7 @@ Image Folder: ..\figures\code_documentation
 # ------------------------------------------------------------------------
 
 HTML Output Folder: ..\docs
-
-```
+</pre>
 
 In `Languages.txt`, I have stated the programming language name, the line comment symbol to tell Natural Docs which part of the excel VBA file is the code documentation, the excel VBA line extender symbol and indicate that excel VBA is case sensitive.
 
@@ -442,6 +404,8 @@ Now that we have a docs folder with a working code documentation (`index.html`),
 
 I understand that there are more advanced and better way to do create code documentation webpages but this is the best that I can come up with so far.
 
+![github_page_example](images/github_page_example.png)
+
 ### MSTemplate_Creator example
 
 Here is the link to the `MSTemplate_Creator` code documentation [example](https://slinghub.github.io/MSTemplate_Creator/)
@@ -466,14 +430,15 @@ Rubberduck VBA also have a [code inspection](https://github.com/rubberduck-vba/R
 Here is an example
 
 ![rubberduck_code_inspection_example](images/rubberduck_code_inspection_example.png)
+## Conclusion
 
-## Excel module and Natural Docs configuration code
+I have to admit that there is a lot of new knowledge in this blog and it does make my brain go 😵. Nevertheless, I do hope the blog may be useful for someone who wants to improve their Excel VBA code and to make it more open source, maintainable and contributor friendly. Just take things slow and don't give up.
 
 Here are the VBA codes for all the modules and the Natural Docs configuration code used.
 
 {{< panelset class="greetings" >}}
 {{< panel name="Export_VBA 🚚" >}}
-```r
+<pre style="height: 300px; overflow: scroll;">
 Option Explicit
 '@Folder("Export VBA Source Code Functions")
 '@IgnoreModule IntegerDataType
@@ -550,10 +515,10 @@ Public Sub Export_Visual_Basic_Code()
     MsgBox "Successfully exported " & CStr(Count) & " VBA files to " & Directory
 
 End Sub
-```
+</pre>
 {{< /panel >}}
 {{< panel name="Utilities 🧰" >}}
-```r
+<pre style="height: 300px; overflow: scroll;">
 Option Explicit
 '@Folder("Utilities Functions")
 
@@ -589,10 +554,10 @@ NextCode:
     Set Folder = Nothing
 End Function
 
-```
+</pre>
 {{< /panel >}}
 {{< panel name="Sample_Type_Identifier 🔍" >}}
-```r
+<pre style="height: 300px; overflow: scroll;">
 Option Explicit
 
 '@Folder("QC_Sample_Type_Identification")
@@ -638,10 +603,10 @@ Public Function Is_EQC(ByVal FileName As String) As Boolean
     Is_EQC = EQCRegEx.Test(OnlyLettersText)
     
 End Function
-```
+</pre>
 {{< /panel >}}
 {{< panel name="Sample_Type_Identifier_Test 📝" >}}
-```r
+<pre style="height: 300px; overflow: scroll;">
 Option Explicit
 Option Private Module
 
@@ -703,10 +668,10 @@ TestExit:
 TestFail:
     Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
 End Sub
-```
+</pre>
 {{< /panel >}}
 {{< panel name="Project.txt 📦" >}}
-```r
+<pre style="height: 300px; overflow: scroll;">
 Format: 2.2
 
 # This is the main file you use to configure Natural Docs for your project.
@@ -917,10 +882,10 @@ HTML Output Folder: ..\docs
 #
 # Auto Group: [yes|no]
 #    Whether groups should automatically apply to you code.  Defaults to yes.
-```
+</pre>
 {{< /panel >}}
 {{< panel name="Languages.txt 📖" >}}
-```r
+<pre style="height: 300px; overflow: scroll;">
 Format: 2.2
 
 # This is the Natural Docs languages file for this project.  If you change
@@ -1024,7 +989,6 @@ Language: Excel VBA
 #    When defined, Natural Docs will attempt to get a prototype from the code
 #    immediately following the comment type.  It stops when it reaches one of
 #    these symbols.  Use \n for line breaks.
-
-```
+</pre>
 {{< /panel >}}
 {{< /panelset >}}

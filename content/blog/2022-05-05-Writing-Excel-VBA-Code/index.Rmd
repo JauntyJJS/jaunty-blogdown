@@ -199,7 +199,7 @@ A few message boxes will pop up. Just click Ok. When it is done, it should look 
 ![test_explorer_completed_test](images/test_explorer_completed_test.png)
 ### MSTemplate_Creator example
 
-Here is the MSTemplate_Creator unit test example
+Here is the `MSTemplate_Creator` unit test example
 
 ![test_explorer_MSTemplate_Creator_example](images/test_explorer_MSTemplate_Creator_example.png)
 In addition, I also created a function that does an integration test as well.
@@ -224,6 +224,7 @@ Follow the instructions provided in this [web page](https://www.thewindowsclub.c
 Check the box Unblock and click Apply, then Ok.
 
 ![natural_docs_unblock](images/natural_docs_unblock.png)
+
 The setup wizard should appear when the installer file is double clicked.
 
 ![natural_docs_setup_wizard](images/natural_docs_setup_wizard.png)
@@ -282,9 +283,9 @@ Now it is time to edit the configuration files to tell Natural Docs some critica
 
 The references of each configuration file can be found as follows:
 
--   [`Project.txt`](https://www.naturaldocs.org/reference/project.txt/)
--   [`Languages.txt`](https://www.naturaldocs.org/reference/languages.txt/)
--   [`Comments.txt`](hhttps://www.naturaldocs.org/reference/comments.txt/)
+-   [Project.txt](https://www.naturaldocs.org/reference/project.txt/)
+-   [Languages.txt](https://www.naturaldocs.org/reference/languages.txt/)
+-   [Comments.txt](hhttps://www.naturaldocs.org/reference/comments.txt/)
 
 In this project example, I have made to following important changes.
 
@@ -310,7 +311,7 @@ Timestamp: Last updated 5 6, 2022
 # ------------------------------------------------------------------------
 
 Source Folder: ..\src
-   Name: BlogPost
+   Name: My Project Name
    
 # Images
 # ------------------------------------------------------------------------
@@ -342,18 +343,55 @@ Language: Excel VBA
 
 No modification is made in `Comments.txt`
 
-### Code documentation
+### Code documentation execution
 
-Take a look at 
+From our configuration settings, we are telling Natural Docs to read the files in the `src` folder
+
+![natural_docs_src_folder](images/natural_docs_src_folder.png)
+
+Look for those lines that starts with `''`
+
+![natural_docs_code_documentation_example](images/natural_docs_code_documentation_example.png)
+
+Read Images in the  `figures\code_documentation` folder
+
+![natural_docs_code_documentation_figures_folder](images/natural_docs_code_documentation_figures_folder.png)
+
+And build the documentation in the `docs` folder
+
+![natural_docs_docs_folder](images/natural_docs_docs_folder.png)
+
+With the parameters set, double clicking on the shortcut exe file
+
+![natural_docs_shortcut_double_click](images/natural_docs_shortcut_double_click.png)
+
+will give the following pop up command line
+
+![natural_docs_code_documentation_command_line](images/natural_docs_code_documentation_command_line.png)
+
+This will create the following
+
+![natural_docs_working_data_output](images/natural_docs_working_data_output.png)
+
+![natural_docs_docs_output](images/natural_docs_docs_output.png)
+Clicking on `index.html` will give the following
+
+![natural_docs_code_documentation_html](images/natural_docs_code_documentation_html.png)
+
+### Code documentation explanation
+
+Take a look at Natural Docs [formatting web page](https://www.naturaldocs.org/reference/formatting/) for more details on how to write the code documentation correctly.
+
+For our examples used, I will try to provide some arrows to show where are things coming from.
 
 
 ### MSTemplate_Creator example
 
-Here is the [MSTemplate_Creator example](https://slinghub.github.io/MSTemplate_Creator/)
+Here is the link to the `MSTemplate_Creator` code documentation [example](https://slinghub.github.io/MSTemplate_Creator/)
 
-## Excel Module Code
+## Excel module and Natural Docs configuration code
 
-Here are the VBA codes for all the modules given.
+Here are the VBA codes for all the modules and the Natural Docs configuration code used.
 
 {{< panelset class="greetings" >}}
 {{< panel name="Export_VBA 🚚" >}}
@@ -587,6 +625,328 @@ TestExit:
 TestFail:
     Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
 End Sub
+```
+{{< /panel >}}
+{{< panel name="Project.txt 📦" >}}
+```r
+Format: 2.2
+
+# This is the main file you use to configure Natural Docs for your project.
+
+
+# Project Information
+# ------------------------------------------------------------------------
+
+Title: My Project Name
+Subtitle: Version 0.0.0.9000
+
+Copyright: Copyright © 2022 My Name, My Affiliation
+
+Timestamp: Last updated 5 6, 2022
+#    m     - Single digit month, when possible.  January is "1".
+#    mm    - Always double digit month.  January is "01".
+#    mon   - Short month word.  January is "Jan".
+#    month - Long month word.  January is "January".
+#    d     - Single digit day, when possible.  1 is "1".
+#    dd    - Always double digit day.  1 is "01".
+#    day   - Day with text extension.  1 is "1st".
+#    yy    - Double digit year.  2022 is "22".
+#    yyyy  - Four digit year.  2022 is "2022".
+#    year  - Four digit year.  2022 is "2022".
+
+
+# This is where you put general information about your project.  None of these
+# settings are required, though Title is recommended.
+#
+# Title: [text]
+#    The name of your project.  (R) and (TM) will be converted to their
+#    respective symbols.
+#
+# Subtitle: [text]
+#    A subtitle for your project, if desired.
+#
+# Copyright: [text]
+#    The copyright notice for your project.  (C) will be converted to the
+#    copyright symbol.
+#
+# Timestamp: [text]
+#    Text explaining when the documentation was generated, such as "Last
+#    Updated Month Day Year", if you want that to be included.  The following
+#    substitutions are performed:
+#
+#    m     - Single digit month, when possible.  January is "1".
+#    mm    - Always double digit month.  January is "01".
+#    mon   - Short month word.  January is "Jan".
+#    month - Long month word.  January is "January".
+#    d     - Single digit day, when possible.  1 is "1".
+#    dd    - Always double digit day.  1 is "01".
+#    day   - Day with text extension.  1 is "1st".
+#    yy    - Double digit year.  2022 is "22".
+#    yyyy  - Four digit year.  2022 is "2022".
+#    year  - Four digit year.  2022 is "2022".
+#
+# Style: [style]
+#    A custom style to apply to the generated documentation.  See
+#    https://naturaldocs.org/reference/styles for more information.
+#
+# Home Page: [file]
+#    A custom home page for the generated documentation.  It could be a
+#    documented file in one of the source folders or a HTML file in any
+#    location.
+#
+# Encoding: [name or code page number]
+# Encoding: [name or code page number] *.[extension]
+#    The character encoding source files use if it is something other than
+#    Unicode.  It can be specified as a name such as "iso-8859-1" or a code
+#    page number such as "28591".  You can see the list of encodings your
+#    system supports by running Natural Docs with the --list-encodings command
+#    line option.
+#
+#    Natural Docs defaults to Unicode which will handle all forms of UTF-8,
+#    UTF-16, and UTF-32.  You can set a new default for all files or you can
+#    limit it to an extension such as "*.txt".  You can use multiple Encoding
+#    lines to cover all the extensions that need them.
+#
+#    You can also set encodings for specific folders by adding Encoding lines
+#    in Source Folder sections.
+
+
+# Source Code
+# ------------------------------------------------------------------------
+
+Source Folder: ..\src
+   Name: My Project Name
+
+
+# This is where you tell Natural Docs which folders it should scan for source
+# files.  If you add any on the command line this section is ignored except
+# for the properties of the ones from the command line.
+#
+# Source Folder: [folder]
+#    Specifies a folder which will be searched for source files.  The path is
+#    relative to the project configuration folder, which lets this file remain
+#    portable across computers and not cause problems in version control
+#    systems.  You can enter an absolute path and it will be converted
+#    automatically.
+#
+#    Additional properties can be added after each source folder:
+#
+#    Name: [name]
+#       How this source folder will appear in the menu if you have more than
+#       one.
+#
+#    Encoding: [name or code page number]
+#    Encoding: [name or code page number] *.[extension]
+#    Encoding: [name or code page number] [folder]
+#    Encoding: [name or code page number] [folder]\*.[extension]
+#       The character encoding source files use if it's something other than
+#       Unicode.  It can be specified as a name such as "iso-8859-1" or a code
+#       page number such as "28591".  You can see the list of encodings your
+#       system supports by running Natural Docs with the --list-encodings
+#       command line option.
+#
+#       Natural Docs defaults to Unicode which will handle all forms of UTF-8,
+#       UTF-16, and UTF-32.  You can set a new default for all files in this
+#       folder, limit it to an extension such as "*.txt", limit it to a
+#       subfolder, or limit it to extensions in a subfolder.  You can use
+#       multiple Encoding lines to cover all the subfolders and extensions
+#       that need them.
+
+
+# Source Filtering
+# ------------------------------------------------------------------------
+
+# If there are any subfolders in the source code that you would like Natural
+# Docs to ignore they can be added here.  If you use any of these options on
+# the command line this section is ignored.
+#
+# Ignore Source Folder: [folder]
+#    Tells Natural Docs to skip this folder when scanning files.
+#
+# Ignore Source Folder Pattern: [pattern]
+#    Tells Natural Docs to skip all folder names which match this pattern when
+#    scanning files.  ? matches a single character, * matches zero or more
+#    characters.  It applies to the entire folder name, so "cli" will not
+#    match "client", although "cli*" will.
+#
+#    The data folders of common version control systems (.git, .svn, .cvs, .hg)
+#    are ignored automatically.  You don't have to add them here.
+
+
+# Images
+# ------------------------------------------------------------------------
+
+Image Folder: ..\figures\code_documentation
+
+
+# This is where you tell Natural Docs which folders it should look for images
+# in.  When you put something like (see diagram.jpg) in a comment Natural Docs
+# will look for it relative to the source file it appears in plus any folders
+# added here.  If you add any on the command line this section is ignored.
+#
+# Image Folder: [folder]
+#    Specifies a folder which will be searched for image files.  The path is
+#    relative to the project configuration folder, which lets this file remain
+#    portable across computers and not cause problems in version control
+#    systems.  You can enter absolute paths and they will be converted
+#    automatically.
+
+
+
+# Generated Documentation
+# ------------------------------------------------------------------------
+
+HTML Output Folder: ..\docs
+
+
+# This is where you tell Natural Docs what kind of documentation you want
+# built and where it should be put.  If you use any of these options on the
+# command line this section is ignored except for the properties of the ones
+# from the command line.
+#
+# HTML Output Folder: [folder]
+#    Generates HTML documentation in the specified folder.  The path is
+#    relative to the project configuration folder, which lets this file remain
+#    portable across computers and not cause problems in version control
+#    systems.  You can enter an absolute path and it will be converted
+#    automatically.
+#
+#    Additional properties can be added after each output folder:
+#
+#    Title: [text]
+#    Subtitle: [text]
+#    Copyright: [text]
+#    Timestamp: [text]
+#    Style: [style]
+#    Home Page: [file]
+#       These properties can be overridden for just this output folder, which
+#       allows you to have multiple output folders with different styles or
+#       titles.  See the Project Information section for descriptions of them.
+
+
+# Global Settings
+# ------------------------------------------------------------------------
+
+# Other settings that apply to your entire project.  Settings specified on the
+# command line override the settings here.
+#
+# Tab Width: [width]
+#    The number of spaces tabs should be expanded to.
+#
+# Documented Only: [yes|no]
+#    Whether only documented code elements should appear in the output.
+#    Defaults to no.
+#
+# Auto Group: [yes|no]
+#    Whether groups should automatically apply to you code.  Defaults to yes.
+```
+{{< /panel >}}
+{{< panel name="Languages.txt 📖" >}}
+```r
+Format: 2.2
+
+# This is the Natural Docs languages file for this project.  If you change
+# anything here, it will apply to THIS PROJECT ONLY.  You can edit the version
+# in Natural Docs' Config folder to make the changes apply to all projects,
+# but it's recommended that you edit this version instead.
+
+
+# Ignored Extensions
+# ------------------------------------------------------------------------
+
+# If you'd like to prevent certain file extensions from being scanned by
+# Natural Docs, you can do it like this:
+#
+# Ignore Extensions: [extension] [extension] ...
+
+
+# Languages
+# ------------------------------------------------------------------------
+# The syntax reference is after the definitions.
+
+Language: Excel VBA
+
+   Line Comment: ''
+   Line Extender: _
+   Case Sensitive: Yes
+
+
+# These settings define the languages Natural Docs knows how to parse.  You
+# can define your own here or override the settings of the existing ones.
+# Note that all lists are space separated so that commas can be used as
+# values.
+#
+# Language: [name]
+# Alter Language: [name]
+#    Defines a new language or alters an existing one.  Its name can use any
+#    characters.  If any of the properties below have an add/replace form, you
+#    must use that when using Alter Language.
+#
+#    The language Shebang Script is special.  It's entry is only used for
+#    extensions, and files with those extensions have their shebang (#!) lines
+#    read to determine the real language of the file.  Extensionless files are
+#    always treated this way.
+#
+#    The language Text File is also special.  It's treated as one big comment
+#    so you can put Natural Docs content in them without special symbols.
+#
+# Extensions: [extension] [extension] ...
+# [Add/Replace] Extensions: [extension] [extension] ...
+#    Defines the file extensions of the language's source files.
+#
+# Shebang Strings: [string] [string] ...
+# [Add/Replace] Shebang Strings: [string] [string] ...
+#    Defines a list of strings that can appear in the shebang (#!) line to
+#    designate that it's part of the language.
+#
+# Simple Identifier: [name]
+#    The name of the language using only the letters A to Z.  No spaces,
+#    numbers, symbols, or Unicode allowed.  Defaults to the language name
+#    minus any unacceptable characters.  This is used to generate things like
+#    CSS class names.
+#
+# Aliases: [alias] [alias] ...
+# [Add/Replace] Aliases: [alias] [alias] ...
+#    Defines alternative names for the language that can be used to start a
+#    code block.
+#
+#
+# Properties for Basic Language Support Only
+# ------------------------------------------------------------------------
+# If you're adding your own language to Natural Docs you must define these.
+#
+# Line Comments: [symbol] [symbol] ...
+#    Defines a space-separated list of symbols that are used for line comments,
+#    if any.
+#
+# Block Comments: [opening sym] [closing sym] [opening sym] [closing sym] ...
+#    Defines a space-separated list of symbol pairs that are used for block
+#    comments, if any.
+#
+# Member Operator: [symbol]
+#    Defines the default member operator symbol.  The default is a dot.
+#
+# Line Extender: [symbol]
+#    Defines the symbol that allows a prototype to span multiple lines if
+#    normally a line break would end it.
+#
+# Enum Values: [global|under type|under parent]
+#    Defines how enum values are referenced.  The default is global.
+#    global       - Values are always global, referenced as 'value'.
+#    under type   - Values are under the enum type, referenced as
+#                   'class.enum.value'.
+#    under parent - Values are under the enum's parent, referenced as
+#                   'class.value'.
+#
+# Case Sensitive: [yes|no]
+#    Defines whether the language's identifiers are case sensitive.  The
+#    default is yes.
+#
+# [Comment Type] Prototype Enders: [symbol] [symbol] ...
+#    When defined, Natural Docs will attempt to get a prototype from the code
+#    immediately following the comment type.  It stops when it reaches one of
+#    these symbols.  Use \n for line breaks.
+
 ```
 {{< /panel >}}
 {{< /panelset >}}

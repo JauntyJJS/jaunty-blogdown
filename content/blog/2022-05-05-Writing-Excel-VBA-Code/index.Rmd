@@ -1,7 +1,7 @@
 ---
 title: "Writing Better VBA Code in Excel"
 subtitle: ""
-excerpt: "This post provides some ideas on how to make VBA code in Excel more contributer friendly"
+excerpt: "This post provides some ideas on how to write better VBA code in Excel using [Rubberduck](https://rubberduckvba.com/) and [Natural Docs](https://www.naturaldocs.org/)"
 date: 2022-05-05
 author: "Jeremy Selva"
 draft: true
@@ -28,7 +28,7 @@ htmltools::tagList(
 
 ## Short summary
 
-There are many good resources on how to write good VBA code for Excel. However, during my experiences in working on VBA code in Excel, I realise some issues that makes it hard for such code to be open source, maintainable and contributor friendly. Nevertheless, I have managed to find alternative ways to tackle these problems. Hope that my suggestions may be useful for you.
+There are many good resources on how to write good VBA code for Excel. However, during my experiences in working on VBA code in Excel, I realise some issues that makes it hard for such code to be open source, maintainable and contributor friendly. Nevertheless, I have managed to find alternative ways to tackle these problems using [Rubberduck](https://rubberduckvba.com/) and [Natural Docs](https://www.naturaldocs.org/). Hope that my suggestions may be useful for you. Source codes can be found at the end of this blog.
 
 ## Introduction
 
@@ -54,6 +54,43 @@ Another barrier is writing good code documentation for a function in Excel VBA c
 
 For someone who knows how to create code documentation in R using [Roxygen2](https://roxygen2.r-lib.org/articles/rd.html) and display them online using [pkgdown](https://pkgdown.r-lib.org/), it will be very nice if I am able to do the same thing for Excel VBA. From this [issue post](https://github.com/rubberduck-vba/Rubberduck/issues/5017), I am indeed not the first who wanted this feature for VBA code in Excel.
 
+The key for me to resolve these issues is to use [Rubberduck](https://rubberduckvba.com/) and [Natural Docs](https://www.naturaldocs.org/). I tries to provide a step-by-step to help users adapt to these good practices easily rather than just plain trial and error. Source codes can be found at the end of this blog.
+
+## Installation
+
+### Rubberduck VBA installation
+
+Go to the Rubberduck [web page](https://rubberduckvba.com/) to download the installer and install the program.
+
+Check if Rubberduck VBA is successfully installed, open Microsoft Visual Basic for Applications from the Developer Tab and you should see the Rubberduck option.
+
+![rubberduck_option](images/rubberduck_option.png)
+
+Here is the [link](https://rubberduckvba.wordpress.com/?s=VBA+Rubberducking) to some blog posts from Rubberduck that showcase its features. In this blog, I will just cover some of them.
+
+### Natural Docs installation
+
+Go to Natural Docs download [web page](https://www.naturaldocs.org/download/) to download the installer and install the program.
+
+If you encounter this in Windows 10 during installation,
+
+![protected_PC_popup](images/protected_PC_popup.png)
+
+Follow the instructions provided in this [web page](https://www.thewindowsclub.com/microsoft-defender-smartscreen-prevented-an-unrecognized-app-from-starting), by right clicking on the installation file and go to Properties.
+
+![natural_docs_properties](images/natural_docs_properties.png)
+Check the box Unblock and click Apply, then Ok.
+
+![natural_docs_unblock](images/natural_docs_unblock.png)
+
+The setup wizard should appear when the installer file is double clicked.
+
+![natural_docs_setup_wizard](images/natural_docs_setup_wizard.png)
+
+A successful installation should look like this
+
+![natural_docs_successful_installation](images/natural_docs_successful_installation.png)
+
 ## Version control
 
 ### Version control resources 
@@ -66,7 +103,7 @@ There are a few resources that has been developed to allow version control for E
 
 SheetGit is an add-in for Excel to track spreadsheets but it is unable to track VBA codes in Excel. On the other hand, while XLTools and xltrail does track VBA codes in Excel, it may not be suited for academia labs with limited financial resources to afford commercial software.
 
-### Export VBA code implementation 
+### Export VBA code (Method 1) implementation 
 
 Thankfully, Steve Jansen has provided [VBA codes](https://gist.github.com/steve-jansen/7589478) to export VBA code in Excel to text file. I have modified the code such that it does not use the status bar `Application.StatusBar` and file system object `fso`. The modified `Export_Visual_Basic_Code` function can be found in the `Export_VBA` module
 
@@ -84,7 +121,7 @@ and in the `Export_Visual_Basic_Code`, I call it using `Utilities.Get_Folder`
 
 ![get_folder_function](images/call_get_folder_function.png)
 
-### Export VBA code execution
+### Export VBA code (Method 1) execution
 
 With the implementation complete, I now run the `Export_Visual_Basic_Code` using the Run Sub button. Ensure that the cursor is located somewhere **inside** the macro function `Export_Visual_Basic_Code` before clicking this button, else the macro will not run.
 
@@ -98,9 +135,17 @@ One downside of running this code is that files will be overwritten without givi
 
 With the VBA codes exported as text files, we can track it using [git](https://git-scm.com/) and display them on [GitHub](https://github.com/). For me, I use [RStudio IDE](https://www.rstudio.com/products/rstudio/download/) to run git and submit my codes to GitHub
 
+### Export VBA code (Method 2)
+
+Alternatively, we can use Rubberduck VBA to export the files.
+
+![rubberduck_export_project](images/rubberduck_export_project.png)
+
+![rubberduck_export_project_folder](images/rubberduck_export_project_folder.png)
+
 ### MSTemplate_Creator example
 
-Here is the [MSTemplate_Creator example](https://github.com/SLINGhub/MSTemplate_Creator/tree/main/src)
+Here is the [MSTemplate_Creator example](https://github.com/SLINGhub/MSTemplate_Creator/tree/main/src) in Github
 
 ## Unit testing
 
@@ -119,9 +164,6 @@ Here are the links to learn how to create unit tests using Rubberduck VBA
 
 I understand that using Rubberduck VBA may be complicated for some, hence, here is a step by step process. Ensure that the VBA code is **free from syntax error/bugs**.
 
-Firstly, to check if Rubberduck VBA is successfully installed, open Microsoft Visual Basic for Applications from the Developer Tab and you should see the Rubberduck option.
-
-![rubberduck_option](images/rubberduck_option.png)
 To display the Rubberduck VBA toolbar, go to the toolbar options, "Add or Remove Buttons" and then click on "Customize".
 
 ![rubberduck_option](images/customize_buttons.png)
@@ -382,12 +424,52 @@ Clicking on `index.html` will give the following
 
 Take a look at Natural Docs [formatting web page](https://www.naturaldocs.org/reference/formatting/) for more details on how to write the code documentation correctly.
 
-For our examples used, I will try to provide some arrows to show where are things coming from.
+For our examples used, I have provided some arrows to show where are things coming from.
 
+Use of Paragraphs, Headings, Definition List and Code Diagram example
+
+![is_eqc_documentation](images/is_eqc_documentation.png)
+Use of Bullet Lists example
+
+![is_eqc_test_documentation](images/is_eqc_test_documentation.png)
+
+Use of Images example
+
+![get_folder_documentation](images/get_folder_documentation.png)
+### Comment Block in Edit toolbar
+
+To write code documentation easily, it will be nice to be able to comment a block of code. Microsoft Visual Basic for Application also have this functionality. It is just hidden. Check out Paul Murana's [blog post](https://www.tachytelic.net/2018/11/how-to-comment-a-block-of-code-in-the-microsoft-office-vba-editor/) to see how to find it.
+
+### Deploy using Github Pages.
+
+Now that we have a docs folder with a working code documentation (`index.html`), we can push all the files to Github. For me, I made the code documentation public using [Github Pages](https://pages.github.com/).
+
+I understand that there are more advanced and better way to do create code documentation webpages but this is the best that I can come up with so far.
 
 ### MSTemplate_Creator example
 
 Here is the link to the `MSTemplate_Creator` code documentation [example](https://slinghub.github.io/MSTemplate_Creator/)
+
+## Code Explorer
+
+In Microsoft Visual Basic for Application, code files are grouped by default accordingly by Microsoft Excel Object, Modules and Forms.
+
+If you are unaware, Rubberduck VBA actually have a [code explorer](https://rubberduckvba.wordpress.com/using-rubberduck/code-explorer/) functionality to help users customised how Microsoft Excel Object, Modules and Forms files be grouped and organised together.
+
+![rubberduck_code_explorer](images/rubberduck_code_explorer.png)
+
+Here is an example
+
+![rubberduck_code_explorer_example](images/rubberduck_code_explorer_example.png)
+## Code Inspection
+
+Rubberduck VBA also have a [code inspection](https://github.com/rubberduck-vba/Rubberduck/wiki/Code-Inspections) feature that encourage users write better excel VBA code like giving better variable names, always use `Option Explicit` and so on.
+
+![rubberduck_code_inspection](images/rubberduck_code_inspection.png)
+
+Here is an example
+
+![rubberduck_code_inspection_example](images/rubberduck_code_inspection_example.png)
 
 ## Excel module and Natural Docs configuration code
 
@@ -950,6 +1032,3 @@ Language: Excel VBA
 ```
 {{< /panel >}}
 {{< /panelset >}}
-
-
-<https://vimeo.com/138774243>

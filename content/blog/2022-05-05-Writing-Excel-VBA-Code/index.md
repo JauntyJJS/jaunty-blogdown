@@ -50,6 +50,8 @@ Source codes can be found at the end of this blog.
 
 I also have placed a small example in this Github [page](https://github.com/JauntyJJS/Write_Better_Excel_VBA_Project_Example).
 
+![excel_example_github](images/excel_example_github.png)
+
 ## Installation
 
 ### Rubberduck VBA installation
@@ -440,7 +442,13 @@ Here is an example
 
 I have to admit that there is a lot of new knowledge in this blog and it does make my brain go 😵. Nevertheless, I do hope the blog may be useful for someone who wants to improve their Excel VBA code and to make it more open source, maintainable and contributor friendly. Just take things slow and don't give up.
 
-Here are the VBA codes for all the modules and the Natural Docs configuration code used.
+For reference, here is the Github page for [MSTemplate_Creator](https://github.com/SLINGhub/MSTemplate_Creator)
+
+Here is the Github [page](https://github.com/JauntyJJS/Write_Better_Excel_VBA_Project_Example) for the small example.
+
+![excel_example_github](images/excel_example_github.png)
+
+Here are the VBA codes for all the modules and the Natural Docs configuration code used for the small example.
 
 {{< panelset class="greetings" >}}
 {{< panel name="Export_VBA 🚚" >}}

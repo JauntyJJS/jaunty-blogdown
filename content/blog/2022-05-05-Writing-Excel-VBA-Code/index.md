@@ -34,7 +34,7 @@ As I have gotten more familiar with the programming, I then started to look at b
 
 With the knowledge gained, I have managed to created a workable Excel macro file called [MSTemplate_Creator](https://github.com/SLINGhub/MSTemplate_Creator) to help researchers create annotation sheets and templates from data exported directly from mass spectrometry software.
 
-When it comes to making it open source, maintainable and contributor friendly, I was faced with several major setbacks which makes it hard to achieve these objectives. Resources to help meet these objectives, turn out to be [limited](https://www.excelforum.com/excel-programming-vba-macros/862789-good-coding-sustainable-projects-how-to.html#post2943927)
+When it comes to making it open source, maintainable and contributor friendly, I was faced with several major setbacks which make it hard to achieve these objectives. Resources to help meet these objectives, turn out to be [limited](https://www.excelforum.com/excel-programming-vba-macros/862789-good-coding-sustainable-projects-how-to.html#post2943927)
 
 The first one is that I have no idea how to export the VBA code in Excel as text files so that I can use version control via [git](https://git-scm.com/) and display them on [GitHub](https://github.com/)
 

@@ -135,7 +135,9 @@ Alternatively, we can use Rubberduck VBA to export the files.
 
 ![rubberduck_export_project_folder](images/rubberduck_export_project_folder.png)
 
-However, unlike the first method, this method is unable to export the cls files.
+However, unlike the first method, this method exports the Microsoft Excel Objects as `.doccls` instead of `.cls` files.
+
+![export_vba_method2](images/export_vba_method2.png)
 
 ### MSTemplate_Creator example
 

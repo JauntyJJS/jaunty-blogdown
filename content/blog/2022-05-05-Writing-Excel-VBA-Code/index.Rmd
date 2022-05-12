@@ -101,7 +101,7 @@ There are a few resources that has been developed to allow version control for E
 
 SheetGit is an add-in for Excel to track spreadsheets but it is unable to track VBA codes in Excel. On the other hand, while XLTools and xltrail does track VBA codes in Excel, it may not be suited for academia labs with limited financial resources to afford commercial software.
 
-### Export VBA code (Method 1)
+### Export VBA code (using Source Code)
 
 Thankfully, Steve Jansen has provided [VBA codes](https://gist.github.com/steve-jansen/7589478) to export VBA code in Excel to text file. I have modified the code such that it does not use the status bar `Application.StatusBar` and file system object `fso`. The modified `Export_Visual_Basic_Code` function can be found in the `Export_VBA` module
 
@@ -131,7 +131,7 @@ One downside of running this code is that files will be overwritten without givi
 
 With the VBA codes exported as text files, we can track it using [git](https://git-scm.com/) and display them on [GitHub](https://github.com/). For me, I use [RStudio IDE](https://www.rstudio.com/products/rstudio/download/) to run git and submit my codes to GitHub
 
-### Export VBA code (Method 2)
+### Export VBA code (using Rubberduck VBA)
 
 Alternatively, we can use Rubberduck VBA to export the files.
 
@@ -143,9 +143,33 @@ However, unlike the first method, this method exports the Microsoft Excel Object
 
 ![export_vba_method2](images/export_vba_method2.png)
 
+Do note also that empty modules are skipped as well.
+
+![empty_module_skipped](images/exporting.gif)
+### Import VBA code (using Rubberduck VBA)
+
+The [Rubberduck VBA team](https://github.com/rubberduck-vba/Rubberduck/issues/5981) is kind enough to share [some ways to import](https://rubberduckvba.wordpress.com/2020/12/11/sync-project-with-files/) Excel VBA files back into a new Excel file.
+
+Here is what I have learnt.
+
+One method is using a drag and drop approach. This should works with the Module files in `.bas` and Form files in `.frm`.
+
+![importing_drag_and_drop](images/importing_drag_and_drop.gif)
+The downside of this method is that reimporting the same files again will give additional modules with a numerical suffix
+
+![importing_duplicate](images/importing_duplicate.gif)
+
+On the other hand, we can use Code Explorer Sync Project's command "Update Components from Files". This should works with the Module files in `.bas` and Form files in `.frm`. For the `.doccls` files, ensure that properties name is the same as the `.doccls` file name.
+
+![importing_condition](images/importing_condition.png)
+
+Here is a simple demonstration.
+
+![importing_rubberduck](images/importing_rubberduck.gif)
+
 ### MSTemplate_Creator example
 
-Here is the `MSTemplate_Creator` [example](https://github.com/SLINGhub/MSTemplate_Creator/tree/main/src) in Github
+Here is the `MSTemplate_Creator` exported source code [example](https://github.com/SLINGhub/MSTemplate_Creator/tree/main/src) in Github
 
 ## Unit testing
 
@@ -198,7 +222,7 @@ Ensure that the following Excel VBA reference list are checked, especially Micro
 
 The function we are using to create the unit test is called `Is_EQC` and is created in the `Sample_Type_Identifier` module. What the `Is_EQC` function does is to give a boolean True if the input string contains the word "EQC", "Eqc" or "eqc".
 
-![is_eqc_function](images/is_eqc_function.png
+![is_eqc_function](images/is_eqc_function.png)
 
 A good summary of how to do regular expression in VBA code in Excel can be found in this [stackoverflow question](https://stackoverflow.com/questions/22542834/how-to-use-regular-expressions-regex-in-microsoft-excel-both-in-cell-and-loops)
 ### Adding a new unit test module

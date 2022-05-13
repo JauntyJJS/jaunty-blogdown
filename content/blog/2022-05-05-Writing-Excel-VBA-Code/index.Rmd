@@ -48,8 +48,7 @@ Another barrier is writing good code documentation for a function in Excel VBA c
 
 For someone who knows how to create code documentation in R using [Roxygen2](https://roxygen2.r-lib.org/articles/rd.html) and display them online using [pkgdown](https://pkgdown.r-lib.org/), it will be very nice if I am able to do the same thing for Excel VBA. From this [issue post](https://github.com/rubberduck-vba/Rubberduck/issues/5017), I am indeed not the first who wanted this feature for VBA code in Excel.
 
-The key for me to resolve these issues is to use [Rubberduck](https://rubberduckvba.com/) and [Natural Docs](https://www.naturaldocs.org/). I tries to provide a step-by-step to help users adapt to these good practices easily rather than just plain trial and error. 
-
+The key for me to resolve these issues is to use [Rubberduck](https://rubberduckvba.com/) and [Natural Docs](https://www.naturaldocs.org/). This blog will provide some ideas and step-by-step guides to help users adapt to these good practices easily rather than just plain trial and error. 
 Source codes can be found at the end of this blog. 
 
 I also have placed a small example in this Github [page](https://github.com/JauntyJJS/Write_Better_Excel_VBA_Project_Example).
@@ -367,12 +366,22 @@ In `Languages.txt`, I have stated the programming language name, the line commen
 
 While `'` is the actual line comment symbol for excel VBA, we use `''` instead to represent code documentation to differentiate between general comments and `'@` used by Rubberduck.
 
+I also indicate what kind of files should Natural Docs look for and ignore.
+
 ```r
+# Ignored Extensions
+# ------------------------------------------------------------------------
+
+Ignore Extensions: frx cls
+
+
 # Languages
 # ------------------------------------------------------------------------
 # The syntax reference is after the definitions.
 
 Language: Excel VBA
+
+   Extensions: bas doccls frm
 
    Line Comment: ''
    Line Extender: _
@@ -448,7 +457,7 @@ I understand that there are more advanced and better way to do create code docum
 
 Here is the link to the `MSTemplate_Creator` code documentation [example](https://slinghub.github.io/MSTemplate_Creator/)
 
-## Code Explorer
+## Rubberduck VBA Code Explorer
 
 In Microsoft Visual Basic for Application, code files are grouped by default accordingly by Microsoft Excel Object, Modules and Forms.
 
@@ -459,7 +468,7 @@ If you are unaware, Rubberduck VBA actually have a [code explorer](https://rubbe
 Here is an example
 
 ![rubberduck_code_explorer_example](images/rubberduck_code_explorer_example.png)
-## Code Inspection
+## Rubberduck VBA Code Inspection
 
 Rubberduck VBA also have a [code inspection](https://github.com/rubberduck-vba/Rubberduck/wiki/Code-Inspections) feature that encourage users write better excel VBA code like giving better variable names, always use `Option Explicit` and so on.
 
@@ -468,6 +477,83 @@ Rubberduck VBA also have a [code inspection](https://github.com/rubberduck-vba/R
 Here is an example
 
 ![rubberduck_code_inspection_example](images/rubberduck_code_inspection_example.png)
+## Rubberduck VBA Annotations
+
+Rubberduck VBA can synchronize certain annotation comments with the actual COM docstring for a procedure which shows up in the Visual Basic Explorer's (or VBE) object browser, Rubberduck VBA's Code Explorer or Rubberduck VBA's toolbar (as per the current selection)
+
+Reference links are as follows:
+- Rubberduck VBA's blog titled: [Rubberduck Annotations](https://rubberduckvba.wordpress.com/2019/12/14/rubberduck-annotations/)
+- Rubberduck VBA's blog titled: [Rubberduck 2.5.1](https://rubberduckvba.wordpress.com/2020/08/22/rubberduck-2-5-1/)
+
+Here is a step by step example to create a `@ModuleDescription` and `@Description` in a given Excel VBA module.
+
+First, key in the Module Description and Description. Ensure that the Module Description is on the top of the file and the Description is top of a given function.
+
+![annotation_input](images/annotation_input.png)
+
+Next, open Code Inspection (Rubberduck and then Code Inspection), click on the Refresh button.
+You should see the following “Rubberduck Opportunities”.
+
+![annotation_warning](images/annotation_warning.png)
+Select multiple of such issues by 
+•	Clicking on the first file
+•	Hold down the Shift key, select the last file or folder, and then let go of the Shift key.
+or Hold down the Ctrl key and click any other file(s) or folder(s) you would like to add to those already selected.
+
+Right click on the selection, go to Add missing attribute and then Selected occurences
+
+![annotation_add_attributes](images/annotation_add_attributes.png)
+
+Rubberduck VBA will then add these attributes into Microsoft Visual Basic for Applications.
+
+This is what you should see.
+
+On the Rubberduck VBA toolbar, the content of the Module Description will appear when the module opened and selected
+
+![annotation_toolbar_module_description](images/annotation_toolbar_module_description.png)
+
+The content of the Description will appear when the function is selected
+
+![annotation_toolbar_description](images/annotation_toolbar_description.png)
+
+Opening the object browser
+
+![annotation_find_object_browser](images/annotation_find_object_browser.png)
+
+And selecting Blogpost (or Name of Excel File) specific libraries
+
+![annotation_find_excel_libraries](images/annotation_find_excel_libraries.png)
+
+Click on the module with the Module Description and you can see its content there
+
+![annotation_object_browser_module_description](images/annotation_object_browser_module_description.png)
+
+Click on the function with the Description and you can see its content there
+
+![annotation_object_browser_description](images/annotation_object_browser_description.png)
+
+This information is also available in the Code Explorer as well.
+
+![annotation_code_explorer_module_description](images/annotation_code_explorer_module_description.png)
+![annotation_code_explorer_description](images/annotation_code_explorer_description.png)
+## Rubberduck VBA Variable Search
+
+To find the places where in the project an Excel VBA variable (for example a excel vba procedure) is used, Rubberduck VBA actually can help to give a report of this.
+
+Just click or highlight the variable name desired. In the below example, it is `Is_EQC`. 
+
+You may either
+- Click on the "3 references" highlighted in yellow
+- Right click on the highlighted `Is_EQC`, go to Rubberduck and then Find all references...
+
+![references_is_EQC_input](images/references_is_EQC_input.png)
+
+The following report will be shown. Double clicking on the results will bring you straight to the file.
+
+![references_is_EQC_results](images/references_is_EQC_results.png)
+
+More details can be found in this [stackoverflow webpage](https://stackoverflow.com/questions/36183657/vba-show-references-to-other-procedures).
+
 ## Conclusion
 
 I have to admit that there is a lot of new knowledge in this blog and it does make my brain go 😵. Nevertheless, I do hope the blog may be useful for someone who wants to improve their Excel VBA code and to make it more open source, maintainable and contributor friendly. Just take things slow and don't give up.
@@ -483,9 +569,11 @@ Here are the VBA codes for all the modules and the Natural Docs configuration co
 {{< panelset class="greetings" >}}
 {{< panel name="Export_VBA 🚚" >}}
 <pre style="height: 300px; overflow: scroll;">
+'@ModuleDescription("Export all VBA source codes.")
 Option Explicit
 '@Folder("Export VBA Source Code Functions")
 '@IgnoreModule IntegerDataType
+'@Description("Export all VBA source codes to a user selected folder.")
 
 '' Function: Export_Visual_Basic_Code
 ''
@@ -563,8 +651,10 @@ End Sub
 {{< /panel >}}
 {{< panel name="Utilities 🧰" >}}
 <pre style="height: 300px; overflow: scroll;">
+'@ModuleDescription("Functions used commonly in this project.")
 Option Explicit
 '@Folder("Utilities Functions")
+'@Description("Get the file path of a folder selected by the user.")
 
 '' Function: Get_Folder
 ''
@@ -597,14 +687,15 @@ NextCode:
     Get_Folder = Selected_Item
     Set Folder = Nothing
 End Function
-
 </pre>
 {{< /panel >}}
 {{< panel name="Sample_Type_Identifier 🔍" >}}
 <pre style="height: 300px; overflow: scroll;">
+'@ModuleDescription("Identify the sample type for a given input string.")
 Option Explicit
 
 '@Folder("QC_Sample_Type_Identification")
+'@Description("Check is the input string (sample name) is an EQC.")
 
 '' Function: Is_EQC
 ''
@@ -651,6 +742,7 @@ End Function
 {{< /panel >}}
 {{< panel name="Sample_Type_Identifier_Test 📝" >}}
 <pre style="height: 300px; overflow: scroll;">
+'@ModuleDescription("Test units for Sample_Type_Identifier.")
 Option Explicit
 Option Private Module
 
@@ -675,6 +767,7 @@ Public Sub ModuleCleanup()
 End Sub
 
 '@TestMethod("Get QC Sample Type")
+'@Description("Test if Sample_Type_Identifier.Is_EQC is working")
 
 '' Function: Is_EQC_Test
 ''
@@ -941,10 +1034,7 @@ Format: 2.2
 # Ignored Extensions
 # ------------------------------------------------------------------------
 
-# If you'd like to prevent certain file extensions from being scanned by
-# Natural Docs, you can do it like this:
-#
-# Ignore Extensions: [extension] [extension] ...
+Ignore Extensions: frx cls
 
 
 # Languages
@@ -952,6 +1042,8 @@ Format: 2.2
 # The syntax reference is after the definitions.
 
 Language: Excel VBA
+
+   Extensions: bas doccls frm
 
    Line Comment: ''
    Line Extender: _

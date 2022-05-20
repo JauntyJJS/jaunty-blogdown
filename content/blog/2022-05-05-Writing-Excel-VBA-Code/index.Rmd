@@ -78,6 +78,7 @@ If you encounter this in Windows 10 during installation,
 Follow the instructions provided in this [web page](https://www.thewindowsclub.com/microsoft-defender-smartscreen-prevented-an-unrecognized-app-from-starting), by right clicking on the installation file and go to Properties.
 
 ![natural_docs_properties](images/natural_docs_properties.png)
+
 Check the box Unblock and click Apply, then Ok.
 
 ![natural_docs_unblock](images/natural_docs_unblock.png)
@@ -98,7 +99,7 @@ There are a few resources that has been developed to allow version control for E
 -   [XLTools](https://xltools.net/)
 -   [xltrail](https://www.xltrail.com/)
 
-SheetGit is an add-in for Excel to track spreadsheets but it is unable to track VBA codes in Excel. On the other hand, while XLTools and xltrail does track VBA codes in Excel, it may not be suited for academia labs with limited financial resources to afford commercial software.
+SheetGit is an add-in for Excel to track spreadsheets but it is unable to track VBA codes in Excel. On the other hand, while XLTools and xltrail do track VBA codes in Excel, it may not be suited for academia labs with limited financial resources to afford commercial software.
 
 ### Export VBA code (using Source Code)
 
@@ -231,6 +232,7 @@ Now to test the function we create a unit test using Rubberduck VBA.
 To start the unit testing, click on Rubberduck, Unit tests and then Test Explorer.
 
 ![rubberduck_getting_to_test_explorer](images/rubberduck_getting_to_test_explorer.png)
+
 This will open up the Test Explorer table. To create a simple test module click on Add and then Test Module
 
 ![test_module_creation.png](images/test_module_creation.png)

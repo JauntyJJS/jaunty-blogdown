@@ -574,6 +574,9 @@ Option Explicit
 '@Description("Export all VBA source codes to a user selected folder.")
 
 '' Function: Export_Visual_Basic_Code
+'' --- Code
+''  Public Sub Export_Visual_Basic_Code()
+'' ---
 ''
 '' Description:
 ''
@@ -655,6 +658,9 @@ Option Explicit
 '@Description("Get the file path of a folder selected by the user.")
 
 '' Function: Get_Folder
+'' --- Code
+''  Public Function Get_Folder() As String
+'' ---
 ''
 '' Description:
 ''
@@ -696,6 +702,9 @@ Option Explicit
 '@Description("Check is the input string (sample name) is an EQC.")
 
 '' Function: Is_EQC
+'' --- Code
+''  Public Function Is_EQC(ByVal FileName As String) As Boolean
+'' ---
 ''
 '' Description:
 ''
@@ -768,6 +777,9 @@ End Sub
 '@Description("Test if Sample_Type_Identifier.Is_EQC is working")
 
 '' Function: Is_EQC_Test
+'' --- Code
+''  Public Sub Is_EQC_Test()
+'' ---
 ''
 '' Description:
 ''

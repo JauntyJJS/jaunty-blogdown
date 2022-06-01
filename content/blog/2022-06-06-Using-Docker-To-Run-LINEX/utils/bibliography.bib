@@ -1,0 +1,39 @@
+@article {LINEX2022,
+	author = {Rose, Tim D. and K{\"o}hler, Nikolai and Falk, Lisa and Klischat, Lucie and Lazareva, Olga E. and Pauling, Josch K.},
+	title = {Lipid network and moiety analysis for revealing enzymatic dysregulation and mechanistic alterations from lipidomics data},
+	elocation-id = {2022.02.04.479101},
+	year = {2022},
+	doi = {10.1101/2022.02.04.479101},
+	publisher = {Cold Spring Harbor Laboratory},
+	abstract = {Lipidomics is of growing importance for clinical and biomedical research due to many associations between lipid metabolism and diseases. The discovery of these associations is facilitated by improved lipid identification and quantification. Sophisticated computational methods are advantageous for interpreting such large-scale data for understanding metabolic processes and their underlying (patho)mechanisms. To generate hypothesis about these mechanisms, the combination of metabolic networks and graph algorithms is a powerful option to pinpoint molecular disease drivers and their interactions. Here we present LINEX2 (Lipid Network Explorer), a lipid network analysis framework that fuels biological interpretation of alterations in lipid compositions. By integrating lipid-metabolic reactions from public databases we generate dataset-specific lipid interaction networks. To aid interpretation of these networks we present an enrichment graph algorithm that infers changes in enzymatic activity in the context of their multispecificity from lipidomics data. Our inference method successfully recovered the MBOAT7 enzyme from knock-out data. Furthermore, we mechanistically interpret lipidomic alterations of adipocytes in obesity by leveraging network enrichment and lipid moieties. We address the general lack of lipidomics data mining options to elucidate potential disease mechanisms and make lipidomics more clinically relevant.Competing Interest StatementThe authors have declared no competing interest.},
+	URL = {https://www.biorxiv.org/content/early/2022/05/23/2022.02.04.479101},
+	eprint = {https://www.biorxiv.org/content/early/2022/05/23/2022.02.04.479101.full.pdf},
+	journal = {bioRxiv}
+}
+
+@article{LINEX2021,
+author = {Köhler, Nikolai and Rose, Tim Daniel and Falk, Lisa and Pauling, Josch Konstantin},
+title = {Investigating Global Lipidome Alterations with the Lipid Network Explorer},
+journal = {Metabolites},
+volume = {11},
+year = {2021},
+number = {8},
+article-number = {488},
+url = {https://www.mdpi.com/2218-1989/11/8/488},
+issn = {2218-1989},
+abstract = {Lipids play an important role in biological systems and have the potential to serve as biomarkers in medical applications. Advances in lipidomics allow identification of hundreds of lipid species from biological samples. However, a systems biological analysis of the lipidome, by incorporating pathway information remains challenging, leaving lipidomics behind compared to other omics disciplines. An especially uncharted territory is the integration of statistical and network-based approaches for studying global lipidome changes. Here we developed the Lipid Network Explorer (LINEX), a web-tool addressing this gap by providing a way to visualize and analyze functional lipid metabolic networks. It utilizes metabolic rules to match biochemically connected lipids on a species level and combine it with a statistical correlation and testing analysis. Researchers can customize the biochemical rules considered, to their tissue or organism specific analysis and easily share them. We demonstrate the benefits of combining network-based analyses with statistics using publicly available lipidomics data sets. LINEX facilitates a biochemical knowledge-based data analysis for lipidomics. It is availableas a web-application and as a publicly available docker container.},
+doi = {10.3390/metabo11080488}
+}
+
+@article{MoSBi,
+author = {Tim Daniel Rose and Thibault Bechtler and Octavia-Andreea Ciora and Kim Anh Lilian Le and Florian Molnar and Nikolai Köhler and Jan Baumbach and Richard Röttger and Josch Konstantin Pauling },
+title = {MoSBi: Automated signature mining for molecular stratification and subtyping},
+journal = {Proceedings of the National Academy of Sciences},
+volume = {119},
+year = {2022},
+number = {16},
+pages = {e2118210119},
+doi = {10.1073/pnas.2118210119},
+URL = {https://www.pnas.org/doi/abs/10.1073/pnas.2118210119},
+eprint = {https://www.pnas.org/doi/pdf/10.1073/pnas.2118210119},
+abstract = {Molecular patient stratification and disease subtyping are ongoing and high-impact problems that rely on the identification of characteristic molecular signatures. Current computational methods show high sensitivity to custom parameterization, which leads to inconsistent performance on different molecular data. Our new method, MoSBi (molecular signature identification using biclustering), 1) enables so far unmatched high performance for stratification and subtyping across datasets of various different biomolecules, 2) provides a scalable solution for visualizing the results and their correspondence to clinical factors, and 3) has immediate practical relevance through its automatic workflow where individual selection, parameterization, screening, and visualization of biclustering algorithms is not required. MoSBi is a major step forward with a high impact for clinical and wet-lab researchers. The improving access to increasing amounts of biomedical data provides completely new chances for advanced patient stratification and disease subtyping strategies. This requires computational tools that produce uniformly robust results across highly heterogeneous molecular data. Unsupervised machine learning methodologies are able to discover de novo patterns in such data. Biclustering is especially suited by simultaneously identifying sample groups and corresponding feature sets across heterogeneous omics data. The performance of available biclustering algorithms heavily depends on individual parameterization and varies with their application. Here, we developed MoSBi (molecular signature identification using biclustering), an automated multialgorithm ensemble approach that integrates results utilizing an error model-supported similarity network. We systematically evaluated the performance of 11 available and established biclustering algorithms together with MoSBi. For this, we used transcriptomics, proteomics, and metabolomics data, as well as synthetic datasets covering various data properties. Profiting from multialgorithm integration, MoSBi identified robust group and disease-specific signatures across all scenarios, overcoming single algorithm specificities. Furthermore, we developed a scalable network-based visualization of bicluster communities that supports biological hypothesis generation. MoSBi is available as an R package and web service to make automated biclustering analysis accessible for application in molecular sample stratification.}}

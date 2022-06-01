@@ -214,7 +214,7 @@ The instruction to run LINEX using Docker can be found in this [GitLab webpage](
 
 Nevertheless, I will try to provide a more detailed procedure on how this can be done in Windows 10 for the sake of those who are unfamiliar with the workings of Windows 10.
 
-The first step is to download the repository first. For Windows 10, we can download it as a zip file.
+The first step is to download the repository. For Windows 10, we can download it as a zip file.
 
 ![LINEX_download](images/LINEX_download.png)
 
@@ -244,9 +244,68 @@ Once the process is completed, go back to Docker Desktop for Windows and click o
 
 ![LINEX_image](images/LINEX_image.png)
 
-With a working Docker container, we can open the LINEX webapage in our local server using `http://127.0.0.1:8084`
+With a working Docker container, we can open the LINEX web page in our local server using `http://127.0.0.1:8084` as recommended in the [GitLab website](https://gitlab.lrz.de/lipitum-projects/linex)
 
 ![LINEX_working_website](images/LINEX_working_website.gif)
+
+We can close the container using the `docker-compose down`
+
+![LINEX_end_container](images/LINEX_end_container.gif)
+
+## MoSBi in Docker
+
+The instruction to run MoSBi web application using Docker can be found in this [GitLab webpage](https://gitlab.lrz.de/lipitum-projects/mosbi-webapp).
+
+The steps are similar to the previous section.
+
+Download the repository first. For Windows 10, we can download it as a zip file.
+
+![MoSBi_download](images/MoSBi_download.png)
+
+To unzip it, right click the zip folder and click on Extract All…
+
+![MoSBi_unzip](images/MoSBi_unzip.png)
+
+In my example, I choose to extract it on the D drive.
+
+![MoSBi_destination](images/MoSBi_destination.png)
+
+![MoSBi_in_D\_drive](images/MoSBi_in_D_drive.png)
+After extraction, open Command Prompt in the current folder by going to the folder location and type “cmd” on the address bar.
+
+![MoSBi_get_to_cmd](images/MoSBi_get_to_cmd.gif)
+
+In this command prompt, type `docker-compose up` as instructed by the [GitLab webpage](https://gitlab.lrz.de/lipitum-projects/mosbi-webapp). The process will take some time to run but this is what you should see when everything is done.
+
+In this scenario, **do not** close the command prompt.
+
+![MoSBi_working_shiny](images/MoSBi_working_shiny.gif)
+
+In the Docker Desktop for Windows, the following Containers and Images will be running
+
+![MoSBi_container](images/MoSBi_container.png)
+
+![MoSBi_image](images/MoSBi_image.png)
+
+With a working Docker container, we can open the MoSBi web page in our local server using `http://127.0.0.1:8082` as recommended in the [GitLab website](https://gitlab.lrz.de/lipitum-projects/mosbi-webapp)
+
+![MoSBi_working_website](images/MoSBi_working_website.gif)
+
+When the web page is running, a new container will be created in Docker Desktop for Windows. In my example, it is called “optimistic_shtern”.
+
+![MoSBi_shiny_container](images/MoSBi_shiny_container.png)
+
+To stop the web service, go back to the command prompt and press “Ctrl+C” on the keyboard. This is what you should see.
+
+![MoSBi_end_container](images/MoSBi_end_container.gif)
+
+After that, remember to go back to Docker Desktop for Windows and stop the `mobishiny` container from running.
+
+![MoSBi_end_shiny_container](images/MoSBi_end_shiny_container.png)
+
+## Conclusion
+
+If you have reached this far, then congratulations, you have managed to create two web applications using Docker.
 
 ## References
 

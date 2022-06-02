@@ -1,8 +1,8 @@
 ---
-title: "Using Docker To Setup LINEX and MoSBi"
+title: "Using Docker To Setup LINEX and MoSBi in Windows 10"
 subtitle: ""
-excerpt: "This post aims to provide a step by step pictorial guide on how to Docker to set up
-Lipid Network EXplorer (LINEX) and Molecular Signatures with Biclustering (MoSBi)"
+excerpt: "This post aims to provide a step by step pictorial guide on how to [Docker](https://www.docker.com/) 🐳 to set up two open source web applications 🌐,
+Lipid Network EXplorer ([LINEX](https://exbio.wzw.tum.de/linex/)) and Molecular Signatures with Biclustering ([MoSBi](https://exbio.wzw.tum.de/mosbi/)) in Windows 10"
 date: 2022-05-31
 author: "Jeremy Selva"
 draft: true
@@ -19,15 +19,15 @@ csl: utils/f1000research.csl
 
 ## Introduction
 
-[Docker](https://www.docker.com/) has been gaining in popularity in the academic field to ensure scripts that are used to run on research data can be easily opened and explored by others.
+[Docker](https://www.docker.com/) 🐳 has been gaining in popularity in the academic field to ensure scripts that are used to run on research data can be easily opened and explored by others. A picture friendly introduction of Docker can be found in this [Devopedia webpage](https://devopedia.org/docker).
 
-As someone who has just started to learn how to use this in a non-computing academic lab, the learning curve for onboarding to Docker just to reproduce other people works is already quite a challenge for me.
+As someone who has just started to learn how to use this in a non-computing academic lab, the onboarding learning curve for Docker just to reproduce other people works is already quite a challenge for me 😅.
 
-In this blog, I will try to share what I have learnt by providing a step by step walk-through with pictures to show on how to install docker in Windows 10 and use it recreate two lipidomics software web service, one made using Django called LINEX (1), (2) and the the other using Shiny called MoSBi (3). Both software are from [LpiTUM](https://www.lipitum.de/Home). I pick these two software because the end results is tangible and does not take too long to build using Docker (once it is successfully installed).
+In this blog, I will try to share what I have learnt by providing a step by step walk-through with pictures to show on how to install Docker 🐳 in Windows 10 and use it recreate two lipidomics software web service 🌐, one made using [Django](https://www.djangoproject.com/) called [LINEX](https://exbio.wzw.tum.de/linex/) (1), (2) and the the other using [Shiny](https://shiny.rstudio.com/) called [MoSBi](https://exbio.wzw.tum.de/mosbi/) (3). Both software are from [LpiTUM](https://www.lipitum.de/Home). I pick these two software because the end results is tangible and do not take too long to build using Docker (once it is successfully installed).
 
-I will also highlight some mistakes that I have made because of my poor understanding of docker command lines. Hope that this is helpful for those who just want to use docker to reproduce a web application.
+Hope that this is helpful for those who just want to use Docker 🐳 to reproduce an open source web application 🌐.
 
-Do note that I am using the Windows Subsystem for Linux (WSL) 2 back end approach to install Docker.
+Do note that I am using the Windows Subsystem for Linux (WSL) 2 back end approach to install Docker 🐳.
 
 ## About LINEX
 
@@ -208,11 +208,13 @@ Look at the General Tab. You will see that “Use the WSL 2 based engine” shou
 
 With Docker installed in Windows 10, we can now proceed to run the two lipidomics software in the docker environment.
 
-## LINEX in Docker
+## LINEX in Windows 10 Docker
 
 The instruction to run LINEX using Docker can be found in this [GitLab webpage](https://gitlab.lrz.de/lipitum-projects/linex).
 
 Nevertheless, I will try to provide a more detailed procedure on how this can be done in Windows 10 for the sake of those who are unfamiliar with the workings of Windows 10.
+
+### Software download
 
 The first step is to download the repository. For Windows 10, we can download it as a zip file.
 
@@ -227,6 +229,8 @@ In my example, I choose to extract it on the D drive.
 ![LINEX_destination](images/LINEX_destination.png)
 
 ![LINEX_in_D\_drive](images/LINEX_in_D_drive.png)
+
+### Docker Excecution
 
 After extraction, open Command Prompt in the current folder by going to the folder location and type “cmd” on the address bar.
 
@@ -244,19 +248,25 @@ Once the process is completed, go back to Docker Desktop for Windows and click o
 
 ![LINEX_image](images/LINEX_image.png)
 
+### Running LINEX
+
 With a working Docker container, we can open the LINEX web page in our local server using `http://127.0.0.1:8084` as recommended in the [GitLab website](https://gitlab.lrz.de/lipitum-projects/linex)
 
 ![LINEX_working_website](images/LINEX_working_website.gif)
+
+### Closing session
 
 We can close the container using the `docker-compose down`
 
 ![LINEX_end_container](images/LINEX_end_container.gif)
 
-## MoSBi in Docker
+## MoSBi in Windows 10 Docker
 
 The instruction to run MoSBi web application using Docker can be found in this [GitLab webpage](https://gitlab.lrz.de/lipitum-projects/mosbi-webapp).
 
 The steps are similar to the previous section.
+
+### Software download
 
 Download the repository first. For Windows 10, we can download it as a zip file.
 
@@ -271,6 +281,9 @@ In my example, I choose to extract it on the D drive.
 ![MoSBi_destination](images/MoSBi_destination.png)
 
 ![MoSBi_in_D\_drive](images/MoSBi_in_D_drive.png)
+
+### Docker Excecution
+
 After extraction, open Command Prompt in the current folder by going to the folder location and type “cmd” on the address bar.
 
 ![MoSBi_get_to_cmd](images/MoSBi_get_to_cmd.gif)
@@ -287,6 +300,8 @@ In the Docker Desktop for Windows, the following Containers and Images will be r
 
 ![MoSBi_image](images/MoSBi_image.png)
 
+### Running MoSBi
+
 With a working Docker container, we can open the MoSBi web page in our local server using `http://127.0.0.1:8082` as recommended in the [GitLab website](https://gitlab.lrz.de/lipitum-projects/mosbi-webapp)
 
 ![MoSBi_working_website](images/MoSBi_working_website.gif)
@@ -294,6 +309,8 @@ With a working Docker container, we can open the MoSBi web page in our local ser
 When the web page is running, a new container will be created in Docker Desktop for Windows. In my example, it is called “optimistic_shtern”.
 
 ![MoSBi_shiny_container](images/MoSBi_shiny_container.png)
+
+### Closing session
 
 To stop the web service, go back to the command prompt and press “Ctrl+C” on the keyboard. This is what you should see.
 
@@ -305,7 +322,9 @@ After that, remember to go back to Docker Desktop for Windows and stop the `mobi
 
 ## Conclusion
 
-If you have reached this far, then congratulations, you have managed to create two web applications using Docker.
+If you have followed me this far successfully 😅, then congratulations 🎉, you have managed to recreate two open source web applications 🌐 using Docker 🐳. Unfortunately, I have to apologise 😓 that I lack the knowledge currently to fully explain why these docker command works and what is it doing. For now, I am just going to try out these cool web applications.
+
+Once again, I do hope this is helpful in your learning journey with Docker 🐳 and to see its usefulness in recreating someone else’s open source software.
 
 ## References
 

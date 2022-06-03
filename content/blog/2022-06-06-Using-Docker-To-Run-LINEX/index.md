@@ -206,7 +206,7 @@ Look at the General Tab. You will see that “Use the WSL 2 based engine” shou
 
 ![docker_general](images/docker_general.png)
 
-With Docker installed in Windows 10, we can now proceed to run the two lipidomics software in the docker environment.
+With Docker installed in Windows 10, we can now proceed to run the two lipidomics software in the Docker environment.
 
 ## LINEX in Windows 10 Docker
 
@@ -322,7 +322,7 @@ After that, remember to go back to Docker Desktop for Windows and stop the `mobi
 
 ## Conclusion
 
-If you have followed me this far successfully 😅, then congratulations 🎉, you have managed to recreate two open source web applications 🌐 using Docker 🐳. Unfortunately, I have to apologise 😓 that I lack the knowledge currently to fully explain why these docker command works and what is it doing. For now, I am just going to try out these cool web applications.
+If you have followed me this far successfully 😅, then congratulations 🎉, you have managed to recreate two open source web applications 🌐 using Docker 🐳. Unfortunately, I have to apologise 😓 that I lack the knowledge currently to fully explain why these Docker command works and what is it doing. For now, I am just going to try out these cool web applications.
 
 Once again, I do hope this is helpful in your learning journey with Docker 🐳 and to see its usefulness in recreating someone else’s open source software.
 

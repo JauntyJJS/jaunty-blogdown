@@ -44,7 +44,19 @@ editor_options:
 
 ## Introduction
 
-Our last function below is able to remove the \[SIM\] at the end of the transition name
+In this blog, we continue the process of cleaning up these lipid annotations that my workplace uses
+
+| Given Name          | Clean Name For Annotation | Precursor Ion | Product Ion |
+|---------------------|---------------------------|---------------|-------------|
+| DG 32:0 \[-16:0\]   | DG 16:0_16:0              | 586.5         | 313.3       |
+| DG 36:1 \[NL-18:1\] | DG 18:1_18:0              | 640.6         | 341.3       |
+| TG 54:3 \[-18:1\]   | TG 18:1_36:2              | 902.8         | 603.5       |
+| TG 54:3 \[NL-18:2\] | TG 18:2_36:1              | 902.8         | 605.5       |
+| TG 54:3 \[SIM\]     | TG 54:3                   | 902.8         | 902.8       |
+
+This is so that they can be processed by lipid annotations converter tools like [Goslin](https://lifs-tools.org/goslin) (1), (2) and [RefMet](https://metabolomicsworkbench.org/databases/refmet/index.php) (3).
+
+Our last function below is able to remove the \[SIM\] at the end of the transition name.
 
 ``` r
 clean_acyl <- function(input_acyl = "DG 32:0 [NL-16:0]") {
@@ -99,17 +111,18 @@ where
 library("rgoslin")
 library("reactable")
 library("flair")
-library("here")
-library("readxl")
+library("readr")
 library("magrittr")
 library("stringr")
+library("glue")
 library("dplyr")
 library("purrr")
+library("tibble")
 library("report")
 summary(report::report(sessionInfo()))
 ```
 
-    ## The analysis was done using the R Statistical language (v4.2.0; R Core Team, 2022) on Windows 10 x64, using the packages rgoslin (v1.0.0), report (v0.5.1), dplyr (v1.0.9), flair (v0.0.2), here (v1.0.1), magrittr (v2.0.3), purrr (v0.3.4), reactable (v0.2.3), readxl (v1.4.0) and stringr (v1.4.0).
+    ## The analysis was done using the R Statistical language (v4.2.0; R Core Team, 2022) on Windows 10 x64, using the packages rgoslin (v1.0.0), report (v0.5.1), dplyr (v1.0.9), flair (v0.0.2), glue (v1.6.2), magrittr (v2.0.3), purrr (v0.3.4), reactable (v0.2.3), readr (v2.1.2), stringr (v1.4.0) and tibble (v3.1.7).
 
 ## The plan
 
@@ -130,13 +143,7 @@ We recall the following steps needed to clean such transition names.
 ## Read data
 
 ``` r
-annotation_data <- readxl::read_excel(
-  path = here::here("content", 
-                    "blog",
-                    "2022-04-23-Clean-Lipid-Names-3",
-                    "Annotation.xlsx"),
-  sheet = "Transition_Name_Annot"
-  )
+annotation_data <- readr::read_csv("https://raw.github.com/JauntyJJS/jaunty-blogdown/main/content/blog/2022-04-23-Clean-Lipid-Names-3/Annotation.csv")
 
 reactable::reactable(annotation_data, defaultPageSize = 5)
 ```
@@ -429,8 +436,8 @@ get_citation <- function(package_name) {
 } 
 
 packages <- c("base","rgoslin", "reactable", "flair",
-              "here", "readxl", "magrittr",
-              "stringr", "dplyr", "report", "purrr")
+              "magrittr", "stringr", "glue", 
+              "dplyr", "purrr", "tibble", "report")
 
 table <- tibble::tibble(Packages = packages)
 
@@ -455,21 +462,43 @@ table %>%
 -   Bodwin K, Glanz H (2020). *flair: Highlight, Annotate, and Format your
     R Source Code*. R package version 0.0.2,
     <https://CRAN.R-project.org/package=flair>.
--   Müller K (2020). *here: A Simpler Way to Find Your Files*. R package
-    version 1.0.1, <https://CRAN.R-project.org/package=here>.
--   Wickham H, Bryan J (2022). *readxl: Read Excel Files*. R package
-    version 1.4.0, <https://CRAN.R-project.org/package=readxl>.
 -   Bache S, Wickham H (2022). *magrittr: A Forward-Pipe Operator for R*. R
     package version 2.0.3, <https://CRAN.R-project.org/package=magrittr>.
 -   Wickham H (2019). *stringr: Simple, Consistent Wrappers for Common
     String Operations*. R package version 1.4.0,
     <https://CRAN.R-project.org/package=stringr>.
+-   Hester J, Bryan J (2022). *glue: Interpreted String Literals*. R
+    package version 1.6.2, <https://CRAN.R-project.org/package=glue>.
 -   Wickham H, François R, Henry L, Müller K (2022). *dplyr: A Grammar of
     Data Manipulation*. R package version 1.0.9,
     <https://CRAN.R-project.org/package=dplyr>.
+-   Henry L, Wickham H (2020). *purrr: Functional Programming Tools*. R
+    package version 0.3.4, <https://CRAN.R-project.org/package=purrr>.
+-   Müller K, Wickham H (2022). *tibble: Simple Data Frames*. R package
+    version 3.1.7, <https://CRAN.R-project.org/package=tibble>.
 -   Makowski D, Ben-Shachar M, Patil I, Lüdecke D (2021). “Automated
     Results Reporting as a Practical Tool to Improve Reproducibility and
     Methodological Best Practices Adoption.” *CRAN*.
     <https://github.com/easystats/report>.
--   Henry L, Wickham H (2020). *purrr: Functional Programming Tools*. R
-    package version 0.3.4, <https://CRAN.R-project.org/package=purrr>.
+
+<div id="refs" class="references csl-bib-body">
+
+<div id="ref-GOSLIN" class="csl-entry">
+
+<span class="csl-left-margin">1. </span><span class="csl-right-inline">Kopczynski D, Hoffmann N, Peng B, Ahrends R. Goslin: A grammar of succinct lipid nomenclature. Analytical Chemistry \[Internet\]. 2020;92(16):10957–60. Available from: <https://doi.org/10.1021/acs.analchem.0c01690></span>
+
+</div>
+
+<div id="ref-GOSLIN2" class="csl-entry">
+
+<span class="csl-left-margin">2. </span><span class="csl-right-inline">Kopczynski D, Hoffmann N, Peng B, Liebisch G, Spener F, Ahrends R. Goslin 2.0 implements the recent lipid shorthand nomenclature for MS-derived lipid structures. Analytical Chemistry \[Internet\]. 2022;94(16):6097–101. Available from: <https://doi.org/10.1021/acs.analchem.1c05430></span>
+
+</div>
+
+<div id="ref-Fahy2020" class="csl-entry">
+
+<span class="csl-left-margin">3. </span><span class="csl-right-inline">Fahy E, Subramaniam S. RefMet: A reference nomenclature for metabolomics. Nature Methods \[Internet\]. 2020 Dec 1;17(12):1173–4. Available from: <https://doi.org/10.1038/s41592-020-01009-y></span>
+
+</div>
+
+</div>

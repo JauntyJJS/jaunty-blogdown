@@ -124,7 +124,7 @@ reactable::reactable(annotation_data, defaultPageSize = 5)
 ```
 
 <div id="htmlwidget-3" class="reactable html-widget" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-3">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Given Name":["DG 32:0 [-16:0]","DG 36:1 [NL-18:1]","TG 54:3  [-18:1]","TG 54:3  [NL-18:2]","TG 54:3  [SIM]",null,null,null,null,null],"Precursor Ion":[586.5,640.6,902.8,902.8,902.8,"NA","NA","NA","NA","NA"],"Product Ion":[313.3,341.3,603.5,605.5,902.8,"NA","NA","NA","NA","NA"]},"columns":[{"accessor":"Given Name","name":"Given Name","type":"character"},{"accessor":"Precursor Ion","name":"Precursor Ion","type":"numeric"},{"accessor":"Product Ion","name":"Product Ion","type":"numeric"}],"defaultPageSize":5,"paginationType":"numbers","showPageInfo":true,"minRows":1,"dataKey":"2932f827758da0343e52ea7623091510","key":"2932f827758da0343e52ea7623091510"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-3">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Given Name":["DG 32:0 [-16:0]","DG 36:1 [NL-18:1]","TG 54:3  [-18:1]","TG 54:3  [NL-18:2]","TG 54:3  [SIM]"],"Precursor Ion":[586.5,640.6,902.8,902.8,902.8],"Product Ion":[313.3,341.3,603.5,605.5,902.8]},"columns":[{"accessor":"Given Name","name":"Given Name","type":"character"},{"accessor":"Precursor Ion","name":"Precursor Ion","type":"numeric"},{"accessor":"Product Ion","name":"Product Ion","type":"numeric"}],"defaultPageSize":5,"paginationType":"numbers","showPageInfo":true,"minRows":1,"dataKey":"4e317afefcf906ebc6a3b0b6ceb3ac38","key":"4e317afefcf906ebc6a3b0b6ceb3ac38"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 
 ## The Plan
 

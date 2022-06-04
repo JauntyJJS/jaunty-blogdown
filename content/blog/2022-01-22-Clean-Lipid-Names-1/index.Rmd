@@ -30,18 +30,19 @@ htmltools::tagList(
 
 Despite efforts made to unified lipids shorthand notations and the rise of software dedicated to standardise lipid annotations, lipid names still remains diverse. This is due to limited ways lipid software may label a lipid and/or researchers' personal preferences to annotate them.
 
-Here, I would like to highlight some lipid annotations that my workplace uses and show how to modify them in R such that it can be processed by lipid annotations converter tools like [Goslin](https://lifs-tools.org/goslin) [@GOSLIN] and [RefMet](https://metabolomicsworkbench.org/databases/refmet/index.php) [@Fahy2020].
+Here, I would like to highlight some lipid annotations that my workplace uses and show how to modify them in R such that it can be processed by lipid annotations converter tools like [Goslin](https://lifs-tools.org/goslin) [@GOSLIN], [@GOSLIN2] and [RefMet](https://metabolomicsworkbench.org/databases/refmet/index.php) [@Fahy2020].
 
 ## R Packages Used
 
 ```{r message=FALSE}
 library("rgoslin")
 library("reactable")
-library("here")
-library("readxl")
+library("readr")
 library("magrittr")
 library("stringr")
 library("dplyr")
+library("purrr")
+library("tibble")
 library("report")
 summary(report::report(sessionInfo()))
 ```
@@ -97,7 +98,8 @@ Unfortunately lipid annotations converter tools like [Goslin](https://lifs-tools
 c("LPC 13:0 (ISTD) (a\\b)",
   "LPC 15:0-d5 (IS) (a\\b)",
   "LPC 17:1 (a/b/c) ") %>%
-  rgoslin::parseLipidNames()
+  rgoslin::parseLipidNames() %>%
+  reactable::reactable(defaultPageSize = 5)
 ```
 
 They must be clean up accordingly
@@ -114,13 +116,7 @@ The task is to remove the variations of (ISTD), (a\\b) and the -d5
 ## Read Data
 
 ```{r read_data, warning=FALSE, message=FALSE}
-annotation_data <- readxl::read_excel(
-  path = here::here("content", 
-                    "blog",
-                    "2022-01-22-Clean-Lipid-Names-1",
-                    "Annotation.xlsx"),
-  sheet = "Transition_Name_Annot"
-  )
+annotation_data <- readr::read_csv("https://raw.github.com/JauntyJJS/jaunty-blogdown/main/content/blog/2022-01-22-Clean-Lipid-Names-1/Annotation.csv")
 
 reactable::reactable(annotation_data, defaultPageSize = 5)
 ```
@@ -339,8 +335,9 @@ get_citation <- function(package_name) {
 } 
 
 packages <- c("base","rgoslin", "reactable",
-              "here", "readxl", "magrittr",
-              "stringr", "dplyr", "report")
+              "readr", "magrittr", "stringr", 
+              "dplyr", "report",
+              "tibble", "purrr")
 
 table <- tibble::tibble(Packages = packages)
 

@@ -29,7 +29,7 @@ htmltools::tagList(
 
 ## Introduction
 
-In this blog, I will introduce another set of lipid annotations that my workplace uses that require to be cleaned up and modified so that they can be processed by lipid annotations converter tools like [Goslin](https://lifs-tools.org/goslin) [@GOSLIN] and [RefMet](https://metabolomicsworkbench.org/databases/refmet/index.php) [@Fahy2020].
+In this blog, I will introduce another set of lipid annotations that my workplace uses that require to be cleaned up and modified so that they can be processed by lipid annotations converter tools like [Goslin](https://lifs-tools.org/goslin) [@GOSLIN], [@GOSLIN2] and [RefMet](https://metabolomicsworkbench.org/databases/refmet/index.php) [@Fahy2020].
 
 ## R Packages Used
 
@@ -37,11 +37,12 @@ In this blog, I will introduce another set of lipid annotations that my workplac
 library("rgoslin")
 library("reactable")
 library("flair")
-library("here")
-library("readxl")
+library("readr")
 library("magrittr")
 library("stringr")
 library("dplyr")
+library("purrr")
+library("tibble")
 library("report")
 summary(report::report(sessionInfo()))
 ```
@@ -72,7 +73,8 @@ Unfortunately lipid annotations converter tools like [Goslin](https://lifs-tools
 c("DG 32:0 [-16:0]",
   "TG 54:3 [NL-18:2]",
   "TG 54:3 [SIM]") %>%
-  rgoslin::parseLipidNames()
+  rgoslin::parseLipidNames() %>%
+  reactable::reactable(defaultPageSize = 5)
 ```
 
 ![refmet_negative_results](refmet_negative_results.jpg)
@@ -96,13 +98,7 @@ c("DG 16:0_16:0",
 ## Read Data
 
 ```{r read_data, warning=FALSE, message=FALSE}
-annotation_data <- readxl::read_excel(
-  path = here::here("content", 
-                    "blog",
-                    "2022-03-07-Clean-Lipid-Names-2",
-                    "Annotation.xlsx"),
-  sheet = "Transition_Name_Annot"
-  )
+annotation_data <- readr::read_csv("https://raw.github.com/JauntyJJS/jaunty-blogdown/main/content/blog/2022-03-07-Clean-Lipid-Names-2/Annotation.csv")
 
 reactable::reactable(annotation_data, defaultPageSize = 5)
 ```
@@ -397,9 +393,10 @@ get_citation <- function(package_name) {
   return(transform_name)
 } 
 
-packages <- c("base","rgoslin", "reactable", "flair",
-              "here", "readxl", "magrittr",
-              "stringr", "dplyr", "report")
+packages <- c("base","rgoslin", "reactable",
+              "flair", "magrittr",
+              "stringr", "dplyr", "report",
+              "tibble", "purrr")
 
 table <- tibble::tibble(Packages = packages)
 

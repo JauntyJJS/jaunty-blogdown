@@ -5,7 +5,7 @@ excerpt: "This post provides some ideas on how to write better VBA code in Excel
 date: 2022-05-11
 author: "Jeremy Selva"
 draft: false
-images:
+images: ["featured.png"]
 series:
 tags:
 categories:

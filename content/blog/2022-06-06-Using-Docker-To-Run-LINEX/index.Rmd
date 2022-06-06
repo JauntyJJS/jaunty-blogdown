@@ -5,7 +5,7 @@ excerpt: "This post aims to provide a step by step pictorial guide on how to [Do
 Lipid Network EXplorer ([LINEX](https://exbio.wzw.tum.de/linex/)) and Molecular Signatures with Biclustering ([MoSBi](https://exbio.wzw.tum.de/mosbi/)) in Windows 10"
 date: 2022-05-31
 author: "Jeremy Selva"
-draft: true
+draft: false
 images:
 series:
 tags:
@@ -24,7 +24,7 @@ knitr::opts_chunk$set(fig.align = "center")
 
 ## Introduction
 
-[Docker](https://www.docker.com/) 🐳 has been gaining in popularity in the academic field to ensure scripts that are used to run on research data can be easily opened and explored by others. A picture friendly introduction of Docker can be found in this [Devopedia webpage](https://devopedia.org/docker).
+[Docker](https://www.docker.com/) 🐳 [@DOCKER] has been gaining in popularity in the academic field to ensure scripts that are used to run on research data can be easily opened and explored by others. A picture friendly introduction of Docker can be found in this [Devopedia webpage](https://devopedia.org/docker).
 
 As someone who has just started to learn how to use this in a non-computing academic lab, the onboarding learning curve for Docker just to reproduce other people works is already quite a challenge for me 😅.
 
@@ -321,7 +321,7 @@ To stop the web service, go back to the command prompt and press "Ctrl+C" on the
 
 ![MoSBi_end_container](images/MoSBi_end_container.gif)
 
-After that, remember to go back to Docker Desktop for Windows and stop the `mobishiny` container from running.
+After that, remember to go back to Docker Desktop for Windows and stop the MoSBi `shiny` container from running.
 
 ![MoSBi_end_shiny_container](images/MoSBi_end_shiny_container.png)
 
@@ -330,5 +330,9 @@ After that, remember to go back to Docker Desktop for Windows and stop the `mobi
 If you have followed me this far successfully 😅, then congratulations 🎉, you have managed to recreate two open source web applications 🌐 using Docker 🐳. Unfortunately, I have to apologise 😓 that I lack the knowledge currently to fully explain why these Docker command works and what is it doing. For now, I am just going to try out these cool web applications.
 
 Once again, I do hope this is helpful in your learning journey with Docker 🐳 and to see its usefulness in recreating someone else's open source software.
+
+## Image References
+
+Docker 🐳 logo is taken from this [media resource webpage](https://www.docker.com/company/newsroom/media-resources/) used under their [trademark guidelines](https://www.docker.com/legal/trademark-guidelines/).
 
 ## References

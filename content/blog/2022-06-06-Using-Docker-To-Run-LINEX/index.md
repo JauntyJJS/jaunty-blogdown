@@ -5,7 +5,7 @@ excerpt: "This post aims to provide a step by step pictorial guide on how to [Do
 Lipid Network EXplorer ([LINEX](https://exbio.wzw.tum.de/linex/)) and Molecular Signatures with Biclustering ([MoSBi](https://exbio.wzw.tum.de/mosbi/)) in Windows 10"
 date: 2022-05-31
 author: "Jeremy Selva"
-draft: true
+draft: false
 images:
 series:
 tags:
@@ -19,11 +19,11 @@ csl: utils/f1000research.csl
 
 ## Introduction
 
-[Docker](https://www.docker.com/) 🐳 has been gaining in popularity in the academic field to ensure scripts that are used to run on research data can be easily opened and explored by others. A picture friendly introduction of Docker can be found in this [Devopedia webpage](https://devopedia.org/docker).
+[Docker](https://www.docker.com/) 🐳 (1) has been gaining in popularity in the academic field to ensure scripts that are used to run on research data can be easily opened and explored by others. A picture friendly introduction of Docker can be found in this [Devopedia webpage](https://devopedia.org/docker).
 
 As someone who has just started to learn how to use this in a non-computing academic lab, the onboarding learning curve for Docker just to reproduce other people works is already quite a challenge for me 😅.
 
-In this blog, I will try to share what I have learnt by providing a step by step walk-through with pictures to show on how to install Docker 🐳 in Windows 10 and use it recreate two lipidomics software web service 🌐, one made using [Django](https://www.djangoproject.com/) called [LINEX](https://exbio.wzw.tum.de/linex/) (1), (2) and the the other using [Shiny](https://shiny.rstudio.com/) called [MoSBi](https://exbio.wzw.tum.de/mosbi/) (3). Both software are from [LpiTUM](https://www.lipitum.de/Home). I pick these two software because the end results is tangible and do not take too long to build using Docker (once it is successfully installed).
+In this blog, I will try to share what I have learnt by providing a step by step walk-through with pictures to show on how to install Docker 🐳 in Windows 10 and use it recreate two lipidomics software web service 🌐, one made using [Django](https://www.djangoproject.com/) called [LINEX](https://exbio.wzw.tum.de/linex/) (2), (3) and the the other using [Shiny](https://shiny.rstudio.com/) called [MoSBi](https://exbio.wzw.tum.de/mosbi/) (4). Both software are from [LpiTUM](https://www.lipitum.de/Home). I pick these two software because the end results is tangible and do not take too long to build using Docker (once it is successfully installed).
 
 Hope that this is helpful for those who just want to use Docker 🐳 to reproduce an open source web application 🌐.
 
@@ -316,7 +316,7 @@ To stop the web service, go back to the command prompt and press “Ctrl+C” on
 
 ![MoSBi_end_container](images/MoSBi_end_container.gif)
 
-After that, remember to go back to Docker Desktop for Windows and stop the `mobishiny` container from running.
+After that, remember to go back to Docker Desktop for Windows and stop the MoSBi `shiny` container from running.
 
 ![MoSBi_end_shiny_container](images/MoSBi_end_shiny_container.png)
 
@@ -326,25 +326,35 @@ If you have followed me this far successfully 😅, then congratulations 🎉, y
 
 Once again, I do hope this is helpful in your learning journey with Docker 🐳 and to see its usefulness in recreating someone else’s open source software.
 
+## Image References
+
+Docker 🐳 logo is taken from this [media resource webpage](https://www.docker.com/company/newsroom/media-resources/) used under their [trademark guidelines](https://www.docker.com/legal/trademark-guidelines/).
+
 ## References
 
 <div id="refs" class="references csl-bib-body">
 
+<div id="ref-DOCKER" class="csl-entry">
+
+<span class="csl-left-margin">1. </span><span class="csl-right-inline">Merkel D. Docker: Lightweight linux containers for consistent development and deployment. Linux Journal \[Internet\]. 2014 Mar;2014(239). Available from: <https://dl.acm.org/doi/10.5555/2600239.2600241></span>
+
+</div>
+
 <div id="ref-LINEX2021" class="csl-entry">
 
-<span class="csl-left-margin">1. </span><span class="csl-right-inline">Köhler N, Rose TD, Falk L, Pauling JK. Investigating global lipidome alterations with the lipid network explorer. Metabolites \[Internet\]. 2021;11(8). Available from: <https://www.mdpi.com/2218-1989/11/8/488></span>
+<span class="csl-left-margin">2. </span><span class="csl-right-inline">Köhler N, Rose TD, Falk L, Pauling JK. Investigating global lipidome alterations with the lipid network explorer. Metabolites \[Internet\]. 2021;11(8). Available from: <https://www.mdpi.com/2218-1989/11/8/488></span>
 
 </div>
 
 <div id="ref-LINEX2022" class="csl-entry">
 
-<span class="csl-left-margin">2. </span><span class="csl-right-inline">Rose TD, Köhler N, Falk L, Klischat L, Lazareva OE, Pauling JK. Lipid network and moiety analysis for revealing enzymatic dysregulation and mechanistic alterations from lipidomics data. bioRxiv \[Internet\]. 2022; Available from: <https://www.biorxiv.org/content/early/2022/05/23/2022.02.04.479101></span>
+<span class="csl-left-margin">3. </span><span class="csl-right-inline">Rose TD, Köhler N, Falk L, Klischat L, Lazareva OE, Pauling JK. Lipid network and moiety analysis for revealing enzymatic dysregulation and mechanistic alterations from lipidomics data. bioRxiv \[Internet\]. 2022; Available from: <https://www.biorxiv.org/content/early/2022/05/23/2022.02.04.479101></span>
 
 </div>
 
 <div id="ref-MoSBi" class="csl-entry">
 
-<span class="csl-left-margin">3. </span><span class="csl-right-inline">Rose TD, Bechtler T, Ciora OA, Le KAL, Molnar F, Köhler N, et al. MoSBi: Automated signature mining for molecular stratification and subtyping. Proceedings of the National Academy of Sciences \[Internet\]. 2022;119(16):e2118210119. Available from: <https://www.pnas.org/doi/abs/10.1073/pnas.2118210119></span>
+<span class="csl-left-margin">4. </span><span class="csl-right-inline">Rose TD, Bechtler T, Ciora OA, Le KAL, Molnar F, Köhler N, et al. MoSBi: Automated signature mining for molecular stratification and subtyping. Proceedings of the National Academy of Sciences \[Internet\]. 2022;119(16):e2118210119. Available from: <https://www.pnas.org/doi/abs/10.1073/pnas.2118210119></span>
 
 </div>
 

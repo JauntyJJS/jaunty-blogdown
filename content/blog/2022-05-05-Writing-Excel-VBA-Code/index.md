@@ -6,7 +6,7 @@ date: 2022-05-11
 author: "Jeremy Selva"
 draft: false
 images: 
-  - featured.png
+  - img/revoir.jpg
 series:
 tags:
 categories:

@@ -1,7 +1,7 @@
 ---
 title: Welcome To My Blog
 description: |
-  This is my blog where I share my curiosity about what I have learnt. It includes notes and tutorials for my future self and hopefully also for you.
+  This is my blog where I share my curiosity about what I have learnt. It includes notes and tutorials for my future self. Hopefully these posts will be useful for you as well.
 author: "Jeremy Selva"
 show_post_thumbnail: true
 thumbnail_left: false # for list-sidebar only

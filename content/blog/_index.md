@@ -1,5 +1,5 @@
 ---
-title: Welcome To My Blog
+title: Blog Posts
 description: |
   This is my blog where I share my notes and tutorials about what I have learnt. Hopefully these posts will be useful for you as well.
 author: "Jeremy Selva"

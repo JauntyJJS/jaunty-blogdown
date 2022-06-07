@@ -1,7 +1,7 @@
 ---
 title: Welcome To My Blog
 description: |
-  This is my blog where I share my curiosity about what I have learnt. It includes notes and tutorials for my future self. Hopefully these posts will be useful for you as well.
+  This is my blog where I share my notes and tutorials about what I have learnt. Hopefully these posts will be useful for you as well.
 author: "Jeremy Selva"
 show_post_thumbnail: true
 thumbnail_left: false # for list-sidebar only
@@ -15,7 +15,7 @@ layout: list-sidebar # list, list-sidebar, list-grid
 sidebar: 
   title: Welcome To My Blog
   description: |
-    This is my blog where I share my curiosity about what I have learnt. It includes notes and tutorials for my future self and hopefully also for you.<br><br>
+    This is my blog where I share my notes and tutorials about what I have learnt. Hopefully these posts will be useful for you as well.<br><br>
     [Photo](https://stocksnap.io/photo/workspace-office-BR2IU3WKMP) is taken from [FOCA Stock](https://stocksnap.io/author/focastock) on [StockSnap](https://stocksnap.io) under [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)
   author: "Jeremy Selva"
   #text_link_label: Subscribe via RSS

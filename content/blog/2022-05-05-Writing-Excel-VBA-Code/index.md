@@ -1,15 +1,10 @@
 ---
 title: "Writing Better VBA Code in Excel"
-subtitle: ""
+subtitle: "This post provides some ideas on how to write better VBA code in Excel"
 excerpt: "This post provides some ideas on how to write better VBA code in Excel using [Rubberduck](https://rubberduckvba.com/) and [Natural Docs](https://www.naturaldocs.org/) to make it more open source, maintainable and contributor friendly."
 date: 2022-05-11
 author: "Jeremy Selva"
 draft: false
-images: 
-  - img/revoir.jpg
-series:
-tags:
-categories:
 layout: single-sidebar
 editor_options: 
   chunk_output_type: console

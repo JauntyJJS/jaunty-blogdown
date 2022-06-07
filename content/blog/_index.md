@@ -2,7 +2,7 @@
 title: Welcome To My Blog
 description: |
   This is my blog where I share my curiosity about what I have learnt. It includes notes and tutorials for my future self and hopefully also for you.
-author: ""
+author: "Jeremy Selva"
 show_post_thumbnail: true
 thumbnail_left: false # for list-sidebar only
 show_author_byline: false
@@ -17,7 +17,7 @@ sidebar:
   description: |
     This is my blog where I share my curiosity about what I have learnt. It includes notes and tutorials for my future self and hopefully also for you.<br><br>
     [Photo](https://stocksnap.io/photo/workspace-office-BR2IU3WKMP) is taken from [FOCA Stock](https://stocksnap.io/author/focastock) on [StockSnap](https://stocksnap.io) under [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)
-  author: ""
+  author: "Jeremy Selva"
   #text_link_label: Subscribe via RSS
   text_link_url: /index.xml
   show_sidebar_adunit: false # show ad container

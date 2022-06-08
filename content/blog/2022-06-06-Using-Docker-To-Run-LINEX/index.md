@@ -43,7 +43,7 @@ MoSBi is available as an [R package](https://github.com/tdrose/mosbi) in [Biocon
 
 ## Windows 10 set up
 
-The minimal settings to have Docker with WSL 2 backend in Windows can be found in this installation web site (https://docs.docker.com/desktop/windows/install/)
+The minimal settings to have Docker with WSL 2 backend in Windows can be found in this installation [web site](https://docs.docker.com/desktop/windows/install/)
 
 ![windows_requirements](images/windows_requirements.png)
 

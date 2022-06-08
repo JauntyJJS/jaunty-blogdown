@@ -481,6 +481,8 @@ table %>%
     Methodological Best Practices Adoption.” *CRAN*.
     <https://github.com/easystats/report>.
 
+## References
+
 <div id="refs" class="references csl-bib-body">
 
 <div id="ref-GOSLIN" class="csl-entry">

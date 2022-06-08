@@ -675,3 +675,6 @@ table %>%
   report::as.report_parameters()
 
 ```
+
+## References
+

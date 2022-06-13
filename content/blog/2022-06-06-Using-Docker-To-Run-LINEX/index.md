@@ -33,7 +33,7 @@ Do note that I am using the Windows Subsystem for Linux (WSL) 2 back end approac
 
 Since both LINEX and MoSBi already have web services available, As a user, why is there a need to go through all these effort to rebuild them in Docker? Well, there are a few reasons.
 
-Firstly, there is no guarantee that the link to these web service will run forever, Docker containers can be seen as a plan B, or a business continuity plan, to resume data analysis should the existing link no longer works and need some time to be updated.
+Firstly, there is no guarantee that the links to these web service will run forever, Docker containers can be seen as a plan B, or a business continuity plan, to resume data analysis should the existing link no longer works and need some time to be updated.
 
 Moreover, web applications generated using Docker containers can run on data analysis computers without internet access. This allows users to run these web applications without fear of accidental data leakage into the web.
 

@@ -31,7 +31,7 @@ Do note that I am using the Windows Subsystem for Linux (WSL) 2 back end approac
 
 ## Benefits of Docker
 
-Since both LINEX and MoSBi already have web services available, why is there a need to go through all these effort to rebuild them in Docker? Well, there are a few reasons.
+Since both LINEX and MoSBi already have web services available, As a user, why is there a need to go through all these effort to rebuild them in Docker? Well, there are a few reasons.
 
 Firstly, there is no guarantee that the link to these web service will run forever, Docker containers can be seen as a plan B, or a business continuity plan, to resume data analysis should the existing link no longer works and need some time to be updated.
 

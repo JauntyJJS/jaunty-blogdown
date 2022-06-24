@@ -82,6 +82,12 @@ For those who are familiar with Docker, [Peter Solymos](https://twitter.com/psol
 
 ## Day 3
 
+Day 3 for me was filled with many sessions that I was interested in like Data Visualization, Publishing and Reproducibility and Web Frameworks as well as the poster presentations. Unfortunately, I could not join all at the same time but here is what I have attended.
+
+### Speed Networking Session
+
+### Clinical Data Review
+
 \[https://twitter.com/M_Steinhilber\]
 \[https://twitter.com/janithcwanni\]
 

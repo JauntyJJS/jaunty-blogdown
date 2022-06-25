@@ -107,13 +107,33 @@ I was looking forward for the presentation on the R package [`animate`](https://
 
 Putting this aside, the next presentation was by [Cara Thompson](https://twitter.com/cararthompson) sharing useful tips and trick to make polished annotations in `ggplot`. Making annotations in `ggplot` has always been really challenging for me. I usually spend a lot of time tweaking fixed parameters to move the annotations from one place to another. Most of the time I just gave up and use Microsoft Powerpoint to add these extra text boxes. Cara's success in finding several clever strategies to make polished annotations, using `ggtext`, `glue`, CSS formatting and a filtered tibble with unique arrow curvature information, does makes me smile. Her tips can also be found in this [talk post](https://www.cararthompson.com/talks/user2022). One of her blog post [Alignment cheatsheet](https://www.cararthompson.com/posts/2021-09-02-alignment-cheat-sheet/) may be useful for those who need a little help on the alignment parameters.
 
-#### Two-Sample Corrgrams
+#### Two-Sample Corrgram
+
+The last presentation in the Data Visualisation room is by Rohan Tummala. This visualisation is a unique way to optimise the correlation results of dichotomous data within the space of a 2D heatmap matrix. More information can be found in this [project webpage](https://rithikatummala8.wixsite.com/sigmaxisrs2021/). 
+
+It definitely has a lot of potential to be improved by the R community. Here are my "5-cent" suggestions. The team may wish to use the R package [`correlation`](https://easystats.github.io/correlation/) from the [easystats](https://easystats.github.io/easystats/) team, to expand their current correlation methods of Pearson, Kendall and Spearman. As for the question raised on extending the static plot to multichotomous data (or k-sample corrgram), one idea I can think of currently is to adopt the [scatter plot matrix](http://www.sthda.com/english/wiki/scatter-plot-matrices-r-base-graphs) style where the diagonal are the groups and the scatter plots are replaced with the two sample corrgrams instead. However, this in turn creates the same redundant space which the two-sample corrgram is supposed to prevent. Regardless, if this visualisation continue to receive good feedback, someone will create an interactive two-sample corrgram and push it as a web tool.
+
+#### R in Production
+
+I next entered the R in Production room where I am first introduced to the R package [`pacs`]((https://polkas.github.io/pacs/)) by [Maciej Nasinski](https://github.com/polkas). It contains a set of useful utility functions for helping R package developers life easier such as, automating validation of a [`renv`](https://rstudio.github.io/renv/articles/renv.html) lock file, finding out packages which are not from CRAN and many more. More information can be found in its [documentation](https://polkas.github.io/pacs/).
+
+The second sharing is from Konrad Oberwimmer who introduced the R package [`svgtools`](https://cran.r-project.org/web/packages/svgtools/index.html) that is able to key in statistical results onto charts template made in [SVG file format](https://commons.wikimedia.org/wiki/Template:SVG_Chart). This is helpful if there is a need to create graphs that needs to follow a certain layout based on corporate needs.
+
+The next showcase is about `data.validator`(https://appsilon.github.io/data.validator/) by [Marcin Dubel](https://twitter.com/DubelMarcin). Honestly, this is an R package that I wish I knew earlier how to use it. While it is great to have tools that validate the data but it is even better when a validation report, highlighting the possible issues of a given dataset clearly and explicitly, can be created and distributed to others. `data.validator` not only uses [`assertr`](https://github.com/ropensci/assertr) to do the validation but is able to create an interactive report in html as well. More details can also be found in this [youtube video](https://www.youtube.com/watch?v=U1-j7c_8LFQ) as well as this [R-bloggers post](https://www.r-bloggers.com/2022/05/data-cleaning-in-r-2-r-packages-to-clean-and-validate-datasets/)
+
+Lastly, it is a workflow presented by [Cody Marquart](https://twitter.com/cody_marquart) on how to manage R packages automatically using [GitLab](https://about.gitlab.com/) Continuous Integration (CI). [GitLab CI](https://docs.gitlab.com/ee/ci/introduction/index.html#continuous-integration) was first introduced from an [April 2020 GitLab meetup](https://www.youtube.com/watch?v=l5705U8s_nQ&t=397s). It is nice to know that CI is possible to be applied on R packages management in GitLab. Usually, CI was done using [Github Actions](https://github.com/features/actions) from [Github](https://github.com/) because of many [useful resources](https://github.com/r-lib/actions) available to help users create CI tasks easily. Thus, [Github Actions](https://github.com/features/actions) became a popular choice for R package management. Nevertheless, as it is unwise not to have a backup plan, being aware of that an alternative workflow exists is critical. Hopefully, I will get to witness a similar workflow for managing R packages in [Bitbucket](https://bitbucket.org/product/) in the future. 
+
+### Clinical Data Review Reporting Tool
+
+Day 3 for me was filled with many sessions that I was interested in like Data Visualization, Publishing and Reproducibility as well as Web Frameworks. Unfortunately, I could not join all at the same time. After some thoughts, I have decided to attend the session on Publishing and Reproducibility.
+
 
 
 ### Clinical Data Review
 
 [https://twitter.com/M_Steinhilber]
 [https://twitter.com/janithcwanni]
+[Using R to Create Reproducible Engineering Test Reports](https://www.youtube.com/watch?v=9GmXuOi4nhk&list=PL9HYL-VRX0oTL2P7FK3854-X6kfLTb4fJ&index=33)
 
 ## Conclusion
 

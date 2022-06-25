@@ -1,5 +1,5 @@
 ---
-title: "Reflections on useR! 2022 Conference"
+title: "Journey and Reflections on useR! 2022 Conference"
 subtitle: ""
 excerpt: "This post is a write up on my learning journey in the useR! 2022 Conference."
 date: 2022-06-23
@@ -87,9 +87,28 @@ For those who are familiar with Docker, [Peter Solymos](https://twitter.com/psol
 
 ## Day 3
 
-Day 3 for me was filled with many sessions that I was interested in like Data Visualization, Publishing and Reproducibility and Web Frameworks as well as the poster presentations. Unfortunately, I could not join all at the same time but here is what I have attended. 
+Day 3 for me was filled with many sessions that I was interested in like Data Visualization, Publishing and Reproducibility and Web Frameworks as well as the poster presentations. Unfortunately, I could not join all at the same time but here is what I have attended.
 
-### Speed Networking Session
+### Poster Presentation
+
+#### renderthis
+
+I first entered the Dissemination of Information room because I was curious about the [`renderthis`](https://jhelvy.github.io/renderthis/) presented by [John Paul Helveston](https://twitter.com/JohnHelveston). It was formally called `xaringanBuilder`, one of the extension of [`Xaringan`](https://github.com/yihui/xaringan). For those who are new to `Xaringan`, it is an alternative way to create presentation slides in html. A decent quick start guide can be found in Silvia Canelón's blog post [Deploying xaringan Slides with GitHub Pages](https://www.silviacanelon.com/blog/2021-deploying-xaringan-slides/). Here is a link to the [Xaringan gallery](https://xaringan.gallery/) for other examples. To my knowledge, the other extension packages are [`xaringanthemer`](https://pkg.garrickadenbuie.com/xaringanthemer/) and [`xaringanExtra`](https://pkg.garrickadenbuie.com/xaringanExtra/).
+
+It is eye opening to see how many different ways `Xaringan` slides can be converted to using `renderthis`. It goes from the usual html file, pdf file to even png images. Currently, I was following the instructions in Garrick Aden-Buie's blog post [Printing xaringan slides with chromote](https://www.garrickadenbuie.com/blog/print-xaringan-chromote/) to output the `Xaringan` slides into pdf. Maybe I should try to see if I can do the same with `renderthis`. With `renderthis`, users can also specify which `Xaringan` slides to be converted to. Future work involves able to output the `Xaringan` slides as a Micosoft Powerpoint [3 slides per page handout](https://answers.microsoft.com/en-us/msoffice/forum/all/how-do-i-save-a-powerpoint-presentation-with/e93ec638-8ad1-4002-8c1c-78cc90f097a6).
+
+#### animate
+
+I jumped to Data Visualisation room later after that. 
+
+I was looking forward for the presentation on the R package [`animate`](https://kcf-jackson.github.io/animate/index.html) by Jackson Kwok. You see, I was reading the poster in Micosoft Powerpoint beforehand and my jaws dropped when I see that the animation featured in this article titled [The New Science of Sentencing](https://www.themarshallproject.org/2015/08/04/the-new-science-of-sentencing) could be replicated using R. While reading the documentation of `animate`, I found out Jackson also made some `Xaringan` [slides](https://rawcdn.githack.com/kcf-jackson/animate/0f3e8211f063e832b3b83288b4834329d491f4da/man/slides/SVI_presentation.html) introducing the R package `animate`. Do take a look if you need a more visual information. Unfortunately, when I entered the virtual longue. It just ended...
+
+### Polished annotations
+
+Putting this aside, the next presentation was by [Cara Thompson](https://twitter.com/cararthompson) sharing useful tips and trick to make polished annotations in `ggplot`. Making annotations in `ggplot` has always been really challenging for me. I usually spend a lot of time tweaking fixed parameters to move the annotations from one place to another. Most of the time I just gave up and use Microsoft Powerpoint to add these extra text boxes. Cara's success in finding several clever strategies to make polished annotations, using `ggtext`, `glue`, CSS formatting and a filtered tibble with unique arrow curvature information, does makes me smile. Her tips can also be found in this [talk post](https://www.cararthompson.com/talks/user2022). One of her blog post [Alignment cheatsheet](https://www.cararthompson.com/posts/2021-09-02-alignment-cheat-sheet/) may be useful for those who need a little help on the alignment parameters.
+
+#### Two-Sample Corrgrams
+
 
 ### Clinical Data Review
 

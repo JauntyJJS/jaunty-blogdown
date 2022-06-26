@@ -166,10 +166,36 @@ When developing R packages, it is advisable to keep it [lightweight](https://tin
 
 This is kind of similar to the R package [dstr](https://github.com/falo0/dstr). The difference is that [pkgndep](https://jokergoo.github.io/pkgndep/) provides a more detailed result in a heatmap rather than a network graph. On the other hand, [dstr](https://github.com/falo0/dstr) provides clearer advise to the R developers on what they can do next to reduce the dependencies. Perhaps, the teams of [pkgndep](https://jokergoo.github.io/pkgndep/) and [dstr](https://github.com/falo0/dstr) can collaborate and build on each other strengths to further improve on the usefulness of their current creations.
 
+### pre-commits
+
 The second talk conducted by [Lorenz Walthert](https://twitter.com/lorenzwalthert) is an eye-opener for me as I am unfamiliar with git pre-commit hooks. From my understanding, pre-commit hooks are widely used for Python developers due to the availability of of the Python package [pre-commit](https://pre-commit.com/) to do all the heavy lifting.
 Motivated by how useful git pre-commit hooks are in improving code quality, Lorenz created a R package [precommit](https://lorenzwalthert.github.io/precommit/index.html) in hopes that more R package developers are able to adapt this workflow easily.
 
-After the second talk, I jumped to the session on Building the R Community 2. Luckily, this time when I got in, the third talk of the session has just begun. It was a presentation by [Kieran Martin](https://twitter.com/kjmartinstats) from [Roche](https://twitter.com/Roche) sharing his experience on how the team journeyed from using SAS to R
+### Transitioning to R
+
+After the second talk, I jumped to the session on Building the R Community 2. Luckily, this time when I got in, the third talk of the session has just begun. It was a presentation by [Kieran Martin](https://twitter.com/kjmartinstats) from [Roche](https://twitter.com/Roche). I have watched a previous R Consortium conducted by his team before in YouTube titled [Package Management at Roche]((https://www.youtube.com/watch?v=A8ePOTOSGg0&ab_channel=RConsortium)) and find it very informative and educational.
+
+It is delightful to see him again presenting for useR! 2022. This time Kieran shared his experience on his large Product Development team's ongoing journey to using R as one of the core data science tool, when there is a need to report results of clinical trials in the most efficient way. Best practices were shared like using [Docker](https://www.docker.com/) to fix the operating system, [renv](https://rstudio.github.io/renv/index.html) and internal package repositories to control the R packages used and the [R Validation Hub](https://www.pharmar.org/) to validate R packages. He also provided some useful advice and mistakes to avoid to help people grow into R.
+
+What is very touching is their desire in conjunction with like-minded pharmaceutical companies to create a shared set of high quality R packages for clinical reporting related analysis, plotting table and graphs via the [pharmaverse](https://pharmaverse.org/) and [Insights Engineering](https://github.com/insightsengineering). At least we do not have to see multiple R packages solving the same problem. Definitely something great to look into.
+
+### Reflections of a Research Software Engineer
+
+This is followed by a presentation by [Nicholas Tierney](https://twitter.com/nj_tierney), a [research software engineer](https://researchsoftware.org/) at the [Telethon Kids Institute](https://www.telethonkids.org.au/). Nicholas is also the developer of the two data visualisation R packages [visdat](https://docs.ropensci.org/visdat/) and [naniar](https://naniar.njtierney.com/index.html).
+
+The talk is consist of three parts: what kind of work he does as a [research software engineer]((https://researchsoftware.org/), a small summary of how he tries to maintain the [greta](https://greta-stats.org/) R package (as part of his job scope) and the future of [research software engineer](https://researchsoftware.org/) in Australia.
+
+I do gain some useful knowledge in package management such as creating better snapshot test, efficient pull request using `pr_feteh` and `pr_finish` from the [usethis](https://usethis.r-lib.org/reference/pull-requests.html) R package and using [glue](https://glue.tidyverse.org/) to make better command line messages to users.
+
+Despite being busy with his research software engineer role, Nicholas is also active in the [rOpenSci Social Coworking and Office Hours](https://ropensci.org/events/coworking-2022-06/) (Asia Pacific Edition) helping people with R related issues. It is actually from this online event when I first met him. He is really a nice and approachable R enthusiast.
+
+### Synthetic Data Generation
+
+Honestly the last set of sessions was another hard choice for me as it covers topics that I am unfamiliar with. I took a leap of faith and attended the session on Synthetic Data and Text Analysis.
+
+The first talk is about a small introduction of the [simPop](https://github.com/statistikat/simPop) R package by Alexander Kowarik. It is an R package used to create synthetic data. Synthetic data generation is useful when there is a need to transform sensitive but complex original data to into privacy-compliant data that still retains the complex structure of the original data. The transformed data can then be used for train machine learning models, software testing and simulation studies. This is actually my first time getting to know about synthetic data and what it is used for. I am grateful for the speaker for giving such a clear presentation for me to understand.
+
+The second talk switches to the topic of Text Analysis with the R package [textrecipes](https://textrecipes.tidymodels.org/). It is presented by [Emil Hvitfeldt](https://twitter.com/Emil_Hvitfeldt) one of the authors of the e-book [Supervised Machine Learning for Test Analysis in R](https://smltar.com/). While I am new to text data analysis, I am able to understand the unique properties of such dataset and why is it so hard to transform such a dataset into meaningful numbers that a machine learning model can use to learn. The presentation then shows step by step how [textrecipes](https://textrecipes.tidymodels.org/) is able to make this transformation process leass painful and yet flexible to user's different needs.
 
 
 ## Conclusion

@@ -190,7 +190,30 @@ Honestly the last set of sessions was another hard choice for me as it covers to
 
 The first talk is about a small introduction of the [simPop](https://github.com/statistikat/simPop) R package by Alexander Kowarik. It is an R package used to create synthetic data. Synthetic data generation is useful when there is a need to transform sensitive but complex original data to into privacy-compliant data that still retains the complex structure of the original data. The transformed data can then be used for train machine learning models, software testing and simulation studies. This is actually my first time getting to know about synthetic data and what it is used for. I am grateful for the speaker for giving such a clear presentation for me to understand.
 
-The second talk switches to the topic of Text Analysis with the R package [textrecipes](https://textrecipes.tidymodels.org/). It is presented by [Emil Hvitfeldt](https://twitter.com/Emil_Hvitfeldt) one of the authors of the e-book [Supervised Machine Learning for Test Analysis in R](https://smltar.com/). While I am new to text data analysis, I am able to understand the unique properties of such dataset and why is it so hard to transform such a dataset into meaningful numbers that a machine learning model can use to learn. The presentation then shows step by step how [textrecipes](https://textrecipes.tidymodels.org/) is able to make this transformation process less painful and yet flexible to user’s different needs.
+### textrecipes to improve preprocessing of textual data
+
+The second one switches to the topic of Text Analysis with the R package [textrecipes](https://textrecipes.tidymodels.org/). It is presented by [Emil Hvitfeldt](https://twitter.com/Emil_Hvitfeldt) one of the authors of the e-book [Supervised Machine Learning for Test Analysis in R](https://smltar.com/). While I am new to text data analysis, I am able to understand the unique properties of such dataset and why is it so hard to transform such a dataset into meaningful numbers that a machine learning model can use to learn. The presentation then shows step by step how [textrecipes](https://textrecipes.tidymodels.org/) is able to make this transformation process less painful and yet flexible to user’s different needs.
+
+As someone who has attended a [book club](https://www.youtube.com/watch?v=cXjTKOoN6aU&list=PL3x6DOfs2NGisLSs09v1NQUQaxuE8nbOO) on [An Introduction to Statistical Learning with Applications in R](https://www.statlearning.com/)(ISLR) conducted by the [R4DS Online Learning Community](https://www.rfordatasci.com/), Emil’s [ISLR tidymodels Labs](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/index.html) notes have been very helpful to our cohort group’s learning journey to use [tidymodels](https://www.tidymodels.org/) to better understand some of the statistical learning methods.
+
+### Bivariate Data Generation using Scagnostics
+
+The next presentation is led by [Janith Wanniarachchi](https://mobile.twitter.com/janithcwanni) regarding his R package called [scatteR](https://github.com/janithwanni/scatteR). [scatteR](https://github.com/janithwanni/scatteR) is used to generate a bivariate data set based on a given [scagnostics](https://en.wikipedia.org/wiki/Scagnostics) measurement.
+
+I enjoyed the flow of the presentation as it is like telling a story. The protagonist who faced a stumbling block along the way managed to overcome it after being inspired by ice-cream sprinkles. I won’t spoil the plot any further.
+
+Janith is another [first time](https://mobile.twitter.com/janithcwanni/status/1540053289089519616?cxt=HHwWgMDS9dGTr98qAAAA) presenter at an international conference. Do show him your support if you like his presentation.
+
+### Making better forecasting models by integrating sentiment analysis with topic modeling of textual data.
+
+Lastly, Oliver Delmarcelle shows how the R package [sentopics](https://github.com/odelmarcelle/sentopics) can be used to integrating sentiment analysis and topic modeling of textual data to potentially make better forecasting models.
+
+The [press conferences](https://www.ecb.europa.eu/press/key/html/index.en.html) documents of the European Central Bank are first grouped into different dominant topics/themes, like inflation, economic growth and so on. Next, sentiment analysis is applied on the [press conferences](https://www.ecb.europa.eu/press/key/html/index.en.html) documents to obtain two sentiment time series data, the sentiment of the Economic Condition and Monetary Policy over time.
+
+With that, two forecasting models were constructed to see which one better predict the [European Central Bank’s decision](https://www.ecb.europa.eu/press/govcdec/html/index.en.html) on the interest rate and monthly targets of the asset purchase program. A forecasting model using only the two sentiment predictors (Economic Condition and Monetary Policy) and another one adding an additional topic-specific sentiment predictor were compared. The result shows that the additional topic-specific sentiment predictor improves the forecasting model.
+
+[Topic modeling with R and tidy data principles](https://www.youtube.com/watch?v=evTuL-RcRpc)
+[A Tutorial on Sentiment Analysis in R](https://www.youtube.com/watch?v=c7YSyCofH3o)
 
 ## Conclusion
 

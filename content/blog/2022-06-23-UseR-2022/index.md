@@ -28,7 +28,7 @@ I have attended two workshops this year titled Introduction to Dimensional Reduc
 
 ## Introduction to Dimensional Reduction in R
 
-The course was conducted by [Isabella](https://twitter.com/bisnotforbella). The materials can be found in this [Github page](https://github.com/bellabf/dimensional-reduction).
+The course was conducted by [Isabella Bicalho-Frazeto](https://twitter.com/bisnotforbella). The materials can be found in this [Github page](https://github.com/bellabf/dimensional-reduction).
 
 I personally enjoyed this course as it is not too technical with equations and the pace is just right with sufficient breaks. The instructor also goes the extra mile to create polls to interact with us and check if we are doing fine during the course.
 
@@ -50,19 +50,35 @@ There are indeed a lot of useful information and it takes some time for me to di
 
 The event that will stick to my mind for a long time is the speed networking session. This is my first time attending one actually. I have to admit it can be scary to meet someone new in the web. The fact that each meetup lasts for three minutes adds to my anxiety. There are times when I started talking only to be realised that I was muted when the other person tells me that they can’t hear me. Nevertheless, I managed to get the hang of it halfway and started to feel more comfortable and confident in introducing myself. I have to say it is quite fruitful for me. I managed to meet new people from Europe and Australia passionate about R and made some connections on Linkedin.
 
-### gittargets
+### gittargets for better data version control
 
-As for the talks, I get to view the latest development on the R package [targets](https://docs.ropensci.org/targets/) from [The R Targetopia](https://wlandau.github.io/targetopia/) created by [Will Landau](https://twitter.com/wmlandau). \[targets\]((https://docs.ropensci.org/targets/) is known to keep a record of pre-processing results in a data analysis pipeline so that it knows when it is able to skip tasks when data analysis pipeline is rerun.
+As for the sessions, I first attended the first two talks from Big Data Management followed by next two talks from Building the R Community 1.
+
+In the first talk, I get to view the latest development on the R package [targets](https://docs.ropensci.org/targets/) from [The R Targetopia](https://wlandau.github.io/targetopia/) created by [Will Landau](https://twitter.com/wmlandau). \[targets\]((https://docs.ropensci.org/targets/) is known to keep a record of pre-processing results in a data analysis pipeline so that it knows when it is able to skip tasks when data analysis pipeline is rerun.
 
 Take a look at [Joel Nitta’s](https://twitter.com/joel_nitta) [presentation](https://www.youtube.com/watch?v=XMvinGSG72k) at an [AsiaR meetup](https://hackmd.io/8HzieKHoSEKLUoQRm9fBYg?view) for a decent introduction and demonstration of the \[targets\]((https://docs.ropensci.org/targets/) R package
 
-Now it is able to have the option to **keep records** of historical data outputs instead of overwriting a previous output with a recent new one as a result of changes in the analysis pipeline. Two methods were shared to capture version-controlled snapshots of the data store. One is by using a version-aware cloud storage such as [Amazon S3](https://aws.amazon.com/s3/) the other is with the help of the R package [gittargets](https://docs.ropensci.org/gittargets/).
+Now it is able to have the option to **keep records** of historical data outputs instead of overwriting a previous output with a recent new one as a result of changes in the analysis pipeline. Two methods were shared to capture version-controlled snapshots of the data store. One is by using a version-aware cloud storage such as [Amazon S3](https://aws.amazon.com/s3/) the other is by using Git, both with the help of the [gittargets](https://docs.ropensci.org/gittargets/).
 
-With the snapshots recorded, the \[targets\]((https://docs.ropensci.org/targets/) workflow is able to recover the pre-processing data that correspond to a **precious** git branch or commit. Thus, should the user needs to roll back the analysis pipeline to a previous stage, it will take less time to rerun the updated code as the set of pre-processing results are updated accordingly.
+With the snapshots recorded, the \[targets\]((https://docs.ropensci.org/targets/) workflow is able to recover the pre-processing data that correspond to a **previous** git branch or commit. Thus, should the user needs to roll back the analysis pipeline to a previous stage, it will take less time to rerun the updated code as the set of pre-processing results are updated accordingly.
+
+### An interactive pipeline for analysing and sharing bulk sequencing results
+
+The following talk is on [bulkAnalyseR](https://core-bioinformatics.github.io/bulkAnalyseR/) by [Ilias Moutsopoulos](https://github.com/emouts) from the [Cambridge Stem Cell Institute Core Bioinformatics Group](https://github.com/Core-Bioinformatics)
+
+If you are new to bulk sequencing data, take a look at this introductory YouTube [video](https://www.youtube.com/watch?v=bMf1cnttuPk) first.
+
+[bulkAnalyseR](https://core-bioinformatics.github.io/bulkAnalyseR/) ensures analysis of single- and multi-omics bulk-sequencing data follows a certain preprocessing pipeline smoothly and display the results in an interactive [R Shiny](https://shiny.rstudio.com/) application. The analysis pipeline is flexible for users’ to analyse a combination of other sequencing data set like mRNAseq, ChIPseq, sRNAseq/microRNAs.
+
+The results are then distributed online via the [shinyapps.io](https://www.shinyapps.io/) platform. Results includes quality check heatmap, similarity heatmap, principal component analysis scatter plots, volcano plots, gene regulatory networks and so on. Here is the [link](http://bioinf.stemcells.cam.ac.uk:3838/bulkAnalyseR/) of some of bulkAnalyseR results if you are interested.
+
+### R-Ladies Nairobi during COVID-19 pandemic
+
+After two talks from next two talks from Big Data Management, I switched to another session Building the R Community 1 for a less technical presentation.
 
 ### Dev Containers for Easy R Tutorials
 
-Another talk that excites me is the one provided by [David Smith](https://twitter.com/revodavid/status/1539256109722222592?cxt=HHwWgIC-5djRxNwqAAAA), I was thrilled to see the use of [Dev Containers](https://containers.dev/) in [Github Codespaces](https://github.com/features/codespaces) to create interactive R tutorials for teaching. One real life example is this [Microsoft workshop](https://docs.microsoft.com/en-us/learn/paths/machine-learning-with-r/) titled “Create machine learning models with R and tidymodels”.
+The next talk I have attended is provided by [David Smith](https://twitter.com/revodavid), I was thrilled to see the use of [Dev Containers](https://containers.dev/) in [Github Codespaces](https://github.com/features/codespaces) to create interactive R tutorials for teaching. One real life example is this [Microsoft workshop](https://docs.microsoft.com/en-us/learn/paths/machine-learning-with-r/) titled “Create machine learning models with R and tidymodels”.
 
 To my knowledge, I have seen interactive R Tutorials implemented in two ways. One is by [learnR](https://rstudio.github.io/learnr/), for example [A Quick Flight to the Edge of the Tidyverse](https://www.allisonhorst.com/talk/rladies_tunis_saudiarabia_tidyverse_intro/) conducted by Allison Horst in a combined [R-Ladies Tunis](https://twitter.com/rladiestunis) and [R-Ladies Dammam](https://twitter.com/rladiesdammam?lang=en) Workshop. The other is by [Google Colaboratory](https://colab.research.google.com/), for example [Introduction to ggplot2](https://github.com/kuanhoong/ggplot2_workshop) conducted by Kuan Hoong in Malaysia’s [R confeRence 2021](https://www.r-conference.com/).
 
@@ -206,14 +222,21 @@ Janith is another [first time](https://mobile.twitter.com/janithcwanni/status/15
 
 ### Making better forecasting models by integrating sentiment analysis with topic modeling of textual data.
 
-Lastly, Oliver Delmarcelle shows how the R package [sentopics](https://github.com/odelmarcelle/sentopics) can be used to integrating sentiment analysis and topic modeling of textual data to potentially make better forecasting models.
+The last talk of the session is quite hard for me to understand because I am unfamiliar with textual data analysis as mentioned before. Nevertheless, to the best of my knowledge, I try to explain what is going on.
 
-The [press conferences](https://www.ecb.europa.eu/press/key/html/index.en.html) documents of the European Central Bank are first grouped into different dominant topics/themes, like inflation, economic growth and so on. Next, sentiment analysis is applied on the [press conferences](https://www.ecb.europa.eu/press/key/html/index.en.html) documents to obtain two sentiment time series data, the sentiment of the Economic Condition and Monetary Policy over time.
+Oliver Delmarcelle shows how the R package [sentopics](https://github.com/odelmarcelle/sentopics) can be used to integrating sentiment analysis and topic modeling of textual data to potentially make better forecasting models. In this presentation, the [press conferences](https://www.ecb.europa.eu/press/key/html/index.en.html) documents of the European Central Bank is used as an example.
 
-With that, two forecasting models were constructed to see which one better predict the [European Central Bank’s decision](https://www.ecb.europa.eu/press/govcdec/html/index.en.html) on the interest rate and monthly targets of the asset purchase program. A forecasting model using only the two sentiment predictors (Economic Condition and Monetary Policy) and another one adding an additional topic-specific sentiment predictor were compared. The result shows that the additional topic-specific sentiment predictor improves the forecasting model.
+If you are unfamiliar with the term topic modeling and sentiment analysis, take a look at these two Youtube videos by [Julia Silge](https://twitter.com/juliasilge)
+[Data Centric Inc.](https://www.datacentriccorp.com/) to know what they are.
 
-[Topic modeling with R and tidy data principles](https://www.youtube.com/watch?v=evTuL-RcRpc)
-[A Tutorial on Sentiment Analysis in R](https://www.youtube.com/watch?v=c7YSyCofH3o)
+-   [Topic modeling with R and tidy data principles](https://www.youtube.com/watch?v=evTuL-RcRpc)
+-   [A Tutorial on Sentiment Analysis in R](https://www.youtube.com/watch?v=c7YSyCofH3o)
+
+The [press conferences](https://www.ecb.europa.eu/press/key/html/index.en.html) documents of the European Central Bank are first grouped into different dominant topics/themes, like inflation, economic growth and so on. Separately, sentiment analysis is applied on the [press conferences](https://www.ecb.europa.eu/press/key/html/index.en.html) documents to obtain two sentiment time series data, the sentiment of the Economic Condition and Monetary Policy over time.
+
+With that, two forecasting models were constructed to see which one better predict the [European Central Bank’s decision](https://www.ecb.europa.eu/press/govcdec/html/index.en.html) on the interest rate and monthly targets of the asset purchase program. They ar a forecasting model using only the two sentiment predictors (Economic Condition and Monetary Policy) and another one with an additional topic-specific sentiment predictor. The result shows that the additional topic-specific sentiment predictor improves the forecasting model.
+
+In addition, Oliver also showed how [sentopics](https://github.com/odelmarcelle/sentopics) is able to create time series plots showing how each topic/theme contributed to the sentiment of the Economic Condition.
 
 ## Conclusion
 

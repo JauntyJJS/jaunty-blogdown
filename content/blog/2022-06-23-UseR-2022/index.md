@@ -76,9 +76,15 @@ The results are then distributed online via the [shinyapps.io](https://www.shiny
 
 After two talks from next two talks from Big Data Management, I switched to another session Building the R Community 1 for a less technical presentation.
 
+I managed to catch up with the presentation by [Njoki Lucy](https://twitter.com/lucy_njokinjuki) and [Shel Kariuki](https://twitter.com/shel_kariuki) on their story of trying to build [R-Ladies Nairobi](https://twitter.com/rladiesnairobi) during the COVID-19 pandemic.
+
+Despite the challenges faced, they managed to host several [meetings](https://www.youtube.com/channel/UCRth2ImB1T-_saYc5YBTcyA/videos) and even collaborated with the [Nairobi R User Group](https://www.meetup.com/nairobi-r-users-group/) to conduct an R conference called [satRday Nairobi 2021](https://www.youtube.com/hashtag/satrdaynairobi). The slides for all [R-Ladies Nairobi](https://twitter.com/rladiesnairobi) meetings can be found in this [Github page](https://github.com/rladies/meetup-presentations_nairobi).
+
+It is heart warming and encouraging to see their strong passion and desire in community building even though the work can be exhausting and the rewards may be little. Do support the team by attending their meetings and if you can’t attend, do at least share it to someone else.
+
 ### Dev Containers for Easy R Tutorials
 
-The next talk I have attended is provided by [David Smith](https://twitter.com/revodavid), I was thrilled to see the use of [Dev Containers](https://containers.dev/) in [Github Codespaces](https://github.com/features/codespaces) to create interactive R tutorials for teaching. One real life example is this [Microsoft workshop](https://docs.microsoft.com/en-us/learn/paths/machine-learning-with-r/) titled “Create machine learning models with R and tidymodels”.
+The following talk I have attended is provided by [David Smith](https://twitter.com/revodavid), I was thrilled to see the use of [Dev Containers](https://containers.dev/) in [Github Codespaces](https://github.com/features/codespaces) to create interactive R tutorials for teaching. One real life example is this [Microsoft workshop](https://docs.microsoft.com/en-us/learn/paths/machine-learning-with-r/) titled “Create machine learning models with R and tidymodels”.
 
 To my knowledge, I have seen interactive R Tutorials implemented in two ways. One is by [learnR](https://rstudio.github.io/learnr/), for example [A Quick Flight to the Edge of the Tidyverse](https://www.allisonhorst.com/talk/rladies_tunis_saudiarabia_tidyverse_intro/) conducted by Allison Horst in a combined [R-Ladies Tunis](https://twitter.com/rladiestunis) and [R-Ladies Dammam](https://twitter.com/rladiesdammam?lang=en) Workshop. The other is by [Google Colaboratory](https://colab.research.google.com/), for example [Introduction to ggplot2](https://github.com/kuanhoong/ggplot2_workshop) conducted by Kuan Hoong in Malaysia’s [R confeRence 2021](https://www.r-conference.com/).
 

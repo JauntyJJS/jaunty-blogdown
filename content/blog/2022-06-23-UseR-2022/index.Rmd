@@ -102,9 +102,29 @@ Here is a [Github](https://github.com/revodavid/devcontainers-r) introduction of
 
 Unfortunately, creating such tutorials are currently only possible with a GitHub Enterprise or GitHub Education account. Hopefully, it could be extended to a personal Github account in the future.
 
+### Converting R function to C++ function and back with ast2ast
+
+After the second keynote of the day, I attended the session on Containerization and Metaprogramming.
+
+In some cases when optimisation of code running time is necessary, there may be a need to rewrite an R function in a faster programming language like C++. However, as C++ is not an easy programming language to learn, a lot of time and effort is required in this rewriting process. I recall learning C++ on my first year as an undergraduate. It was a tough journey. I usually create infinite loops by mistake and crash the program frequently. Memory management using C++ pointers was a nightmare.
+
+To speed up the rewriting process, [Krämer Konrad](https://twitter.com/kraemer_konrad) introduced the R package [ast2ast](https://github.com/Konrad1991/ast2ast) which is able to convert some simple R function into C++ function automatically, minimising the need for the user to type [Rcpp](https://www.rcpp.org/) related function and C++ code.
+
+I have to say it sounds like magic. I thought it was too good to be truth and slapped my face with both hands like [Naruto](https://twitter.com/abdul_s17/status/1193855247850053634) to check if I was dreaming instead of watching the conference in the middle of the night. However, the session proceeded to the Q and A asking if [ast2ast](https://github.com/Konrad1991/ast2ast) can translate functions from non standard libraries like the [magrittr pipe](https://magrittr.tidyverse.org/reference/pipe.html) and probability density functions. Guess I am not sleeping and agreed with the host that [ast2ast](https://github.com/Konrad1991/ast2ast) has a lot of potential.
+
+### Modeling marine ecosystem with gadget3
+
+Marine ecosystem models are needed to better understand the impacts of human related activities and natural events, such as overfishing, pollution and climate change, on the marine food web. Such models are needed for state holders to make wiser decisions and evaluate existing policies meant to protect our marine environment.
+
+The issue is that most of these open source computationally intensive modeling tools are implemented in C++ and lack integration for other programming languages and modern tools to contribute. Thus, [Jamie Lentin](https://github.com/lentinj) shared about how his team managed to bridge this gap for the [Gadget model](https://heima.hafro.is/~bthe/introduction.html) using [gadget3](https://github.com/gadget-framework/gadget3) and other R packages in the [gadget-framework](https://github.com/gadget-framework).
+
+I am afraid that this is all I can share due to my limited understanding in this kind of analysis. While this marine ecology is something that I don't know much, it is amazing to see how much progress has been made made into this field of research since the UN proclaimed 2021–2030 as the [Decade of Ocean Science for Sustainable Development](https://www.oceandecade.org/)
+
 ### Docker for Data Science and Shiny Apps
 
-Today, more research data publications use [Docker](https://www.docker.com/) as a means for others  to reproduce the results and graphs created in the published journal paper. Recently, they are also applied on open source web applications as well.
+The talks in relation to Containerization were about [Docker](https://www.docker.com/), so I have summarised both talks in this section.
+
+Today, more research data publications use [Docker](https://www.docker.com/) as a means for others to reproduce the results and graphs created in the published journal paper. Recently, they are also applied on open source web applications as well.
 
 If what I am writing may sound Greek to you, may I suggest [Alex Gold's](https://twitter.com/alexkgold?lang=en) introductory [talk](https://github.com/akgold/docker4ds) on Docker. In addition, the speaker is also working on an [e-book](https://do4ds.com/) titled DevOps for Data Science. Do give him your support.
 

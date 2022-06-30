@@ -157,6 +157,25 @@ Nevertheless, Amanda concludes that despite all these limitations in R for visua
 
 ### First Keynote
 
+The first keynote is by the [afrimapr](https://afrimapr.github.io/afrimapr.website/) project team. The project aims is to use R as a building block for many things such as better management of data realted to Africa, creation of open source analytical tools to analyse and provide insights across Africa, providing teaching resources and training for those interested in this novel work and building a strong community with this common interest.
+
+[Anelda van der Walt](https://twitter.com/aneldavdw) shared the progress the team have made since it was first launched in 2020 such as [R packages](https://afrimapr.github.io/afrimapr.website/code/), [interactive apps](https://afrimapr.github.io/afrimapr.website/interactive-apps/), [teaching materials](https://afrimapr.github.io/afrimapr.website/training/) and even [publications of data](https://afrimapr.github.io/afrimapr.website/publications/) in journals.
+
+The next phase of the talk was a sharing from [Clinton Nkolokosa](https://twitter.com/clintymw) about his experiences as a geospatial researcher doing projects such as [malaria incident](https://rpubs.com/Clinty/786191), [flood incidence](https://nkolokosa.shinyapps.io/FloodMapper/) and [covid 19 cases](https://rpubs.com/Clinty/705819). Such meaningful accomplishments were hard to obtain as he highlighted the challenges faced such as difficulties in getting up-to-date data (Clinton ended up having to update the data on his own) and finding local talented people (R gurus) doing similar work for help and consultation due to lack of funding and opportunities. He stressed the importance of more individuals from the African R community to step out of their comfort zones and be drivers of innovative ideas and resources.
+
+The following phase of the keynote is mainly focus on effective teaching. [Anne Treasure](https://twitter.com/annemtreasure) presented the usefulness of [learnr](https://rstudio.github.io/learnr/) to create [online tutorials](https://afrimapr.github.io/afrilearnr/) to support novice learners of R. She then showed how the team goes one step further by making these material more accessible such as
+
+-   Teaching them in French, besides English.
+-   Use of [RStudio Cloud](https://rstudio.cloud/) so that more people can participate on the courses simultaneously.
+-   Making materials downloadable for local use.
+-   Pre and post course survey to understand the attendee’s concern for improvement of future teaching sessions.
+
+[Nono Gueye](https://twitter.com/gueyenono) then showed how having teaching resources in other language such as French can benefit more people in multilingual Africa and gave some existing R resources in French such as [tidyverse](https://juba.github.io/tidyverse/index.html).
+
+The last phase of the keynote is about the status of R communities in Africa. Anelda showed some statistics that the R communities in Africa when compared to North America is not doing as well with a significantly lower number of active groups and organised events. This implies that the knowledge transmission of R from one individual to another in Africa is quite low. Anelda then gave a few reasons to explain why it is hard to build and sustain an R community. One reason is that building one requires a lot of skills and hard work which is daunting if the organising team just have a few people. Another reason is that the people who build such communities are mainly volunteers who may be overburdened by work and/or family commitments to run regular events. Low participate rate in such organised event does bring a mental toll on the organisers as well. The last reason is a lack of funding and resources.
+
+The keynote concluded first by appealing to the African R community to support more new R users locally, collaborate locally and internationally and try to experiment new established approaches to see if it helps or not. It then appeal towards the global (funding) community to find ways to reward people for their time to run events, invest more in multilingual materials as well as to identify and support locally-led, custom-developed initiatives that works in emerging regions.
+
 ### Poster Presentation
 
 #### renderthis

@@ -31,7 +31,7 @@ Here is a list of things that inspire me to be a better programmer and analyst.
 
 I have attended two workshops this year titled Introduction to Dimensional Reduction in R and Regression Modeling Strategies.
 
-## Introduction to Dimensional Reduction in R
+### Introduction to Dimensional Reduction in R
 
 The course was conducted by [Isabella Bicalho-Frazeto](https://twitter.com/bisnotforbella). The materials can be found in this [Github page](https://github.com/bellabf/dimensional-reduction). 
 
@@ -39,11 +39,11 @@ I personally enjoyed this course as it is not too technical with equations and t
 
 Besides learning to use different dimension reduction techniques using base R, I was also lightly introduced to the use of [Tidymodels](https://www.tidymodels.org/) to do Principal Component Analysis ([PCA](https://recipes.tidymodels.org/reference/step_pca.html) ) as well as [reticulate](https://rstudio.github.io/reticulate/) to run T-distributed Stochastic Neighbor Embedding ([tSNE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html) ) using [Python](https://www.python.org/).
 
-## Regression Modeling Strategies
+### Regression Modeling Strategies
 
 It is heart warming to be able to attend a course conducted by a well-known biostatistician, [Frank Harrell](https://twitter.com/f2harrell) from Vanderbilt University. 
 
-I first saw his presentation [R for Graphical Clinical Trial Reporting](https://www.youtube.com/watch?v=4gXWQxaBbac) during the RStudio Conference 2020 at San Francisco. Here is the [abstract](https://www.fharrell.com/talk/rstudio20/) for this talk. I was touched by his desire and passion to always learn new things in R. This talk was one of the key morale booster for me to learn [plotly](https://plotly.com/r/) even though its documentation can be quite intimidating.I only got aware of his popularity when I saw him again presenting again at the Why R? 2020 as a keynote speaker titled [Controversies in Predictive Modeling, Machine Learning, and Validation](https://www.youtube.com/watch?v=DF1WsYZ94Es)
+I first saw his presentation [R for Graphical Clinical Trial Reporting](https://www.youtube.com/watch?v=4gXWQxaBbac) during the RStudio Conference 2020 at San Francisco. Here is the [abstract](https://www.fharrell.com/talk/rstudio20/) for this talk. I was touched by his desire and passion to always learn new things in R. This talk was one of the key morale booster for me to learn [plotly](https://plotly.com/r/) even though its documentation can be quite intimidating.I only got aware of his popularity when I saw him again presenting again at the Why R? 2020 as a keynote speaker titled [Controversies in Predictive Modeling, Machine Learning, and Validation](https://www.youtube.com/watch?v=DF1WsYZ94Es). 
 
 In summary, the course was mainly a short summary of his ebook [Regression Modeling Strategies](https://hbiostat.org/rms/) as well as a short introduction of his new e-book [R Workflow](https://hbiostat.org/rflow/) written in [Quarto](https://quarto.org/). 
 
@@ -51,7 +51,17 @@ There are indeed a lot of useful information and it takes some time for me to di
 
 ## Day 2
 
+### First Keynote
 
+The first keynote in Day 2 of the conference is by [Paula Moraga](https://twitter.com/Paula_Moraga), author of the e-book [Geospatial Health Data: Modeling and Visualization with R-INLA and Shiny](https://www.paulamoraga.com/book-geospatial/).
+
+Even though I am not working with geospatial data, the content from the talk is very resourceful for those who has just started using R and geospatial analysis in general. It is the type of information I wish I had when I first begin to learn about R.
+
+It started with a brief summary of a generic geospatial analysis workflow followed by some real life applications to highlight some challenges faced. Lots of visual examples were used to keep the audience glued to the talk. The presenter also shared how one can start learning geospatial analysis by using open data from [rspatialdata](https://rspatialdata.github.io/) and useful R packages analytical tools like [SpatialEpiApp](https://github.com/Paula-Moraga/SpatialEpiApp) and [epiflows](https://www.repidemicsconsortium.org/epiflows/). R packages from the [R Epidemics Consortium](http://www.repidemicsconsortium.org) were something new to me as well. 
+
+The section on communication and dissemination provides a good overview of different R packages used to display and distribute results to others. A gentle introduction of [ggplot2](https://ggplot2.tidyverse.org/), [htmlwidgets](http://gallery.htmlwidgets.org/), [R Markdown](https://rmarkdown.rstudio.com/), [flexdashboard](https://pkgs.rstudio.com/flexdashboard/), [Shiny](https://shiny.rstudio.com/) were mentioned, without being too technical on the code. The presenter also highlighted some R communities ([R Ladies](https://rladies.org/), [R Forwards](https://forwards.github.io/)) for those new to R to be able to seek help or improve themselves.
+
+Overall, I recommended this keynote for those who wants to know more about R and what it can provide.
 
 ### Speed Networking Session
 
@@ -82,7 +92,7 @@ The results are then distributed online via the [shinyapps.io](https://www.shiny
 
 ### R-Ladies Nairobi during COVID-19 pandemic
 
-After two talks from next two talks from Big Data Management, I switched to another session Building the R Community 1 for a less technical presentation.
+After two talks from Big Data Management, I switched to another session Building the R Community 1 for a less technical presentation.
 
 I managed to catch up with the presentation by [Njoki Lucy](https://twitter.com/lucy_njokinjuki) and [Shel Kariuki](https://twitter.com/shel_kariuki) on their story of trying to build [R-Ladies Nairobi](https://twitter.com/rladiesnairobi) during the COVID-19 pandemic. 
 
@@ -130,7 +140,30 @@ If what I am writing may sound Greek to you, may I suggest [Alex Gold's](https:/
 
 For those who are familiar with Docker, [Peter Solymos](https://twitter.com/psolymos) has shared some valuable [advice](https://my.visme.co/view/90rqk0kg-user-2022-talk-shiny-docker) on when and how to apply Docker on [R Shiny](https://shiny.rstudio.com/) Apps. More of such resources can be found in this Hosting Data Apps [webpage](https://hosting.analythium.io/).
 
+### Second Keynote
+
+The second keynote is by [Amanda Cox](https://mobile.twitter.com/amandacox), a well-known American journalist now working in a non-profit organisation [USAFacts](https://usafacts.org/).
+
+In the past when people ask her what tools were used to make great graphics, her response were used to be "it does not really matters" as great graphics usually depends on how well it communicate its message to the readers rather than how it is made. Her perspective changes when she started her new job and begin to look for people to work for her. During the hiring process as she was looking at portfolios, she realised that she was able to identify which tools were used (this graph looks like it has been made using [reactjs](https://reactjs.org/) but the overall structure is inspired from R related plots) and understand what programming skills the candidate may potentially possess. For example, graphics that shows small multiple plots arranged neatly in a grid squares give a higher probability that it is inspired from R. 
+
+As she started to reflect on why she was able to identify the tools used to make a certain graphic so easily, she started to see that the tools used does restrict or enhance what information can be highlight from the visual graphics, affecting how well it communicate its message to the readers. For example, in this New York Times' graphics on [Olympics sprinter](http://archive.nytimes.com/www.nytimes.com/interactive/2012/08/05/sports/olympics/the-100-meter-dash-one-race-every-medalist-ever.html), the sound at the end to emphasise the difference in speed between 19-century sprinter and 2012 is three seconds is made using R. R was used at that time because it was the only tool that the team can find that is able to produce a decent soundtrack that compliments the video at a tight deadline schedule.
+
+She then shared some case studies in which R was the right tool to use and others that were not. Based on what I can understand, here are some of the cases.
+
+One example in which R was the right tool to use is when there is a need to report [statistical uncertainty](https://raw.githubusercontent.com/m1arc00/m1arc00.github.io/master/useR/fla5.png) (approximate answers) of the US election voting results over time. The team was grateful that R was able to simulate practice data set for the team to learn how to make such a report in advanced before applying it on the actual data. 
+
+On the other hand, graphics needing animation (movement) are harder to implement using R like [The New Science of Sentencing](https://www.themarshallproject.org/2015/08/04/the-new-science-of-sentencing) and [Extensive Data Shows Punishing Reach of Racism for Black Boys](https://www.nytimes.com/interactive/2018/03/19/upshot/race-class-white-and-black-men.html). 
+For interactive visualisations that is able to provide constant feedback (mimicking a real person) based on the readers' input of expected data, such as [You Draw It: How Family Income Predicts Children's College Chances](https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html), R also still has a long way to go. 
+
+Amanda also shared her difficulties in using R to make annotations/labelling in a static graph even though it is simple to do the same thing in other visual making software. She then show a few examples on how annotations are useful like this New York Times' report [One Report, Diverging Perspectives](https://archive.nytimes.com/www.nytimes.com/interactive/2012/10/05/business/economy/one-report-diverging-perspectives.html). This is something that I fully agree. They are a few times that I had to resolve to Powerpoint after making a plot in R because I do not know how to create a label at the correct place. Resources like Cara Thompson's [post]((https://www.cararthompson.com/talks/user2022)) on how to make polished annotations in R are truly like gem mines.
+
+Nevertheless, Amanda concludes that despite all these limitations in R for visualisation based on her understanding, it still remains subjective and personal as it depends how much people are willing to push themselves to make effective visuals given the amount of tools and resources that they have. One of the last few examples that she showed was [Coasterplots](https://www.tylermw.com/datacoaster-tycoon/) made by [Tyler Morgan-Wall](https://twitter.com/tylermorganwall). It was an eye-opening experience for me to see how 3D visualisation plots can be viewed in such a unique way using R.
+
 ## Day 3
+
+### First Keynote
+
+The first keynote
 
 ### Poster Presentation
 

@@ -269,7 +269,7 @@ The keynote is indeed rich in content regarding the best practices for machine l
 
 ## Day 4
 
-### R Core Team Panel Discussion 
+### First Keynote
 
 Day 4 of the conference started with a keynote by the R Core Team. The keynote is led by [Sebastian Meyer](https://twitter.com/bastistician) who has recently joined the R Core team. 
 
@@ -277,11 +277,11 @@ The first part of the presentation is about a summary of the [major changes](htt
 
 The second part is a sharing of a few bug report stories followed by some tips on anyone who wish to contribute and make R better. R actually has a website [R's Bugzilla](https://www.r-project.org/bugs.html) for reporting potential bugs as well as a simple [walkthrough](https://blog.r-project.org/2019/10/09/r-can-use-your-help-reviewing-bug-reports/index.html) of how to create a decent [bug report](https://www.r-project.org/bugs.html). The presenter then requests for more people to test R, especially its [pre-release versions](https://blog.r-project.org/2021/04/28/r-can-use-your-help-testing-r-before-release/index.html), as well as to report to the R-core team old bug reports in [R's Bugzilla](https://www.r-project.org/bugs.html) which may have already been resolved with a later version of R.
 
-After the keynote, 
+After the keynote session, the R Core Team then had a panel discussion.
 
 ### Package dependencies
 
-After the keynote session, I attended the first two talks in the Package Development session followed by the last two talks in Building the R Community 2.
+After the panel discussion, I attended the first two talks in the Package Development session followed by the last two talks in Building the R Community 2.
 
 The first talk on Package Development is from [Zuguang Gu](https://twitter.com/jokergoo_gu), developer of many packages such as [ComplexHeatmap](https://github.com/jokergoo/ComplexHeatmap) and [spiralize](https://github.com/jokergoo/spiralize). The presentation is about an R package called [pkgndep](https://jokergoo.github.io/pkgndep/) used to calculate the dependency heaviness of an R package and display the results in a heatmap. 
 
@@ -349,6 +349,14 @@ The [press conferences](https://www.ecb.europa.eu/press/key/html/index.en.html) 
 With that, two forecasting models were constructed to see which one better predict the [European Central Bank's decision](https://www.ecb.europa.eu/press/govcdec/html/index.en.html) on the interest rate and monthly targets of the asset purchase program. They ar a forecasting model using only the two sentiment predictors (Economic Condition and Monetary Policy) and another one with an additional topic-specific sentiment predictor. The result shows that the additional topic-specific sentiment predictor improves the forecasting model.  
 
 In addition, Oliver also showed how [sentopics](https://github.com/odelmarcelle/sentopics) is able to create time series plots showing how each topic/theme contributed to the sentiment of the Economic Condition.
+
+### Second Keynote
+
+[Mine Dogucu](https://twitter.com/MineDogucu), one of the authors of the e-book [Bayes Rules! An Introduction to Applied Bayesian Modeling](https://www.bayesrulesbook.com/) , delivered the last keynote of the day titled Teaching Accessibly and Teaching Accessibility. The talk consist of three parts: Teaching Accessibly, Teaching Accessibility and Recomendations for the Community
+
+
+
+
 
 ## Conclusion
 

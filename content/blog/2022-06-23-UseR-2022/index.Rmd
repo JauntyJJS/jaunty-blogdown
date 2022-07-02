@@ -352,10 +352,41 @@ In addition, Oliver also showed how [sentopics](https://github.com/odelmarcelle/
 
 ### Second Keynote
 
-[Mine Dogucu](https://twitter.com/MineDogucu), one of the authors of the e-book [Bayes Rules! An Introduction to Applied Bayesian Modeling](https://www.bayesrulesbook.com/) , delivered the last keynote of the day titled Teaching Accessibly and Teaching Accessibility. The talk consist of three parts: Teaching Accessibly, Teaching Accessibility and Recomendations for the Community
+[Mine Dogucu](https://twitter.com/MineDogucu), one of the authors of the e-book [Bayes Rules! An Introduction to Applied Bayesian Modeling](https://www.bayesrulesbook.com/) , delivered the last keynote of the day titled Teaching Accessibly and Teaching Accessibility. The talk consist of three parts: Teaching Accessibly, Teaching Accessibility and some recommendations for the community, especially those involved in pedagogy.
+
+To make teaching resources more accessible and inclusive, Mine first suggested that such education materials should be open access (made available on the internet) as not all students are fortunate financially to be able to afford textbook material. In addition, students are usually the ones that contributes the most in improving the quality the of education materials by highlighting mistakes and providing alternative solutions to exercises. Such opportunities may missed out if the education materials remain only on print.
+
+Even when the teaching material is available online, accessibility can be further expanded to the visually impaired with the use of [alternative text](https://www.med.unc.edu/webguide/accessibility/alt-text/) and [screen readers](https://www.nomensa.com/blog/what-screen-reader). Being a strong advocate for accessible teaching, Mine went the extra mile by opening a [feature request](https://github.com/rstudio/rmarkdown/issues/1867) for [Rmarkdown](https://rmarkdown.rstudio.com/) to include an option of alternative text in 2020.
+
+As the content of the Bayesian statistics e-book requires a strong mathematics background to comprehend, Mine tries to make lessons more inviting for readers new to Bayesian statistics by complementing mathematical concepts with story telling, step by step computing instructions and the use relevant examples (Weather, Spotify data, Hotel bookings) that most lay person can relate. The goal is to encourage learners to embrace a growth mindset by learning from mistakes and not be discouraged when things are unclear when seen for the first time. Mistakes can still be good if it teaches you something. More ways to make teaching material accessible can be found the paper  [Framework for Accessible and Inclusive Teaching Materials for Statistics and Data Science Courses](https://arxiv.org/abs/2110.06355) 
+
+I started to laugh "The proof is obvious"
+
+When she had finished writing the e-book, Mine began to realise how little she knew about accessibility and was curious to know why this is so. She decided to look back into past teaching curriculum and data analysis tools to see how much focus on accessibility awareness and support are there. Unfortunately, most had little to no support. Knowing what needs to be done, she seek the support of [Teach Access](https://teachaccess.org/) and motivated individuals like [JooYoung Seo](https://twitter.com/seo_jooyoung) to spread the need of accessibility skills in data science education for aspiring and experienced data scientist. Mine is currently working on designing curriculum to include accessibility awareness and use of assistive technologies in data science projects.
+
+Mine proceeds with some technical details on how to use R to make data visualisation more accessible. Examples are 
+
+* [colorblindr](https://github.com/clauswilke/colorblindr) to simulate colour blindness and utilisation of the [Okabe-Ito](https://jfly.uni-koeln.de/color/) palette, 
+* Image alternative text in [Rmarkdown](https://rmarkdown.rstudio.com/) with `fig.alt`. See this blog [post](https://www.rstudio.com/blog/knitr-fig-alt/) for more details. 
+* [Data sonification](https://www.youtube.com/watch?v=1VS9Od9qM1k&ab_channel=ChandraX-rayObservatory) with [sonify](https://cran.r-project.org/web/packages/sonify/index.html), 
+* [Data tactualization](https://www.youtube.com/watch?v=ClI555l4Z1M&ab_channel=JooYoungSeo) with [tactileR](https://github.com/jooyoungseo/tactileR)
+
+For image alternative text, take a look at Amy Cesal's [post](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) on some good practice guidelines to describe plots with alternative text. One can also use the `VI` function from the [BrailleR](https://github.com/ajrgodfrey/BrailleR) package to generate [alternative text automatically](https://cran.rstudio.com/web/packages/BrailleR/vignettes/qplot.html). Mine's collaborator, [JooYoung Seo](https://twitter.com/seo_jooyoung) also had a [presentation](https://www.youtube.com/watch?v=0HvyNtltu-A&ab_channel=RStudio) on accessible data science on the RStudio Global Conference 2021. 
+
+Mine concluded the keynote with some recommendations for the community. Here are they below
+
+* A picture is worth a thousand words but an alternative text is worth a thousand pictures
+* Fixing a typo and writing alternative text are good pull request
+* Disclosure should fall on event organisers
+* Accessibility request should not be a job of just volunteers to handle
+* Accessibility should be taught to students as well as professionals
+* Accessibility should not be specific to just the R programming language
+* Accessibility should be taught in a way that learners can apply their learning in non-data contexts. (Alternative text should be used outside data science)
+* Students should be assessed and held accountable for their accessibility practices.
+* Accessibility is for everyone
 
 
-
+https://mdogucu.github.io/user2022
 
 
 ## Conclusion

@@ -1,7 +1,7 @@
 ---
-title: "Journey and Reflections on useR! 2022 Conference"
+title: "Learning Journey and Reflections on useR! 2022 Conference."
 subtitle: ""
-excerpt: "This post is a write up on my learning journey in the useR! 2022 Conference."
+excerpt: "This narrative is a write up on my learning journey in the useR! 2022 Conference."
 date: 2022-06-23
 author: "Jeremy Selva"
 draft: true
@@ -18,9 +18,9 @@ csl: utils/f1000research.csl
 
 ## Introduction
 
-The useR! 2022 Virtual Conference is a great opportunity for me to learn new things about R as well as to meet new people along the way.
+The useR! 2022 Virtual Conference has provided me to new things about R as well as an opportunity to meet new people along the way.
 
-Here is a list of things that inspire me to be a better programmer and analyst.
+Here is a narrative of what happened during my participation in the conference, which inspires me to be a better programmer and analyst.
 
 ## Day 1
 
@@ -40,7 +40,7 @@ It is heart warming to be able to attend a course conducted by a well-known bios
 
 I first saw his presentation [R for Graphical Clinical Trial Reporting](https://www.youtube.com/watch?v=4gXWQxaBbac) during the RStudio Conference 2020 at San Francisco. Here is the [abstract](https://www.fharrell.com/talk/rstudio20/) for this talk. I was touched by his desire and passion to always learn new things in R. This talk was one of the key morale booster for me to learn [plotly](https://plotly.com/r/) even though its documentation can be quite intimidating.I only got aware of his popularity when I saw him again presenting again at the Why R? 2020 as a keynote speaker titled [Controversies in Predictive Modeling, Machine Learning, and Validation](https://www.youtube.com/watch?v=DF1WsYZ94Es).
 
-In summary, the course was mainly a short summary of his ebook [Regression Modeling Strategies](https://hbiostat.org/rms/) as well as a short introduction of his new e-book [R Workflow](https://hbiostat.org/rflow/) written in [Quarto](https://quarto.org/).
+In summary, the course was mainly a short summary of his ebook [Regression Modeling Strategies](https://hbiostat.org/rms/) as well as a short introduction of his new e-book [R Workflow](https://hbiostat.org/rflow/) written in [Quarto](https://quarto.org/). Recently, he has also converted his free text [Biostatistics for Biomedical Research](http://hbiostat.org/bbr/) into an e-book as well.
 
 There are indeed a lot of useful information and it takes some time for me to digest, understand and reflect.
 
@@ -354,8 +354,6 @@ Even when the teaching material is available online, accessibility can be furthe
 
 As the content of the Bayesian statistics e-book requires a strong mathematics background to comprehend, Mine tries to make lessons more inviting for readers new to Bayesian statistics by complementing mathematical concepts with story telling, step by step computing instructions and the use relevant examples (Weather, Spotify data, Hotel bookings) that most lay person can relate. The goal is to encourage learners to embrace a growth mindset by learning from mistakes and not be discouraged when things are unclear when seen for the first time. Mistakes can still be good if it teaches you something. More ways to make teaching material accessible can be found the paper [Framework for Accessible and Inclusive Teaching Materials for Statistics and Data Science Courses](https://arxiv.org/abs/2110.06355)
 
-I started to laugh “The proof is obvious”
-
 When she had finished writing the e-book, Mine began to realise how little she knew about accessibility and was curious to know why this is so. She decided to look back into past teaching curriculum and data analysis tools to see how much focus on accessibility awareness and support are there. Unfortunately, most had little to no support. Knowing what needs to be done, she seek the support of [Teach Access](https://teachaccess.org/) and motivated individuals like [JooYoung Seo](https://twitter.com/seo_jooyoung) to spread the need of accessibility skills in data science education for aspiring and experienced data scientist. Mine is currently working on designing curriculum to include accessibility awareness and use of assistive technologies in data science projects.
 
 Mine proceeds with some technical details on how to use R to make data visualisation more accessible. Examples are
@@ -365,19 +363,19 @@ Mine proceeds with some technical details on how to use R to make data visualisa
 -   [Data sonification](https://www.youtube.com/watch?v=1VS9Od9qM1k&ab_channel=ChandraX-rayObservatory) with [sonify](https://cran.r-project.org/web/packages/sonify/index.html),
 -   [Data tactualization](https://www.youtube.com/watch?v=ClI555l4Z1M&ab_channel=JooYoungSeo) with [tactileR](https://github.com/jooyoungseo/tactileR)
 
-For image alternative text, take a look at Amy Cesal’s [post](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) on some good practice guidelines to describe plots with alternative text. One can also use the `VI` function from the [BrailleR](https://github.com/ajrgodfrey/BrailleR) package to generate [alternative text automatically](https://cran.rstudio.com/web/packages/BrailleR/vignettes/qplot.html). Mine’s collaborator, [JooYoung Seo](https://twitter.com/seo_jooyoung) also had a [presentation](https://www.youtube.com/watch?v=0HvyNtltu-A&ab_channel=RStudio) on accessible data science on the RStudio Global Conference 2021.
+For image alternative text, take a look at Amy Cesal’s [post](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) on some good practice guidelines to describe plots with alternative text. One can also use the `VI` function from the [BrailleR](https://github.com/ajrgodfrey/BrailleR) package to generate [alternative text automatically](https://cran.rstudio.com/web/packages/BrailleR/vignettes/qplot.html). More resources on accessibility can be found in this [presentation](https://www.youtube.com/watch?v=0HvyNtltu-A&ab_channel=RStudio) on accessible data science on the RStudio Global Conference 2021 by Mine’s collaborator, [JooYoung Seo](https://twitter.com/seo_jooyoung).
 
-Mine concluded the keynote with some recommendations for the community. Here are they below
+Mine concluded the keynote with many recommendations for the community. Here are some points that I have summarised below
 
--   A picture is worth a thousand words but an alternative text is worth a thousand pictures
--   Fixing a typo and writing alternative text are good pull request
--   Disclosure should fall on event organisers
--   Accessibility request should not be a job of just volunteers to handle
--   Accessibility should be taught to students as well as professionals
--   Accessibility should not be specific to just the R programming language
--   Accessibility should be taught in a way that learners can apply their learning in non-data contexts. (Alternative text should be used outside data science)
--   Students should be assessed and held accountable for their accessibility practices.
--   Accessibility is for everyone
+-   Having alternative text in a picture is worth a thousand picture and should be treated with greater value than a diagram without one. Thus, writing alternative text as a git pull request is a good way to contribute to open source educational material.
+
+-   Event organisers should take a more proactive approach by creating events/meetups that are more accommodating to the needs of individuals who need additional accessibility and not wait for them to make such a request before working on it.
+
+-   Providing accessibility related support should not be a job assigned to volunteers alone. Event organisers must invest some resources in hiring professionals to lead and guide these volunteers and ensure that these services are implemented correctly.
+
+-   Accessibility lessons should be taught to students as well as professionals, included in all programming languages, and applicable outside of the data science classroom. Given a (school or) work project, (students and) professionals should be (assessed and) held accountable for their accessibility practices.
+
+-   Accessibility should be seen as a gift for everyone and not for a privileged few.
 
 https://mdogucu.github.io/user2022
 

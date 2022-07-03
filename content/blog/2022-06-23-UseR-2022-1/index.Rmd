@@ -32,7 +32,7 @@ Here is a narrative of what happened during my participation in the conference f
 
 I have attended two workshops this year titled Introduction to Dimensional Reduction in R and Regression Modeling Strategies.
 
-### Introduction To Dimensional Reduction i=In R
+### Introduction To Dimensional Reduction In R
 
 The course was conducted by [Isabella Bicalho-Frazeto](https://twitter.com/bisnotforbella). The materials can be found in this [Github page](https://github.com/bellabf/dimensional-reduction). 
 

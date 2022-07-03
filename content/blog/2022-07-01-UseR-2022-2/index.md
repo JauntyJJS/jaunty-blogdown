@@ -19,7 +19,7 @@ csl: utils/f1000research.csl
 
 ## Introduction
 
-In this narrative, I will share my learning journey during Day 3 and Day 4 of useR! 2022 Virtual Conference.
+In this narrative, I will continue sharing my learning journey during Day 3 and Day 4 of useR! 2022 Virtual Conference.
 
 ## Day 3
 

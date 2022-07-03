@@ -2,7 +2,7 @@
 title: "Learning Journey and Reflections on useR! 2022 Conference Part 3"
 subtitle: ""
 excerpt: "This narrative is a write up on Day 4 of my learning journey in the useR! 2022 Conference."
-date: 2022-07-01
+date: 2022-07-02
 author: "Jeremy Selva"
 draft: false
 images:

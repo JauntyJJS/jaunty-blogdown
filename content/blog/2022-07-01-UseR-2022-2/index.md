@@ -46,7 +46,7 @@ There are indeed a lot of useful information and it takes some time for me to di
 
 ## Day 2
 
-### First Keynote
+### First Keynote: R for geospatial data science and public health surveillance
 
 The first keynote in Day 2 of the conference is by [Paula Moraga](https://twitter.com/Paula_Moraga), author of the e-book [Geospatial Health Data: Modeling and Visualization with R-INLA and Shiny](https://www.paulamoraga.com/book-geospatial/).
 
@@ -58,6 +58,8 @@ The section on communication and dissemination provides a good overview of diffe
 
 Overall, I recommended this keynote for those who wants to know more about R and what it can provide.
 
+-   📝[Slides](https://www.paulamoraga.com/presentation-geohealth)
+
 ### Speed Networking Session
 
 The event that will stick to my mind for a long time is the speed networking session. This is my first time attending one actually. I have to admit it can be scary to meet someone new in the web. The fact that each meetup lasts for three minutes adds to my anxiety. There are times when I started talking only to be realised that I was muted when the other person tells me that they can’t hear me. Nevertheless, I managed to get the hang of it halfway and started to feel more comfortable and confident in introducing myself. I have to say it is quite fruitful for me. I managed to meet new people from Europe and Australia passionate about R and made some connections on Linkedin.
@@ -66,13 +68,15 @@ The event that will stick to my mind for a long time is the speed networking ses
 
 As for the sessions, I first attended the first two talks from Big Data Management followed by next two talks from Building the R Community 1.
 
-In the first talk, I get to view the latest development on the R package [targets](https://docs.ropensci.org/targets/) from [The R Targetopia](https://wlandau.github.io/targetopia/) created by [Will Landau](https://twitter.com/wmlandau). \[targets\]((https://docs.ropensci.org/targets/) is known to keep a record of pre-processing results in a data analysis pipeline so that it knows when it is able to skip tasks when data analysis pipeline is rerun.
+In the first talk, I get to view the latest development on the R package [targets](https://docs.ropensci.org/targets/) from [The R Targetopia](https://wlandau.github.io/targetopia/) created by [Will Landau](https://twitter.com/wmlandau). [targets](https://docs.ropensci.org/targets/) is known to keep a record of pre-processing results in a data analysis pipeline so that it knows when it is able to skip tasks when data analysis pipeline is rerun.
 
 Take a look at [Joel Nitta’s](https://twitter.com/joel_nitta) [presentation](https://www.youtube.com/watch?v=XMvinGSG72k) at an [AsiaR meetup](https://hackmd.io/8HzieKHoSEKLUoQRm9fBYg?view) for a decent introduction and demonstration of the \[targets\]((https://docs.ropensci.org/targets/) R package
 
 Now it is able to have the option to **keep records** of historical data outputs instead of overwriting a previous output with a recent new one as a result of changes in the analysis pipeline. Two methods were shared to capture version-controlled snapshots of the data store. One is by using a version-aware cloud storage such as [Amazon S3](https://aws.amazon.com/s3/) the other is by using Git, both with the help of the [gittargets](https://docs.ropensci.org/gittargets/).
 
 With the snapshots recorded, the \[targets\]((https://docs.ropensci.org/targets/) workflow is able to recover the pre-processing data that correspond to a **previous** git branch or commit. Thus, should the user needs to roll back the analysis pipeline to a previous stage, it will take less time to rerun the updated code as the set of pre-processing results are updated accordingly.
+
+-   📝[Slides](https://wlandau.github.io/user-conf-2022/)
 
 ### An interactive pipeline for analysing and sharing bulk sequencing results
 
@@ -94,6 +98,8 @@ Despite the challenges faced, they managed to host several [meetings](https://ww
 
 It is heart warming and encouraging to see their strong passion and desire in community building even though the work can be exhausting and the rewards may be little. Do support the team by attending their meetings and if you can’t attend, do at least share it to someone else.
 
+-   📝[Slides](https://github.com/rladies/meetup-presentations_nairobi/tree/master/useR!%202022%20-%20Regular%20Talk)
+
 ### Dev Containers for Easy R Tutorials
 
 The following talk I have attended is provided by [David Smith](https://twitter.com/revodavid), I was thrilled to see the use of [Dev Containers](https://containers.dev/) in [Github Codespaces](https://github.com/features/codespaces) to create interactive R tutorials for teaching. One real life example is this [Microsoft workshop](https://docs.microsoft.com/en-us/learn/paths/machine-learning-with-r/) titled “Create machine learning models with R and tidymodels”.
@@ -105,6 +111,8 @@ Seeing more and more options to create interactive R Tutorials definitely will e
 Here is a [Github](https://github.com/revodavid/devcontainers-r) introduction of what [Dev Containers](https://containers.dev/) in Github Codespaces is about. (Video introduction may come soon.)
 
 Unfortunately, creating such tutorials are currently only possible with a GitHub Enterprise or GitHub Education account. Hopefully, it could be extended to a personal Github account in the future.
+
+-   📝[Slides](https://github.com/revodavid/devcontainers-r/blob/main/EasyRTutorialsUseR2022.pdf)
 
 ### Converting R function to C++ function and back with ast2ast
 
@@ -132,9 +140,12 @@ Today, more research data publications use [Docker](https://www.docker.com/) as 
 
 If what I am writing may sound Greek to you, may I suggest [Alex Gold’s](https://twitter.com/alexkgold?lang=en) introductory [talk](https://github.com/akgold/docker4ds) on Docker. In addition, the speaker is also working on an [e-book](https://do4ds.com/) titled DevOps for Data Science. Do give him your support.
 
-For those who are familiar with Docker, [Peter Solymos](https://twitter.com/psolymos) has shared some valuable [advice](https://my.visme.co/view/90rqk0kg-user-2022-talk-shiny-docker) on when and how to apply Docker on [R Shiny](https://shiny.rstudio.com/) Apps. More of such resources can be found in this Hosting Data Apps [webpage](https://hosting.analythium.io/).
+For those who are familiar with Docker, [Peter Solymos](https://twitter.com/psolymos) has shared some valuable [advice](https://my.visme.co/view/90rqk0kg-user-2022-talk-shiny-docker) on when and how to apply Docker on [R Shiny](https://shiny.rstudio.com/) Apps. More of such resources can be found in this Hosting Data Apps [webpage](https://hosting.analythium.io/) and this R-bloggers [post](https://www.r-bloggers.com/2022/06/user2022-best-practicesfor-shiny-apps-with-docker-and-more/).
 
-### Second Keynote
+-   📝[Alex’s Slides](https://github.com/akgold/docker4ds)
+-   📝[Peter’s Slides](https://my.visme.co/view/90rqk0kg-user-2022-talk-shiny-docker)
+
+### Second Keynote: How tools shape thinking about graphics
 
 The second keynote is by [Amanda Cox](https://mobile.twitter.com/amandacox), a well-known American journalist now working in a non-profit organisation [USAFacts](https://usafacts.org/).
 
@@ -155,7 +166,7 @@ Nevertheless, Amanda concludes that despite all these limitations in R for visua
 
 ## Day 3
 
-### First Keynote
+### First Keynote: afrimapr - Perspectives of doing R stuff\* in an emerging region \*stuff \<- c(“coding”, “community”, “capacity”)
 
 The first keynote is by the [afrimapr](https://afrimapr.github.io/afrimapr.website/) project team. The project aims is to use R as a building block for many things such as better management of data realted to Africa, creation of open source analytical tools to analyse and provide insights across Africa, providing teaching resources and training for those interested in this novel work and building a strong community with this common interest.
 
@@ -177,6 +188,8 @@ The last phase of the keynote is about the status of R communities in Africa. An
 Anelda then gave a few reasons to explain why it is hard to build and sustain an R community. One reason is that building one requires a lot of skills and hard work which is daunting if the organising team just have a few people. Another reason is that the people who build such communities are mainly volunteers who may be overburdened by work and/or family commitments to run regular events. Low participate rate in such organised event does bring a mental toll on the organisers as well. The last reason is a lack of funding and resources.
 
 The keynote concluded first by appealing to the African R community to support more new R users locally, collaborate locally and internationally and try to experiment new established approaches to see if it helps or not. It then appeal towards the global (funding) community to find ways to reward people for their time to run events, invest more in multilingual materials as well as to identify and support locally-led, custom-developed initiatives that works in emerging regions.
+
+-   📝[Slides](https://docs.google.com/presentation/d/1ResuITjWSs6shKT0wtyyWzR1llTIu-t4cOcPh1BsIII/edit#slide=id.g131a1a79661_0_0)
 
 ### Poster Presentation
 
@@ -202,13 +215,19 @@ The last presentation in the Data Visualisation room is by Rohan Tummala. This v
 
 It definitely has a lot of potential to be improved by the R community. Here are my “5-cent” suggestions. The team may wish to use the R package [correlation](https://easystats.github.io/correlation/) from the [easystats](https://easystats.github.io/easystats/) team, to expand their current correlation methods of Pearson, Kendall and Spearman. As for the question raised on extending the static plot to multichotomous data (or k-sample corrgram), one idea I can think of currently is to adopt the [scatter plot matrix](http://www.sthda.com/english/wiki/scatter-plot-matrices-r-base-graphs) style where the diagonal are the groups and the scatter plots are replaced with the two sample corrgrams instead. However, this in turn creates the same redundant space which the two-sample corrgram is supposed to prevent. Regardless, if this visualisation continue to receive good feedback, someone will create an interactive two-sample corrgram and push it as a web tool.
 
-#### R in Production
+#### pacs
 
 I next entered the R in Production room where I am first introduced to the R package [pacs]((https://polkas.github.io/pacs/)) by [Maciej Nasinski](https://github.com/polkas). It contains a set of useful utility functions for helping R package developers life easier such as, automating validation of a [renv](https://rstudio.github.io/renv/articles/renv.html) lock file, finding out packages which are not from CRAN and many more. More information can be found in its [documentation](https://polkas.github.io/pacs/).
 
+#### svgtools
+
 The second sharing is from Konrad Oberwimmer who introduced the R package [`svgtools`](https://cran.r-project.org/web/packages/svgtools/index.html) that is able to key in statistical results onto charts template made in [SVG file format](https://commons.wikimedia.org/wiki/Template:SVG_Chart). This is helpful if there is a need to create graphs that needs to follow a certain layout based on corporate needs.
 
+#### data.validator
+
 The next showcase is about [data.validator](https://appsilon.github.io/data.validator/) by [Marcin Dubel](https://twitter.com/DubelMarcin). Honestly, this is an R package that I wish I knew earlier how to use it. While it is great to have tools that validate the data but it is even better when a validation report, highlighting the possible issues of a given dataset clearly and explicitly, can be created and distributed to others. [data.validator](https://appsilon.github.io/data.validator/) not only uses [assertr](https://github.com/ropensci/assertr) to do the validation but is able to create an interactive report in html as well. More details can also be found in this [youtube video](https://www.youtube.com/watch?v=U1-j7c_8LFQ) as well as this [R-bloggers post](https://www.r-bloggers.com/2022/05/data-cleaning-in-r-2-r-packages-to-clean-and-validate-datasets/)
+
+#### Continuous Integration in GitLab for R
 
 Lastly, it is a workflow presented by [Cody Marquart](https://twitter.com/cody_marquart) on how to manage R packages automatically using [GitLab](https://about.gitlab.com/) Continuous Integration (CI). [GitLab CI](https://docs.gitlab.com/ee/ci/introduction/index.html#continuous-integration) was first introduced from an [April 2020 GitLab meetup](https://www.youtube.com/watch?v=l5705U8s_nQ&t=397s). It is nice to know that CI is possible to be applied on R packages management in GitLab. Usually, CI was done using [Github Actions](https://github.com/features/actions) from [Github](https://github.com/) because of many [useful resources](https://github.com/r-lib/actions) available to help users create CI tasks easily. Thus, [Github Actions](https://github.com/features/actions) became a popular choice for R package management. Nevertheless, as it is unwise not to have a backup plan, being aware of that an alternative workflow exists is critical. Take a look at one of GitLab CI examples used in the R package [shinyLogger](https://gitlab.com/clmarquart/shinyLogger/-/blob/main/.gitlab-ci.yml)
 Hopefully, I will get to witness a similar workflow for managing R packages in [Bitbucket](https://bitbucket.org/product/) in the future.
@@ -221,6 +240,8 @@ The first talk was from Laure Cougnaud from [OpenAnalytics](https://www.openanal
 
 I was first introduced to Rmarkdown report templates during my attendance in the RStudio Conference 2020 at San Francisco. It was presented by [Sharla Gelfand](https://twitter.com/sharlagelfand) titled [Don’t repeat yourself, talk to yourself! Reporting with R](https://www.youtube.com/watch?v=JThd3YYQXGg&ab_channel=RStudio). I highly recommend watching as it is really down to Earth and funny at the same time. Sharla also provided a [blog post](https://sharla.party/post/usethis-for-reporting/) showing step by step how to produce an introductory R package with Rmarkdown report templates. The work done by Laure Cougnaud and her team is bringing this workflow to the next level by extending from Rmarkdown to [bookdown](https://bookdown.org/) reports. Definitely a job well done.
 
+-   📝[Slides](https://medical-monitoring.openanalytics.io/)
+
 ### knitr engines and blogdown troubleshooting
 
 The next talk is by [Christophe Dervieux](https://twitter.com/chrisderv) giving a [introductory tour](https://cderv.rbind.io/talk/2022-user-knitr-engines/) on the different [knitr](https://github.com/yihui/knitr) engines. The [knitr](https://github.com/yihui/knitr) engines can be listed in R using the command `names(knitr::knit_engines$get())`. More information of commonly used engines can be found in the \[Rmarkdown e-book\](https://bookdown.org/yihui/rmarkdown/language-engines.html. The talk also introduced the latest [`knitr`](https://github.com/yihui/knitr) engine called `exec` which allow command lines to be executed in the Rmarkdown code chunk. The talk also inform users how to create custom [knitr](https://github.com/yihui/knitr) engines as well. One major takeaway for me on this talk is the that there is actually a [Github link](https://github.com/yihui/knitr-examples) showing Rmarkdown examples of many different [knitr](https://github.com/yihui/knitr) engine, including the latest `exec` engine found [here](https://github.com/yihui/knitr-examples/blob/master/124-exec-engine.Rmd).
@@ -229,19 +250,18 @@ After enjoying the tour on [knitr](https://github.com/yihui/knitr) engines, the 
 
 For me, I started to learn how to create this [Hugo Apéro](https://hugo-apero-docs.netlify.app/) theme [blogdown](https://pkgs.rstudio.com/blogdown/) site from watching a YouTube video of a [lesson](https://www.youtube.com/watch?v=RksaNh5Ywbo&ab_channel=R-LadiesTunis) conducted by Alison Hill’s in R Ladies Tunis. However, if a two hours lesson is too long, may I direct you to Alison Hill’s [Day 09: Hugo Apéro from scratch \|\| rmarkdown + blogdown + Netlify](https://www.youtube.com/watch?v=yXFu_upDL2o&ab_channel=AlisonHill) from the \#12DaysOfDusting [series](https://www.youtube.com/playlist?list=PLzxicn7kBeazI9Niimsth81iWn4mvCmu0) instead.
 
+-   📝[Christophe’s Slides](https://cderv.rbind.io/talk/2022-user-knitr-engines/)
+-   📝[Yihui’s Slides](https://yihui.org/en/2022/06/user-blogdown/)
+
 ### Reliable Scientific Software Development
 
-The last presentation of this session is by [Meike Steinhilber](https://twitter.com/M_Steinhilber), developer of the R packages [sprtt](https://meikesteinhilber.github.io/sprtt/)(Sequential Probability Ratio Tests Using The Associated t-statistic) and its Shiny counterpart [sprit](https://meike-steinhilber.shinyapps.io/spirit/). The [talk](https://www.dropbox.com/s/dv80062qo0rbhd3/useR_MeikeSteinhilber_2022_V2.pdf?dl=0) focuses on ways to develop reliable scientific software using some best practices for software development.
+The last presentation of this session is by [Meike Steinhilber](https://twitter.com/M_Steinhilber), developer of the R packages [sprtt](https://meikesteinhilber.github.io/sprtt/)(Sequential Probability Ratio Tests Using The Associated t-statistic) and its Shiny counterpart [sprit](https://meike-steinhilber.shinyapps.io/spirit/). The talk focuses on ways to develop reliable scientific software using some best practices for software development.
 
 In summary, the best practices are having clean and refactored code, software testing, continuous integration, version control and extended documentation. Examples used were from her R package [sprtt](https://meikesteinhilber.github.io/sprtt/). This is great advice for someone who has just started to have many long R scripts and wish to make them more manageable and sustainable. As this is also the speaker’s [first conference presentation](https://twitter.com/M_Steinhilber/status/1539705226319564802?cxt=HHwWhMC4mdzvkN4qAAAA), do show her some love and support if you like the presentation.
 
 This presentation gives me a nostalgia feeling as I have [presented](https://jeremy-selva.netlify.app/talk/2021-10-29-pydata-global-2021/) something similar in the [PyData Global 2021](https://pydata.org/global2021/) conference using a Python-made software [MSOrganiser](https://github.com/SLINGhub/MSOrganiser) as an example. That conference was also my first as well. Instead of reliability, the focus of my presentation however was tips to make the software more user friendly, less intimidating for new users and ways to deal with the angry ones as well.
 
-### Clinical Data Review
-
-\[https://twitter.com/M_Steinhilber\]
-\[https://twitter.com/janithcwanni\]
-[Using R to Create Reproducible Engineering Test Reports](https://www.youtube.com/watch?v=9GmXuOi4nhk&list=PL9HYL-VRX0oTL2P7FK3854-X6kfLTb4fJ&index=33)
+-   📝[Slides](https://www.dropbox.com/s/dv80062qo0rbhd3/useR_MeikeSteinhilber_2022_V2.pdf?dl=0)
 
 ### Second Keynote
 
@@ -259,7 +279,7 @@ To facilitate a smooth MLOps process for the programming language of Python and 
 
 The keynote is indeed rich in content regarding the best practices for machine learning.
 
-[Slides](https://www.dropbox.com/s/3ds01k9hdtn2ghb/user2022.pdf?dl=0)
+-   📝[Slides](https://www.dropbox.com/s/3ds01k9hdtn2ghb/user2022.pdf?dl=0)
 
 ## Day 4
 
@@ -273,6 +293,8 @@ The second part is a sharing of a few bug report stories followed by some tips o
 
 After the keynote session, the R Core Team then had a panel discussion.
 
+-   📝[Slides](https://raw.github.com/JauntyJJS/jaunty-blogdown/main/content/blog/2022-06-23-UseR-2022/R_core.pdf)
+
 ### Package dependencies
 
 After the panel discussion, I attended the first two talks in the Package Development session followed by the last two talks in Building the R Community 2.
@@ -283,10 +305,15 @@ When developing R packages, it is advisable to keep it [lightweight](https://tin
 
 This is kind of similar to the R package [dstr](https://github.com/falo0/dstr). The difference is that [pkgndep](https://jokergoo.github.io/pkgndep/) provides a more detailed result in a heatmap rather than a network graph. On the other hand, [dstr](https://github.com/falo0/dstr) provides clearer advise to the R developers on what they can do next to reduce the dependencies. Perhaps, the teams of [pkgndep](https://jokergoo.github.io/pkgndep/) and [dstr](https://github.com/falo0/dstr) can collaborate and build on each other strengths to further improve on the usefulness of their current creations.
 
+-   📝[Slides](https://docs.google.com/presentation/d/11EwFl18Ana1pZ1C4UDdbdqjLJnbM9F32KOHXRpbY4IM/edit#slide=id.p)
+
 ### pre-commits
 
 The second talk conducted by [Lorenz Walthert](https://twitter.com/lorenzwalthert) is an eye-opener for me as I am unfamiliar with git pre-commit hooks. From my understanding, pre-commit hooks are widely used for Python developers due to the availability of of the Python package [pre-commit](https://pre-commit.com/) to do all the heavy lifting.
 Motivated by how useful git pre-commit hooks are in improving code quality, Lorenz created a R package [precommit](https://lorenzwalthert.github.io/precommit/index.html) in hopes that more R package developers are able to adapt this workflow easily.
+
+-   📝[Slides](https://github.com/lorenzwalthert/useR2022.precommit.slides)
+-   📝[Demo](https://github.com/lorenzwalthert/useR2022.precommit.demo)
 
 ### Transitioning to R
 
@@ -306,6 +333,8 @@ I do gain some useful knowledge in package management such as creating better sn
 
 Despite being busy with his research software engineer role, Nicholas is also active in the [rOpenSci Social Coworking and Office Hours](https://ropensci.org/events/coworking-2022-06/) (Asia Pacific Edition) helping people with R related issues. It is actually from this online event when I first met him. He is really a nice and approachable R enthusiast.
 
+-   📝[Slides](https://njt-user-2022.netlify.app/)
+
 ### Synthetic Data Generation
 
 Honestly the last set of sessions was another hard choice for me as it covers topics that I am unfamiliar with. I took a leap of faith and attended the session on Synthetic Data and Text Analysis.
@@ -318,6 +347,8 @@ The second one switches to the topic of Text Analysis with the R package [textre
 
 As someone who has attended a [book club](https://www.youtube.com/watch?v=cXjTKOoN6aU&list=PL3x6DOfs2NGisLSs09v1NQUQaxuE8nbOO) on [An Introduction to Statistical Learning with Applications in R](https://www.statlearning.com/)(ISLR) conducted by the [R4DS Online Learning Community](https://www.rfordatasci.com/), Emil’s [ISLR tidymodels Labs](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/index.html) notes have been very helpful to our cohort group’s learning journey to use [tidymodels](https://www.tidymodels.org/) to better understand some of the statistical learning methods.
 
+-   📝[Slides](https://emilhvitfeldt.github.io/useR2022-textrecipes)
+
 ### Bivariate Data Generation using Scagnostics
 
 The next presentation is led by [Janith Wanniarachchi](https://mobile.twitter.com/janithcwanni) regarding his R package called [scatteR](https://github.com/janithwanni/scatteR). [scatteR](https://github.com/janithwanni/scatteR) is used to generate a bivariate data set based on a given [scagnostics](https://en.wikipedia.org/wiki/Scagnostics) measurement.
@@ -325,6 +356,8 @@ The next presentation is led by [Janith Wanniarachchi](https://mobile.twitter.co
 I enjoyed the flow of the presentation as it is like telling a story. The protagonist who faced a stumbling block along the way managed to overcome it after being inspired by ice-cream sprinkles. I won’t spoil the plot any further.
 
 Janith is another [first time](https://mobile.twitter.com/janithcwanni/status/1540053289089519616?cxt=HHwWgMDS9dGTr98qAAAA) presenter at an international conference. Do show him your support if you like his presentation.
+
+-   📝[Slides](https://scatter-use-r-2022.netlify.app/)
 
 ### Making better forecasting models by integrating sentiment analysis with topic modeling of textual data.
 
@@ -377,7 +410,7 @@ Mine concluded the keynote with many recommendations for the community. Here are
 
 -   Accessibility should be seen as a gift for everyone and not for a privileged few.
 
-https://mdogucu.github.io/user2022
+-   📝[Slides](https://mdogucu.github.io/user2022)
 
 ## Conclusion
 

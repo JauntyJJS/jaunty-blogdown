@@ -4,11 +4,12 @@ subtitle: ""
 excerpt: "This narrative is a write up on my learning journey in the useR! 2022 Conference."
 date: 2022-07-01
 author: "Jeremy Selva"
-draft: true
+draft: false
 images:
 series:
 tags:
 categories:
+  - useR! 2022
 layout: single-sidebar
 editor_options: 
   chunk_output_type: console

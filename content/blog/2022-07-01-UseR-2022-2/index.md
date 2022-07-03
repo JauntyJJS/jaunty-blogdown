@@ -1,8 +1,8 @@
 ---
-title: "Learning Journey and Reflections on useR! 2022 Conference."
+title: "Learning Journey and Reflections on useR! 2022 Conference Part 2"
 subtitle: ""
 excerpt: "This narrative is a write up on my learning journey in the useR! 2022 Conference."
-date: 2022-06-23
+date: 2022-07-01
 author: "Jeremy Selva"
 draft: true
 images:
@@ -18,155 +18,11 @@ csl: utils/f1000research.csl
 
 ## Introduction
 
-The useR! 2022 Virtual Conference has provided me to new things about R as well as an opportunity to meet new people along the way.
-
-Here is a narrative of what happened during my participation in the conference, which inspires me to be a better programmer and analyst.
-
-## Day 1
-
-I have attended two workshops this year titled Introduction to Dimensional Reduction in R and Regression Modeling Strategies.
-
-### Introduction to Dimensional Reduction in R
-
-The course was conducted by [Isabella Bicalho-Frazeto](https://twitter.com/bisnotforbella). The materials can be found in this [Github page](https://github.com/bellabf/dimensional-reduction).
-
-I personally enjoyed this course as it is not too technical with equations and the pace is just right with sufficient breaks. The instructor also goes the extra mile to create polls to interact with us and check if we are doing fine during the course.
-
-Besides learning to use different dimension reduction techniques using base R, I was also lightly introduced to the use of [Tidymodels](https://www.tidymodels.org/) to do Principal Component Analysis ([PCA](https://recipes.tidymodels.org/reference/step_pca.html) ) as well as [reticulate](https://rstudio.github.io/reticulate/) to run T-distributed Stochastic Neighbor Embedding ([tSNE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html) ) using [Python](https://www.python.org/).
-
-### Regression Modeling Strategies
-
-It is heart warming to be able to attend a course conducted by a well-known biostatistician, [Frank Harrell](https://twitter.com/f2harrell) from Vanderbilt University.
-
-I first saw his presentation [R for Graphical Clinical Trial Reporting](https://www.youtube.com/watch?v=4gXWQxaBbac) during the RStudio Conference 2020 at San Francisco. Here is the [abstract](https://www.fharrell.com/talk/rstudio20/) for this talk. I was touched by his desire and passion to always learn new things in R. This talk was one of the key morale booster for me to learn [plotly](https://plotly.com/r/) even though its documentation can be quite intimidating.I only got aware of his popularity when I saw him again presenting again at the Why R? 2020 as a keynote speaker titled [Controversies in Predictive Modeling, Machine Learning, and Validation](https://www.youtube.com/watch?v=DF1WsYZ94Es).
-
-In summary, the course was mainly a short summary of his ebook [Regression Modeling Strategies](https://hbiostat.org/rms/) as well as a short introduction of his new e-book [R Workflow](https://hbiostat.org/rflow/) written in [Quarto](https://quarto.org/). Recently, he has also converted his free text [Biostatistics for Biomedical Research](http://hbiostat.org/bbr/) into an e-book as well.
-
-There are indeed a lot of useful information and it takes some time for me to digest, understand and reflect.
-
-## Day 2
-
-### First Keynote: R for geospatial data science and public health surveillance
-
-The first keynote in Day 2 of the conference is by [Paula Moraga](https://twitter.com/Paula_Moraga), author of the e-book [Geospatial Health Data: Modeling and Visualization with R-INLA and Shiny](https://www.paulamoraga.com/book-geospatial/).
-
-Even though I am not working with geospatial data, the content from the talk is very resourceful for those who has just started using R and geospatial analysis in general. It is the type of information I wish I had when I first begin to learn about R.
-
-It started with a brief summary of a generic geospatial analysis workflow followed by some real life applications to highlight some challenges faced. Lots of visual examples were used to keep the audience glued to the talk. The presenter also shared how one can start learning geospatial analysis by using open data from [rspatialdata](https://rspatialdata.github.io/) and useful R packages analytical tools like [SpatialEpiApp](https://github.com/Paula-Moraga/SpatialEpiApp) and [epiflows](https://www.repidemicsconsortium.org/epiflows/). R packages from the [R Epidemics Consortium](http://www.repidemicsconsortium.org) were something new to me as well.
-
-The section on communication and dissemination provides a good overview of different R packages used to display and distribute results to others. A gentle introduction of [ggplot2](https://ggplot2.tidyverse.org/), [htmlwidgets](http://gallery.htmlwidgets.org/), [R Markdown](https://rmarkdown.rstudio.com/), [flexdashboard](https://pkgs.rstudio.com/flexdashboard/), [Shiny](https://shiny.rstudio.com/) were mentioned, without being too technical on the code. The presenter also highlighted some R communities ([R Ladies](https://rladies.org/), [R Forwards](https://forwards.github.io/)) for those new to R to be able to seek help or improve themselves.
-
-Overall, I recommended this keynote for those who wants to know more about R and what it can provide.
-
--   📝[Slides](https://www.paulamoraga.com/presentation-geohealth)
-
-### Speed Networking Session
-
-The event that will stick to my mind for a long time is the speed networking session. This is my first time attending one actually. I have to admit it can be scary to meet someone new in the web. The fact that each meetup lasts for three minutes adds to my anxiety. There are times when I started talking only to be realised that I was muted when the other person tells me that they can’t hear me. Nevertheless, I managed to get the hang of it halfway and started to feel more comfortable and confident in introducing myself. I have to say it is quite fruitful for me. I managed to meet new people from Europe and Australia passionate about R and made some connections on Linkedin.
-
-### gittargets for better data version control
-
-As for the sessions, I first attended the first two talks from Big Data Management followed by next two talks from Building the R Community 1.
-
-In the first talk, I get to view the latest development on the R package [targets](https://docs.ropensci.org/targets/) from [The R Targetopia](https://wlandau.github.io/targetopia/) created by [Will Landau](https://twitter.com/wmlandau). [targets](https://docs.ropensci.org/targets/) is known to keep a record of pre-processing results in a data analysis pipeline so that it knows when it is able to skip tasks when data analysis pipeline is rerun.
-
-Take a look at [Joel Nitta’s](https://twitter.com/joel_nitta) [presentation](https://www.youtube.com/watch?v=XMvinGSG72k) at an [AsiaR meetup](https://hackmd.io/8HzieKHoSEKLUoQRm9fBYg?view) for a decent introduction and demonstration of the \[targets\]((https://docs.ropensci.org/targets/) R package
-
-Now it is able to have the option to **keep records** of historical data outputs instead of overwriting a previous output with a recent new one as a result of changes in the analysis pipeline. Two methods were shared to capture version-controlled snapshots of the data store. One is by using a version-aware cloud storage such as [Amazon S3](https://aws.amazon.com/s3/) the other is by using Git, both with the help of the [gittargets](https://docs.ropensci.org/gittargets/).
-
-With the snapshots recorded, the \[targets\]((https://docs.ropensci.org/targets/) workflow is able to recover the pre-processing data that correspond to a **previous** git branch or commit. Thus, should the user needs to roll back the analysis pipeline to a previous stage, it will take less time to rerun the updated code as the set of pre-processing results are updated accordingly.
-
--   📝[Slides](https://wlandau.github.io/user-conf-2022/)
-
-### An interactive pipeline for analysing and sharing bulk sequencing results
-
-The following talk is on [bulkAnalyseR](https://core-bioinformatics.github.io/bulkAnalyseR/) by [Ilias Moutsopoulos](https://github.com/emouts) from the [Cambridge Stem Cell Institute Core Bioinformatics Group](https://github.com/Core-Bioinformatics)
-
-If you are new to bulk sequencing data, take a look at this introductory YouTube [video](https://www.youtube.com/watch?v=bMf1cnttuPk) first.
-
-[bulkAnalyseR](https://core-bioinformatics.github.io/bulkAnalyseR/) ensures analysis of single- and multi-omics bulk-sequencing data follows a certain preprocessing pipeline smoothly and display the results in an interactive [R Shiny](https://shiny.rstudio.com/) application. The analysis pipeline is flexible for users’ to analyse a combination of other sequencing data set like mRNAseq, ChIPseq, sRNAseq/microRNAs.
-
-The results are then distributed online via the [shinyapps.io](https://www.shinyapps.io/) platform. Results includes quality check heatmap, similarity heatmap, principal component analysis scatter plots, volcano plots, gene regulatory networks and so on. Here is the [link](http://bioinf.stemcells.cam.ac.uk:3838/bulkAnalyseR/) of some of bulkAnalyseR results if you are interested.
-
-### R-Ladies Nairobi during COVID-19 pandemic
-
-After two talks from Big Data Management, I switched to another session Building the R Community 1 for a less technical presentation.
-
-I managed to catch up with the presentation by [Njoki Lucy](https://twitter.com/lucy_njokinjuki) and [Shel Kariuki](https://twitter.com/shel_kariuki) on their story of trying to build [R-Ladies Nairobi](https://twitter.com/rladiesnairobi) during the COVID-19 pandemic.
-
-Despite the challenges faced, they managed to host several [meetings](https://www.youtube.com/channel/UCRth2ImB1T-_saYc5YBTcyA/videos) and even collaborated with the [Nairobi R User Group](https://www.meetup.com/nairobi-r-users-group/) to conduct an R conference called [satRday Nairobi 2021](https://www.youtube.com/hashtag/satrdaynairobi). The slides for all [R-Ladies Nairobi](https://twitter.com/rladiesnairobi) meetings can be found in this [Github page](https://github.com/rladies/meetup-presentations_nairobi).
-
-It is heart warming and encouraging to see their strong passion and desire in community building even though the work can be exhausting and the rewards may be little. Do support the team by attending their meetings and if you can’t attend, do at least share it to someone else.
-
--   📝[Slides](https://github.com/rladies/meetup-presentations_nairobi/tree/master/useR!%202022%20-%20Regular%20Talk)
-
-### Dev Containers for Easy R Tutorials
-
-The following talk I have attended is provided by [David Smith](https://twitter.com/revodavid), I was thrilled to see the use of [Dev Containers](https://containers.dev/) in [Github Codespaces](https://github.com/features/codespaces) to create interactive R tutorials for teaching. One real life example is this [Microsoft workshop](https://docs.microsoft.com/en-us/learn/paths/machine-learning-with-r/) titled “Create machine learning models with R and tidymodels”.
-
-To my knowledge, I have seen interactive R Tutorials implemented in two ways. One is by [learnR](https://rstudio.github.io/learnr/), for example [A Quick Flight to the Edge of the Tidyverse](https://www.allisonhorst.com/talk/rladies_tunis_saudiarabia_tidyverse_intro/) conducted by Allison Horst in a combined [R-Ladies Tunis](https://twitter.com/rladiestunis) and [R-Ladies Dammam](https://twitter.com/rladiesdammam?lang=en) Workshop. The other is by [Google Colaboratory](https://colab.research.google.com/), for example [Introduction to ggplot2](https://github.com/kuanhoong/ggplot2_workshop) conducted by Kuan Hoong in Malaysia’s [R confeRence 2021](https://www.r-conference.com/).
-
-Seeing more and more options to create interactive R Tutorials definitely will empower more teachers to be able to teach R in more interesting and engaging ways.
-
-Here is a [Github](https://github.com/revodavid/devcontainers-r) introduction of what [Dev Containers](https://containers.dev/) in Github Codespaces is about. (Video introduction may come soon.)
-
-Unfortunately, creating such tutorials are currently only possible with a GitHub Enterprise or GitHub Education account. Hopefully, it could be extended to a personal Github account in the future.
-
--   📝[Slides](https://github.com/revodavid/devcontainers-r/blob/main/EasyRTutorialsUseR2022.pdf)
-
-### Converting R function to C++ function and back with ast2ast
-
-After the second keynote of the day, I attended the session on Containerization and Metaprogramming.
-
-In some cases when optimisation of code running time is necessary, there may be a need to rewrite an R function in a faster programming language like C++. However, as C++ is not an easy programming language to learn, a lot of time and effort is required in this rewriting process. I recall learning C++ on my first year as an undergraduate. It was a tough journey. I usually create infinite loops by mistake and crash the program frequently. Memory management using C++ pointers was a nightmare.
-
-To speed up the rewriting process, [Krämer Konrad](https://twitter.com/kraemer_konrad) introduced the R package [ast2ast](https://github.com/Konrad1991/ast2ast) which is able to convert some simple R function into C++ function automatically, minimising the need for the user to type [Rcpp](https://www.rcpp.org/) related function and C++ code.
-
-I have to say it sounds like magic. I thought it was too good to be truth and slapped my face with both hands like [Naruto](https://twitter.com/abdul_s17/status/1193855247850053634) to check if I was dreaming instead of watching the conference in the middle of the night. However, the session proceeded to the Q and A asking if [ast2ast](https://github.com/Konrad1991/ast2ast) can translate functions from non standard libraries like the [magrittr pipe](https://magrittr.tidyverse.org/reference/pipe.html) and probability density functions. Guess I am not sleeping and agreed with the host that [ast2ast](https://github.com/Konrad1991/ast2ast) has a lot of potential.
-
-### Modeling marine ecosystem with gadget3
-
-Marine ecosystem models are needed to better understand the impacts of human related activities and natural events, such as overfishing, pollution and climate change, on the marine food web. Such models are needed for state holders to make wiser decisions and evaluate existing policies meant to protect our marine environment.
-
-The issue is that most of these open source computationally intensive modeling tools are implemented in C++ and lack integration for other programming languages and modern tools to contribute. Thus, [Jamie Lentin](https://github.com/lentinj) shared about how his team managed to bridge this gap for the [Gadget model](https://heima.hafro.is/~bthe/introduction.html) using [gadget3](https://github.com/gadget-framework/gadget3) and other R packages in the [gadget-framework](https://github.com/gadget-framework).
-
-I am afraid that this is all I can share due to my limited understanding in this kind of analysis. While this marine ecology is something that I don’t know much, it is amazing to see how much progress has been made made into this field of research since the UN proclaimed 2021–2030 as the [Decade of Ocean Science for Sustainable Development](https://www.oceandecade.org/)
-
-### Docker for Data Science and Shiny Apps
-
-The talks in relation to Containerization were about [Docker](https://www.docker.com/), so I have summarised both talks in this section.
-
-Today, more research data publications use [Docker](https://www.docker.com/) as a means for others to reproduce the results and graphs created in the published journal paper. Recently, they are also applied on open source web applications as well.
-
-If what I am writing may sound Greek to you, may I suggest [Alex Gold’s](https://twitter.com/alexkgold?lang=en) introductory [talk](https://github.com/akgold/docker4ds) on Docker. In addition, the speaker is also working on an [e-book](https://do4ds.com/) titled DevOps for Data Science. Do give him your support.
-
-For those who are familiar with Docker, [Peter Solymos](https://twitter.com/psolymos) has shared some valuable [advice](https://my.visme.co/view/90rqk0kg-user-2022-talk-shiny-docker) on when and how to apply Docker on [R Shiny](https://shiny.rstudio.com/) Apps. More of such resources can be found in this Hosting Data Apps [webpage](https://hosting.analythium.io/) and this R-bloggers [post](https://www.r-bloggers.com/2022/06/user2022-best-practicesfor-shiny-apps-with-docker-and-more/).
-
--   📝[Alex’s Slides](https://github.com/akgold/docker4ds)
--   📝[Peter’s Slides](https://my.visme.co/view/90rqk0kg-user-2022-talk-shiny-docker)
-
-### Second Keynote: How tools shape thinking about graphics
-
-The second keynote is by [Amanda Cox](https://mobile.twitter.com/amandacox), a well-known American journalist now working in a non-profit organisation [USAFacts](https://usafacts.org/).
-
-In the past when people ask her what tools were used to make great graphics, her response were used to be “it does not really matters” as great graphics usually depends on how well it communicate its message to the readers rather than how it is made. Her perspective changes when she started her new job and begin to look for people to work for her. During the hiring process as she was looking at portfolios, she realised that she was able to identify which tools were used (this graph looks like it has been made using [reactjs](https://reactjs.org/) but the overall structure is inspired from R related plots) and understand what programming skills the candidate may potentially possess. For example, graphics that shows small multiple plots arranged neatly in a grid squares give a higher probability that it is inspired from R.
-
-As she started to reflect on why she was able to identify the tools used to make a certain graphic so easily, she started to see that the tools used does restrict or enhance what information can be highlight from the visual graphics, affecting how well it communicate its message to the readers. For example, in this New York Times’ graphics on [Olympics sprinter](http://archive.nytimes.com/www.nytimes.com/interactive/2012/08/05/sports/olympics/the-100-meter-dash-one-race-every-medalist-ever.html), the sound at the end to emphasise the difference in speed between 19-century sprinter and 2012 is three seconds is made using R. R was used at that time because it was the only tool that the team can find that is able to produce a decent soundtrack that compliments the video at a tight deadline schedule.
-
-She then shared some case studies in which R was the right tool to use and others that were not. Based on what I can understand, here are some of the cases.
-
-One example in which R was the right tool to use is when there is a need to report [statistical uncertainty](https://raw.githubusercontent.com/m1arc00/m1arc00.github.io/master/useR/fla5.png) (approximate answers) of the US election voting results over time. The team was grateful that R was able to simulate practice data set for the team to learn how to make such a report in advanced before applying it on the actual data.
-
-On the other hand, graphics needing animation (movement) are harder to implement using R like [The New Science of Sentencing](https://www.themarshallproject.org/2015/08/04/the-new-science-of-sentencing) and [Extensive Data Shows Punishing Reach of Racism for Black Boys](https://www.nytimes.com/interactive/2018/03/19/upshot/race-class-white-and-black-men.html).
-For interactive visualisations that is able to provide constant feedback (mimicking a real person) based on the readers’ input of expected data, such as [You Draw It: How Family Income Predicts Children’s College Chances](https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html), R also still has a long way to go.
-
-Amanda also shared her difficulties in using R to make annotations/labelling in a static graph even though it is simple to do the same thing in other visual making software. She then show a few examples on how annotations are useful like this New York Times’ report [One Report, Diverging Perspectives](https://archive.nytimes.com/www.nytimes.com/interactive/2012/10/05/business/economy/one-report-diverging-perspectives.html). This is something that I fully agree. They are a few times that I had to resolve to Powerpoint after making a plot in R because I do not know how to create a label at the correct place. Resources like Cara Thompson’s [post]((https://www.cararthompson.com/talks/user2022)) on how to make polished annotations in R are truly like gem mines.
-
-Nevertheless, Amanda concludes that despite all these limitations in R for visualisation based on her understanding, it still remains subjective and personal as it depends how much people are willing to push themselves to make effective visuals given the amount of tools and resources that they have. One of the last few examples that she showed was [Coasterplots](https://www.tylermw.com/datacoaster-tycoon/) made by [Tyler Morgan-Wall](https://twitter.com/tylermorganwall). It was an eye-opening experience for me to see how 3D visualisation plots can be viewed in such a unique way using R.
+In this narrative, I will share my learning journey during Day 3 and Day 4 of useR! 2022 Virtual Conference.
 
 ## Day 3
 
-### First Keynote: afrimapr - Perspectives of doing R stuff\* in an emerging region \*stuff \<- c(“coding”, “community”, “capacity”)
+### First Keynote: afrimapr
 
 The first keynote is by the [afrimapr](https://afrimapr.github.io/afrimapr.website/) project team. The project aims is to use R as a building block for many things such as better management of data realted to Africa, creation of open source analytical tools to analyse and provide insights across Africa, providing teaching resources and training for those interested in this novel work and building a strong community with this common interest.
 
@@ -205,7 +61,7 @@ I jumped to Data Visualisation room later after that.
 
 I was looking forward for the presentation on the R package [animate](https://kcf-jackson.github.io/animate/index.html) by Jackson Kwok. You see, I was reading the poster in Micosoft Powerpoint beforehand and my jaws dropped when I see that the animation featured in this article titled [The New Science of Sentencing](https://www.themarshallproject.org/2015/08/04/the-new-science-of-sentencing) could be replicated using R. While reading the documentation of [animate](https://kcf-jackson.github.io/animate/index.html), I found out Jackson also made some [Xaringan](https://github.com/yihui/xaringan) [slides](https://rawcdn.githack.com/kcf-jackson/animate/0f3e8211f063e832b3b83288b4834329d491f4da/man/slides/SVI_presentation.html) introducing the R package [animate](https://kcf-jackson.github.io/animate/index.html). Do take a look if you need a more visual information. Unfortunately, when I entered the virtual longue. It just ended…
 
-#### Polished annotations
+#### Polished Annotations
 
 Putting this aside, the next presentation was by [Cara Thompson](https://twitter.com/cararthompson) sharing useful tips and trick to make polished annotations in [ggplot](https://ggplot2.tidyverse.org/index.html). Making annotations in [ggplot](https://ggplot2.tidyverse.org/index.html) has always been really challenging for me. I usually spend a lot of time tweaking fixed parameters to move the annotations from one place to another. Most of the time I just gave up and use Microsoft Powerpoint to add these extra text boxes. Cara’s success in finding several clever strategies to make polished annotations, using [ggtext](https://wilkelab.org/ggtext/), [glue](https://glue.tidyverse.org/), CSS formatting and a filtered tibble with unique arrow curvature information, does makes me smile. Her tips can also be found in this [talk post](https://www.cararthompson.com/talks/user2022). One of her blog post [Alignment cheatsheet](https://www.cararthompson.com/posts/2021-09-02-alignment-cheat-sheet/) may be useful for those who need a little help on the alignment parameters.
 
@@ -227,7 +83,7 @@ The second sharing is from Konrad Oberwimmer who introduced the R package [`svgt
 
 The next showcase is about [data.validator](https://appsilon.github.io/data.validator/) by [Marcin Dubel](https://twitter.com/DubelMarcin). Honestly, this is an R package that I wish I knew earlier how to use it. While it is great to have tools that validate the data but it is even better when a validation report, highlighting the possible issues of a given dataset clearly and explicitly, can be created and distributed to others. [data.validator](https://appsilon.github.io/data.validator/) not only uses [assertr](https://github.com/ropensci/assertr) to do the validation but is able to create an interactive report in html as well. More details can also be found in this [youtube video](https://www.youtube.com/watch?v=U1-j7c_8LFQ) as well as this [R-bloggers post](https://www.r-bloggers.com/2022/05/data-cleaning-in-r-2-r-packages-to-clean-and-validate-datasets/)
 
-#### Continuous Integration in GitLab for R
+#### Continuous Integration In GitLab For R
 
 Lastly, it is a workflow presented by [Cody Marquart](https://twitter.com/cody_marquart) on how to manage R packages automatically using [GitLab](https://about.gitlab.com/) Continuous Integration (CI). [GitLab CI](https://docs.gitlab.com/ee/ci/introduction/index.html#continuous-integration) was first introduced from an [April 2020 GitLab meetup](https://www.youtube.com/watch?v=l5705U8s_nQ&t=397s). It is nice to know that CI is possible to be applied on R packages management in GitLab. Usually, CI was done using [Github Actions](https://github.com/features/actions) from [Github](https://github.com/) because of many [useful resources](https://github.com/r-lib/actions) available to help users create CI tasks easily. Thus, [Github Actions](https://github.com/features/actions) became a popular choice for R package management. Nevertheless, as it is unwise not to have a backup plan, being aware of that an alternative workflow exists is critical. Take a look at one of GitLab CI examples used in the R package [shinyLogger](https://gitlab.com/clmarquart/shinyLogger/-/blob/main/.gitlab-ci.yml)
 Hopefully, I will get to witness a similar workflow for managing R packages in [Bitbucket](https://bitbucket.org/product/) in the future.
@@ -242,7 +98,7 @@ I was first introduced to Rmarkdown report templates during my attendance in the
 
 -   📝[Slides](https://medical-monitoring.openanalytics.io/)
 
-### knitr engines and blogdown troubleshooting
+### knitr engines And blogdown Troubleshooting
 
 The next talk is by [Christophe Dervieux](https://twitter.com/chrisderv) giving a [introductory tour](https://cderv.rbind.io/talk/2022-user-knitr-engines/) on the different [knitr](https://github.com/yihui/knitr) engines. The [knitr](https://github.com/yihui/knitr) engines can be listed in R using the command `names(knitr::knit_engines$get())`. More information of commonly used engines can be found in the \[Rmarkdown e-book\](https://bookdown.org/yihui/rmarkdown/language-engines.html. The talk also introduced the latest [`knitr`](https://github.com/yihui/knitr) engine called `exec` which allow command lines to be executed in the Rmarkdown code chunk. The talk also inform users how to create custom [knitr](https://github.com/yihui/knitr) engines as well. One major takeaway for me on this talk is the that there is actually a [Github link](https://github.com/yihui/knitr-examples) showing Rmarkdown examples of many different [knitr](https://github.com/yihui/knitr) engine, including the latest `exec` engine found [here](https://github.com/yihui/knitr-examples/blob/master/124-exec-engine.Rmd).
 
@@ -263,7 +119,7 @@ This presentation gives me a nostalgia feeling as I have [presented](https://jer
 
 -   📝[Slides](https://www.dropbox.com/s/dv80062qo0rbhd3/useR_MeikeSteinhilber_2022_V2.pdf?dl=0)
 
-### Second Keynote
+### Second Keynote: Applied Machine Learning With tidymodels
 
 Day 3 of the conference ended with a keynote from [Julia Silge](https://twitter.com/juliasilge), author of [Supervised Machine Learning for Text Analysis in R](https://smltar.com/). She also posted a lot of [tidymodels-related lessons](https://www.youtube.com/c/JuliaSilge/videos) on YouTube as well as the online tutorial [Text mining with tidy data principles](https://juliasilge.shinyapps.io/learntidytext/).
 
@@ -283,7 +139,7 @@ The keynote is indeed rich in content regarding the best practices for machine l
 
 ## Day 4
 
-### First Keynote
+### First Keynote: Junior R-core Experiences
 
 Day 4 of the conference started with a keynote by the R Core Team. The keynote is led by [Sebastian Meyer](https://twitter.com/bastistician) who has recently joined the R Core team.
 
@@ -293,9 +149,9 @@ The second part is a sharing of a few bug report stories followed by some tips o
 
 After the keynote session, the R Core Team then had a panel discussion.
 
--   📝[Slides](https://raw.github.com/JauntyJJS/jaunty-blogdown/main/content/blog/2022-06-23-UseR-2022/R_core.pdf)
+-   📝[Slides](https://raw.github.com/JauntyJJS/jaunty-blogdown/main/content/blog/2022-07-01-UseR-2022-2/R_core.pdf)
 
-### Package dependencies
+### Package Dependencies
 
 After the panel discussion, I attended the first two talks in the Package Development session followed by the last two talks in Building the R Community 2.
 
@@ -315,7 +171,7 @@ Motivated by how useful git pre-commit hooks are in improving code quality, Lore
 -   📝[Slides](https://github.com/lorenzwalthert/useR2022.precommit.slides)
 -   📝[Demo](https://github.com/lorenzwalthert/useR2022.precommit.demo)
 
-### Transitioning to R
+### Transitioning To R
 
 After the second talk, I jumped to the session on Building the R Community 2. Luckily, this time when I got in, the third talk of the session has just begun. It was a presentation by [Kieran Martin](https://twitter.com/kjmartinstats) from [Roche](https://twitter.com/Roche). I have watched a previous R Consortium conducted by his team before in YouTube titled [Package Management at Roche]((https://www.youtube.com/watch?v=A8ePOTOSGg0&ab_channel=RConsortium)) and find it very informative and educational.
 
@@ -341,7 +197,7 @@ Honestly the last set of sessions was another hard choice for me as it covers to
 
 The first talk is about a small introduction of the [simPop](https://github.com/statistikat/simPop) R package by Alexander Kowarik. It is an R package used to create synthetic data. Synthetic data generation is useful when there is a need to transform sensitive but complex original data to into privacy-compliant data that still retains the complex structure of the original data. The transformed data can then be used for train machine learning models, software testing and simulation studies. This is actually my first time getting to know about synthetic data and what it is used for. I am grateful for the speaker for giving such a clear presentation for me to understand.
 
-### textrecipes to improve preprocessing of textual data
+### textrecipes To Improve Preprocessing Of Textual Data
 
 The second one switches to the topic of Text Analysis with the R package [textrecipes](https://textrecipes.tidymodels.org/). It is presented by [Emil Hvitfeldt](https://twitter.com/Emil_Hvitfeldt) one of the authors of the e-book [Supervised Machine Learning for Test Analysis in R](https://smltar.com/). While I am new to text data analysis, I am able to understand the unique properties of such dataset and why is it so hard to transform such a dataset into meaningful numbers that a machine learning model can use to learn. The presentation then shows step by step how [textrecipes](https://textrecipes.tidymodels.org/) is able to make this transformation process less painful and yet flexible to user’s different needs.
 
@@ -349,7 +205,7 @@ As someone who has attended a [book club](https://www.youtube.com/watch?v=cXjTKO
 
 -   📝[Slides](https://emilhvitfeldt.github.io/useR2022-textrecipes)
 
-### Bivariate Data Generation using Scagnostics
+### Bivariate Data Generation Using Scagnostics
 
 The next presentation is led by [Janith Wanniarachchi](https://mobile.twitter.com/janithcwanni) regarding his R package called [scatteR](https://github.com/janithwanni/scatteR). [scatteR](https://github.com/janithwanni/scatteR) is used to generate a bivariate data set based on a given [scagnostics](https://en.wikipedia.org/wiki/Scagnostics) measurement.
 
@@ -359,7 +215,7 @@ Janith is another [first time](https://mobile.twitter.com/janithcwanni/status/15
 
 -   📝[Slides](https://scatter-use-r-2022.netlify.app/)
 
-### Making better forecasting models by integrating sentiment analysis with topic modeling of textual data.
+### Making Better Forecasting Models By Integrating Sentiment Analysis With Topic Modeling
 
 The last talk of the session is quite hard for me to understand because I am unfamiliar with textual data analysis as mentioned before. Nevertheless, to the best of my knowledge, I try to explain what is going on.
 
@@ -377,7 +233,7 @@ With that, two forecasting models were constructed to see which one better predi
 
 In addition, Oliver also showed how [sentopics](https://github.com/odelmarcelle/sentopics) is able to create time series plots showing how each topic/theme contributed to the sentiment of the Economic Condition.
 
-### Second Keynote
+### Second Keynote: Teaching Accessibly And Teaching Accessibility
 
 [Mine Dogucu](https://twitter.com/MineDogucu), one of the authors of the e-book [Bayes Rules! An Introduction to Applied Bayesian Modeling](https://www.bayesrulesbook.com/) , delivered the last keynote of the day titled Teaching Accessibly and Teaching Accessibility. The talk consist of three parts: Teaching Accessibly, Teaching Accessibility and some recommendations for the community, especially those involved in pedagogy.
 
@@ -411,7 +267,3 @@ Mine concluded the keynote with many recommendations for the community. Here are
 -   Accessibility should be seen as a gift for everyone and not for a privileged few.
 
 -   📝[Slides](https://mdogucu.github.io/user2022)
-
-## Conclusion
-
-## References

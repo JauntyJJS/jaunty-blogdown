@@ -154,7 +154,7 @@ The second part is a sharing of a few bug report stories followed by some tips o
 
 After the keynote session, the R Core Team then had a panel discussion.
 
-* 📝[Slides](https://raw.github.com/JauntyJJS/jaunty-blogdown/main/content/blog/2022-06-23-UseR-2022/R_core.pdf)
+* 📝[Slides](https://raw.github.com/JauntyJJS/jaunty-blogdown/main/content/blog/2022-07-01-UseR-2022-2/R_core.pdf)
 
 ### Package Dependencies
 

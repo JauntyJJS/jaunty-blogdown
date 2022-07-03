@@ -46,7 +46,7 @@ It is heart warming to be able to attend a course conducted by a well-known bios
 
 I first saw his presentation [R for Graphical Clinical Trial Reporting](https://www.youtube.com/watch?v=4gXWQxaBbac) during the RStudio Conference 2020 at San Francisco. Here is the [abstract](https://www.fharrell.com/talk/rstudio20/) for this talk. I was touched by his desire and passion to always learn new things in R. This talk was one of the key morale booster for me to learn [plotly](https://plotly.com/r/) even though its documentation can be quite intimidating.I only got aware of his popularity when I saw him again presenting again at the Why R? 2020 as a keynote speaker titled [Controversies in Predictive Modeling, Machine Learning, and Validation](https://www.youtube.com/watch?v=DF1WsYZ94Es). 
 
-In summary, the course was mainly a short summary of his ebook [Regression Modeling Strategies](https://hbiostat.org/rms/) as well as a short introduction of his new e-book [R Workflow](https://hbiostat.org/rflow/) written in [Quarto](https://quarto.org/). Recently, he has also converted his free text [Biostatistics for Biomedical Research](http://hbiostat.org/bbr/) into an e-book as well.
+In summary, the course was mainly a short summary of his e-book [Regression Modeling Strategies](https://hbiostat.org/rms/) as well as a short introduction of his new e-book [R Workflow](https://hbiostat.org/rflow/) written in [Quarto](https://quarto.org/). Recently, he has also converted his free text [Biostatistics for Biomedical Research](http://hbiostat.org/bbr/) into an e-book as well.
 
 There are indeed a lot of useful information and it takes some time for me to digest, understand and reflect.
 

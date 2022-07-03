@@ -1,0 +1,159 @@
+---
+title: "Learning Journey and Reflections on useR! 2022 Conference Part 3"
+subtitle: ""
+excerpt: "This narrative is a write up on Day 4 of my learning journey in the useR! 2022 Conference."
+date: 2022-07-01
+author: "Jeremy Selva"
+draft: false
+images:
+series:
+tags:
+categories:
+  - useR! 2022
+layout: single-sidebar
+editor_options: 
+  chunk_output_type: console
+bibliography: utils/bibliography.bib
+csl: utils/f1000research.csl
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(fig.align = "center")
+
+```
+
+## Introduction
+
+In this narrative, I will continue sharing my learning journey during Day 4 of useR! 2022 Virtual Conference.
+
+## Day 4
+
+### First Keynote: Junior R-core Experiences
+
+Day 4 of the conference started with a keynote by the R Core Team. The keynote is led by [Sebastian Meyer](https://twitter.com/bastistician) who has recently joined the R Core team. 
+
+The first part of the presentation is about a summary of the [major changes](https://journal.r-project.org/archive/2021-2/core.pdf) in R from version 4.1.3 version 4.2.0, such as [code highlighting in HTML documentation](https://blog.r-project.org/2022/04/08/enhancements-to-html-documentation/index.html) and a new function [Sys.setLanguage](https://stat.ethz.ch/R-manual/R-devel/library/base/html/gettext.html) that is able to change the language of messages from R. It is from this part of the keynote that I learnt there is actually a [search engine](https://search.r-project.org/) for R related functions from CRAN packages. Do take a look at the [R blog](https://blog.r-project.org/) for updates on the latest developments in R.
+
+The second part is a sharing of a few bug report stories followed by some tips on anyone who wish to contribute and make R better. R actually has a website [R's Bugzilla](https://www.r-project.org/bugs.html) for reporting potential bugs as well as a simple [walkthrough](https://blog.r-project.org/2019/10/09/r-can-use-your-help-reviewing-bug-reports/index.html) of how to create a decent [bug report](https://www.r-project.org/bugs.html). The presenter then requests for more people to test R, especially its [pre-release versions](https://blog.r-project.org/2021/04/28/r-can-use-your-help-testing-r-before-release/index.html), as well as to report to the R-core team old bug reports in [R's Bugzilla](https://www.r-project.org/bugs.html) which may have already been resolved with a later version of R.
+
+After the keynote session, the R Core Team then had a panel discussion.
+
+* 📝[Slides](https://raw.github.com/JauntyJJS/jaunty-blogdown/main/content/blog/2022-07-02-UseR-2022-3/R_core.pdf)
+
+### Package Dependencies
+
+After the panel discussion, I attended the first two talks in the Package Development session followed by the last two talks in Building the R Community 2.
+
+The first talk on Package Development is from [Zuguang Gu](https://twitter.com/jokergoo_gu), developer of many packages such as [ComplexHeatmap](https://github.com/jokergoo/ComplexHeatmap) and [spiralize](https://github.com/jokergoo/spiralize). The presentation is about an R package called [pkgndep](https://jokergoo.github.io/pkgndep/) used to calculate the dependency heaviness of an R package and display the results in a heatmap. 
+
+When developing R packages, it is advisable to keep it [lightweight](https://tinyverse.netlify.app/) (depend on a low number of external R packages). This is mainly to allow users to install R packages easily by reducing the chances of failure due to an unsuccessful dependency installation. Thus, [pkgndep](https://jokergoo.github.io/pkgndep/) is helpful for R package developers who wish to optimise their R package dependencies.
+
+This is kind of similar to the R package [dstr](https://github.com/falo0/dstr). The difference is that [pkgndep](https://jokergoo.github.io/pkgndep/) provides a more detailed result in a heatmap rather than a network graph. On the other hand, [dstr](https://github.com/falo0/dstr) provides clearer advise to the R developers on what they can do next to reduce the dependencies. Perhaps, the teams of [pkgndep](https://jokergoo.github.io/pkgndep/) and [dstr](https://github.com/falo0/dstr) can collaborate and build on each other strengths to further improve on the usefulness of their current creations.
+
+* 📝[Slides](https://docs.google.com/presentation/d/11EwFl18Ana1pZ1C4UDdbdqjLJnbM9F32KOHXRpbY4IM/edit#slide=id.p)
+
+### pre-commits
+
+The second talk conducted by [Lorenz Walthert](https://twitter.com/lorenzwalthert) is an eye-opener for me as I am unfamiliar with git pre-commit hooks. From my understanding, pre-commit hooks are widely used for Python developers due to the availability of of the Python package [pre-commit](https://pre-commit.com/) to do all the heavy lifting.
+Motivated by how useful git pre-commit hooks are in improving code quality, Lorenz created a R package [precommit](https://lorenzwalthert.github.io/precommit/index.html) in hopes that more R package developers are able to adapt this workflow easily.
+
+* 📝[Slides](https://github.com/lorenzwalthert/useR2022.precommit.slides)
+* 👨🏻‍🏫[Demo](https://github.com/lorenzwalthert/useR2022.precommit.demo)
+
+### Transitioning To R
+
+After the second talk, I jumped to the session on Building the R Community 2. Luckily, this time when I got in, the third talk of the session has just begun. It was a presentation by [Kieran Martin](https://twitter.com/kjmartinstats) from [Roche](https://twitter.com/Roche). I have watched a previous R Consortium conducted by his team before in YouTube titled [Package Management at Roche]((https://www.youtube.com/watch?v=A8ePOTOSGg0&ab_channel=RConsortium)) and find it very informative and educational.
+
+It is delightful to see him again presenting for useR! 2022. This time Kieran shared his experience on his large Product Development team's ongoing journey to using R as one of the core data science tool, when there is a need to report results of clinical trials in the most efficient way. Best practices were shared like using [Docker](https://www.docker.com/) to fix the operating system, [renv](https://rstudio.github.io/renv/index.html) and internal package repositories to control the R packages used and the [R Validation Hub](https://www.pharmar.org/) to validate R packages. He also provided some useful advice and mistakes to avoid to help people grow into R.
+
+What is very touching is their desire in conjunction with like-minded pharmaceutical companies to create a shared set of high quality R packages for clinical reporting related analysis, plotting table and graphs via the [pharmaverse](https://pharmaverse.org/) and [Insights Engineering](https://github.com/insightsengineering). At least we do not have to see multiple R packages solving the same problem. Definitely something great to look into.
+
+### Reflections of a Research Software Engineer
+
+This is followed by a presentation by [Nicholas Tierney](https://twitter.com/nj_tierney), a [research software engineer](https://researchsoftware.org/) at the [Telethon Kids Institute](https://www.telethonkids.org.au/). Nicholas is also the developer of the two data visualisation R packages [visdat](https://docs.ropensci.org/visdat/) and [naniar](https://naniar.njtierney.com/index.html).
+
+The talk is consist of three parts: what kind of work he does as a [research software engineer]((https://researchsoftware.org/), a small summary of how he tries to maintain the [greta](https://greta-stats.org/) R package (as part of his job scope) and the future of [research software engineer](https://researchsoftware.org/) in Australia.
+
+I do gain some useful knowledge in package management such as creating better snapshot test, efficient pull request using `pr_feteh` and `pr_finish` from the [usethis](https://usethis.r-lib.org/reference/pull-requests.html) R package and using [glue](https://glue.tidyverse.org/) to make better command line messages to users.
+
+Despite being busy with his research software engineer role, Nicholas is also active in the [rOpenSci Social Coworking and Office Hours](https://ropensci.org/events/coworking-2022-06/) (Asia Pacific Edition) helping people with R related issues. It is actually from this online event when I first met him. He is really a nice and approachable R enthusiast.
+
+* 📝[Slides](https://njt-user-2022.netlify.app/)
+
+### Synthetic Data Generation
+
+Honestly the last set of sessions was another hard choice for me as it covers topics that I am unfamiliar with. I took a leap of faith and attended the session on Synthetic Data and Text Analysis.
+
+The first talk is about a small introduction of the [simPop](https://github.com/statistikat/simPop) R package by Alexander Kowarik. It is an R package used to create synthetic data. Synthetic data generation is useful when there is a need to transform sensitive but complex original data to into privacy-compliant data that still retains the complex structure of the original data. The transformed data can then be used for train machine learning models, software testing and simulation studies. This is actually my first time getting to know about synthetic data and what it is used for. I am grateful for the speaker for giving such a clear presentation for me to understand.
+
+### textrecipes To Improve Preprocessing Of Textual Data
+
+The second one switches to the topic of Text Analysis with the R package [textrecipes](https://textrecipes.tidymodels.org/). It is presented by [Emil Hvitfeldt](https://twitter.com/Emil_Hvitfeldt) one of the authors of the e-book [Supervised Machine Learning for Test Analysis in R](https://smltar.com/). While I am new to text data analysis, I am able to understand the unique properties of such dataset and why is it so hard to transform such a dataset into meaningful numbers that a machine learning model can use to learn. The presentation then shows step by step how [textrecipes](https://textrecipes.tidymodels.org/) is able to make this transformation process less painful and yet flexible to user's different needs.
+
+As someone who has attended a [book club](https://www.youtube.com/watch?v=cXjTKOoN6aU&list=PL3x6DOfs2NGisLSs09v1NQUQaxuE8nbOO) on [An Introduction to Statistical Learning with Applications in R](https://www.statlearning.com/)(ISLR) conducted by the [R4DS Online Learning Community](https://www.rfordatasci.com/), Emil's [ISLR tidymodels Labs](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/index.html) notes have been very helpful to our cohort group's learning journey to use [tidymodels](https://www.tidymodels.org/) to better understand some of the statistical learning methods.
+
+* 📝[Slides](https://emilhvitfeldt.github.io/useR2022-textrecipes)
+
+### Bivariate Data Generation Using Scagnostics
+
+The next presentation is led by [Janith Wanniarachchi](https://mobile.twitter.com/janithcwanni) regarding his R package called [scatteR](https://github.com/janithwanni/scatteR). [scatteR](https://github.com/janithwanni/scatteR) is used to generate a bivariate data set based on a given [scagnostics](https://en.wikipedia.org/wiki/Scagnostics) measurement. 
+
+I enjoyed the flow of the presentation as it is like telling a story. The protagonist who faced a stumbling block along the way managed to overcome it after being inspired by ice-cream sprinkles. I won't spoil the plot any further.
+
+Janith is another [first time](https://mobile.twitter.com/janithcwanni/status/1540053289089519616?cxt=HHwWgMDS9dGTr98qAAAA) presenter at an international conference. Do show him your support if you like his presentation. 
+
+* 📝[Slides](https://scatter-use-r-2022.netlify.app/)
+
+### Making Better Forecasting Models By Integrating Sentiment Analysis With Topic Modeling
+
+The last talk of the session is quite hard for me to understand because I am unfamiliar with textual data analysis as mentioned before. Nevertheless, to the best of my knowledge, I try to explain what is going on. 
+
+Oliver Delmarcelle shows how the R package [sentopics](https://github.com/odelmarcelle/sentopics) can be used to integrating sentiment analysis and topic modeling of textual data to potentially make better forecasting models. In this presentation, the [press conferences](https://www.ecb.europa.eu/press/key/html/index.en.html) documents of the European Central Bank is used as an example.
+
+If you are unfamiliar with the term topic modeling and sentiment analysis, take a look at these two Youtube videos by [Julia Silge](https://twitter.com/juliasilge)
+[Data Centric Inc.](https://www.datacentriccorp.com/) to know what they are.
+
+* [Topic modeling with R and tidy data principles](https://www.youtube.com/watch?v=evTuL-RcRpc)
+* [A Tutorial on Sentiment Analysis in R](https://www.youtube.com/watch?v=c7YSyCofH3o)
+
+The [press conferences](https://www.ecb.europa.eu/press/key/html/index.en.html) documents of the European Central Bank are first grouped into different dominant topics/themes, like inflation, economic growth and so on. Separately, sentiment analysis is applied on the [press conferences](https://www.ecb.europa.eu/press/key/html/index.en.html) documents to obtain two sentiment time series data, the sentiment of the Economic Condition and Monetary Policy over time. 
+
+With that, two forecasting models were constructed to see which one better predict the [European Central Bank's decision](https://www.ecb.europa.eu/press/govcdec/html/index.en.html) on the interest rate and monthly targets of the asset purchase program. They ar a forecasting model using only the two sentiment predictors (Economic Condition and Monetary Policy) and another one with an additional topic-specific sentiment predictor. The result shows that the additional topic-specific sentiment predictor improves the forecasting model.  
+
+In addition, Oliver also showed how [sentopics](https://github.com/odelmarcelle/sentopics) is able to create time series plots showing how each topic/theme contributed to the sentiment of the Economic Condition.
+
+### Second Keynote: Teaching Accessibly And Teaching Accessibility
+
+[Mine Dogucu](https://twitter.com/MineDogucu), one of the authors of the e-book [Bayes Rules! An Introduction to Applied Bayesian Modeling](https://www.bayesrulesbook.com/) , delivered the last keynote of the day titled Teaching Accessibly and Teaching Accessibility. The talk consist of three parts: Teaching Accessibly, Teaching Accessibility and some recommendations for the community, especially those involved in pedagogy.
+
+To make teaching resources more accessible and inclusive, Mine first suggested that such education materials should be open access (made available on the internet) as not all students are fortunate financially to be able to afford textbook material. In addition, students are usually the ones that contributes the most in improving the quality the of education materials by highlighting mistakes and providing alternative solutions to exercises. Such opportunities may missed out if the education materials remain only on print.
+
+Even when the teaching material is available online, accessibility can be further expanded to the visually impaired with the use of [alternative text](https://www.med.unc.edu/webguide/accessibility/alt-text/) and [screen readers](https://www.nomensa.com/blog/what-screen-reader). Being a strong advocate for accessible teaching, Mine went the extra mile by opening a [feature request](https://github.com/rstudio/rmarkdown/issues/1867) for [Rmarkdown](https://rmarkdown.rstudio.com/) to include an option of alternative text in 2020.
+
+As the content of the Bayesian statistics e-book requires a strong mathematics background to comprehend, Mine tries to make lessons more inviting for readers new to Bayesian statistics by complementing mathematical concepts with story telling, step by step computing instructions and the use relevant examples (Weather, Spotify data, Hotel bookings) that most lay person can relate. The goal is to encourage learners to embrace a growth mindset by learning from mistakes and not be discouraged when things are unclear when seen for the first time. Mistakes can still be good if it teaches you something. More ways to make teaching material accessible can be found the paper  [Framework for Accessible and Inclusive Teaching Materials for Statistics and Data Science Courses](https://arxiv.org/abs/2110.06355) 
+
+When she had finished writing the e-book, Mine began to realise how little she knew about accessibility and was curious to know why this is so. She decided to look back into past teaching curriculum and data analysis tools to see how much focus on accessibility awareness and support are there. Unfortunately, most had little to no support. Knowing what needs to be done, she seek the support of [Teach Access](https://teachaccess.org/) and motivated individuals like [JooYoung Seo](https://twitter.com/seo_jooyoung) to spread the need of accessibility skills in data science education for aspiring and experienced data scientist. Mine is currently working on designing curriculum to include accessibility awareness and use of assistive technologies in data science projects.
+
+Mine proceeds with some technical details on how to use R to make data visualisation more accessible. Examples are 
+
+* [colorblindr](https://github.com/clauswilke/colorblindr) to simulate colour blindness and utilisation of the [Okabe-Ito](https://jfly.uni-koeln.de/color/) palette, 
+* Image alternative text in [Rmarkdown](https://rmarkdown.rstudio.com/) with `fig.alt`. See this blog [post](https://www.rstudio.com/blog/knitr-fig-alt/) for more details. 
+* [Data sonification](https://www.youtube.com/watch?v=1VS9Od9qM1k&ab_channel=ChandraX-rayObservatory) with [sonify](https://cran.r-project.org/web/packages/sonify/index.html), 
+* [Data tactualization](https://www.youtube.com/watch?v=ClI555l4Z1M&ab_channel=JooYoungSeo) with [tactileR](https://github.com/jooyoungseo/tactileR)
+
+For image alternative text, take a look at Amy Cesal's [post](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) on some good practice guidelines to describe plots with alternative text. One can also use the `VI` function from the [BrailleR](https://github.com/ajrgodfrey/BrailleR) package to generate [alternative text automatically](https://cran.rstudio.com/web/packages/BrailleR/vignettes/qplot.html). More resources on accessibility can be found in this [presentation](https://www.youtube.com/watch?v=0HvyNtltu-A&ab_channel=RStudio) on accessible data science on the RStudio Global Conference 2021 by Mine's collaborator, [JooYoung Seo](https://twitter.com/seo_jooyoung). 
+
+Mine concluded the keynote with many recommendations for the community. Here are some points that I have summarised below
+
+* Having alternative text in a picture is worth a thousand picture and should be treated with greater value than a diagram without one. Thus, writing alternative text as a git pull request is a good way to contribute to open source educational material.
+
+* Event organisers should take a more proactive approach by creating events/meetups that are more accommodating to the needs of individuals who need additional accessibility and not wait for them to make such a request before working on it. 
+
+* Providing accessibility related support should not be a job assigned to volunteers alone. Event organisers must invest some resources in hiring professionals to lead and guide these volunteers and ensure that these services are implemented correctly. 
+
+* Accessibility lessons should be taught to students as well as professionals, included in all programming languages, and applicable outside of the data science classroom. Given a (school or) work project, (students and) professionals should be (assessed and) held accountable for their accessibility practices.
+
+* Accessibility should be seen as a gift for everyone and not for a privileged few.
+
+* 📝[Slides](https://mdogucu.github.io/user2022)
+

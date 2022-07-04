@@ -1,7 +1,7 @@
 ---
 title: "Learning Journey and Reflections on useR! 2022 Conference Part 3"
 subtitle: ""
-excerpt: "This narrative is a write up on Day 4 of my learning journey in the useR! 2022 Conference."
+excerpt: "This narrative is a write up on Day 4 of my learning journey in the [useR! 2022 Conference](https://user2022.r-project.org/)."
 date: 2022-07-02
 author: "Jeremy Selva"
 draft: false
@@ -15,8 +15,6 @@ categories:
 layout: single-sidebar
 editor_options: 
   chunk_output_type: console
-bibliography: utils/bibliography.bib
-csl: utils/f1000research.csl
 ---
 
 ```{r setup, echo=FALSE}

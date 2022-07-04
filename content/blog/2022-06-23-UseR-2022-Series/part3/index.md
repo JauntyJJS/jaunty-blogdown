@@ -9,6 +9,7 @@ images:
 series:
   - useR! 2022
 tags:
+  - useR! 2022
 categories:
   - useR! 2022
 layout: single-sidebar
@@ -20,7 +21,7 @@ csl: utils/f1000research.csl
 
 ## Introduction
 
-In this narrative, I will continue sharing my learning journey during Day 4 of useR! 2022 Virtual Conference.
+In this narrative, I will continue sharing my learning journey during Day 4 of [useR! 2022 Virtual Conference](https://user2022.r-project.org/).
 
 ## Day 4
 
@@ -36,7 +37,7 @@ The second part was a sharing of a few bug report stories followed by some tips 
 
 After the keynote session, the R Core Team then had a panel discussion.
 
--   📝[Slides](https://raw.github.com/JauntyJJS/jaunty-blogdown/main/content/blog/2022-07-02-UseR-2022-3/R_core.pdf)
+-   📝[Slides](https://raw.github.com/JauntyJJS/jaunty-blogdown/main/content/blog/202206-23-UseR-2022-Series/part3/R_core.pdf)
 
 ### Package Dependencies
 

@@ -7,7 +7,9 @@ author: "Jeremy Selva"
 draft: false
 images:
 series:
+  - useR! 2022
 tags:
+  - useR! 2022
 categories:
   - useR! 2022
 layout: single-sidebar
@@ -19,7 +21,7 @@ csl: utils/f1000research.csl
 
 ## Introduction
 
-The useR! 2022 Virtual Conference has provided me to new things about R as well as an opportunity to meet new people along the way. Here is a narrative of my learning journey in the conference for Day 1 and Day 2.
+The [useR! 2022 Virtual Conference](https://user2022.r-project.org/) has provided me to new things about R as well as an opportunity to meet new people along the way. Here is a narrative of my learning journey in the conference for Day 1 and Day 2.
 
 ## Day 1
 

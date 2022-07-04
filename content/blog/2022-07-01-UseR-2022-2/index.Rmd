@@ -6,8 +6,6 @@ date: 2022-07-01
 author: "Jeremy Selva"
 draft: false
 images:
-series:
-  - useR! 2022
 tags:
 categories:
   - useR! 2022

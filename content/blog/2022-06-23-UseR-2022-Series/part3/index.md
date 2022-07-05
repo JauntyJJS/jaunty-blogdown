@@ -29,9 +29,9 @@ In this narrative, I will continue sharing my learning journey during Day 4 of [
 
 Day 4 of the conference started with a keynote by the R Core Team. The keynote was led by [Sebastian Meyer](https://twitter.com/bastistician) who had recently joined the R Core team. 
 
-The first part of the presentation is about a summary of the [major changes](https://journal.r-project.org/archive/2021-2/core.pdf) in R from version 4.1.3 version 4.2.0, such as [code highlighting in HTML documentation](https://blog.r-project.org/2022/04/08/enhancements-to-html-documentation/index.html) and a new function [Sys.setLanguage](https://stat.ethz.ch/R-manual/R-devel/library/base/html/gettext.html) that is able to change the language of messages from R. 
+The first part of the presentation was about a summary of the [major changes](https://journal.r-project.org/archive/2021-2/core.pdf) in R from version 4.1.3 version 4.2.0, such as [code highlighting in HTML documentation](https://blog.r-project.org/2022/04/08/enhancements-to-html-documentation/index.html) and a new function [Sys.setLanguage](https://stat.ethz.ch/R-manual/R-devel/library/base/html/gettext.html) that is able to change the language of messages from R. 
 
-It was from this part of the keynote that I learnt there was actually a [search engine](https://search.r-project.org/) for R related functions from CRAN packages. Do take a look at the [R blog](https://blog.r-project.org/) for updates on the latest developments in R.
+It was from this part of the keynote that I learnt that there was actually a [search engine](https://search.r-project.org/) for R related functions from CRAN packages. Do take a look at the [R blog](https://blog.r-project.org/) for updates on the latest developments in R.
 
 The second part was a sharing of a few bug report stories followed by some tips on anyone who wished to contribute and make R better. R actually had a website [R's Bugzilla](https://www.r-project.org/bugs.html) for reporting potential bugs as well as a simple [walkthrough](https://blog.r-project.org/2019/10/09/r-can-use-your-help-reviewing-bug-reports/index.html) of how to create a decent [bug report](https://www.r-project.org/bugs.html). The presenter then requested for more people to test R, especially its [pre-release versions](https://blog.r-project.org/2021/04/28/r-can-use-your-help-testing-r-before-release/index.html), as well as to report to the R-core team old bug reports in [R's Bugzilla](https://www.r-project.org/bugs.html) which might have already been resolved with a later version of R.
 
@@ -45,7 +45,7 @@ After the panel discussion, I attended the first two talks in the Package Develo
 
 The first talk on Package Development was from [Zuguang Gu](https://twitter.com/jokergoo_gu), developer of many packages such as [ComplexHeatmap](https://github.com/jokergoo/ComplexHeatmap) and [spiralize](https://github.com/jokergoo/spiralize). The presentation was about an R package called [pkgndep](https://jokergoo.github.io/pkgndep/) used to calculate the dependency heaviness of an R package and display the results in a heatmap. 
 
-When developing R packages, it is advisable to keep it [lightweight](https://tinyverse.netlify.app/) (depend on a low number of external R packages). This is mainly to allow users to install R packages easily by reducing the chances of failure due to an unsuccessful dependency installation. Thus, [pkgndep](https://jokergoo.github.io/pkgndep/) is helpful for R package developers who wish to optimise their R package dependencies.
+When developing R packages, it is advisable to keep it [lightweight](https://tinyverse.netlify.app/) ( depend on a low number of external R packages ). This is mainly to allow users to install R packages easily by reducing the chances of failure due to an unsuccessful dependency installation. Thus, [pkgndep](https://jokergoo.github.io/pkgndep/) is helpful for R package developers who wish to optimise their R package dependencies.
 
 This is kind of similar to the R package [dstr](https://github.com/falo0/dstr). The difference is that [pkgndep](https://jokergoo.github.io/pkgndep/) provides a more detailed result in a heatmap rather than a network graph. On the other hand, [dstr](https://github.com/falo0/dstr) provides clearer advise to the R developers on what they can do next to reduce the dependencies. Perhaps, the teams of [pkgndep](https://jokergoo.github.io/pkgndep/) and [dstr](https://github.com/falo0/dstr) can collaborate and build on each other strengths to further improve on the usefulness of their current creations.
 
@@ -53,29 +53,29 @@ This is kind of similar to the R package [dstr](https://github.com/falo0/dstr). 
 
 ### pre-commits
 
-The second talk conducted by [Lorenz Walthert](https://twitter.com/lorenzwalthert) was an eye-opener for me as I am unfamiliar with git pre-commit hooks. From my understanding, pre-commit hooks are widely used for Python developers due to the availability of of the Python package [pre-commit](https://pre-commit.com/) to do all the heavy lifting.
-Motivated by how useful git pre-commit hooks are in improving code quality, Lorenz created a R package [precommit](https://lorenzwalthert.github.io/precommit/index.html) in hopes that more R package developers were able to adapt this workflow easily.
+The second talk conducted by [Lorenz Walthert](https://twitter.com/lorenzwalthert) was a treat for me as I am unfamiliar with git pre-commit hooks. From my understanding, pre-commit hooks are widely used for Python developers due to the availability of of the Python package [pre-commit](https://pre-commit.com/) to do all the heavy lifting.
+Motivated by how useful git pre-commit hooks are in improving code quality, Lorenz created a R package [precommit](https://lorenzwalthert.github.io/precommit/index.html) in hopes that more R package developers would be able to adapt this workflow easily.
 
 * 📝[Slides](https://github.com/lorenzwalthert/useR2022.precommit.slides)
 * 👨🏻‍🏫[Demo](https://github.com/lorenzwalthert/useR2022.precommit.demo)
 
 ### Transitioning To R
 
-After the second talk, I jumped to the session on Building the R Community 2. Luckily, this time when I got in, the third talk of the session had just begun. It was a presentation by [Kieran Martin](https://twitter.com/kjmartinstats) from [Roche](https://twitter.com/Roche). I have watched a previous R Consortium conducted by his team before in YouTube titled [Package Management at Roche]((https://www.youtube.com/watch?v=A8ePOTOSGg0&ab_channel=RConsortium)) and found it very informative and educational.
+After the second talk, I jumped to the session on Building the R Community 2. Luckily, this time when I got in, the third talk of the session had just begun. It was a presentation by [Kieran Martin](https://twitter.com/kjmartinstats) from [Roche](https://twitter.com/Roche). I have watched a [R Consortium](https://www.r-consortium.org/) session conducted by his team before in YouTube titled [Package Management at Roche]((https://www.youtube.com/watch?v=A8ePOTOSGg0&ab_channel=RConsortium)) and found it very informative and educational.
 
 It was delightful to see him again presenting for useR! 2022. This time Kieran shared his experience on his large Product Development team's ongoing journey to using R as one of the core data science tool, when there was a need to report results of clinical trials in the most efficient way. Best practices were shared like using [Docker](https://www.docker.com/) to fix the operating system, [renv](https://rstudio.github.io/renv/index.html) and internal package repositories to control the R packages used and the [R Validation Hub](https://www.pharmar.org/) to validate R packages. He also provided some useful advice and mistakes to avoid to help people grow into R.
 
-What was very touching is their desire in conjunction with like-minded pharmaceutical companies to create a shared set of high quality R packages for clinical reporting related analysis, plotting table and graphs via the [pharmaverse](https://pharmaverse.org/) and [Insights Engineering](https://github.com/insightsengineering). At least we do not have to see multiple R packages solving the same problem. Definitely something great to look into.
+What was very touching is the team's desire in conjunction with like-minded pharmaceutical companies to create a shared set of high quality R packages for clinical reporting related analysis, plotting table and graphs via the [pharmaverse](https://pharmaverse.org/) and [Insights Engineering](https://github.com/insightsengineering). At least we do not have to see multiple R packages solving the same problem. Definitely something great to look into.
 
 ### Reflections of a Research Software Engineer
 
 The session was followed by a presentation by [Nicholas Tierney](https://twitter.com/nj_tierney), a [research software engineer](https://researchsoftware.org/) at the [Telethon Kids Institute](https://www.telethonkids.org.au/). Nicholas is also the developer of the two data visualisation R packages [visdat](https://docs.ropensci.org/visdat/) and [naniar](https://naniar.njtierney.com/index.html).
 
-The talk consisted of three parts: what kind of work he does as a [research software engineer]((https://researchsoftware.org/), a small summary of how he tried to maintain the [greta](https://greta-stats.org/) R package (as part of his job scope) and the future of [research software engineer](https://researchsoftware.org/) in Australia.
+The talk consisted of three parts: what kind of work he does as a research software engineer, a small summary of how he tried to maintain the [greta](https://greta-stats.org/) R package ( as part of his job scope ) and the future of research software engineer in Australia.
 
 I did gain some useful knowledge in package management such as creating better snapshot test, efficient pull request using `pr_feteh` and `pr_finish` from the [usethis](https://usethis.r-lib.org/reference/pull-requests.html) R package and using [glue](https://glue.tidyverse.org/) to make better command line messages to users.
 
-Despite being busy with his research software engineer role, Nicholas is also active in the [rOpenSci Social Coworking and Office Hours](https://ropensci.org/events/coworking-2022-06/) (Asia Pacific Edition) helping people with R related issues. It was actually from this online event when I first met him. He is really a nice and approachable R enthusiast.
+Despite being busy with his research software engineer role, Nicholas is also active in the [rOpenSci Social Coworking and Office Hours](https://ropensci.org/events/coworking-2022-06/) ( Asia Pacific Edition ) helping people with R related issues. It was actually from this online event when I first met him. He is really a nice and approachable R enthusiast.
 
 * 📝[Slides](https://njt-user-2022.netlify.app/)
 
@@ -85,11 +85,11 @@ Honestly the last set of sessions was another hard choice for me as it covered t
 
 The first talk was about a small introduction of the [simPop](https://github.com/statistikat/simPop) R package by Alexander Kowarik. It was an R package used to create synthetic data. Synthetic data generation is useful when there is a need to transform sensitive but complex original data to into privacy-compliant data that still retains the complex structure of the original data. The transformed data can then be used for train machine learning models, software testing and simulation studies. This was actually my first time getting to know about synthetic data and what it was used for. I was grateful for the speaker for giving such a clear presentation for me to understand.
 
-### textrecipes To Improve Preprocessing Of Textual Data
+### `textrecipes` To Improve Preprocessing Of Textual Data
 
 The second one switched to the topic of Text Analysis with the R package [textrecipes](https://textrecipes.tidymodels.org/). It was presented by [Emil Hvitfeldt](https://twitter.com/Emil_Hvitfeldt) one of the authors of the e-book [Supervised Machine Learning for Test Analysis in R](https://smltar.com/). While I was new to text data analysis, I was able to understand the unique properties of such dataset and why was it so hard to transform such a dataset into meaningful numbers that a machine learning model could use to learn. The presentation then showed step by step on how [textrecipes](https://textrecipes.tidymodels.org/) was able to make this transformation process less painful and yet flexible to user's different needs.
 
-As someone who had attended a [book club](https://www.youtube.com/watch?v=cXjTKOoN6aU&list=PL3x6DOfs2NGisLSs09v1NQUQaxuE8nbOO) on [An Introduction to Statistical Learning with Applications in R](https://www.statlearning.com/)(ISLR) conducted by the [R4DS Online Learning Community](https://www.rfordatasci.com/), Emil's [ISLR tidymodels Labs](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/index.html) notes had been very helpful to our cohort group's learning journey to use [tidymodels](https://www.tidymodels.org/) to better understand some of the statistical learning methods.
+As someone who had attended a [book club](https://www.youtube.com/watch?v=cXjTKOoN6aU&list=PL3x6DOfs2NGisLSs09v1NQUQaxuE8nbOO) on [An Introduction to Statistical Learning with Applications in R](https://www.statlearning.com/) ( ISLR ) conducted by the [R4DS Online Learning Community](https://www.rfordatasci.com/), Emil's [ISLR tidymodels Labs](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/index.html) notes had been very helpful to our cohort group's learning journey to use [tidymodels](https://www.tidymodels.org/) to better understand some of the statistical learning methods.
 
 * 📝[Slides](https://emilhvitfeldt.github.io/useR2022-textrecipes)
 
@@ -109,7 +109,7 @@ The last talk of the session was quite hard for me to understand because I was u
 
 Oliver Delmarcelle showed how the R package [sentopics](https://github.com/odelmarcelle/sentopics) could be used to integrating sentiment analysis and topic modeling of textual data to potentially make better forecasting models. In this presentation, the [press conferences](https://www.ecb.europa.eu/press/key/html/index.en.html) documents of the European Central Bank was used as an example.
 
-If you are unfamiliar with the term topic modeling and sentiment analysis, take a look at these two Youtube videos by [Julia Silge](https://twitter.com/juliasilge)
+If you are unfamiliar with the term topic modeling and sentiment analysis, take a look at these two Youtube videos by [Julia Silge](https://twitter.com/juliasilge) and
 [Data Centric Inc.](https://www.datacentriccorp.com/) to know what they are.
 
 * [Topic modeling with R and tidy data principles](https://www.youtube.com/watch?v=evTuL-RcRpc)
@@ -157,4 +157,4 @@ Mine concluded the keynote with many recommendations for the community. Here are
 
 ## Conclusion
 
-With that, I finished my participation in this online conference.
+With that, I finished my participation in this online conference. A big thank you to the [organisers](https://user2022.r-project.org/about/organizers/) for their hard work in making this event possible. It was indeed very fruitful. Looking forward to watch the recordings of the talks that I have missed.

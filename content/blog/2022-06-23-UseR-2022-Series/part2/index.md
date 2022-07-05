@@ -52,7 +52,7 @@ The keynote concluded first by appealing to the African R community to support m
 
 ### Poster Presentation
 
-#### renderthis
+#### `renderthis`
 
 I first entered the Dissemination of Information room because I was curious about the [renderthis](https://jhelvy.github.io/renderthis/) presented by [John Paul Helveston](https://twitter.com/JohnHelveston). It was formally called xaringanBuilder, one of the extension of [Xaringan](https://github.com/yihui/xaringan). 
 
@@ -62,7 +62,7 @@ It was eye opening to see how many different ways [Xaringan](https://github.com/
 
 With [renderthis](https://jhelvy.github.io/renderthis/), users could also specify which [Xaringan](https://github.com/yihui/xaringan) slides to be converted to. Future work involved able to output the [Xaringan](https://github.com/yihui/xaringan) slides as a Microsoft Powerpoint [3 slides per page handout](https://answers.microsoft.com/en-us/msoffice/forum/all/how-do-i-save-a-powerpoint-presentation-with/e93ec638-8ad1-4002-8c1c-78cc90f097a6).
 
-#### animate
+#### `animate`
 
 I jumped to Data Visualisation room later after that. 
 
@@ -84,15 +84,15 @@ As for the question raised on extending the static plot to multichotomous data (
 
 Regardless, if this visualisation continue to receive good feedback, someone will create an interactive two-sample corrgram and push it as a web tool.
 
-#### pacs
+#### `pacs`
 
 I next entered the R in Production room where I was first introduced to the R package [pacs]((https://polkas.github.io/pacs/)) by [Maciej Nasinski](https://github.com/polkas). It contained a set of useful utility functions for helping R package developers life easier such as, automating validation of a [renv](https://rstudio.github.io/renv/articles/renv.html) lock file, finding out which are packages not from CRAN, etc... More information could be found in its [documentation](https://polkas.github.io/pacs/).
 
-#### svgtools
+#### `svgtools`
 
 The second sharing was from Konrad Oberwimmer who introduced the R package [svgtools](https://cran.r-project.org/web/packages/svgtools/index.html) that was able to key in statistical results onto charts template made in [SVG file format](https://commons.wikimedia.org/wiki/Template:SVG_Chart). This is helpful if there is a need to create graphs that needs to follow a certain layout based on corporate needs.
 
-#### data.validator
+#### `data.validator`
 
 The next showcase was about [data.validator](https://appsilon.github.io/data.validator/) by [Marcin Dubel](https://twitter.com/DubelMarcin). Honestly, this is an R package that I wish I knew about earlier in my data analysis journey. While it is great to have tools that validate the data but it is even better when a validation report, highlighting the possible issues of a given dataset clearly and explicitly, can be created and distributed to others.
 
@@ -119,7 +119,7 @@ The work done by Laure Cougnaud and her team was bringing this workflow to the n
 
 * 📝[Slides](https://medical-monitoring.openanalytics.io/)
 
-### knitr engines And blogdown Troubleshooting
+### `knitr` engines And `blogdown` Troubleshooting
 
 The next talk was by [Christophe Dervieux](https://twitter.com/chrisderv) giving a [introductory tour](https://cderv.rbind.io/talk/2022-user-knitr-engines/) on the different [knitr](https://github.com/yihui/knitr) engines. The [knitr](https://github.com/yihui/knitr) engines can be listed in R using the command `names(knitr::knit_engines$get())`. More information of commonly used engines can be found in the [Rmarkdown e-book](https://bookdown.org/yihui/rmarkdown/language-engines.html). 
 
@@ -146,7 +146,7 @@ The presentation gave me a nostalgia feeling as I had [presented](https://jeremy
 
 * 📝[Slides](https://www.dropbox.com/s/dv80062qo0rbhd3/useR_MeikeSteinhilber_2022_V2.pdf?dl=0)
 
-### Second Keynote: Applied Machine Learning With tidymodels
+### Second Keynote: Applied Machine Learning With `tidymodels`
 
 Day 3 of the conference ended with a keynote from [Julia Silge](https://twitter.com/juliasilge), author of [Supervised Machine Learning for Text Analysis in R](https://smltar.com/). She also posted a lot of [tidymodels-related lessons](https://www.youtube.com/c/JuliaSilge/videos) on YouTube as well as the online tutorial [Text mining with tidy data principles](https://juliasilge.shinyapps.io/learntidytext/).
 

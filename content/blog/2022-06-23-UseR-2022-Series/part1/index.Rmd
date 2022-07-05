@@ -64,7 +64,7 @@ Overall, I recommended this keynote for those who want to know more about R and 
 
 * 📝[Slides](https://www.paulamoraga.com/presentation-geohealth)
 
-### gittargets For Better Data Version Control
+### `gittargets` For Better Data Version Control
 
 As for the sessions, I first attended the first two talks from Big Data Management followed by next two talks from Building the R Community 1.
 
@@ -80,7 +80,7 @@ With the snapshots recorded, the [targets](https://docs.ropensci.org/targets/) w
 
 * 📝[Slides](https://wlandau.github.io/user-conf-2022/)
 
-### bulkAnalyseR: An Interactive Pipeline For Analysing And Sharing Bulk Sequencing Results
+### `bulkAnalyseR`: An Interactive Pipeline For Analysing And Sharing Bulk Sequencing Results
 
 The following talk was on [bulkAnalyseR](https://core-bioinformatics.github.io/bulkAnalyseR/) by [Ilias Moutsopoulos](https://github.com/emouts) from the [
 Cambridge Stem Cell Institute Core Bioinformatics Group](https://github.com/Core-Bioinformatics)
@@ -132,7 +132,7 @@ To speed up the rewriting process, [Krämer Konrad](https://twitter.com/kraemer_
 
 I had to say it sounded like magic. I thought it was too good to be truth and slapped my face with both hands like [Naruto](https://twitter.com/abdul_s17/status/1193855247850053634) to check if I was dreaming instead of watching the conference in the middle of the night. However, the session proceeded to the Q and A asking if [ast2ast](https://github.com/Konrad1991/ast2ast) could translate functions from non standard libraries like the [magrittr pipe](https://magrittr.tidyverse.org/reference/pipe.html) and probability density functions. Guess I was not sleeping and agreed with the host that [ast2ast](https://github.com/Konrad1991/ast2ast) had a lot of potential.
 
-### Modeling Marine Ecosystem With gadget3
+### Modeling Marine Ecosystem With `gadget3`
 
 Marine ecosystem models are needed to better understand the impacts of human related activities and natural events, such as overfishing, pollution and climate change, on the marine food web. Such models are needed for state holders to make wiser decisions and evaluate existing policies meant to protect our marine environment.
 

@@ -45,6 +45,11 @@ For this video, I was going through the contents of the book.
 <iframe width="710" height="390" src="https://www.youtube.com/embed/bfOfGLEO_GQ" frameborder="0" allowfullscreen>
 </iframe>
 
+For this video, I was going through the lab session.
+
+<iframe width="710" height="390" src="https://www.youtube.com/embed/pTys5kfA6Yc" frameborder="0" allowfullscreen>
+</iframe>
+
 Here are the slides.
 
 <div class="shareagain" style="min-width:300px;margin:1em auto;">

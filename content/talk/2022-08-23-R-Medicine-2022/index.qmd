@@ -1,0 +1,39 @@
+---
+title: "Viewing Mulitple Interactive Plots Using Plotly and Trelliscopejs"
+subtitle: ""
+excerpt: "Here is a talk I gave on R/Medicine 2022."
+format: hugo
+date: 2022-08-23T23:00:00
+show_post_time: false
+event: "R/Medicine 2022"
+event_url: https://events.linuxfoundation.org/r-medicine/
+author: "Jeremy Selva"
+location: "A Virtual Conference"
+draft: false
+# layout options: single, single-sidebar
+layout: single
+categories:
+- talk
+links:
+- icon: door-open
+  icon_pack: fas
+  name: website
+  url: https://jauntyjjs.github.io/RMedicine2022
+- icon: github
+  icon_pack: fab
+  name: code
+  url: https://github.com/JauntyJJS/RMedicine2022
+---
+
+Here are the slides.
+
+```{r, echo=FALSE}
+
+xaringanExtra::embed_xaringan(
+  url = "https://jauntyjjs.github.io/RMedicine2022",
+  ratio = "16:9"
+)
+
+```
+
+[Xaringan](https://github.com/yihui/xaringan) Slide Template by [Sharla Gelfand](https://github.com/sharlagelfand/sharstudioconf)

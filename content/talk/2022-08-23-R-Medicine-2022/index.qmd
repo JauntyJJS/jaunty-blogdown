@@ -8,7 +8,7 @@ show_post_time: false
 event: "R Medicine 2022"
 event_url: https://events.linuxfoundation.org/r-medicine/
 author: "Jeremy Selva"
-location: "A Virtual Conference"
+location: ""
 draft: false
 # layout options: single, single-sidebar
 layout: single

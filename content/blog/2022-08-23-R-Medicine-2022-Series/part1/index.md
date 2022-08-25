@@ -3,7 +3,6 @@ title: "Learning Journey and Reflections on R/Medicine 2022 Conference"
 subtitle: ""
 excerpt: "This narrative is a write up on Day 1 and Day 2 of my learning journey in the [R/Medicine 2022 Conference](https://events.linuxfoundation.org/r-medicine/)"
 format: hugo
-date: 2022-08-23T22:00:00
 author: "Jeremy Selva"
 draft: false
 images:

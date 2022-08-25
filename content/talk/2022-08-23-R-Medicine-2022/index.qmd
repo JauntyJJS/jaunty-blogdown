@@ -1,11 +1,11 @@
 ---
 title: "Viewing Mulitple Interactive Plots Using Plotly and Trelliscopejs"
 subtitle: ""
-excerpt: "Here is a talk I gave on R/Medicine 2022."
+excerpt: "Here is a talk I gave on R Medicine 2022."
 format: hugo
 date: 2022-08-23T23:00:00
 show_post_time: false
-event: "R/Medicine 2022"
+event: "R Medicine 2022"
 event_url: https://events.linuxfoundation.org/r-medicine/
 author: "Jeremy Selva"
 location: "A Virtual Conference"

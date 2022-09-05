@@ -1,5 +1,5 @@
 ---
-title: "Learning Journey and Reflections on R Medicine 2022 Conference"
+title: "Learning Journey and Reflections on R Medicine 2022 Conference Part 1"
 subtitle: ""
 excerpt: "This narrative is a write up on Day 1 and Day 2 of my learning journey in the [R Medicine 2022 Conference](https://events.linuxfoundation.org/r-medicine/)"
 format: hugo
@@ -150,17 +150,17 @@ On the other hand, Git Bash uses `quarto.cmd` for my computer.
 
 There is currently work in progress to make the version of the Quarto used during the R session available in`session Info` in this [GitHub Issue](https://github.com/r-lib/sessioninfo/issues/75).
 
-<figure>
-<img src="sessioninfo.jpg" data-fig-align="center" data-fig-alt="Picture showing a Github Issue opened by Tom Mock, requesting for the Quarto version used in an R session to be in the session info." alt="Session Info" />
-<figcaption aria-hidden="true">Session Info</figcaption>
-</figure>
+<img src="sessioninfo.jpg" data-fig-align="center" data-fig-alt="Picture showing a Github Issue opened by Tom Mock, requesting for the Quarto version used in an R session to be in the session info." />
 
 Do give your support.
 
-<figure>
-<img src="support.jpg" data-fig-align="center" data-fig-alt="Figure asking others to support the above figure GitHub issue." alt="Session Info" />
-<figcaption aria-hidden="true">Session Info</figcaption>
-</figure>
+<img src="support.jpg" data-fig-align="center" data-fig-alt="Figure asking others to support the above figure GitHub issue." />
+
+Other great questions include the following
+
+```
+{{< tweet user="thomas_mock" id="1562807783111532546" >}}
+```
 
 I guess I will slowly look through the course material in my free time.
 

@@ -1,0 +1,39 @@
+---
+title: "Learning Journey and Reflections on R Medicine 2022 Conference Part 2"
+subtitle: ""
+excerpt: "This narrative is a write up on Day 3 of my learning journey in the [R Medicine 2022 Conference](https://events.linuxfoundation.org/r-medicine/)"
+format: hugo
+date: 2022-08-23
+author: "Jeremy Selva"
+draft: true
+images:
+series:
+  - R/Medicine 2022
+tags:
+  - R/Medicine 2022
+categories:
+  - R/Medicine 2022
+layout: single-sidebar
+editor_options: 
+  chunk_output_type: console
+---
+
+## Introduction
+
+Here is a write up about my learning journey during Day 3 of the conference. As the videos of the presentation are not available, the writings made are based soely on my memory and 
+
+## Day 3
+
+### Quarto
+
+Day 3 of the conference started with a keynote, presented by [JJ Allaire](https://twitter.com/fly_upside_down), founder of [RStudio](https://www.rstudio.com/), which soon will be become [Posit](https://posit.co/).
+
+The topic was about [Quarto](https://quarto.org/), an open source data publishing tool, used to render narrative text, pictures and code chunks into documents, web pages and so much more. 
+
+While some may point out that this is similar to [R Markdown](https://rmarkdown.rstudio.com/). The presentation mainly covered features that can be done easily using Quarto (but hard in R Markdown) such as [complicated figure layouts](https://quarto.org/docs/authoring/figures.html), [callout blocks](https://quarto.org/docs/authoring/callouts.html) and [support](https://quarto.org/docs/authoring/diagrams.html) for embedding [Mermaid](https://mermaid-js.github.io/mermaid/#/) and [Graphviz](https://graphviz.org/) diagrams.
+
+This is similar to what Tom had covered during the Quarto workshop. It is comforting to know that the Poxit team is currently working on adding "track changes" feature into Quarto similar to what Microsoft Word can do. This could make collaboration of Quarto documents between different users less painful, especially with those who don't know Git.
+
+* 📝[Slides](https://jjallaire.quarto.pub/rmedicine-introduction-to-quarto)
+
+### Quarto

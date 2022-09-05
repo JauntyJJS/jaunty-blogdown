@@ -46,6 +46,7 @@ Due to a lack of time, the instructor quickly went through ways to combine diffe
 
 -   📝[Course Material](https://www.danieldsjoberg.com/clinical-reporting-gtsummary-rmed/)
 -   📝[Course Slides](https://www.danieldsjoberg.com/clinical-reporting-gtsummary-rmed/slides)
+-   📹[Video](https://www.youtube.com/watch?v=p-diyV2E77o)
 
 ### Using Public Data and Maps for Powerful Data Visualization.
 
@@ -71,7 +72,8 @@ I had to admit that dealing with geospatial data could be daunting with a lot of
     -   [Opening Map Files](https://rpubs.com/pm0kjp/opening_map_files)
     -   [Mapping Data from Socrata/SODA](https://rpubs.com/pm0kjp/simple_maps_from_socrata)
     -   [Obtaining US Census Data](https://rpubs.com/pm0kjp/census_data)
-    
+-   📹[Video](https://www.youtube.com/watch?v=iU1h5b3qp_Y)
+
 ## Day 2
 
 For Day 2 of the conference, I have attended the following workshops: Differential Expression using R and Reproducible Research with Quarto.
@@ -102,6 +104,7 @@ The workshop then proceeded to different ways to visualise the differential expr
 It was a pity that we could not go through enrichment analysis which was what most participants were looking forward to. Nevertheless, it was a decent workshop for beginners like me. Hope to see the team conduct more of such workshops in the future.
 
 -   📝[Course Material](https://github.com/developerpiru/GeneExpressionWorkshopRMed2022)
+-   📹[Video](https://www.youtube.com/watch?v=JdX0KeRuWvQ)
 
 ### Reproducible Research with [Quarto](https://quarto.org/)
 
@@ -149,4 +152,4 @@ I guess I will slowly look through the course material in my free time.
 -   📝[R Conference 2022 Course Material](https://github.com/jthomasmock/quarto-workshop)
 -   📝[Tierney's Notes on Changing from Rmarkdown/Bookdown to Quarto](https://www.njtierney.com/post/2022/04/11/rmd-to-qmd/)
 -   📝[Quarto Pub to publish and share Quarto documents](https://quartopub.com/)
-
+-   📹[Video](https://www.youtube.com/watch?v=KnwQFph3s94)

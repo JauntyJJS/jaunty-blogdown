@@ -18,6 +18,8 @@ editor_options:
   chunk_output_type: console
 ---
 
+
+
 ## Introduction
 
 Here is a write up about my learning journey during Day 3 and 4 of the conference. As the videos of the presentation are not available, the writings made are based on my memory. If there are any mistakes, kindly let me know.
@@ -28,13 +30,13 @@ Here is a write up about my learning journey during Day 3 and 4 of the conferenc
 
 Day 3 of the conference started with a keynote, presented by [JJ Allaire](https://twitter.com/fly_upside_down), founder of [RStudio](https://www.rstudio.com/), which soon will be become [Posit](https://posit.co/).
 
-The topic was about [Quarto](https://quarto.org/), an open source data publishing tool, used to render narrative text, pictures and code chunks into documents, web pages and so much more. 
+The topic was about [Quarto](https://quarto.org/), an open source data publishing tool, used to render narrative text, pictures and code chunks into documents, web pages and so much more.
 
 While some may point out that this is similar to [R Markdown](https://rmarkdown.rstudio.com/). The presentation mainly covered features that can be done easily using Quarto (but hard in R Markdown) such as [complicated figure layouts](https://quarto.org/docs/authoring/figures.html), [callout blocks](https://quarto.org/docs/authoring/callouts.html) and [support](https://quarto.org/docs/authoring/diagrams.html) for embedding [Mermaid](https://mermaid-js.github.io/mermaid/#/) and [Graphviz](https://graphviz.org/) diagrams.
 
 This is similar to what Tom had covered during the Quarto workshop. It is comforting to know that the Poxit team is currently working on adding "track changes" feature into Quarto similar to what Microsoft Word can do. This could make collaboration of Quarto documents between different users less painful, especially with those who don't know Git.
 
-* 📝[Slides](https://jjallaire.quarto.pub/rmedicine-introduction-to-quarto)
+-   📝[Slides](https://jjallaire.quarto.pub/rmedicine-introduction-to-quarto)
 
 ### Interactive web tools using R and Run Chart Plot
 
@@ -44,18 +46,18 @@ The first group of talks can be summarised as ways in which R can be used to cre
 
 [Jeremy Selva](https://twitter.com/jauntyjjs) covered how interactive plots created using [Plotly](https://plotly.com/r/) can be organised and distributed to collaborators using [trelliscopejs](https://hafen.github.io/trelliscopejs/).
 
-* 📝[Slides](https://jeremy-selva.netlify.app/talk/2022-08-23-r-medicine-2022/)
-* 📝[Quarto Example](https://jeremy-selva.netlify.app/blog/2022-08-08-quarto-report/)
+-   📝[Slides](https://jeremy-selva.netlify.app/talk/2022-08-23-r-medicine-2022/)
+-   📝[Quarto Example](https://jeremy-selva.netlify.app/blog/2022-08-08-quarto-report/)
 
-[Anastasiia Kostiv](https://twitter.com/Kostiv_A) uses R Shiny dashboard to highlight the usefulness of geospatial data in understanding the spread of a disease (unfortunately I cannot remember) and places where healthcare support is greatly needed. She also showed the flexibility of R in creating customised pdf reports that suit the needs of her collaborators through the use of css files. 
+[Anastasiia Kostiv](https://twitter.com/Kostiv_A) uses R Shiny dashboard to highlight the usefulness of geospatial data in understanding the spread of a disease (unfortunately I cannot remember) and places where healthcare support is greatly needed. She also showed the flexibility of R in creating customised pdf reports that suit the needs of her collaborators through the use of css files.
 
-Moving away from the topic of interactive plots, [Robert Lobato](https://twitter.com/RobertLobatoMD/status/1562852019378855937) presented how he used the R package [`runcharter`](https://johnmackintosh.github.io/runcharter/) to plot a time series run chart plot to see if a recent quality improvement program is helping staff members improve their work performance. The R package [`runcharter`](https://johnmackintosh.github.io/runcharter/) was also presented during R Medicine 2020 conference by the maintainer [John MacKintosh](https://twitter.com/_johnmackintosh). Here is the [link](https://www.youtube.com/watch?v=Y2DQp2nkrnk) to John's presentation.  
+Moving away from the topic of interactive plots, [Robert Lobato](https://twitter.com/RobertLobatoMD/status/1562852019378855937) presented how he used the R package [`runcharter`](https://johnmackintosh.github.io/runcharter/) to plot a time series run chart plot to see if a recent quality improvement program is helping staff members improve their work performance. The R package [`runcharter`](https://johnmackintosh.github.io/runcharter/) was also presented during R Medicine 2020 conference by the maintainer [John MacKintosh](https://twitter.com/_johnmackintosh). Here is the [link](https://www.youtube.com/watch?v=Y2DQp2nkrnk) to John's presentation.
 
-* 📝[Slides](https://static.sched.com/hosted_files/rmedicineconference2022/9c/supercharge_qi_with_runcharts.pdf)
+-   📝[Slides](https://static.sched.com/hosted_files/rmedicineconference2022/9c/supercharge_qi_with_runcharts.pdf)
 
 ### CONSORT Diagrams, Applied Epi and Spatial Transcriptomics
 
-The next group of talks were about CONSORT Diagrams, a non-profit organisation called Applied Epi and applied spatial transcriptomics in the brain.  
+The next group of talks were about CONSORT Diagrams, a non-profit organisation called Applied Epi and applied spatial transcriptomics in the brain.
 
 [Nick Barrowman](https://twitter.com/nbarrowman) showed how the R package [`vtree`](https://nbarrowman.github.io/vtree) was able to not only draw beautiful CONSORT flow diagram but more importantly, error-free and reproducible as well.
 
@@ -63,10 +65,10 @@ In addition, the R package [`vtree`](https://nbarrowman.github.io/vtree) could a
 
 The talk ended with a fruitful sharing from the audience, highlighting alternative packages that made CONSORT flow diagram. One of them is [`ggconsort`](https://tgerke.github.io/ggconsort/), which was [presented](https://www.youtube.com/watch?v=a8A638n6Qew) during the R Medicine 2021 conference and used in [R Workflow](https://hbiostat.org/rflow/doverview.html) by Frank Harrell.
 
-* 📝[Slides](https://github.com/nbarrowman/vtreeRmedicine)
-* 🌐[vtree Twiiter Page](https://twitter.com/vtreeRpackage)
+-   📝[Slides](https://github.com/nbarrowman/vtreeRmedicine)
+-   🌐[vtree Twiiter Page](https://twitter.com/vtreeRpackage)
 
-[Neale Batra](https://twitter.com/neale_batra) from [Applied Epi](https://www.appliedepi.org/) shared his journey when he was working on the [Epidemiologist R Handbook](https://www.tephinet.org/tephinet-learning-center/tephinet-library/epidemiologist-r-handbook#:~:text=The%20Epidemiologist%20R%20Handbook%20is,visualization%20tasks%20with%20epidemiological%20examples) project. 
+[Neale Batra](https://twitter.com/neale_batra) from [Applied Epi](https://www.appliedepi.org/) shared his journey when he was working on the [Epidemiologist R Handbook](https://www.tephinet.org/tephinet-learning-center/tephinet-library/epidemiologist-r-handbook#:~:text=The%20Epidemiologist%20R%20Handbook%20is,visualization%20tasks%20with%20epidemiological%20examples) project.
 
 The Epidemiologist R Handbook Project team strived to work on tools to make R more accessible to those working in Applied and "field" epidemiology, by providing them training and establishing workflows and standardised methods for such analysis.
 
@@ -74,52 +76,53 @@ The team is currently working on translating the handbook into several other lan
 
 [Leonardo Collado-Torres](https://twitter.com/lcolladotor) showcased his lab's research on spatial transcriptomics of the brain. A few resources were mentioned such as [`spatialLIBD`](http://spatial.libd.org/spatialLIBD/), [`spatialExperiment`](https://github.com/drighelli/SpatialExperiment), [`biocthis`](https://lcolladotor.github.io/biocthis/index.html) and an ebook titled "Orchestrating Spatially-Resolved Transcriptomics Analysis with Bioconductor" or [OSTA](https://lmweber.org/OSTA-book/) in short. One thing that surprised me was his sharing on how openly sharing data can help to accelerate not just science but the time took to publish the paper as well.
 
-* 📝[Slides](https://speakerdeck.com/lcolladotor/medicine-2022)
+-   📝[Slides](https://speakerdeck.com/lcolladotor/medicine-2022)
 
 ### Clinical Data Reporting
 
 For the next set of talks, majority of them revolved around clinical data reporting as well as some example case studies in R.
 
-Things started off with a lightning talk by [Raymond Balise](https://github.com/RaymondBalise). Raymond is known for being the maintainer of [`tidyREDCap`](https://raymondbalise.github.io/tidyREDCap/) and [`rUM`](https://raymondbalise.github.io/rUM/). 
+Things started off with a lightning talk by [Raymond Balise](https://github.com/RaymondBalise). Raymond is known for being the maintainer of [`tidyREDCap`](https://raymondbalise.github.io/tidyREDCap/) and [`rUM`](https://raymondbalise.github.io/rUM/).
 
 In this lightning talk, attendees were introduced to the [`rUM`](https://raymondbalise.github.io/rUM/) package, used to help R users create a research project template easily without spending too much time choosing the right YAML and knitr code chunk parameters in a newly created R markdown document. Moreover, the package could also create an "aggressive" `.gitignore` to prevent users from making accidental data breach when pushing their code to GitHub.
 
 In its latest version, the [`rUM`](https://raymondbalise.github.io/rUM/) package also supports Quarto documents.
 
-* 📝[Slides](https://balise.quarto.pub/a-quart-o-rum)
+-   📝[Slides](https://balise.quarto.pub/a-quart-o-rum)
 
 The following speech is from [Paul Harris](https://twitter.com/paul_a_harris), one of the founders of [REDCap](https://doi.org/10.1016/j.jbi.2019.103208) (Research Electronic Data Capture). He introduced a new REDCap module called the Clinical Data Interoperability Services (CDIS) which could be used to collect data from electronic health records (EHRs) into the REDCap database.
 
-* 📝[Journal Paper](https://www.sciencedirect.com/science/article/pii/S1532046421002008)
+-   📝[Journal Paper](https://www.sciencedirect.com/science/article/pii/S1532046421002008)
 
 After Paul's talk, Jeremy Michel from the [Children's Hospital of Philadelphia](https://www.chop.edu/) (CHOP) gave a success story of how he managed to create a reliable immunisation status report with the help of the [`data.table`](https://rdatatable.gitlab.io/data.table/) R package. He showed some coding examples of how validation and complex conditional filtering can be done using this R package.
 
 Another success story comes from Nathan Breit, whose team created an automated reporting system that is able to create numerous dashboard reports, such as scheduling for staff, accessing workflow changes and blood draw forecasting. The main body of the presentation consisted of a gallery of such reports. Credit goes to the R package [`flexdashboard`](https://rstudio.github.io/flexdashboard/index.html) for making this possible.
 
-* 📹[Video](https://www.youtube.com/watch?v=90_rrZtL32Y&t=349s)
+-   📹[Video](https://www.youtube.com/watch?v=90_rrZtL32Y&t=349s)
 
-[Shannon Pileggi](https://twitter.com/PipingHotData) and [Daniel Sjoberg](https://twitter.com/statistishdan) introduced their newly created package [gtreg](https://shannonpileggi.github.io/gtreg/). This R package is used to create summary report tables of adverse events easily. 
+[Shannon Pileggi](https://twitter.com/PipingHotData) and [Daniel Sjoberg](https://twitter.com/statistishdan) introduced their newly created package [gtreg](https://shannonpileggi.github.io/gtreg/). This R package is used to create summary report tables of adverse events easily.
 
-* 📝[Slides](https://shannonpileggi.github.io/introducing-gtreg-rmed-2022)
+-   📝[Slides](https://shannonpileggi.github.io/introducing-gtreg-rmed-2022)
 
 ### Treatment timelines, Mediation Analysis and Randomization
 
 Treatment timelines are useful in exploratory longitudinal survival analysis to better monitor how a patient is doing when being treated for an illness.
 
-[Katherine Hoffman](https://twitter.com/kat_hoffman_) taught the attendees how to create treatment timelines or "swimmer plots" using [`ggplot2`](https://ggplot2.tidyverse.org/). 
+[Katherine Hoffman](https://twitter.com/kat_hoffman_) taught the attendees how to create treatment timelines or "swimmer plots" using [`ggplot2`](https://ggplot2.tidyverse.org/).
 
-* 📝[Slides](https://kathoffman.github.io/swimmer-plots/slides.html)
-* 📝[Treatment Timelines Example 1](https://www.khstats.com/blog/trt-timelines/trt-timelines/)
-* 📝[Treatment Timelines Example 2](https://www.khstats.com/blog/trt-timelines/multiple-vars/)
+-   📝[Slides](https://kathoffman.github.io/swimmer-plots/slides.html)
+-   📝[Treatment Timelines Example 1](https://www.khstats.com/blog/trt-timelines/trt-timelines/)
+-   📝[Treatment Timelines Example 2](https://www.khstats.com/blog/trt-timelines/multiple-vars/)
 
 Penalised mediation models could be useful in helping biostatisticians select the most useful variables in a given biological model.
 
-Jason Sinnwell presented one of his R package [`regmed`](https://cran.rstudio.com/web/packages/regmed/index.html) used to create penalised mediation model for the following cases: 
+Jason Sinnwell presented one of his R package [`regmed`](https://cran.rstudio.com/web/packages/regmed/index.html) used to create penalised mediation model for the following cases:
 
-* One exposure, multiple mediators, and One outcome variable
-* Multiple exposures, multiple mediators, and multiple outcome variables
+-   One exposure, multiple mediators, and One outcome variable
 
-* 📝[Slides](https://github.com/sinnweja/presentations/blob/main/RMed22_regmed.pdf)
+-   Multiple exposures, multiple mediators, and multiple outcome variables
+
+-   📝[Slides](https://github.com/sinnweja/presentations/blob/main/RMed22_regmed.pdf)
 
 The next speaker was from [Michael Kane](https://twitter.com/kaneplusplus), one of the founders of R Medicine. He was supposed to speak about the R package [`ctrialsgov`](https://cran.r-project.org/web/packages/ctrialsgov/index.html), a tool for querying information from the U.S. National Library of Medicine's Clinical Trials [database](https://clinicaltrials.gov). Michael was intending to share how the R package can be used to investigate the trends of drug development in the US. Unfortunately, the connection got cut off in the midst of his presentation. A video recording will be provided in the future.
 
@@ -134,64 +137,57 @@ A few useful R packages were shared
 
 [Frank Hawell](https://twitter.com/f2harrell) kick-started the keynote with a walkthrough of the latest version of the ebook [R Workflow](https://hbiostat.org/rflow/). This ebook is meant to guide people using R to create decent reports (in Quarto) that are computationally reproducible and comprehensive to a general audience. There is even a chapter dedicated to just [report formatting](https://hbiostat.org/rflow/rformat.html).
 
-
-
 Here are some things that are unique to this ebook that most data science book don't provide
--   Creation of a data dictionary or metadata in Chapter 5
+- Creation of a data dictionary or metadata in Chapter 5
 
-![](data_dictionary.jpg){fig-align="center" fig-alt="Picture showing a data dictionary."}
+<img src="data_dictionary.jpg" data-fig-align="center" data-fig-alt="Picture showing a data dictionary." />
 
-*  Usage of R package [`data.table`](https://rdatatable.gitlab.io/data.table/) to perform clean, merge and summarise data in Chapter 10-12
+-   Usage of R package [`data.table`](https://rdatatable.gitlab.io/data.table/) to perform clean, merge and summarise data in Chapter 10-12
 
-![](data_table.jpg){fig-align="center" fig-alt="Picture showing the syntax of data.table."}
+<img src="data_table.jpg" data-fig-align="center" data-fig-alt="Picture showing the syntax of data.table." />
 
-*  Usage of stratified spike histograms
+-   Usage of stratified spike histograms
 
-![](stratified_spike_histograms.jpg
-){fig-align="center" fig-alt="Picture showing the stratified spike histograms of heart rate stratified by ECG category."}
+<img src="stratified_spike_histograms.jpg" data-fig-align="center" data-fig-alt="Picture showing the stratified spike histograms of heart rate stratified by ECG category." />
 
-*  Usage of extended box plots
+-   Usage of extended box plots
 
-![](extended_box_plot_1.jpg
-){fig-align="center" fig-alt="Picture showing a prototype of an extended box plot."}
+<img src="extended_box_plot_1.jpg" data-fig-align="center" data-fig-alt="Picture showing a prototype of an extended box plot." />
 
-![](extended_box_plot_2.jpg
-){fig-align="center" fig-alt="Picture showing an extended box plot example with stratification by disease group."}
+<img src="extended_box_plot_2.jpg" data-fig-align="center" data-fig-alt="Picture showing an extended box plot example with stratification by disease group." />
 
 For each section, readers can see the source code used to create the section's content, such as the code to create this flow diagram using [Mermaid](https://mermaid-js.github.io/mermaid/#/) by clicking on the "Code" button.
 
-![](mermaid_example.jpg
-){fig-align="center" fig-alt="Picture showing a flow diagram made using Mermaid and the location of the button which users can access the source code."}
+<img src="mermaid_example.jpg" data-fig-align="center" data-fig-alt="Picture showing a flow diagram made using Mermaid and the location of the button which users can access the source code." />
 
-![](mermaid_source_code.jpg
-){fig-align="center" fig-alt="Picture showing the source code of a flow diagram made using Mermaid."}
+<img src="mermaid_source_code.jpg" data-fig-align="center" data-fig-alt="Picture showing the source code of a flow diagram made using Mermaid." />
 
-Whether you have used R frequently or just starting to use it, this book is useful as there is always something new to learn from its content. 
+Whether you have used R frequently or just starting to use it, this book is useful as there is always something new to learn from its content.
 
-### Wrangling Big Medical Data, 📦 {`censored`}, Workflow, Application of R in Industry 
+### Wrangling Big Medical Data, 📦 {censored}, Workflow, Application of R in Industry
 
-[Peter Higgins](https://twitter.com/ibddoctor) kept the audience glued to his presentation as by giving a story of his own investigation to find out how four physicians received a yearly payment of over $1 million, according to this [paper](10.1053/j.gastro.2022.06.029). 
+[Peter Higgins](https://twitter.com/ibddoctor) kept the audience glued to his presentation as by giving a story of his own investigation to find out how four physicians received a yearly payment of over \$1 million, according to this [paper](10.1053/j.gastro.2022.06.029).
 
 Peter obtained the data from the CMS (Center for Medicare and Medicaid Services) [website](https://www.cms.gov/OpenPayments/Data/Dataset-Downloads) but was hit with a stumbling block to process that data as the data were too large for R to handle through conventional methods. Thankfully, with the help of the R community on Twitter, he was able to proceed using [Apache Arrow](https://arrow.apache.org/docs/r/) and [DuckDB](https://duckdb.org/). Eventually, he was able to identify how the four physicians received such a high amount of payment. However, I would not wish to spoil the ending. Take a look at his slides to find out.
 
 A myraid of resources was also shared.
 
-* 📝[Getting started with Apache Arrow by Danielle Navarro](https://blog.djnavarro.net/posts/2021-11-19_starting-apache-arrow-in-r/)
-* 📝[Apache Arrow Workshop Notes](https://arrow-user2022.netlify.app/)
-* 📝[Arrow Cheatsheet](rawgithubusercontent.com/rstudio/cheatsheets/master/arrow.pdf)
-* 📹[Doing More with Data: An Introduction to Arrow for R Users by Danielle Navarro](https://www.youtube.com/watch?v=O42LUmJZPx0)
-* 📹[Efficient Data Analysis on Larger-than-Memory Data with DuckDB and Arrow by Thomas Mock](https://www.youtube.com/watch?v=LvTX1ZAZy6M)
+-   📝[Getting started with Apache Arrow by Danielle Navarro](https://blog.djnavarro.net/posts/2021-11-19_starting-apache-arrow-in-r/)
+-   📝[Apache Arrow Workshop Notes](https://arrow-user2022.netlify.app/)
+-   📝[Arrow Cheatsheet](rawgithubusercontent.com/rstudio/cheatsheets/master/arrow.pdf)
+-   📹[Doing More with Data: An Introduction to Arrow for R Users by Danielle Navarro](https://www.youtube.com/watch?v=O42LUmJZPx0)
+-   📹[Efficient Data Analysis on Larger-than-Memory Data with DuckDB and Arrow by Thomas Mock](https://www.youtube.com/watch?v=LvTX1ZAZy6M)
 
 An additional side note. [Peter Higgins](https://twitter.com/ibddoctor) is also the author of the ebook [Reproducible Medical Research with R](https://bookdown.org/pdr_higgins/rmrwr/) and the new chair of R Medicine 2023
 
-* 📝[Slides](https://kathoffman.github.io/swimmer-plots/slides.html)
+-   📝[Slides](https://kathoffman.github.io/swimmer-plots/slides.html)
 
 After an engaging talk, [Hannah Frick](https://twitter.com/hfcfrick) presented an R package from the [tidymodels](https://www.tidymodels.org/) family called [`censored`](https://censored.tidymodels.org/).
 This R package aimed to create a consistent interface for survival models, helping users to create censored regression and survival analysis in a more streamline approach.
 
-* 📝[Slides](https://hfrick.github.io/rstudio-conf-2022)
+-   📝[Slides](https://hfrick.github.io/rstudio-conf-2022)
 
-[Asmae Toumi](https://twitter.com/asmae_toumi), Director of Analytics and Research at [PursueCare](https://twitter.com/PursueCare) shared how her team used data and R to understand trends in opioid misuse and overdose so that better care can be delivered to the patients and those affected by the opioid crisis. What we can learn form there is the data science is not just about dealing with data but also being able to determine and anticipate the needs of the clients or stakeholders and requires the flexibility to take multiple roles. 
+[Asmae Toumi](https://twitter.com/asmae_toumi), Director of Analytics and Research at [PursueCare](https://twitter.com/PursueCare) shared how her team used data and R to understand trends in opioid misuse and overdose so that better care can be delivered to the patients and those affected by the opioid crisis. What we can learn form there is the data science is not just about dealing with data but also being able to determine and anticipate the needs of the clients or stakeholders and requires the flexibility to take multiple roles.
 
 Moreover, Asame shared some useful resources that contributed to the team's success such as [Building a team of internal R packages by Emily Riederer](https://emilyriederer.netlify.app/post/team-of-packages/), use of [tidyverse](https://www.tidyverse.org/) and [tidymodels](https://www.tidymodels.org/) to make survival analysis predictions, [`targets`](https://docs.ropensci.org/targets/) to create reproducible pipelines, publishing results and reports using [RStudio Connect](https://www.rstudio.com/products/connect/).
 
@@ -201,18 +197,18 @@ The next group of talks was mainly the return on the applications of R in clinic
 
 [Marcin Dubel](https://twitter.com/dubelmarcin) started of by sharing some useful tips to create a Reproducible R Shiny Project Environment. Here are just some notes that I have taken:
 
-*  If possible, keep data files and `.Renviron` files out of the code repository.
-*  Avoid local paths, use relative paths instead.
-*  Use [renv](https://rstudio.github.io/renv/) and [Docker](https://www.docker.com/) to save your computing environment.
-*  When creating a web application, consider creating 
-   *  Production Environment
-   *  Test Environment
-   *  Development Environment
-   *  Sandbox Environment
-   *  Offline Environment
-*  Use a YAML file to set hardcoded configurations.
-*  Setup a Continuous Integration first before adding test units
-*  Use a data validation tools (like [`data.validator`](https://appsilon.github.io/data.validator/)) and [`targets`](https://docs.ropensci.org/targets/) to check business logic
+-   If possible, keep data files and `.Renviron` files out of the code repository.
+-   Avoid local paths, use relative paths instead.
+-   Use [renv](https://rstudio.github.io/renv/) and [Docker](https://www.docker.com/) to save your computing environment.
+-   When creating a web application, consider creating
+    -   Production Environment
+    -   Test Environment
+    -   Development Environment
+    -   Sandbox Environment
+    -   Offline Environment
+-   Use a YAML file to set hardcoded configurations.
+-   Setup a Continuous Integration first before adding test units
+-   Use a data validation tools (like [`data.validator`](https://appsilon.github.io/data.validator/)) and [`targets`](https://docs.ropensci.org/targets/) to check business logic
 
 The following lightning talk is from [Jaclyn Janis](https://twitter.com/jaclynjanis?lang=en) who gave a plea for nurses to acquire some basic data science related skill sets and R is an effective way to make this possible.
 
@@ -220,44 +216,43 @@ Since nurses had access to a lot of clinical data and had a wide domain knowledg
 
 As clinical data become more vast and complex, it will be more beneficial for them to use R as it is easier to create simple reports in compared to other programming languages. [Jaclyn Janis](https://twitter.com/jaclynjanis?lang=en) shared how overjoyed she felt when she managed to create a report using R Markdown. Nevertheless, the speaker acknowledged that convincing nurses to learn new things was hard as they had a lot of things to do.
 
-Jaclyn ended her talk by asking for more nurses to reach out and network with her to share their experiences and difficulties dealing with clinical data, especially those who were successful in using R in their work. 
+Jaclyn ended her talk by asking for more nurses to reach out and network with her to share their experiences and difficulties dealing with clinical data, especially those who were successful in using R in their work.
 
-* 📧[Linkedin](https://www.linkedin.com/in/jaclyn-janis/)
-* 📧 Email: jaclyn.janis@rstudio.com
+-   📧[Linkedin](https://www.linkedin.com/in/jaclyn-janis/)
+-   📧 Email: jaclyn.janis@rstudio.com
 
 Gloria Kang from the [Centers for Disease Control and Prevention](https://www.cdc.gov/) (CDC) gave an overview of her working experiences in few projects, which she had received little data but needed to provide the results quickly to state holders and decision makers.
 
 Below are the links to these projects' results.
 
-* 🔗[COVID Data Tracker](https://covid.cdc.gov/covid-data-tracker/)
-* 🔗[School Learning Modality](https://public-data-hub-dhhs.hub.arcgis.com/pages/school-learning-modalities)
+-   🔗[COVID Data Tracker](https://covid.cdc.gov/covid-data-tracker/)
+-   🔗[School Learning Modality](https://public-data-hub-dhhs.hub.arcgis.com/pages/school-learning-modalities)
 
-Returning back to the use of [Shiny](https://shiny.rstudio.com/), [Lucy D'Agostino McGowan](https://twitter.com/LucyStats) presented a Shiny Application called CONTESSA (Contact Tracing Evaluation and Strategic Support Application). This application is used to monitor and evaluate the impact of Covid 19 Test-Trace-Isolate program implemented in the US. 
+Returning back to the use of [Shiny](https://shiny.rstudio.com/), [Lucy D'Agostino McGowan](https://twitter.com/LucyStats) presented a Shiny Application called CONTESSA (Contact Tracing Evaluation and Strategic Support Application). This application is used to monitor and evaluate the impact of Covid 19 Test-Trace-Isolate program implemented in the US.
 
-The R package [tti](https://github.com/HopkinsIDD/tti) was used to calculate the virus reproductive number, defined as the number of onward transmissions an infected individual is expected to make given the current immune status of the population and implemented control measures. To see if the Test-Trace-Isolate program is working, we want the reproductive number to decrease to a low number over time (given some input parameters) 
+The R package [tti](https://github.com/HopkinsIDD/tti) was used to calculate the virus reproductive number, defined as the number of onward transmissions an infected individual is expected to make given the current immune status of the population and implemented control measures. To see if the Test-Trace-Isolate program is working, we want the reproductive number to decrease to a low number over time (given some input parameters)
 
 CONTESSA provides a user-friendly interface for analyst to keep in the parameters and plot the reproductive number results over time. From the calculated reproductive number, the tool is able to predict the percentage of the community that will be isolated or quarantined.
 
-* 📝[Slides](https://docs.google.com/presentation/d/1feKvPdlrcTL9mkz-qdQJd1UGa4-Vi4n9252fCLN0fr0/edit#slide=id.ga447f5e1d9_0_117)
-* [Paper](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1003585)
-* 🔗[Shiny Application](https://covid.cdc.gov/covid-data-tracker/)
-* 🔗[Shiny Application Source Code](github.com/hopkinsidd/contessa)
+-   📝[Slides](https://docs.google.com/presentation/d/1feKvPdlrcTL9mkz-qdQJd1UGa4-Vi4n9252fCLN0fr0/edit#slide=id.ga447f5e1d9_0_117)
+-   [Paper](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1003585)
+-   🔗[Shiny Application](https://covid.cdc.gov/covid-data-tracker/)
+-   🔗[Shiny Application Source Code](github.com/hopkinsidd/contessa)
 
 Lihai Song's team contributed another Shiny application to automate regression and survival analysis and reporting with minimal typing from the user.
 
-* 🔗[Shiny Application](https://chopdsbu.shinyapps.io/Stats/)
-
+-   🔗[Shiny Application](https://chopdsbu.shinyapps.io/Stats/)
 
 ### Effective R Teaching in biomedical sciences, Tidying REDCap data and Application of Tidymodels
 
-The next talk was from [Carrie Wright](carriewright11.github.io) from the Informatics Technology for Cancer Research ([ITCR](https://itcr.cancer.gov/)) Training Network ([ITN](https://www.itcrtraining.org/home)). The goal of ITN is to create a support cancer researchers with data science training through resources, technology and events. 
+The next talk was from [Carrie Wright](carriewright11.github.io) from the Informatics Technology for Cancer Research ([ITCR](https://itcr.cancer.gov/)) Training Network ([ITN](https://www.itcrtraining.org/home)). The goal of ITN is to create a support cancer researchers with data science training through resources, technology and events.
 
 One of their most recent projects was the development of [OTTR](https://www.ottrproject.org/) (Open-source Tools for Training Resources) to assist teachers, who had written courses in R Markdown files, to be able to publish and maintain courses on multiple learning platforms (Bookdown, Cousera and Leanpub).
 
 ITN is also looking for people to [join](https://www.itcrtraining.org/join-us) them.
 
-* 📝[Slides](docs.google.com/presentation/d/15_J0CFpA22lRk2P_33CtXiYGU7tZf1fkf_OHhRHvgXc/edit?usp=sharing)
-* 📝[Journal article about OTTR](https://arxiv.org/abs/2203.07083)
+-   📝[Slides](docs.google.com/presentation/d/15_J0CFpA22lRk2P_33CtXiYGU7tZf1fkf_OHhRHvgXc/edit?usp=sharing)
+-   📝[Journal article about OTTR](https://arxiv.org/abs/2203.07083)
 
 The baton was then passed to [Stephan Kadauke](https://twitter.com/stephankadauke) who presented on an R package that he was working on called [`REDCapTidieR`](https://chop-cgtdataops.github.io/REDCapTidieR/).
 
@@ -265,7 +260,7 @@ While [`REDCapR`](https://ouhscbbmc.github.io/REDCapR/) was able to interact wit
 
 [`REDCapTidieR`](https://chop-cgtdataops.github.io/REDCapTidieR/) resolves this issue by organising the sparse data and output them into a tibble with two rows. One row with the repeating data and the other with a non-repeating data. A key column was created to connect the non-repeating data with the repeating data.
 
-Next, [Garrett Grolemund](https://twitter.com/statgarrett?lang=en), author of the ebook [R for Data Science](https://r4ds.had.co.nz/), presented on ways to effectively teach others to obtain data science skills through the use of lessons, daily practice, project milestones, group sharing and mentor meetings. 
+Next, [Garrett Grolemund](https://twitter.com/statgarrett?lang=en), author of the ebook [R for Data Science](https://r4ds.had.co.nz/), presented on ways to effectively teach others to obtain data science skills through the use of lessons, daily practice, project milestones, group sharing and mentor meetings.
 
 To spread the use o these effective teaching techniques, the [RStudio Academy](https://www.rstudio.com/academy) was created. They are currently looking for mentors to assist in their teaching program.
 
@@ -273,25 +268,22 @@ Here is the [link](https://docs.google.com/forms/d/e/1FAIpQLSedwrR8eynI0jJ5fPevR
 
 We returned to the application of [tidymodels](https://www.tidymodels.org/) as Allen Lee from the University of Michigan showed how it can be used to identify patient with high risk of *Clostridiodes difficile* Infection.
 
-The presentation ended with a short sharing from the attendees highlighting the limitations of the ROC curve to evaluate a prediction model and suggestions to use a [high resolution calibration curve](http://hbiostat.org/rmsc/validate.html#sec-val-index) 
+The presentation ended with a short sharing from the attendees highlighting the limitations of the ROC curve to evaluate a prediction model and suggestions to use a [high resolution calibration curve](http://hbiostat.org/rmsc/validate.html#sec-val-index)
 
-![](calibration.jpg){fig-align="center" fig-alt="Figure showing what are calibration measures."}
+<img src="calibration.jpg" data-fig-align="center" data-fig-alt="Figure showing what are calibration measures." />
 
-like these examples from the ebook [Regression Modeling Strategies](http://hbiostat.org/rmsc/): 
+like these examples from the ebook [Regression Modeling Strategies](http://hbiostat.org/rmsc/):
 
-* [Example 1](http://hbiostat.org/rmsc/lrcase1.html#fig-lrcase1-cal)
+-   [Example 1](http://hbiostat.org/rmsc/lrcase1.html#fig-lrcase1-cal)
 
-![](calibration_example_1.jpg){fig-align="center" fig-alt="Figure showing one example of a calibration curve."}
+<img src="calibration_example_1.jpg" data-fig-align="center" data-fig-alt="Figure showing one example of a calibration curve." />
 
-* [Example 2](http://hbiostat.org/rmsc/titanic.html#fig-titanic-calibrate)
+-   [Example 2](http://hbiostat.org/rmsc/titanic.html#fig-titanic-calibrate)
 
-![](calibration_example_2.jpg){fig-align="center" fig-alt="Figure showing one example of a calibration curve."}
+<img src="calibration_example_2.jpg" data-fig-align="center" data-fig-alt="Figure showing one example of a calibration curve." />
 
-* [Example 3](http://hbiostat.org/rmsc/coxcase.html#fig-coxcase-cal)
+-   [Example 3](http://hbiostat.org/rmsc/coxcase.html#fig-coxcase-cal)
 
-![](calibration_example_3.jpg){fig-align="center" fig-alt="Figure showing one example of a calibration curve."}
+<img src="calibration_example_3.jpg" data-fig-align="center" data-fig-alt="Figure showing one example of a calibration curve." />
 
 ### R in PCR automation, 📦 {`nnsvg`} and MeRGE Expo
-
-[Daniel Holmes](https://twitter.com/drdanholmes?lang=en) from the University of British Columbia shared how he is able to 
-

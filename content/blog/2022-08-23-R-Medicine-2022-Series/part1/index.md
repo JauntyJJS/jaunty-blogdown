@@ -24,7 +24,7 @@ editor_options:
 
 Time flies since the last conference that I have attended. I am fortunate to be given a chance to attend the [R/Medicine 2022 Conference](https://events.linuxfoundation.org/r-medicine/) and give a lightning talk as well.
 
-The general goal of R/Medicine Conference is to help practitioners in clinical and medicine sciences improve the quality of their research workflow with the use of R based tools. The focus is mainly on the application of R to create effective workflows and applications that promote reproducible data processing, reporting and visualisation.
+The general goal of the R/Medicine Conference is to help practitioners in clinical and medicine sciences improve the quality of their research workflow with the use of R based tools. The focus is mainly on the application of R to create effective workflows and applications that promote reproducible data processing, reporting and visualisation.
 
 Despite having to attend the conference in the middle of the night ... again, it was indeed a fruitful experience. Here is a write up about my experiences in the conference for Day 1 and Day 2.
 

@@ -5,7 +5,7 @@ excerpt: "This narrative is a write up on Day 3 of my learning journey in the [R
 format: hugo
 date: 2022-08-23
 author: "Jeremy Selva"
-draft: true
+draft: false
 images:
 series:
   - R/Medicine 2022
@@ -20,7 +20,7 @@ editor_options:
 
 ## Introduction
 
-Here is a write up about my learning journey during Day 3 and 4 of the conference. As the videos of the presentation are not available, the writings made are based on my memory. If there are any mistakes, kindly let me know.
+This is a continuation about my learning journey in R Medicine 2022. This section covers Day 3 and 4 of the conference. As the videos of the presentation are not available, the writings made are based on my memory. If there are any mistakes, kindly let me know.
 
 ## Day 3
 
@@ -30,7 +30,7 @@ Day 3 of the conference started with a keynote, presented by [JJ Allaire](https:
 
 The topic was about [Quarto](https://quarto.org/), an open source data publishing tool, used to render narrative text, pictures and code chunks into documents, web pages and so much more. 
 
-While some may point out that this is similar to [R Markdown](https://rmarkdown.rstudio.com/). The presentation mainly covered features that can be done easily using Quarto (but hard in R Markdown) such as [complicated figure layouts](https://quarto.org/docs/authoring/figures.html), [callout blocks](https://quarto.org/docs/authoring/callouts.html) and [support](https://quarto.org/docs/authoring/diagrams.html) for embedding [Mermaid](https://mermaid-js.github.io/mermaid/#/) and [Graphviz](https://graphviz.org/) diagrams.
+While some may point out that this is similar to [R Markdown](https://rmarkdown.rstudio.com/). The presentation mainly covered features that can be done easily using Quarto (but hard in [R Markdown](https://rmarkdown.rstudio.com/)) such as [complicated figure layouts](https://quarto.org/docs/authoring/figures.html), [callout blocks](https://quarto.org/docs/authoring/callouts.html) and [support](https://quarto.org/docs/authoring/diagrams.html) for embedding [Mermaid](https://mermaid-js.github.io/mermaid/#/) and [Graphviz](https://graphviz.org/) diagrams.
 
 This is similar to what Tom had covered during the Quarto workshop. It is comforting to know that the Poxit team is currently working on adding "track changes" feature into Quarto similar to what Microsoft Word can do. This could make collaboration of Quarto documents between different users less painful, especially with those who don't know Git.
 
@@ -82,7 +82,7 @@ For the next set of talks, majority of them revolved around clinical data report
 
 Things started off with a lightning talk by [Raymond Balise](https://github.com/RaymondBalise). Raymond is known for being the maintainer of [`tidyREDCap`](https://raymondbalise.github.io/tidyREDCap/) and [`rUM`](https://raymondbalise.github.io/rUM/). 
 
-In this lightning talk, attendees were introduced to the [`rUM`](https://raymondbalise.github.io/rUM/) package, used to help R users create a research project template easily without spending too much time choosing the right YAML and knitr code chunk parameters in a newly created R markdown document. Moreover, the package could also create an "aggressive" `.gitignore` to prevent users from making accidental data breach when pushing their code to GitHub.
+In this lightning talk, attendees were introduced to the [`rUM`](https://raymondbalise.github.io/rUM/) package, used to help R users create a research project template easily without spending too much time choosing the right YAML and knitr code chunk parameters in a newly created [R Markdown](https://rmarkdown.rstudio.com/) document. Moreover, the package could also create an "aggressive" `.gitignore` to prevent users from making accidental data breach when pushing their code to GitHub.
 
 In its latest version, the [`rUM`](https://raymondbalise.github.io/rUM/) package also supports Quarto documents.
 
@@ -218,7 +218,7 @@ The following lightning talk is from [Jaclyn Janis](https://twitter.com/jaclynja
 
 Since nurses had access to a lot of clinical data and had a wide domain knowledge about the clinical data, Jaclyn argued that the quality of the data would improve if they were equipped with tools (besides paper and Excel) that could help save time and effort in processing the data.
 
-As clinical data become more vast and complex, it will be more beneficial for them to use R as it is easier to create simple reports in compared to other programming languages. [Jaclyn Janis](https://twitter.com/jaclynjanis?lang=en) shared how overjoyed she felt when she managed to create a report using R Markdown. Nevertheless, the speaker acknowledged that convincing nurses to learn new things was hard as they had a lot of things to do.
+As clinical data become more vast and complex, it will be more beneficial for them to use R as it is easier to create simple reports in compared to other programming languages. [Jaclyn Janis](https://twitter.com/jaclynjanis?lang=en) shared how overjoyed she felt when she managed to create a report using [R Markdown](https://rmarkdown.rstudio.com/). Nevertheless, the speaker acknowledged that convincing nurses to learn new things was hard as they had a lot of things to do.
 
 Jaclyn ended her talk by asking for more nurses to reach out and network with her to share their experiences and difficulties dealing with clinical data, especially those who were successful in using R in their work. 
 
@@ -252,7 +252,7 @@ Lihai Song's team contributed another Shiny application to automate regression a
 
 The next talk was from [Carrie Wright](carriewright11.github.io) from the Informatics Technology for Cancer Research ([ITCR](https://itcr.cancer.gov/)) Training Network ([ITN](https://www.itcrtraining.org/home)). The goal of ITN is to create a support cancer researchers with data science training through resources, technology and events. 
 
-One of their most recent projects was the development of [OTTR](https://www.ottrproject.org/) (Open-source Tools for Training Resources) to assist teachers, who had written courses in R Markdown files, to be able to publish and maintain courses on multiple learning platforms (Bookdown, Cousera and Leanpub).
+One of their most recent projects was the development of [OTTR](https://www.ottrproject.org/) (Open-source Tools for Training Resources) to assist teachers, who had written courses in [R Markdown](https://rmarkdown.rstudio.com/) files, to be able to publish and maintain courses on multiple learning platforms (Bookdown, Cousera and Leanpub).
 
 ITN is also looking for people to [join](https://www.itcrtraining.org/join-us) them.
 
@@ -291,7 +291,31 @@ like these examples from the ebook [Regression Modeling Strategies](http://hbios
 
 ![](calibration_example_3.jpg){fig-align="center" fig-alt="Figure showing one example of a calibration curve."}
 
-### R in PCR automation, 📦 {`nnsvg`} and MeRGE Expo
+### R in Transcriptomics and Pharmacometrics Data
 
-[Daniel Holmes](https://twitter.com/drdanholmes?lang=en) from the University of British Columbia shared how he is able to 
+The last few talks for the conference were about the use of R in transcriptomics
 
+[Daniel Holmes](https://twitter.com/drdanholmes?lang=en) from the University of British Columbia presented how he is able create a pipeline from PCR readings collected from several [Hamilton Instruments](https://www.hamiltoncompany.com/) to an R Shiny application showing quality control results. A feat that required a lot of patience and hard work to achieve
+
+[Lukas Weber](https://twitter.com/lmwebr?lang=en), author of the ebook [Orchestrating Spatially-Resolved Transcriptomics Analysis with Bioconductor](https://lmweber.org/OSTA-book/) (OSTA) presented a new package called [`nnSVG`](https://bioconductor.org/packages/release/bioc/html/nnSVG.html) used to identify and rank spatially variable genes in spatial transcriptomics data. For those new to this kind of work, here is a link to a open access [review paper](https://doi.org/10.1186/s13059-022-02653-7)
+
+* 📝[Paper](https://www.biorxiv.org/content/10.1101/2022.05.16.492124v1)
+
+Lastly, [Seth Green](https://www.metrumrg.com/team_member/seth-green-m-s/) from the [Metrum Research Group](https://www.metrumrg.com/) praised the usefulness of [Quarto](https://quarto.org/) to create a beta preview of their ebook [Metrum Research Group Ecosystem (MeRGE) Expo](https://merge.metrumrg.com/zy8x3BETA7R5Ph/).
+
+This ebook contained a walkthrough of how to do a population pharmacokinetic (pop PK) modeling and simulation (M&S) analysis that is traceable and reporducible. It also showcased some [useful R pacakge](https://merge.metrumrg.com/zy8x3BETA7R5Ph/posts/intro-to-metrumrg-tools.html) made by them that were free and open source such as [`pkgr`](https://github.com/metrumresearchgroup/pkgr) and [`bbr`](https://metrumresearchgroup.github.io/bbr/). 
+
+The speaker also gave some useful tips in Quarto such as the use of the `_variables.yaml` file to create [dynamic documents](https://quarto.org/docs/authoring/variables.html) that is able to give consistent descriptions and links to R packages, scripts and related articles.
+
+Since most of their R packages are related to pharmaceutical research, it will be great if the [pharmaverse](https://pharmaverse.org/) team is aware of their presence.
+
+* 📝[Slides](https://static.sched.com/hosted_files/rmedicineconference2022/a7/Seth%20Green%20-%20Quarto%20for%20showcasing%20MeRGE%2C%20R_Medicine%202022-08-26.pdf)
+* 🔗[Metrum Open Source Tools](https://www.metrumrg.com/try-open-source-tools/)
+
+## Conclusion
+
+R Medicine 2022 indeed had provided many inspiring information to the attendees with its beneficial workshops, stellar keynotes and useful (and even inspirational) talks at an economical price. It is highly recommended if you are able to fit your schedule with the conference timeline. I am grateful to the organising team for giving me a chance to give a lightning talk. 
+
+Wishing all the best to the next organising team under the leadership of the new chair [Peter Higgins](https://twitter.com/ibddoctor). 
+
+If you wish to help up with the planning and preparation of future R Medicine conference, do send an email to r-medicine-conf@r-consortium.org to indicate your interest and desire to help.

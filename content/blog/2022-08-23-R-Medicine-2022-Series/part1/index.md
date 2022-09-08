@@ -26,7 +26,7 @@ Time flies since the last conference that I have attended. I am fortunate to be 
 
 The general goal of R/Medicine Conference is to help practitioners in clinical and medicine sciences improve the quality of their research workflow with the use of R based tools. The focus is mainly on the application of R to create effective workflows and applications that promote reproducible data processing, reporting and visualisation.
 
-Despite having to attend the conference in the middle of the night ... again, it is indeed a fruitful experience. Here is a write up about my experiences in the conference for Day 1 and Day 2.
+Despite having to attend the conference in the middle of the night ... again, it was indeed a fruitful experience. Here is a write up about my experiences in the conference for Day 1 and Day 2.
 
 ## Day 1
 
@@ -113,7 +113,7 @@ The last workshop of the day was run by [Tom Mock](https://twitter.com/thomas_mo
 
 To date, I only managed to create two Quarto documents. One is a [lab work](https://jauntyjjs.github.io/islr2-bookclub-cohort3-chapter12-lab/) from a R for Data Science [book club](https://www.youtube.com/watch?v=pTys5kfA6Yc&ab_channel=R4DSOnlineLearningCommunity), the other is a [write up](https://jauntyjjs.github.io/Trelliscopejs_In_Quarto_Example/) on how to create interactive plots using [`plotly`](https://plotly.com/r/) and display them as trellis plot using [`trelliscopejs`](https://hafen.github.io/trelliscopejs/). Hopefully I could learn something new today.
 
-When I realised that content of the workshop was going to be just slide presentations and demonstrations, I was initially worried that I would fall asleep because it was 3.30 am in where I am living and the content seemed quite technical (if you have little programming experience, it can be hard to understand things like Jupyter, Lua, Bootstrap, Javascript, etc...). It was a miracle that I was able to pull through till around 7am and ask a few questions along the way. Special thanks 🙏 to the one who asked if Howard, the instructor's pet dog seen in most of the slides, was given extra treats/food for contributing heavily to the course content. That really cracked me up internally though I could not laugh loudly because everyone else was asleep in where I lived.
+When I realised that content of the workshop was going to be just slide presentations and demonstrations, I was initially worried that I would fall asleep because it was 3.30 am in where I was living and the content seemed quite technical (if you have little programming experience, it can be hard to understand things like Jupyter, Lua, Bootstrap, Javascript, etc...). It was a miracle that I was able to pull through till around 7am and ask a few questions along the way. Special thanks 🙏 to the one who asked if Howard, the instructor's pet dog seen in most of the slides, was given extra treats/food for contributing heavily to the course content. That really cracked me up internally though I could not laugh loudly because everyone else was asleep in where I lived.
 
 At least it is comforting to know that I can still create [Github Flavoured Markdown](https://quarto.org/docs/output-formats/gfm.html) documents using Quarto and a [hugo](https://quarto.org/docs/reference/formats/markdown/hugo.html) option is presence as well. This blog originally come from a Quarto `.qmd` file
 

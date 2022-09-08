@@ -26,7 +26,7 @@ This is a continuation about my learning journey in R Medicine 2022. This sectio
 
 ## Day 3
 
-### Quarto
+### Keynote: Quarto
 
 Day 3 of the conference started with a keynote, presented by [JJ Allaire](https://twitter.com/fly_upside_down), founder of [RStudio](https://www.rstudio.com/), which soon will be become [Posit](https://posit.co/).
 
@@ -133,7 +133,7 @@ A few useful R packages were shared
 
 ## Day 4
 
-### R Workflow
+### Keynote: R Workflow
 
 [Frank Hawell](https://twitter.com/f2harrell) kick-started the keynote with a walkthrough of the latest version of the ebook [R Workflow](https://hbiostat.org/rflow/). This ebook is meant to guide people using R to create decent reports (in Quarto) that are computationally reproducible and comprehensive to a general audience. There is even a chapter dedicated to just [report formatting](https://hbiostat.org/rflow/rformat.html).
 

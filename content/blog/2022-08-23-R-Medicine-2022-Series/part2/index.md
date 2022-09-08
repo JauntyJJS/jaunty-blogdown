@@ -1,7 +1,7 @@
 ---
-title: "Learning Journey and Reflections on R Medicine 2022 Conference Part 2"
+title: "Learning Journey and Reflections on R/Medicine 2022 Conference Part 2"
 subtitle: ""
-excerpt: "This narrative is a write up on Day 3 of my learning journey in the [R Medicine 2022 Conference](https://events.linuxfoundation.org/r-medicine/)"
+excerpt: "This narrative is a write up on Day 3 of my learning journey in the [R/Medicine 2022 Conference](https://events.linuxfoundation.org/r-medicine/)"
 format: hugo
 date: 2022-08-23
 author: "Jeremy Selva"
@@ -22,7 +22,7 @@ editor_options:
 
 ## Introduction
 
-This is a continuation about my learning journey in R Medicine 2022. This section covers Day 3 and 4 of the conference. As the videos of the presentation are not available, the writings made are based on my memory. If there are any mistakes, kindly let me know.
+This is a continuation about my learning journey in R/Medicine 2022. This section covers Day 3 and 4 of the conference. As the videos of the presentation are not available, the writings made are based on my memory. If there are any mistakes, kindly let me know.
 
 ## Day 3
 
@@ -51,7 +51,7 @@ The first group of talks can be summarised as ways in which R can be used to cre
 
 [Anastasiia Kostiv](https://twitter.com/Kostiv_A) uses R Shiny dashboard to highlight the usefulness of geospatial data in understanding the spread of a disease (unfortunately I cannot remember) and places where healthcare support is greatly needed. She also showed the flexibility of R in creating customised pdf reports that suit the needs of her collaborators through the use of css files.
 
-Moving away from the topic of interactive plots, [Robert Lobato](https://twitter.com/RobertLobatoMD/status/1562852019378855937) presented how he used the R package [`runcharter`](https://johnmackintosh.github.io/runcharter/) to plot a time series run chart plot to see if a recent quality improvement program is helping staff members improve their work performance. The R package [`runcharter`](https://johnmackintosh.github.io/runcharter/) was also presented during R Medicine 2020 conference by the maintainer [John MacKintosh](https://twitter.com/_johnmackintosh). Here is the [link](https://www.youtube.com/watch?v=Y2DQp2nkrnk) to John's presentation.
+Moving away from the topic of interactive plots, [Robert Lobato](https://twitter.com/RobertLobatoMD/status/1562852019378855937) presented how he used the R package [`runcharter`](https://johnmackintosh.github.io/runcharter/) to plot a time series run chart plot to see if a recent quality improvement program is helping staff members improve their work performance. The R package [`runcharter`](https://johnmackintosh.github.io/runcharter/) was also presented during R/Medicine 2020 conference by the maintainer [John MacKintosh](https://twitter.com/_johnmackintosh). Here is the [link](https://www.youtube.com/watch?v=Y2DQp2nkrnk) to John's presentation.
 
 -   📝[Slides](https://static.sched.com/hosted_files/rmedicineconference2022/9c/supercharge_qi_with_runcharts.pdf)
 
@@ -63,7 +63,7 @@ The next group of talks were about CONSORT Diagrams, a non-profit organisation c
 
 In addition, the R package [`vtree`](https://nbarrowman.github.io/vtree) could also be used to see hidden patterns during exploratory data analysis. It was striking that [`vtree`](https://nbarrowman.github.io/vtree) was also able to give statistical summary on continuous variable as well.
 
-The talk ended with a fruitful sharing from the audience, highlighting alternative packages that made CONSORT flow diagram. One of them is [`ggconsort`](https://tgerke.github.io/ggconsort/), which was [presented](https://www.youtube.com/watch?v=a8A638n6Qew) during the R Medicine 2021 conference and used in [R Workflow](https://hbiostat.org/rflow/doverview.html) by Frank Harrell.
+The talk ended with a fruitful sharing from the audience, highlighting alternative packages that made CONSORT flow diagram. One of them is [`ggconsort`](https://tgerke.github.io/ggconsort/), which was [presented](https://www.youtube.com/watch?v=a8A638n6Qew) during the R/Medicine 2021 conference and used in [R Workflow](https://hbiostat.org/rflow/doverview.html) by Frank Harrell.
 
 -   📝[Slides](https://github.com/nbarrowman/vtreeRmedicine)
 -   🌐[vtree Twiiter Page](https://twitter.com/vtreeRpackage)
@@ -124,7 +124,7 @@ Jason Sinnwell presented one of his R package [`regmed`](https://cran.rstudio.co
 
 -   📝[Slides](https://github.com/sinnweja/presentations/blob/main/RMed22_regmed.pdf)
 
-The next speaker was from [Michael Kane](https://twitter.com/kaneplusplus), one of the founders of R Medicine. He was supposed to speak about the R package [`ctrialsgov`](https://cran.r-project.org/web/packages/ctrialsgov/index.html), a tool for querying information from the U.S. National Library of Medicine's Clinical Trials [database](https://clinicaltrials.gov). Michael was intending to share how the R package can be used to investigate the trends of drug development in the US. Unfortunately, the connection got cut off in the midst of his presentation. A video recording will be provided in the future.
+The next speaker was from [Michael Kane](https://twitter.com/kaneplusplus), one of the founders of R/Medicine. He was supposed to speak about the R package [`ctrialsgov`](https://cran.r-project.org/web/packages/ctrialsgov/index.html), a tool for querying information from the U.S. National Library of Medicine's Clinical Trials [database](https://clinicaltrials.gov). Michael was intending to share how the R package can be used to investigate the trends of drug development in the US. Unfortunately, the connection got cut off in the midst of his presentation. A video recording will be provided in the future.
 
 Day 3 of the conference ended with [Steven Schwager](https://www.milliegroup.com/people/steve-schwager/), providing a light summary of the common types of randomisation used in a clinical trial. They are complete randomization, stratified permuted block randomisation and covariate-adjusted randomisation.
 
@@ -178,7 +178,7 @@ A myraid of resources was also shared.
 -   📹[Doing More with Data: An Introduction to Arrow for R Users by Danielle Navarro](https://www.youtube.com/watch?v=O42LUmJZPx0)
 -   📹[Efficient Data Analysis on Larger-than-Memory Data with DuckDB and Arrow by Thomas Mock](https://www.youtube.com/watch?v=LvTX1ZAZy6M)
 
-An additional side note. [Peter Higgins](https://twitter.com/ibddoctor) is also the author of the ebook [Reproducible Medical Research with R](https://bookdown.org/pdr_higgins/rmrwr/) and the new chair of R Medicine 2023
+An additional side note. [Peter Higgins](https://twitter.com/ibddoctor) is also the author of the ebook [Reproducible Medical Research with R](https://bookdown.org/pdr_higgins/rmrwr/) and the new chair of R/Medicine 2023
 
 -   📝[Slides](https://kathoffman.github.io/swimmer-plots/slides.html)
 
@@ -309,8 +309,8 @@ Since most of their R packages are related to pharmaceutical research, it will b
 
 ## Conclusion
 
-R Medicine 2022 indeed had provided many inspiring information to the attendees with its beneficial workshops, stellar keynotes and useful (and even inspirational) talks at an economical price. It is highly recommended if you are able to fit your schedule with the conference timeline. I am grateful to the organising team for giving me a chance to give a lightning talk.
+R/Medicine 2022 indeed had provided many inspiring information to the attendees with its beneficial workshops, stellar keynotes and useful (and even inspirational) talks at an economical price. It is highly recommended if you are able to fit your schedule with the conference timeline. I am grateful to the organising team for giving me a chance to give a lightning talk.
 
 Wishing all the best to the next organising team under the leadership of the new chair [Peter Higgins](https://twitter.com/ibddoctor).
 
-If you wish to help up with the planning and preparation of future R Medicine conference, do send an email to r-medicine-conf@r-consortium.org to indicate your interest and desire to help.
+If you wish to help up with the planning and preparation of future R/Medicine conference, do send an email to r-medicine-conf@r-consortium.org to indicate your interest and desire to help.

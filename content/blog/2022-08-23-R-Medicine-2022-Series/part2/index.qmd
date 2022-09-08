@@ -64,7 +64,7 @@ In addition, the R package [`vtree`](https://nbarrowman.github.io/vtree) could a
 The talk ended with a fruitful sharing from the audience, highlighting alternative packages that made CONSORT flow diagram. One of them is [`ggconsort`](https://tgerke.github.io/ggconsort/), which was [presented](https://www.youtube.com/watch?v=a8A638n6Qew) during the R/Medicine 2021 conference and used in [R Workflow](https://hbiostat.org/rflow/doverview.html) by Frank Harrell.
 
 * 📝[Slides](https://github.com/nbarrowman/vtreeRmedicine)
-* 🌐[vtree Twiiter Page](https://twitter.com/vtreeRpackage)
+* 🌐[vtree Twitter Page](https://twitter.com/vtreeRpackage)
 
 [Neale Batra](https://twitter.com/neale_batra) from [Applied Epi](https://www.appliedepi.org/) shared his journey when he was working on the [Epidemiologist R Handbook](https://www.tephinet.org/tephinet-learning-center/tephinet-library/epidemiologist-r-handbook#:~:text=The%20Epidemiologist%20R%20Handbook%20is,visualization%20tasks%20with%20epidemiological%20examples) project. 
 
@@ -88,13 +88,13 @@ In its latest version, the [`rUM`](https://raymondbalise.github.io/rUM/) package
 
 * 📝[Slides](https://balise.quarto.pub/a-quart-o-rum)
 
-The following speech is from [Paul Harris](https://twitter.com/paul_a_harris), one of the founders of [REDCap](https://doi.org/10.1016/j.jbi.2019.103208) (Research Electronic Data Capture). He introduced a new REDCap module called the Clinical Data Interoperability Services (CDIS) which could be used to collect data from electronic health records (EHRs) into the REDCap database.
+The following speech was from [Paul Harris](https://twitter.com/paul_a_harris), one of the founders of [REDCap](https://doi.org/10.1016/j.jbi.2019.103208) (Research Electronic Data Capture). He introduced a new REDCap module called the Clinical Data Interoperability Services (CDIS) which could be used to collect data from electronic health records (EHRs) into the REDCap database.
 
 * 📝[Journal Paper](https://www.sciencedirect.com/science/article/pii/S1532046421002008)
 
 After Paul's talk, Jeremy Michel from the [Children's Hospital of Philadelphia](https://www.chop.edu/) (CHOP) gave a success story of how he managed to create a reliable immunisation status report with the help of the [`data.table`](https://rdatatable.gitlab.io/data.table/) R package. He showed some coding examples of how validation and complex conditional filtering can be done using this R package.
 
-Another success story comes from Nathan Breit, whose team created an automated reporting system that is able to create numerous dashboard reports, such as scheduling for staff, accessing workflow changes and blood draw forecasting. The main body of the presentation consisted of a gallery of such reports. Credit goes to the R package [`flexdashboard`](https://rstudio.github.io/flexdashboard/index.html) for making this possible.
+Another success story came from Nathan Breit, whose team created an automated reporting system capable of creating numerous dashboard reports, such as scheduling for staff, accessing workflow changes and blood draw forecasting. The main body of the presentation consisted of a gallery of such reports. Credit goes to the R package [`flexdashboard`](https://rstudio.github.io/flexdashboard/index.html) for making this possible.
 
 * 📹[Video](https://www.youtube.com/watch?v=90_rrZtL32Y&t=349s)
 
@@ -112,11 +112,11 @@ Treatment timelines are useful in exploratory longitudinal survival analysis to 
 * 📝[Treatment Timelines Example 1](https://www.khstats.com/blog/trt-timelines/trt-timelines/)
 * 📝[Treatment Timelines Example 2](https://www.khstats.com/blog/trt-timelines/multiple-vars/)
 
-Penalised mediation models could be useful in helping biostatisticians select the most useful variables in a given biological model.
+Penalised mediation models could be useful in helping biostatisticians select useful variables in a given biological model.
 
 Jason Sinnwell presented one of his R package [`regmed`](https://cran.rstudio.com/web/packages/regmed/index.html) used to create penalised mediation model for the following cases: 
 
-* One exposure, multiple mediators, and One outcome variable
+* One exposure, multiple mediators, and one outcome variable
 * Multiple exposures, multiple mediators, and multiple outcome variables
 
 * 📝[Slides](https://github.com/sinnweja/presentations/blob/main/RMed22_regmed.pdf)
@@ -168,7 +168,7 @@ For each section, readers can see the source code used to create the section's c
 
 Whether you have used R frequently or just starting to use it, this book is useful as there is always something new to learn from its content. 
 
-### Wrangling Big Medical Data, 📦 {`censored`}, Workflow, Application of R in Industry 
+### Wrangling Big Medical Data, 📦 {`censored`}, Application of R in Industry 
 
 [Peter Higgins](https://twitter.com/ibddoctor) kept the audience glued to his presentation as by giving a story of his own investigation to find out how four physicians received a yearly payment of over $1 million, according to this [paper](10.1053/j.gastro.2022.06.029). 
 
@@ -218,14 +218,14 @@ The following lightning talk is from [Jaclyn Janis](https://twitter.com/jaclynja
 
 Since nurses had access to a lot of clinical data and had a wide domain knowledge about the clinical data, Jaclyn argued that the quality of the data would improve if they were equipped with tools (besides paper and Excel) that could help save time and effort in processing the data.
 
-As clinical data become more vast and complex, it will be more beneficial for them to use R as it is easier to create simple reports in compared to other programming languages. [Jaclyn Janis](https://twitter.com/jaclynjanis?lang=en) shared how overjoyed she felt when she managed to create a report using [R Markdown](https://rmarkdown.rstudio.com/). Nevertheless, the speaker acknowledged that convincing nurses to learn new things was hard as they had a lot of things to do.
+As clinical data become more vast and complex, it will be more beneficial for them to use R as it is easier to create simple reports compared to other programming languages. [Jaclyn Janis](https://twitter.com/jaclynjanis?lang=en) shared how overjoyed she felt when she managed to create a report using [R Markdown](https://rmarkdown.rstudio.com/). Nevertheless, the speaker acknowledged that convincing nurses to learn new things was hard as they had a lot of things to do.
 
 Jaclyn ended her talk by asking for more nurses to reach out and network with her to share their experiences and difficulties dealing with clinical data, especially those who were successful in using R in their work. 
 
 * 📧[Linkedin](https://www.linkedin.com/in/jaclyn-janis/)
 * 📧 Email: jaclyn.janis@rstudio.com
 
-Gloria Kang from the [Centers for Disease Control and Prevention](https://www.cdc.gov/) (CDC) gave an overview of her working experiences in few projects, which she had received little data but needed to provide the results quickly to state holders and decision makers.
+Gloria Kang from the [Centers for Disease Control and Prevention](https://www.cdc.gov/) (CDC) gave an overview of her working experiences in a few projects, which she had received little data but needed to provide the results quickly to state holders and decision makers.
 
 Below are the links to these projects' results.
 
@@ -234,12 +234,12 @@ Below are the links to these projects' results.
 
 Returning back to the use of [Shiny](https://shiny.rstudio.com/), [Lucy D'Agostino McGowan](https://twitter.com/LucyStats) presented a Shiny Application called CONTESSA (Contact Tracing Evaluation and Strategic Support Application). This application is used to monitor and evaluate the impact of Covid 19 Test-Trace-Isolate program implemented in the US. 
 
-The R package [tti](https://github.com/HopkinsIDD/tti) was used to calculate the virus reproductive number, defined as the number of onward transmissions an infected individual is expected to make given the current immune status of the population and implemented control measures. To see if the Test-Trace-Isolate program is working, we want the reproductive number to decrease to a low number over time (given some input parameters) 
+The R package [`tti`](https://github.com/HopkinsIDD/tti) was used to calculate the virus reproductive number, defined as the number of onward transmissions an infected individual is expected to make given the current immune status of the population and implemented control measures. To see if the Test-Trace-Isolate program is working, we want the reproductive number to decrease to a low number over time (given some input parameters) 
 
 CONTESSA provides a user-friendly interface for analyst to keep in the parameters and plot the reproductive number results over time. From the calculated reproductive number, the tool is able to predict the percentage of the community that will be isolated or quarantined.
 
 * 📝[Slides](https://docs.google.com/presentation/d/1feKvPdlrcTL9mkz-qdQJd1UGa4-Vi4n9252fCLN0fr0/edit#slide=id.ga447f5e1d9_0_117)
-* [Paper](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1003585)
+* 📝[Paper](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1003585)
 * 🔗[Shiny Application](https://covid.cdc.gov/covid-data-tracker/)
 * 🔗[Shiny Application Source Code](github.com/hopkinsidd/contessa)
 
@@ -267,7 +267,7 @@ While [`REDCapR`](https://ouhscbbmc.github.io/REDCapR/) was able to interact wit
 
 Next, [Garrett Grolemund](https://twitter.com/statgarrett?lang=en), author of the ebook [R for Data Science](https://r4ds.had.co.nz/), presented on ways to effectively teach others to obtain data science skills through the use of lessons, daily practice, project milestones, group sharing and mentor meetings. 
 
-To spread the use o these effective teaching techniques, the [RStudio Academy](https://www.rstudio.com/academy) was created. They are currently looking for mentors to assist in their teaching program.
+To spread the use of these effective teaching techniques, the [RStudio Academy](https://www.rstudio.com/academy) was created. They are currently looking for mentors to assist in their teaching program.
 
 Here is the [link](https://docs.google.com/forms/d/e/1FAIpQLSedwrR8eynI0jJ5fPevRJ7dwTUhedIlvuiS5Y-5OQG8BN6tww/viewform) if you are interested in being a RStudio Academy Mentor.
 
@@ -293,19 +293,19 @@ like these examples from the ebook [Regression Modeling Strategies](http://hbios
 
 ### R in Transcriptomics and Pharmacometrics Data
 
-The last few talks for the conference were about the use of R in transcriptomics
+The last few talks for the conference were about the use of R in transcriptomics and pharmacometrics data
 
-[Daniel Holmes](https://twitter.com/drdanholmes?lang=en) from the University of British Columbia presented how he is able create a pipeline from PCR readings collected from several [Hamilton Instruments](https://www.hamiltoncompany.com/) to an R Shiny application showing quality control results. A feat that required a lot of patience and hard work to achieve
+[Daniel Holmes](https://twitter.com/drdanholmes?lang=en) from the University of British Columbia presented how he was able create a pipeline from PCR readings collected from several [Hamilton Instruments](https://www.hamiltoncompany.com/) to an R Shiny application showing quality control results. A feat that required a lot of patience and hard work to achieve
 
-[Lukas Weber](https://twitter.com/lmwebr?lang=en), author of the ebook [Orchestrating Spatially-Resolved Transcriptomics Analysis with Bioconductor](https://lmweber.org/OSTA-book/) (OSTA) presented a new package called [`nnSVG`](https://bioconductor.org/packages/release/bioc/html/nnSVG.html) used to identify and rank spatially variable genes in spatial transcriptomics data. For those new to this kind of work, here is a link to a open access [review paper](https://doi.org/10.1186/s13059-022-02653-7)
+[Lukas Weber](https://twitter.com/lmwebr?lang=en), author of the ebook [Orchestrating Spatially-Resolved Transcriptomics Analysis with Bioconductor](https://lmweber.org/OSTA-book/) (OSTA) presented a new package called [`nnSVG`](https://bioconductor.org/packages/release/bioc/html/nnSVG.html) used to identify and rank spatially variable genes in spatial transcriptomics data. For those new to this kind of work, here is a link to an open access [review paper](https://doi.org/10.1186/s13059-022-02653-7)
 
 * 📝[Paper](https://www.biorxiv.org/content/10.1101/2022.05.16.492124v1)
 
 Lastly, [Seth Green](https://www.metrumrg.com/team_member/seth-green-m-s/) from the [Metrum Research Group](https://www.metrumrg.com/) praised the usefulness of [Quarto](https://quarto.org/) to create a beta preview of their ebook [Metrum Research Group Ecosystem (MeRGE) Expo](https://merge.metrumrg.com/zy8x3BETA7R5Ph/).
 
-This ebook contained a walkthrough of how to do a population pharmacokinetic (pop PK) modeling and simulation (M&S) analysis that is traceable and reporducible. It also showcased some [useful R pacakge](https://merge.metrumrg.com/zy8x3BETA7R5Ph/posts/intro-to-metrumrg-tools.html) made by them that were free and open source such as [`pkgr`](https://github.com/metrumresearchgroup/pkgr) and [`bbr`](https://metrumresearchgroup.github.io/bbr/). 
+This ebook contained a walkthrough of how to do a population pharmacokinetic (pop PK) modeling and simulation (M&S) analysis that is traceable and reporducible. It also showcased some [useful R package](https://merge.metrumrg.com/zy8x3BETA7R5Ph/posts/intro-to-metrumrg-tools.html) made by them that were free and open source such as [`pkgr`](https://github.com/metrumresearchgroup/pkgr) and [`bbr`](https://metrumresearchgroup.github.io/bbr/). 
 
-The speaker also gave some useful tips in Quarto such as the use of the `_variables.yaml` file to create [dynamic documents](https://quarto.org/docs/authoring/variables.html) that is able to give consistent descriptions and links to R packages, scripts and related articles.
+The speaker also gave some useful tips in Quarto such as the use of the `_variables.yaml` file to create [dynamic documents](https://quarto.org/docs/authoring/variables.html) that was able to give consistent descriptions and links to R packages, scripts and related articles.
 
 Since most of their R packages are related to pharmaceutical research, it will be great if the [pharmaverse](https://pharmaverse.org/) team is aware of their presence.
 

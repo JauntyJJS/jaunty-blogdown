@@ -30,7 +30,7 @@ Despite having to attend the conference in the middle of the night ... again, it
 
 I had attended two workshops: Clinical Reporting with [gtsummary](https://www.danieldsjoberg.com/gtsummary/) and Using Public Data and Maps for Powerful Data Visualization.
 
-### Clinical Reporting with [gtsummary](https://www.danieldsjoberg.com/gtsummary/)
+### Clinical Reporting with 📦 {`gtsummary`}
 
 I actually never create a clinical summary table before but have heard from other colleagues about how difficult it is to do this in Excel and transfer the tabular results to Word. Things get pretty ugly when the table needs to be updated because of a new influx of study samples or/and the number of clinical information that needs to be reported is large. Having an R package like [gtsummary](https://www.danieldsjoberg.com/gtsummary/) that is able to create such reports automatically is beneficial to the medical community.   
 
@@ -106,17 +106,19 @@ It was a pity that we could not go through enrichment analysis which was what mo
 -   📝[Course Material](https://github.com/developerpiru/GeneExpressionWorkshopRMed2022)
 -   📹[Video](https://www.youtube.com/watch?v=JdX0KeRuWvQ)
 
-### Reproducible Research with [Quarto](https://quarto.org/)
+### Reproducible Research with Quarto
 
-The last workshop of the day was run by [Tom Mock](https://twitter.com/thomas_mock).
+The last workshop of the day was run by [Tom Mock](https://twitter.com/thomas_mock) regarding [Quarto](https://quarto.org/).
 
 To date, I only managed to create two Quarto documents. One is a [lab work](https://jauntyjjs.github.io/islr2-bookclub-cohort3-chapter12-lab/) from a R for Data Science [book club](https://www.youtube.com/watch?v=pTys5kfA6Yc&ab_channel=R4DSOnlineLearningCommunity), the other is a [write up](https://jauntyjjs.github.io/Trelliscopejs_In_Quarto_Example/) on how to create interactive plots using [`plotly`](https://plotly.com/r/) and display them as trellis plot using [`trelliscopejs`](https://hafen.github.io/trelliscopejs/). Hopefully I could learn something new today.
 
-When I realised that content of the workshop was going to be just slide presentations and demonstrations, I was initially worried that I would fall asleep because it was 3.30 am in where I was living and the content seemed quite technical (if you have little programming experience, it can be hard to understand things like Jupyter, Lua, Bootstrap, Javascript, etc...). It was a miracle that I was able to pull through till around 7am and ask a few questions along the way. Special thanks 🙏 to the one who asked if Howard, the instructor's pet dog seen in most of the slides, was given extra treats/food for contributing heavily to the course content. That really cracked me up internally though I could not laugh loudly because everyone else was asleep in where I lived.
+When I realised that content of the workshop was going to be just slide presentations and demonstrations, I was initially worried that I would fall asleep because it was 3.30 am in where I was living and the content seemed quite technical (if you have little programming experience, it can be hard to understand things like Jupyter, Lua, Bootstrap, Javascript, etc...). It was a miracle that I was able to pull through till around 7am and ask a few questions along the way. 
 
-At least it is comforting to know that I can still create [Github Flavoured Markdown](https://quarto.org/docs/output-formats/gfm.html) documents using Quarto and a [hugo](https://quarto.org/docs/reference/formats/markdown/hugo.html) option is presence as well. This blog originally come from a Quarto `.qmd` file
+Special thanks 🙏 to the one who asked if Howard, the instructor's pet dog seen in most of the slides, was given extra treats/food for contributing heavily to the course content. That really cracked me up internally though I could not laugh loudly because everyone else was asleep in where I lived.
 
-As for the issue of calling quarto in the terminal of RStudio, for my computer, both Windows 10 Command Line and PowerShell uses `quarto`.
+At least it is comforting to know that I can still create [Github Flavoured Markdown](https://quarto.org/docs/output-formats/gfm.html) documents using Quarto and a [hugo](https://quarto.org/docs/reference/formats/markdown/hugo.html) option is presence as well. This blog post comes from a Quarto `.qmd` file
+
+As for the issue of calling Quarto in the terminal of RStudio, for my computer, both Windows 10 Command Line and PowerShell uses `quarto`.
 
 ![Command Prompt Option](commandline_option.jpg){fig-align="center" fig-alt="Figure showing how to set the terminal to use Windows 10 command line"}
 

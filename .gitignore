@@ -8,3 +8,5 @@
 Thumbs.db
 renv
 .hugo_build.lock
+
+/.quarto/

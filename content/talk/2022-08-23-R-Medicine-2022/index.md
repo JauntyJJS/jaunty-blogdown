@@ -25,14 +25,13 @@ links:
   url: https://github.com/JauntyJJS/RMedicine2022
 ---
 
-
-
 <script src="index_files/libs/fitvids-2.1.1/fitvids.min.js"></script>
 
+Here are the video and slides.
 
-Here are the slides.
-
-<div class="shareagain" style="min-width:300px;margin:1em auto;">
+<iframe width="710" height="390" src="https://www.youtube.com/embed/F4Rutkru6mg" frameborder="0" allowfullscreen>
+</iframe>
+<div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
 <iframe src="https://jauntyjjs.github.io/RMedicine2022" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>

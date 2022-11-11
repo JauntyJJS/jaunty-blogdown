@@ -1,0 +1,37 @@
+---
+title: "Recommended Awesome Lists for Bioconductor Community Oct 2022 Edition"
+subtitle: ""
+excerpt: "This blog post consolidates web links to different Awesome Lists that may be useful to those just starting up in bioinformatics and those experienced in the field."
+format: hugo
+date: 2022-11-10
+author: "Jeremy Selva"
+draft: false
+layout: single-sidebar
+editor_options: 
+  chunk_output_type: console
+---
+
+I initially wanted to create for myself a record of some [Awesome Lists](https://github.com/topics/awesome) which are useful in the field of bioinformatics and computational biology and create a post here. However, upon seeing this twitter post, I decided to do things differently and attend the meetup instead with an open mind. After all, it is better to have someone to verify if what I do is meaningful.
+
+```
+{{< tweet user="Bioconductor" id="1582117168816132096" >}}
+```
+
+The meetup turned out to be very productive. The team was helpful and I managed to create a [pull request](https://github.com/Bioconductor/biocblog/pull/24) in spite of some hiccups along the way. With a few more exchanges on the [Bioconductor Slack Page](https://bioc-community.herokuapp.com/), we managed to come up with this [blog post](https://bioconductor.github.io/biocblog/posts/2022-10-22-awesome-lists/).
+
+<iframe width="780" height="400" src="https://bioconductor.github.io/biocblog/posts/2022-10-22-awesome-lists/" title="Recommended Awesome Lists for Bioconductor Community"></iframe>
+
+The Bioconductor team is also kind to acknowledge my contribution on Twitter. Thank you very much.
+
+```
+{{< tweet user="Bioconductor" id="1589560084899954689" >}}
+```
+
+If you are interested on how to contribute to the [Bioconductor community blog](https://bioconductor.github.io/biocblog/), take a look at their [contributing guide](https://bioconductor.github.io/biocblog/contributing.html) for more information
+
+<iframe width="780" height="400" src="https://bioconductor.github.io/biocblog/contributing.html" title="Bioconductor community blog contributing guide"></iframe>
+
+There are also a few upcoming Bioconductor related conference as well.
+
+-   [BioC Asia 2022](https://biocasia2022.bioconductor.org) at Melbourne, Australia from 1-2 December 2022
+-   [BioC 2023](https://support.bioconductor.org/p/9147691/) at Boston, MA from 2-4 August 2023

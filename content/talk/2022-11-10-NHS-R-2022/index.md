@@ -1,0 +1,39 @@
+---
+title: "Viewing Mulitple Interactive Plots Using Plotly and Trelliscopejs"
+subtitle: ""
+excerpt: "Here is a talk I gave on NHS-R Online Conference 2022 – 10th November 2022."
+format: hugo
+date: 2022-11-10T19:00:00
+show_post_time: false
+event: "NHS-R Online Conference 2022"
+event_url: https://nhsrcommunity.com/events/nhs-r-online-speaker-conference-2022-10th-november-2022/
+author: "Jeremy Selva"
+location: ""
+draft: false
+# layout options: single, single-sidebar
+layout: single
+categories:
+- talk
+links:
+- icon: door-open
+  icon_pack: fas
+  name: website
+  url: https://jauntyjjs-nhs-r-2022.netlify.app
+- icon: github
+  icon_pack: fab
+  name: code
+  url: https://github.com/JauntyJJS/NHS-R2022
+---
+
+<script src="index_files/libs/fitvids-2.1.1/fitvids.min.js"></script>
+
+Here are the video and slides.
+
+I am the second speaker it begins at 16:20
+
+<iframe width="710" height="390" src="https://www.youtube.com/embed/GWeZt1to1Po" frameborder="0" allowfullscreen>
+</iframe>
+<div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
+<iframe src="https://jauntyjjs-nhs-r-2022.netlify.app" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<script>fitvids('.shareagain', {players: 'iframe'});</script>
+</div>

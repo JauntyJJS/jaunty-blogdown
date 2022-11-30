@@ -8,6 +8,8 @@ author: "Jeremy Selva"
 draft: false
 tags:
   - R ConfeRence 2022
+categories:
+  - R ConfeRence 2022
 layout: single-sidebar
 editor_options: 
   chunk_output_type: console

@@ -136,8 +136,57 @@ The second part of the presentation is a short code demonstration on how to use 
 
 The last speaker of the day is by Dr. Pieter on Web Scraping, Content and Network Analysis using R. It consisted of three short but concise demonstrations, using R in Web Scraping, Text and Network Analysis.
 
-Here are some notes to summarised what has been taught.
+Using R packages `tidyRSS`, `httr` and `rvest`, the first demonstration involved getting paragraphs of news articles from Google News related to Malaysia's most recent prime minister, Anwar Ibrahim. Tips included ways to make search query reproducible and the need to let the system sleep for a few seconds to prevent the search request to be blacklisted. After the data had been collected, R packages `quanteda` and `quanteda.textplots` were used to do simple Text Analysis such as word frequency and co-word analysis. Results were then plotted as a word cloud and network to find out what topics are closely related to Anwar Ibrahim.
 
+Lastly, a Network Analysis is done on the novel "A Tale of Two Cities" by Charles Dickens to identify important characters in the novel. With the help of R packages `quanteda` and `igraph`, the generated results showed that Javis Lorry had the highest degree centrality but Monsieur Defrage had the highest betweeness centrality score
+
+-   📝[Slides](https://pstek.nl/2022/r-conference/)
 -   📹[Video](https://www.youtube.com/watch?v=ASUxL4AGZCo&list=PLqd3IXFKBgD_YP6dFmvKmu8ojtH_wOCLY&index=5)
 
 ## Day 2
+
+Day 2 is the main day of R ConfeRence 2022 consisting of just talks for the whole day.
+
+### Tidymodels in Medicine
+
+It is crucial for physicians to be able to correctly predict a patient's health outcomes based on the patient's past medical information. However, as medical data can be vast and complex, it can be challenging for physicians to achieve this goal. Thankfully, predictive analytics can assist physicians to make more accurate diagnosis on the patient via machine learning and other computationally intensive methods.
+
+In relation to R, Dr. Kamarul Imran Musa showed how to do predictive analysis, more specifically supervised machine learning, using R packages from `tidymodels` on a stroke fatality dataset. He also covered different types of bias in medical machine learning projects and ways to mitigate them.
+
+Dr. Kamarul Imran Musa is also the author of the book "Exploring Data Using R".
+
+-   📝[Slides](https://pstek.nl/2022/r-conference/)
+-   📹[Video](https://www.youtube.com/watch?v=Gx8kiBcQ3Gs&list=PLqd3IXFKBgD9oYTacAUVf9NauopnYpsGb)
+
+### Partial Verification Bias Correction
+
+In a typical diagnostic accuracy study, a newly developed diagnostic test is usually compared to a gold standard diagnostic test. For example, a new Covid-19 test kit is compared with the results generated from Reverse Transcription Polymerase Chain Reaction (RT-PCR). From there, a confusion matrix is constructed and the sensitivity and specificity are calculated. A test kit is decent when it has high sensitivity and specificity.
+
+However, if the gold standard diagnostic test is too invasive or expensive, it is common that individuals who are tested positive for a disease from a newly developed test kit to be verified with the results from the gold standard diagnostic test. Patients who were test negative are selectively excluded. For example, usually patients who were tested positive for Covid-19 on a new test kit are asked to go for a RT-PCR test for verification. Those who tested negative need not be further verified. This gave rise to partial verification bias (PVB), leading to an inaccurate evaluation of the newly developed test kit.
+
+As a result, Dr. Wan Nor Ariffin created an R package `PVBcorrect` to allow users to use various PVB correction methods on their dataset during diagnostic accuracy analysis.
+
+-   📹[Video](https://www.youtube.com/watch?v=jkFDk1tdtUo&list=PLqd3IXFKBgD9oYTacAUVf9NauopnYpsGb&index=2)
+
+### Integrating R with Web Applications with OpenCPU
+
+It can be hard to scale up a program in R into a productive enterprise system. This is because to build a tool with modern web application features, R needs to be integrated with other applications which requires a lot of technical knowledge and skills. Arup Kamal shared that this conversion process can be made less painful if the functions in R can be converted to REST APIs. To do this, he suggested a program called [OpenCPU](https://www.opencpu.org/).
+
+Examples shown in this presentation are creating a web service that outputs the results from the R function `rnorm` and a simple web based wind turbine management system. Other examples can be found in this [webpage](https://www.opencpu.org/apps.html).
+
+-   📹[Video](https://www.youtube.com/watch?v=jkFDk1tdtUo&list=PLqd3IXFKBgD9oYTacAUVf9NauopnYpsGb&index=3)
+
+### Bibliometrics Analysis in R
+
+While bibliometrics is commonly used in the evaluation the progress of a given research area, it can be used for someone who is new to a broad research topic to identify useful introductory and review papers.
+
+Tengku Hanis shared a walk through of the R package `bibliometrix` to find relevant information related to Covid-19 research in Malaysia from the [Scopus](https://www.scopus.com/home.uri) database. Information includes highly cited papers, relevant journals, most productive authors, institutions/countries collaborations and trending keywords.
+
+For those that do not want to do bibliometrics analysis in code, they can instead use [`biblioshiny`](https://www.bibliometrix.org/home/index.php/layout/biblioshiny), which is a web interface version of `bibliometrix`.
+
+-   📝[Slides](https://tengkuhanis.netlify.app/talk/talk-exploring-past-literature-a-bibliometric-approach/)
+-   📹[Video](https://www.youtube.com/watch?v=jkFDk1tdtUo&list=PLqd3IXFKBgD9oYTacAUVf9NauopnYpsGb&index=4)
+
+### Modeling Health Measurement Trend with `lme4`
+
+Mohd Azmi Bin Suliman

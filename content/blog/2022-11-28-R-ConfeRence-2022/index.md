@@ -187,6 +187,28 @@ For those that do not want to do bibliometrics analysis in code, they can instea
 -   📝[Slides](https://tengkuhanis.netlify.app/talk/talk-exploring-past-literature-a-bibliometric-approach/)
 -   📹[Video](https://www.youtube.com/watch?v=jkFDk1tdtUo&list=PLqd3IXFKBgD9oYTacAUVf9NauopnYpsGb&index=4)
 
-### Modeling Health Measurement Trend with `lme4`
+### Modeling Longitudinal Health Measurement Trend with `lme4`
 
-Mohd Azmi Bin Suliman
+Longitudinal health measurements may contain variables that are correlated due to similar trends over time or clustering effects such as geographical location. As such, these data are not independent from one another. It is recommended to use a linear mixed effects model instead of a standard linear model to give a more accurate predictions. More information can be found in this [visual introduction](https://mfviz.com/hierarchical-models/) by [Michael Freeman](https://twitter.com/mf_viz)
+
+Mohd Azmi Bin Suliman shared that one way to do linear mixed effects model in R is to use the R package `lme4`. He showcased its use in a sleep study data set and a simulated stroke care giver data set.
+
+One thing that catches my eye is that he uses the R package [`simstudy`](https://kgoldfeld.github.io/simstudy/index.html) to simulate the data, an R package which I have not heard of.
+
+-   📹[Video](https://www.youtube.com/watch?v=jkFDk1tdtUo&list=PLqd3IXFKBgD9oYTacAUVf9NauopnYpsGb&index=5)
+
+### Summarising model-based results with `gtsummary`
+
+The last session by Dr. Che Muhammad Nur Hidayat bin Che Nawi is a brief summary of what the R package `gtsummary` can do. In a nutshell, the `gtsummary` package helps user create publication-ready statistical summary tables that is also flexible for customisation. While SPSS and R is able to display results from regression models, it can be hard to understand for someone looking at it for the first time. `gtsummary` is able to convert these output to something that is more comprehensible with just a few lines of code.
+
+Using a stroke mortality dataset, the speaker showed how `gtsummary` is able to convert tabular raw data to a descriptive summary table and a cross tabulation table. Next, he showed how to create model summary tables from a logistic regression and cox proportional hazards regression (for survival analysis). Dr. Che then shared ways to customised the table and combined multiple tables together. `gtsummary` results can be exported in many forms such as html, pdf and word. During the presentation, Dr Che. suggested using the print engine `flextable` to export the report in Microsoft Word.
+
+To give an overview report of a `gtsummary` table in a R Markdown or Quarto document, [`inline_text`](https://www.danieldsjoberg.com/gtsummary/reference/inline_text.html) can be used to ensure that the overview report can be updated automatically when the `gtsummary` table changes overtime.
+
+-   📹[Video](https://www.youtube.com/watch?v=jkFDk1tdtUo&list=PLqd3IXFKBgD9oYTacAUVf9NauopnYpsGb&index=6)
+
+## Conclusion
+
+[R ConfeRence 2022](https://www.r-conference.com/home) is made possible by the dedication and hard work from the [organising community](https://www.r-conference.com/about/organizing-committee).
+
+If you are curious to find out more about the Malaysian R User Group (MyRUG) or R-Ladies Malaysia like their upcoming events or volunteer your time to give a talk or teaching session, they can be contacted via these platforms.

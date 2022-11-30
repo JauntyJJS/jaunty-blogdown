@@ -5,12 +5,7 @@ excerpt: "This is a write up of what I have learne during the [R ConfeRence 2022
 format: hugo
 date: 2022-11-28
 author: "Jeremy Selva"
-draft: true
-images:
-tags:
-  - R ConfeRence 2022
-categories:
-  - R ConfeRence 2022
+draft: false
 layout: single-sidebar
 editor_options: 
   chunk_output_type: console
@@ -155,7 +150,6 @@ In relation to R, Dr. Kamarul Imran Musa showed how to do predictive analysis, 
 
 Dr. Kamarul Imran Musa is also the author of the book "Exploring Data Using R".
 
--   📝[Slides](https://pstek.nl/2022/r-conference/)
 -   📹[Video](https://www.youtube.com/watch?v=Gx8kiBcQ3Gs&list=PLqd3IXFKBgD9oYTacAUVf9NauopnYpsGb)
 
 ### Partial Verification Bias Correction
@@ -210,5 +204,7 @@ To give an overview report of a `gtsummary` table in a R Markdown or Quarto docu
 ## Conclusion
 
 [R ConfeRence 2022](https://www.r-conference.com/home) is made possible by the dedication and hard work from the [organising community](https://www.r-conference.com/about/organizing-committee).
+
+The link to the YouTube videos for this conference can be found as follows:
 
 If you are curious to find out more about the Malaysian R User Group (MyRUG) or R-Ladies Malaysia like their upcoming events or volunteer your time to give a talk or teaching session, they can be contacted via these platforms.

@@ -6,11 +6,6 @@ format: hugo
 date: 2022-11-28
 author: "Jeremy Selva"
 draft: false
-images:
-tags:
-  - R ConfeRence 2022
-categories:
-  - R ConfeRence 2022
 layout: single-sidebar
 editor_options: 
   chunk_output_type: console

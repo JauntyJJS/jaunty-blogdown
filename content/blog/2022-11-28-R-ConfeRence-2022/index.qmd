@@ -15,39 +15,65 @@ editor_options:
   chunk_output_type: console
 ---
 
+<a name="top"></a>
+
+## Table of Content
+
+- [Introduction]
+- [Day 1]
+    - [Application of R and Shiny in Digital Marketing Intelligence]
+    - [Data Storytelling in R]
+    - [Contributing to R Packages]
+    - [Univariate Bayesian Approach to Fine-mapping Genes]
+    - [Web Scraping, Text and Network Analysis in R]
+- [Day 2]
+    - [Tidymodels in Medicine]
+    - [Partial Verification Bias Correction]
+    - [Integrating R with Web Applications with OpenCPU]
+    - [Bibliometrics Analysis in R]
+    - [Modeling Longitudinal Health Measurement Trend with `lme4`]
+    - [Summarising model-based results with `gtsummary`]
+- [Conclusion]
+    - [YouTube video links]
+    - [Social media links]
+
 ## Introduction
 
-[R ConfeRence 2022](https://www.r-conference.com/home) is one of the biggest R event in Malaysia conducted by the [Malaysian R User Group (MyRUG) and R-Ladies Malaysia. This year, it is a two days virtual event consisting of workshops and presentations from many talented instructors and speakers.
+[R ConfeRence 2022](https://www.r-conference.com/home) is one of the biggest R event in Malaysia conducted by the [Malaysian R User Group](https://www.facebook.com/rusergroupmalaysia/) (MyRUG) and [R-Ladies Malaysia](https://www.facebook.com/groups/myrladies). This year, it is a two days virtual event consisting of workshops and presentations from many talented instructors and speakers.
+
+<a href="#top">Back to top</a>
 
 ## Day 1
 
-On the first day of the conference, there was a choice to attend some R related workshops or talks prepared by R-Ladies Malaysia. For me, I had decided to attend the talks and to learn something new.
+On the first day of the conference, there was a choice to attend some R related workshops or talks prepared by [R-Ladies Malaysia](https://www.facebook.com/groups/myrladies). For me, I had decided to attend the talks and to learn something new.
 
 ### Application of R and Shiny in Digital Marketing Intelligence
 
 In short, digital marketing intelligence is the process of analysing information that is relevant for the business, to understand how the business is doing and help decision makers make wise choices.
 
-Sailalith Sarupuri shared how R and Shiny were incorporated in his digital marketing intelligence architecture. Here is a summary of some useful R packages shared.
+[Sailalith Sarupuri](https://github.com/sarupurisailalith) shared how R and [Shiny](https://shiny.rstudio.com/) were incorporated in his digital marketing intelligence architecture. Here is a summary of some useful R packages shared.
 
-With a few lines of code, R package `httr` can be used to facilitate authentication using OAuth2 to ensure the data are imported, using REST API endpoints, by the right users.
+With a few lines of code, R package [`httr`](https://httr.r-lib.org/index.html) can be used to facilitate authentication using [OAuth 2.0](https://httr.r-lib.org/reference/oauth2.0_token.html) to ensure the data are imported, using REST API endpoints, by the right users. More information on OAuth 2.0 authentication can be found in this [R-hub blog post](https://blog.r-hub.io/2021/01/25/oauth-2.0/).
 
-R packages `shinycssloaders` and `shinydashboard` provides additional widgets for users to quickly create a user interface for the Shiny application. Custom components can be added using HTML, CSS and JS. 
+R packages [`shinycssloaders`](https://github.com/daattali/shinycssloaders) and [`shinydashboard`](https://rstudio.github.io/shinydashboard/) provides additional widgets for users to quickly create a user interface for the [Shiny](https://shiny.rstudio.com/) application. Custom components can be added using HTML, CSS and JS. 
 
-Reactivity in Shiny applications can be hard to understand, making it hard to debug should an issue occur. R package `reactlog` is able to display an interactive reactivity workflow to help users see which reactive elements are responsible in causing the issue.
+Reactivity in [Shiny](https://shiny.rstudio.com/) applications can be hard to understand, making it hard to debug should an issue occur. R package [`reactlog`](https://rstudio.github.io/reactlog/) is able to display an interactive reactivity workflow to help users see which reactive elements are responsible in causing the issue.
 
-[Firebase](https://firebase.google.com/docs/auth/web/custom-auth) lightweight javascript library can be used in a Shiny application for users to create a customised user authentication system such as registration of new users, user login, reset passwords platforms
+[Firebase](https://firebase.google.com/docs/auth/web/custom-auth) lightweight javascript library can be used in a Shiny application for users to create a customised user authentication system such as registration of new users, user login, reset passwords platforms.
 
-With regards to deploying Shiny applications, there are a few options such as shinyapps.io and [Shiny Server](https://github.com/rstudio/shiny-server). However, there are limitations in both options when it comes to scaling. Applications deployed in shinyapps.io has a 8GB memory limited while maintainance of [Shiny Server](https://github.com/rstudio/shiny-server) can be laborious. The speaker shared that one solution which is to convert the Shiny application into a containerized application using Docker and then use Kubernetes to deploy, scale and manage the containerized application automatically.
+With regards to deploying [Shiny](https://shiny.rstudio.com/) applications, there are a few options such as [shinyapps.io](https://www.shinyapps.io/) and [Shiny Server](https://github.com/rstudio/shiny-server). However, there are limitations in both options when it comes to scaling. Applications deployed in [shinyapps.io](https://www.shinyapps.io/) has a 8GB memory limited while maintainance of [Shiny Server](https://github.com/rstudio/shiny-server) can be laborious. The speaker shared that one solution which is to convert the [Shiny](https://shiny.rstudio.com/) application into a containerized application using [Docker](https://www.docker.com/) and then use [Kubernetes](https://kubernetes.io/) to deploy, scale and manage the containerized application automatically.
 
-It is useful create functions that can be resued in the Shiny application. Such function are called `Shiny Modules`. Sailalith gave an example of creating a `Shiny Modules` that generate dynamic report cards.
+It is useful create functions that can be resued in the [Shiny](https://shiny.rstudio.com/) application. Such function are called [`Shiny Modules`](https://mastering-shiny.org/scaling-modules.html). Sailalith gave an example of creating a [`Shiny Module`](https://mastering-shiny.org/scaling-modules.html) that generate dynamic report cards.
 
-As R is a single threaded program, it can only perform one task at a time which can affect the performance of the Shiny application. It is possible to enable asynchronous programming in R using the R package `promise`. This is to ensure that the Shiny application can still response to other user interaction events while it is running a time consuming task. 
+As R is a single threaded program, it can only perform one task at a time which can affect the performance of the [Shiny](https://shiny.rstudio.com/) application. It is possible to enable asynchronous programming in R using the R package [`promises`](https://rstudio.github.io/promises/). This is to ensure that the Shiny application can still response to other user interaction events while it is running a time consuming task. 
 
-Caching or storing a temporary copy of a processed data or chart can help to speed up the running process as well. When the Shiny application refreshes or restarts, the temporary copy will only be recomputed only when the inputs have changed.
+[Caching](https://mastering-shiny.org/performance.html#caching) or storing a temporary copy of a processed data or chart can help to speed up the running process as well. When the [Shiny](https://shiny.rstudio.com/) application refreshes or restarts, the temporary copy will only be recomputed only when the inputs have changed.
 
 Overall, it is a very informative presentation which I will keep watching time after time.
 
 -   📹[Video](https://www.youtube.com/watch?v=XEivnv6qlaU&list=PLqd3IXFKBgD_YP6dFmvKmu8ojtH_wOCLY&index=1)
+
+<a href="#top">Back to top</a>
 
 ### Data Storytelling in R 
 
@@ -72,8 +98,9 @@ Calyn concluded her presentation with a few advises when learning R
 -   Don't be afraid to fail. Just keep trying
 -   Stories are Data with a Soul - *Brené Brown*
          
-
 -   📹[Video](https://www.youtube.com/watch?v=MFp8xzDq9Zs&list=PLqd3IXFKBgD_YP6dFmvKmu8ojtH_wOCLY&index=2)
+
+<a href="#top">Back to top</a>
 
 ### Contributing to R Packages
 
@@ -83,7 +110,7 @@ The talk began with a friendly introduction about R, RStudio and R packages foll
 
 -    Improve source code organisation.
 -    Encourage good documentation.
--    Ensure code reusability and accessibility.
+-    Ensure code Rrusability and accessibility.
 
 and the benefits of contributing to an R package
 
@@ -91,7 +118,7 @@ and the benefits of contributing to an R package
 -    Gain new R programming coding knowledge and skills
 -    A chance to work with new people and expand your network and visibility in the R community
 
-The main body of the talk are some guidelines to make a decent contribution using the speaker's experiences when contributing to the R packages `mlr3proba` and `distr6` as examples. Here is a quick preview of the main points discussed.
+The main body of the talk are some guidelines to make a decent contribution using the speaker's experiences when contributing to the R packages [`mlr3proba`](https://mlr3proba.mlr-org.com/) and [`distr6`](https://alan-turing-institute.github.io/distr6/) as examples. Here is a quick preview of the main points discussed.
 
 -    Ensure your contribution aligns with the objective of the R package.
 -    Contributing to R packages is not limited to contributing code. Here are some alternative ways to contribute.
@@ -101,10 +128,12 @@ The main body of the talk are some guidelines to make a decent contribution usin
         -   Proposed a new idea or feature request
 -    When contributing code, try to understand the design of the package
         -   Basic file structure of an R package.
-        -   Does it use functional programming or object oriented programming like S3, S4, Reference Classes (RC), R6 or R7.
+        -   Does it use functional programming or object oriented programming like [S3](https://adv-r.hadley.nz/s3.html), [S4](https://adv-r.hadley.nz/s4.html), Reference Classes (RC), [R6](https://r6.r-lib.org/index.html) or [R7](https://rconsortium.github.io/OOP-WG/index.html).
 -   Remember to write unit test and documentation if you are creating a new function for the R package.
 
 -   📹[Video](https://www.youtube.com/watch?v=ASUxL4AGZCo&list=PLqd3IXFKBgD_YP6dFmvKmu8ojtH_wOCLY&index=3)
+
+<a href="#top">Back to top</a>
 
 ### Univariate Bayesian Approach to Fine-mapping Genes
 
@@ -117,22 +146,28 @@ Fine-mapping analysis aims to find out which frequently occurring SNPs are truly
 Additional resources can be found in this YouTube video.
 -    [MPG Primer: Introduction to fine-mapping methods (2020)](https://www.youtube.com/watch?v=S6vfOr336b0)
 
-A common prior used in Bayesian fine-mapping studies is the Normal distribution. Dr. Hannuun Yaacob proposed that changing the prior to a Laplace distribution provides a more accurate calculation of the probability that a candidate SNP is causal using simulated genotype data (Hapgen2) as an example.
+A common prior used in Bayesian fine-mapping studies is the Normal distribution. Dr. Hannuun Yaacob proposed that changing the prior to a Laplace distribution provides a more accurate calculation of the probability that a candidate SNP is causal using simulated genotype data, [HAPGEN2](https://mathgen.stats.ox.ac.uk/genetics_software/hapgen/hapgen2.html) as an example.
 
 The second part of the presentation is a short code demonstration on how to use R to change haplotype data to genotype data.
 
+
+-   📝[Paper](https://onlinelibrary.wiley.com/doi/10.1002/gepi.22212)
 -   📹[Video](https://www.youtube.com/watch?v=ASUxL4AGZCo&list=PLqd3IXFKBgD_YP6dFmvKmu8ojtH_wOCLY&index=4)
 
-### R in Web Scraping, Text and Network Analysis.
+<a href="#top">Back to top</a>
 
-The last speaker of the day is by Dr. Pieter on Web Scraping, Content and Network Analysis using R. It consisted of three short but concise demonstrations, using R in Web Scraping, Text and Network Analysis.
+### Web Scraping, Text and Network Analysis in R
 
-Using R packages `tidyRSS`, `httr` and `rvest`, the first demonstration involved getting paragraphs of news articles from Google News related to Malaysia's most recent prime minister, Anwar Ibrahim. Tips included ways to make search query reproducible and the need to let the system sleep for a few seconds to prevent the search request to be blacklisted. After the data had been collected, R packages `quanteda` and `quanteda.textplots` were used to do simple Text Analysis such as word frequency and co-word analysis. Results were then plotted as a word cloud and network to find out what topics are closely related to Anwar Ibrahim.
+The last speaker of the day is by [Dr. Pieter](https://pstek.nl/) on Web Scraping, Content and Network Analysis using R. It consisted of three short but concise demonstrations, using R in Web Scraping, Text and Network Analysis.
 
-Lastly, a Network Analysis is done on the novel "A Tale of Two Cities" by Charles Dickens to identify important characters in the novel. With the help of R packages `quanteda` and `igraph`, the generated results showed that Javis Lorry had the highest degree centrality but Monsieur Defrage had the highest betweeness centrality score
+Using R packages [`tidyRSS`](https://robertmyles.github.io/tidyRSS/), [`httr`](https://httr.r-lib.org/index.html) and [`rvest`](https://rvest.tidyverse.org/), the first demonstration involved getting paragraphs of news articles from Google News related to Malaysia's most recent prime minister, Anwar Ibrahim. Tips included ways to make search query reproducible and the need to let the system sleep for a few seconds to prevent the search request to be blacklisted. After the data had been collected, R packages [`quanteda`](https://quanteda.io/) and [`quanteda.textplots`](https://github.com/quanteda/quanteda.textplots) were used to do simple Text Analysis such as word frequency and co-word analysis. Results were then plotted as a word cloud and network to find out what topics are closely related to Anwar Ibrahim.
 
--   📝[Slides](https://pstek.nl/2022/r-conference/)
+Lastly, a Network Analysis is done on the novel "A Tale of Two Cities" by Charles Dickens to identify important characters in the novel. With the help of R packages [`quanteda`](https://quanteda.io/) and [`igraph`](https://igraph.org/r/), the generated results showed that Javis Lorry had the highest degree centrality but Monsieur Defrage had the highest betweeness centrality score
+
+-   📝[Slides and Codes](https://pstek.nl/2022/r-conference/)
 -   📹[Video](https://www.youtube.com/watch?v=ASUxL4AGZCo&list=PLqd3IXFKBgD_YP6dFmvKmu8ojtH_wOCLY&index=5)
+
+<a href="#top">Back to top</a>
 
 ## Day 2
 
@@ -142,11 +177,13 @@ Day 2 is the main day of R ConfeRence 2022 consisting of just talks for the whol
 
 It is crucial for physicians to be able to correctly predict a patient's health outcomes based on the patient's past medical information. However, as medical data can be vast and complex, it can be challenging for physicians to achieve this goal. Thankfully, predictive analytics can assist physicians to make more accurate diagnosis on the patient via machine learning and other computationally intensive methods.
 
-In relation to R, Dr. Kamarul Imran Musa showed how to do predictive analysis, more specifically supervised machine learning, using R packages from `tidymodels` on a stroke fatality dataset. He also covered different types of bias in medical machine learning projects and ways to mitigate them.
+In relation to R, [Dr. Kamarul Imran Musa](https://myanalytics.com.my/) showed how to do predictive analysis, more specifically supervised machine learning, using R packages from [`tidymodels`](https://www.tidymodels.org/) on a stroke fatality dataset. He also covered different types of bias in medical machine learning projects and ways to mitigate them.
 
-Dr. Kamarul Imran Musa is also the author of the book "Exploring Data Using R".
+Dr. Kamarul Imran Musa is also the author of the book titled [Exploring Data Using R](https://shopee.com.my/Exploring-Data-Using-R-i.222767571.13310422273).
 
 -   📹[Video](https://www.youtube.com/watch?v=Gx8kiBcQ3Gs&list=PLqd3IXFKBgD9oYTacAUVf9NauopnYpsGb)
+
+<a href="#top">Back to top</a>
 
 ### Partial Verification Bias Correction
 
@@ -154,56 +191,89 @@ In a typical diagnostic accuracy study, a newly developed diagnostic test is usu
 
 However, if the gold standard diagnostic test is too invasive or expensive, it is common that individuals who are tested positive for a disease from a newly developed test kit to be verified with the results from the gold standard diagnostic test. Patients who were test negative are selectively excluded. For example, usually patients who were tested positive for Covid-19 on a new test kit are asked to go for a RT-PCR test for verification. Those who tested negative need not be further verified. This gave rise to partial verification bias (PVB), leading to an inaccurate evaluation of the newly developed test kit.
 
-As a result, Dr. Wan Nor Ariffin created an R package `PVBcorrect` to allow users to use various PVB correction methods on their dataset during diagnostic accuracy analysis.
+As a result, [Dr. Wan Nor Ariffin](https://wnarifin.github.io/) created an R package [`PVBcorrect`](https://github.com/wnarifin/PVBcorrect) to allow users to use various PVB correction methods on their dataset during diagnostic accuracy analysis.
 
 -   📹[Video](https://www.youtube.com/watch?v=jkFDk1tdtUo&list=PLqd3IXFKBgD9oYTacAUVf9NauopnYpsGb&index=2)
 
+<a href="#top">Back to top</a>
+
 ### Integrating R with Web Applications with OpenCPU
 
-It can be hard to scale up a program in R into a productive enterprise system. This is because to build a tool with modern web application features, R needs to be integrated with other applications which requires a lot of technical knowledge and skills. Arup Kamal shared that this conversion process can be made less painful if the functions in R can be converted to REST APIs. To do this, he suggested a program called [OpenCPU](https://www.opencpu.org/). 
+It can be hard to scale up a program in R into a productive enterprise system. This is because to build a tool with modern web application features, R needs to be integrated with other applications which requires a lot of technical knowledge and skills. [Arup Kamal](https://github.com/arupkamal) shared that this conversion process can be made less painful if the functions in R can be converted to REST APIs. To do this, he suggested a program called [OpenCPU](https://www.opencpu.org/). 
 
 Examples shown in this presentation are creating a web service that outputs the results from the R function `rnorm` and a simple web based wind turbine management system. Other examples can be found in this [webpage](https://www.opencpu.org/apps.html).
 
 -   📹[Video](https://www.youtube.com/watch?v=jkFDk1tdtUo&list=PLqd3IXFKBgD9oYTacAUVf9NauopnYpsGb&index=3)
 
+<a href="#top">Back to top</a>
+
 ### Bibliometrics Analysis in R
 
 While bibliometrics is commonly used in the evaluation the progress of a given research area, it can be used for someone who is new to a broad research topic to identify useful introductory and review papers. 
 
-Tengku Hanis shared a walk through of the R package `bibliometrix` to find relevant information related to Covid-19 research in Malaysia from the [Scopus](https://www.scopus.com/home.uri) database. Information includes highly cited papers, relevant journals, most productive authors, institutions/countries collaborations and trending keywords.
+[Tengku Hanis](https://tengkuhanis.netlify.app/) shared a walk through of the R package [`bibliometrix`](https://www.bibliometrix.org/home/) to find relevant information related to Covid-19 research in Malaysia from the [Scopus](https://www.scopus.com/home.uri) database. Information includes highly cited papers, relevant journals, most productive authors, institutions/countries collaborations and trending keywords.
 
-For those that do not want to do bibliometrics analysis in code, they can instead use [`biblioshiny`](https://www.bibliometrix.org/home/index.php/layout/biblioshiny), which is a web interface version of `bibliometrix`.
+For those that do not want to do bibliometrics analysis in code, they can instead use [`biblioshiny`](https://www.bibliometrix.org/home/index.php/layout/biblioshiny), which is a web interface version of [`bibliometrix`](https://www.bibliometrix.org/home/).
 
--   📝[Slides](https://tengkuhanis.netlify.app/talk/talk-exploring-past-literature-a-bibliometric-approach/)
+-   📝[Slides](https://tengku-hanis.github.io/bibliometrics_Nov2022/#1)
+-   👨‍💻 [Codes](https://github.com/tengku-hanis/bibliometrics_Nov2022)
 -   📹[Video](https://www.youtube.com/watch?v=jkFDk1tdtUo&list=PLqd3IXFKBgD9oYTacAUVf9NauopnYpsGb&index=4)
+
+<a href="#top">Back to top</a>
 
 ### Modeling Longitudinal Health Measurement Trend with `lme4`
 
 Longitudinal health measurements may contain variables that are correlated due to similar trends over time or clustering effects such as geographical location. As such, these data are not independent from one another. It is recommended to use a linear mixed effects model instead of a standard linear model to give a more accurate predictions. More information can be found in this [visual introduction](https://mfviz.com/hierarchical-models/) by [Michael Freeman](https://twitter.com/mf_viz)
 
-Mohd Azmi Bin Suliman shared that one way to do linear mixed effects model in R is to use the R package `lme4`. He showcased its use in a sleep study data set and a simulated stroke care giver data set. 
+Mohd Azmi Bin Suliman shared that one way to do linear mixed effects model in R is to use the R package [`lme4`](https://github.com/lme4/lme4/). He showcased its use in a sleep study data set and a simulated stroke care giver data set. 
 
 One thing that catches my eye is that he uses the R package [`simstudy`](https://kgoldfeld.github.io/simstudy/index.html) to simulate the data, an R package which I have not heard of.
 
 -   📹[Video](https://www.youtube.com/watch?v=jkFDk1tdtUo&list=PLqd3IXFKBgD9oYTacAUVf9NauopnYpsGb&index=5)
 
+<a href="#top">Back to top</a>
+
 ### Summarising model-based results with `gtsummary`
 
-The last session by Dr. Che Muhammad Nur Hidayat bin Che Nawi is a brief summary of what the R package `gtsummary` can do. In a nutshell, the `gtsummary` package helps user create publication-ready statistical summary tables that is also flexible for customisation. While SPSS and R is able to display results from regression models, it can be hard to understand for someone looking at it for the first time. `gtsummary` is able to convert these output to something that is more comprehensible with just a few lines of code.
+The last session by Dr. Che Muhammad Nur Hidayat bin Che Nawi is a brief summary of what the R package [`gtsummary`](https://www.danieldsjoberg.com/gtsummary/) can do. In a nutshell, the [`gtsummary`](https://www.danieldsjoberg.com/gtsummary/) package helps user create publication-ready statistical summary tables that is also flexible for customisation. While SPSS and R is able to display results from regression models, it can be hard to understand for someone looking at it for the first time. [`gtsummary`](https://www.danieldsjoberg.com/gtsummary/) is able to convert these output to something that is more comprehensible with just a few lines of code.
 
-Using a stroke mortality dataset, the speaker showed how `gtsummary` is able to convert tabular raw data to a descriptive summary table and a cross tabulation table. Next, he showed how to create model summary tables from a logistic regression and cox proportional hazards regression (for survival analysis). Dr. Che then shared ways to customised the table and combined multiple tables together. `gtsummary` results can be exported in many forms such as html, pdf and word. During the presentation, Dr Che. suggested using the print engine `flextable` to export the report in Microsoft Word. 
+Using a stroke mortality dataset, the speaker showed how [`gtsummary`](https://www.danieldsjoberg.com/gtsummary/) is able to convert tabular raw data to a descriptive summary table and a cross tabulation table. Next, he showed how to create model summary tables from a logistic regression and cox proportional hazards regression (for survival analysis). Dr. Che then shared ways to customised the table and combined multiple tables together. [`gtsummary`](https://www.danieldsjoberg.com/gtsummary/) results can be exported in many forms such as html, pdf and word. During the presentation, Dr Che. suggested using the print engine [`flextable`](https://davidgohel.github.io/flextable/) to export the report in Microsoft Word. 
 
-To give an overview report of a `gtsummary` table in a R Markdown or Quarto document, [`inline_text`](https://www.danieldsjoberg.com/gtsummary/reference/inline_text.html) can be used to ensure that the overview report can be updated automatically when the `gtsummary` table changes overtime.
+To give an overview report of a [`gtsummary`](https://www.danieldsjoberg.com/gtsummary/) table in a R Markdown or Quarto document, [`inline_text`](https://www.danieldsjoberg.com/gtsummary/reference/inline_text.html) can be used to ensure that the overview report can be updated automatically when the [`gtsummary`](https://www.danieldsjoberg.com/gtsummary/) table changes overtime.
 
 -   📹[Video](https://www.youtube.com/watch?v=jkFDk1tdtUo&list=PLqd3IXFKBgD9oYTacAUVf9NauopnYpsGb&index=6)
+
+<a href="#top">Back to top</a>
 
 ## Conclusion
 
 [R ConfeRence 2022](https://www.r-conference.com/home) is made possible by the dedication and hard work from the [organising community](https://www.r-conference.com/about/organizing-committee).
 
+<a href="#top">Back to top</a>
+
+### YouTube video links
+
 The link to the YouTube videos for this conference can be found as follows:
 
-If you are curious to find out more about the Malaysian R User Group (MyRUG) or R-Ladies Malaysia like their upcoming events or volunteer your time to give a talk or teaching session, they can be contacted via these platforms.
+-   📹[R Workshop (26 November 2022)](https://www.youtube.com/watch?v=bsCJI5sxFbw&list=PLqd3IXFKBgD8_Mh0mKcXss-d8appb_Tun)
+-   📹[R Ladies (26 November 2022)](https://www.youtube.com/watch?v=XEivnv6qlaU&list=PLqd3IXFKBgD_YP6dFmvKmu8ojtH_wOCLY)
+-   📹[R Technical Talk (27 November 2022)](https://www.youtube.com/watch?v=Gx8kiBcQ3Gs&list=PLqd3IXFKBgD9oYTacAUVf9NauopnYpsGb)
 
+<a href="#top">Back to top</a>
+
+### Social media links
+
+If you are curious to find out more about the [Malaysian R User Group](https://www.facebook.com/rusergroupmalaysia/) (MyRUG) or [R-Ladies Malaysia](https://www.facebook.com/groups/myrladies) like their upcoming events or volunteer your time to give a talk or teaching session, they can be contacted via these platforms.
+
+Malaysian R User Group (MyRUG)
+-   🌐[Facebook](https://www.facebook.com/groups/MalaysiaRUserGroup/)
+-   🌐[Meetup](https://www.meetup.com/malaysia-r-user-group/)
+-   🌐[YouTUbe](https://www.youtube.com/@malaysiarusergroup)
+-   🌐[Discord](https://discord.com/invite/bsDFvGvMhY)
+
+R-Ladies Malaysia
+-   🌐[Facebook](https://www.facebook.com/groups/myrladies)
+
+<a href="#top">Back to top</a>
 
 

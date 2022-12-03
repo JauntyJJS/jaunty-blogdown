@@ -1,7 +1,7 @@
 ---
 title: "Reflections on R ConfeRence 2022"
 subtitle: ""
-excerpt: "This is a write up of what I have learne during the [R ConfeRence 2022](https://www.r-conference.com/home)"
+excerpt: "This is a write up of what I have learned during the [R ConfeRence 2022](https://www.r-conference.com/home)"
 format: hugo
 date: 2022-11-28
 author: "Jeremy Selva"

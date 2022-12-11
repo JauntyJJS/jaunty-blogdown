@@ -276,7 +276,7 @@ If you are curious to find out more about the [Malaysian R User Group](https://w
 Malaysian R User Group (MyRUG)
 - 🌐[Facebook](https://www.facebook.com/groups/MalaysiaRUserGroup/)
 - 🌐[Meetup](https://www.meetup.com/malaysia-r-user-group/)
-- 🌐[YouTUbe](https://www.youtube.com/@malaysiarusergroup)
+- 🌐[YouTube](https://www.youtube.com/@malaysiarusergroup)
 - 🌐[Discord](https://discord.com/invite/bsDFvGvMhY)
 
 R-Ladies Malaysia

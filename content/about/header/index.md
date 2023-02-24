@@ -7,6 +7,4 @@ headline: |
 ---
 
 <!-- this is a subheadline -->
-Currently, I am a research assistant working for the [Singapore Lipidomics Incubator](https://sling.sg/) (SLING) at the National University of Singapore. 
-
-My work focus on making research software to automate some lipidomics analysis workflow.
+Currently, I am a research officer working for the [National Heart Centre Singapore](https://www.nhcs.com.sg/) (NHCS).

@@ -1,6 +1,6 @@
 ---
 title: "Jeremy Selva"
-subtitle: "Research Assistant in Singapore Lipidomics Incubator"
+subtitle: "Research Officer in National Heart Centre Singapore"
 description: "This is my personal website where I keep my notes on things that I have learnt. Hope that it will be useful to you as well."
 date: 2019-02-18T12:27:33-06:00
 images:

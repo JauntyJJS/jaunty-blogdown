@@ -1,7 +1,10 @@
 ---
 title: "MSOrganiser"
 subtitle: "A Python Program"
-excerpt: "A standalone Windows executable software that extracts and organizes MRM transition names data in a few button clicks."
+excerpt: "A past project when I was working for [SLING](https://sling.sg/).
+
+
+A standalone Windows executable software that extracts and organizes MRM transition names data in a few button clicks."
 date: 2021-08-28
 author: "Jeremy Selva"
 draft: false

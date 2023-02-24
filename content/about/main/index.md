@@ -5,7 +5,7 @@ title: "What I'm up to lately" # leave blank to exclude
 # number_categories: 3 # set to zero to exclude
 show_intro: true
 intro: |
-  Currently writing codes and slides for a book club.
+  Currently adapting myself to the new job.
 show_outro: true
 outro: |
   <i class="fas fa-dove pr2"></i>“I can do things you cannot, you can do things I cannot; together we can do great things.” Saint Teresa of Calcutta

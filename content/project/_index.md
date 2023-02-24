@@ -1,6 +1,6 @@
 ---
 title: Project Portfolio
-description: ""
+description: "Here are a list of my current and past research projects"
 author: ""
 show_post_thumbnail: true
 show_author_byline: true

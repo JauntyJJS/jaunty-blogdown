@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.2.0",
+    "Version": "4.3.0",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -133,10 +133,10 @@
     },
     "fastmap": {
       "Package": "fastmap",
-      "Version": "1.1.0",
+      "Version": "1.1.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "77bd60a6157420d4ffa93b27cf6a58b8",
+      "Hash": "f7736a18de97dea803bde0a2daaafb27",
       "Requirements": []
     },
     "fs": {
@@ -405,6 +405,14 @@
         "xfun"
       ]
     },
+    "uuid": {
+      "Package": "uuid",
+      "Version": "1.1-0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "f1cb46c157d080b729159d407be83496",
+      "Requirements": []
+    },
     "vctrs": {
       "Package": "vctrs",
       "Version": "0.5.2",
@@ -418,12 +426,25 @@
         "rlang"
       ]
     },
-    "xfun": {
-      "Package": "xfun",
-      "Version": "0.37",
+    "xaringanExtra": {
+      "Package": "xaringanExtra",
+      "Version": "0.7.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "a6860e1400a8fd1ddb6d9b4230cc34ab",
+      "Hash": "b700278c14be355c081d130d48abc83d",
+      "Requirements": [
+        "htmltools",
+        "jsonlite",
+        "knitr",
+        "uuid"
+      ]
+    },
+    "xfun": {
+      "Package": "xfun",
+      "Version": "0.40",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "be07d23211245fc7d4209f54c4e4ffc8",
       "Requirements": []
     },
     "yaml": {

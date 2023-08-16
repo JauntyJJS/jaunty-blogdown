@@ -30,9 +30,7 @@ links:
 
 Here are the video and slides.
 
-I am the second speaker it begins at 16:20
-
-For this video, I was going through the contents of the book.
+For this video, I was going through Chapter 2 of the book [R4DS 2nd edition](https://r4ds.hadley.nz/).
 
 <iframe width="710" height="390" src="https://www.youtube.com/embed/w1H75vwcNkk" frameborder="0" allowfullscreen>
 </iframe>

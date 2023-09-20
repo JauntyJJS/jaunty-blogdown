@@ -3,12 +3,10 @@ title: "Reflections on ESC Congress 2023"
 subtitle: ""
 excerpt: "This is a write up of what I have learned during the [ESC Congress](https://www.escardio.org/Congresses-Events/ESC-Congress) 2023 Edition"
 format: hugo
-date: 2023-9-19
+date: 2023-09-19
 author: "Jeremy Selva"
 draft: true
 tags:
-  - ESC Congress 2023
-categories:
   - ESC Congress 2023
 layout: single-sidebar
 editor_options: 
@@ -18,11 +16,6 @@ csl: utils/esc.csl
 ---
 
 <a name="top"></a>
-
-## Table of Content
-
--   [Introduction]
--   [p-values]
 
 ## Introduction
 
@@ -34,7 +27,7 @@ The [European Society of Cardiology (ESC) Congress](https://www.escardio.org/Con
 
 A formal definition of p-value is the likelihood of observing a result that is (more) extreme than your data, if the null hypothesis were true. When used in the field of clinical trials, it is the likelihood of observing a result that is (more) extreme than the trial's results, if the treatment were truly ineffective.
 
-p \< 0.05 was an arbitrary threshold proposed by Ronald Fisher in the 1920s to make a decision if a deviation from the null hypothesis is considered to be significant or not. The threshold over time became widely adopted in biomedical research.
+p < 0.05 was an arbitrary threshold proposed by Ronald Fisher in the 1920s to make a decision if a deviation from the null hypothesis is considered to be significant or not. The threshold over time became widely adopted in biomedical research.
 
 The conference provides a summary and understanding of the p-values can or cannot do and its use in clinical trials.
 
@@ -72,20 +65,20 @@ The conference provides a summary and understanding of the p-values can or canno
     -   Smaller p-value suggests that results are less likely to have occured by chance.
     -   Small enough p-value: Rule out "chance" and assume "true effect".
 
-### Advice
-
 It is best to improve the interpretation of p values by creating a range table to help translate them into plain English. Below is an example from this [link](https://www.jcpcarchives.org/full/p-value-statistical-significance-and-clinical-significance-121.php) [@Padam-pvalue] from the Journal of Clinical and Preventive Cardiology.
 
-| Values of p         | Inference                                     |
-|---------------------|-----------------------------------------------|
-| p \> 0.1            | No evidence against null hypothesis.          |
-| 0.05 \< p \< 0.1    | Weak evidence against null hypothesis.        |
-| 0.01 \< p \< 0.05   | Moderate evidence against null hypothesis.    |
-| 0.005 \< p \< 0.01  | Good evidence against null hypothesis.        |
-| 0.001 \< p \< 0.005 | Strong evidence against null hypothesis.      |
-| p \< 0.001          | Very strong evidence against null hypothesis. |
+| Values of p       | Inference                                     |
+|-------------------|-----------------------------------------------|
+| p > 0.1           | No evidence against null hypothesis.          |
+| 0.05 < p < 0.1    | Weak evidence against null hypothesis.        |
+| 0.01 < p < 0.05   | Moderate evidence against null hypothesis.    |
+| 0.005 < p < 0.01  | Good evidence against null hypothesis.        |
+| 0.001 < p < 0.005 | Strong evidence against null hypothesis.      |
+| p < 0.001         | Very strong evidence against null hypothesis. |
 
 Include other parameters like effect size to provide additional evidence if the treatment is truly working.
+
+<a href="#top">Back to top</a>
 
 ## Treatment Effect in Complicated Clinical Trials
 
@@ -96,28 +89,67 @@ Failure to consider recurrent/multiple events and event types may lead to bias t
 ### correcting for Multiple or Recurrent Events
 
 Fortunately there are statistical tools that are available for such complicated analysis. 
-For recurrent event data, the Cox proportional hazards model, used to model time to the first event can be expanded with the Lin, Wei, Yang, and Ying (LWYY) and a joint frailty model. A paper from Claggett et al. recommended some model-free approaches to quantify a patient's temporal recurrent-event profile and treatment effects using an area under the curve (AUC) approach.
+For recurrent event data, the Cox proportional hazards model, used to model time to the first event can be expanded with the [Lin, Wei, Yang, and Ying](https://doi.org/10.1111/1467-9868.00259) [@LWYY-Model] (LWYY) and a [joint frailty](https://onlinelibrary.wiley.com/doi/abs/10.1002/sim.6853) [@Rogers-Joint-Model] model. A paper from [Claggett et al.](https://evidence.nejm.org/doi/abs/10.1056/EVIDoa2200047) [@Brian-AOC] recommended some model-free approaches to quantify a patient's temporal recurrent-event profile and treatment effects using an area under the curve (AUC) approach.
 
-An application of this can be found in this DELIVER Trial paper which uses the three methods to investigate the effect of SGLT2 inhibitor dapagliflozin on total heart failure events and cardiovascular death.
+An application of this can be found in this [DELIVER](https://doi.org/10.1001/jamacardio.2023.0711) [@DELIVER-HF] trial paper which uses the three methods to investigate the effect of SGLT2 inhibitor dapagliflozin on total heart failure events and cardiovascular death.
 
 ### Correcting for Mortality Endpoints
 
 We may be interested in understanding the effect of a drug on surrogate markers like the estimated glomerular filtration rate (eGFR), blood pressure and biomarkers. The Cox proportional hazards model has its limitation because these variables are measured with error (due to biological variation) and only observable when the measured subject is alive. As such, we do not know the exact underlying value of the variable between measurements or at death (time of specific endpoint). 
 
-The Joint Model helps to mitigate the issue by bringing the survival model (modelling the mortality outcome) and the linear mixed-effects model (modelling the longitudinal outcome) together, allowing us to model the change of surrogate markers between measurements and at death (time of event). It is basically a mixed linear model that is corrected for drop-out events like death.
-
-More information can be found in https://academic.oup.com/ckj/article/13/2/143/5818093?login=false and 
+The [Joint Model](https://doi.org/10.1093/ckj/sfaa024) [@Joint-Model] helps to mitigate the issue by bringing the survival model (modelling the mortality outcome) and the linear mixed-effects model (modelling the longitudinal outcome) together, allowing us to model the change of surrogate markers between measurements and at death (time of event). It is basically a mixed linear model that is corrected for drop-out events like death.
 
 ### Correcting for both groups of outcomes
 
-Unfortunately, both groups of outcomes may be measured in a clinical trial and they should not be treated as separate (independent) outcomes. The key is to create hierarchical composite endpoints to combine different clinical outcomes of patients into a composite so as to preserve their different natures. The endpoints can later be analysed using win statistics (win ratio, win odds and net benefit).
+However, both groups of outcomes may be measured in a clinical trial and they should not be treated as separate (independent) outcomes. The key is to create hierarchical composite endpoints to combine different clinical outcomes of patients into a composite so as to preserve their different natures. The endpoints can later be analysed using win statistics (win ratio, win odds and net benefit).
 
-An application of this technique can be found in this Heart failure design paper.
+An application of this technique can be found in this Heart failure design paper by [Kosiborod et al.](https://www.sciencedirect.com/science/article/pii/S2213177923002457) [@Kosiborod-Design].
 
-https://www.sciencedirect.com/science/article/pii/S2213177923002457#mmc1
+More information on win statistics can be found in [Ajufo et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10322884/) [@Ajufo-Win-Statistics].
 
-More information on win statistics can be found in 
+<a href="#top">Back to top</a>
 
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10322884/
+## Questions to Ask regarding AI
+
+I had attended a talk from [Maarten van Smeden](https://twitter.com/MaartenvSmeden?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor) which summarised the [original paper](https://doi.org/10.1093/eurheartj/ehac238) [@Maarten-Questions-AI] on what questions to raise when appraising the development and validation of AI prediction models. It went down to a few simple questions.
+
+### Where is the model ?
+
+While AI systems are mainly computer code, most of the AI systems are live only on the hard drive of the developer. This makes external validation by others almost impossible. The speaker believed that sharing of computer code should be the standard procedure to allow a fair evaluation of the AI prediction model.
+
+### What Information is used to build the model ?
+
+A [model](https://www.sciencedirect.com/science/article/pii/S1936879819313123?via%3Dihub) [@Hernandez] using logistic regression to predict in-hospital mortality after Transcatheter Aortic Valve Replacement (TAVR) was met with some [skepticism](https://www.tctmd.com/news/machine-learning-helps-predict-hospital-mortality-post-tavr-skepticism-abounds) on its usefulness. While the model had the highest area under the curve (AUC) score of 0.92 compared to other published models, it was built using both preprocedural and postoperative factors. This means that the model could only be used to predict in-hospital mortality after the patient was discharged. By then, the doctors would have already known if in-hospital mortality has occurred.
+
+The above incident shows that the right kind of information needs to be provided for the model to be effective in what it was meant to be built for. The speaker advised developers to ensure proper reporting of AI systems by using the [TRIPOD checklist](https://www.equator-network.org/reporting-guidelines/tripod-statement/) [@Collins].  
+
+### Has it been well developed/evaluated ?
+
+Researchers have evaluated different kind of models over the past few years for risk of bias and use of external validation. Unfortunately, the overall result of the review has been poor.
+
+-  [Wynants et al.](https://www.bmj.com/content/369/bmj.m1328.long) [@Wynantsm1328] reviewed 606 models for prognosis of Covid-19 and found only 7 newly developed models and 22 external validations of existing models were at low risk of bias.
+-  [Navarro et al.](https://www.sciencedirect.com/science/article/pii/S0895435623000756) [@ANDAURNAVARRO202399] reported that 74 out of 133 (55.6% of) diagnostic and prognostic prediction model studies made recommendations of its models for clinical use but did not have any external validation.
+-  [Dhiman et al.](https://doi.org/10.1186/s41512-022-00126-w) [@Dhiman2022] investigated 152 developed prognostic models in the oncology domain and found that 84% were at high risk of bias.
+
+### Other questions not covered
+
+A summary of other important questions were stated but not in detail due to limited time.
+
+-  How do we ensure implemented AI models remain safe and effective over time and place ?
+    - Model updating, monitoring, transfer learning
+-  How do we ensure AI models are not leading to disadvantage for certain groups of patients ?
+    - Algorithmic bias, fairness
+-  How do we let the AI tell us when a prediction is uncertain ?
+    - Conformal prediction
+-  How do we increase trust and transparency of AI models ?
+    - Trustworthy AI, explainable AI
+
+### Is there any chance for a model to become implemented ?
+
+[Sculley et al.](https://papers.nips.cc/paper_files/paper/2015/hash/86df7dcfd896fcaf2674f757a2463eba-Abstract.html) [@Sculley] pointed out that machine Learning code is only a small fraction in a real-world machine learning architecture. The required surrounding infrastructure like automation, process and resource Management can be complicated. The risk of failure is very high. [Royen et al.](https://osf.io/sc2pz) [@Royen2200250] provided a nice overview of how implementation can go wrong in the below [leaky pipeline example](https://twitter.com/MaartenvSmeden/status/1539485495809409025).
+
+To make the task of machine learning implementation less daunting, a [guidance article](https://www.datavoorgezondheid.nl/documenten/publicaties/2021/12/17/guideline-for-high-quality-diagnostic-and-prognostic-applications-of-ai-in-healthcare) is available.
+
+<a href="#top">Back to top</a>
 
 ## References

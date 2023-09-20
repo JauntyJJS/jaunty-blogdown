@@ -3,12 +3,10 @@ title: "Reflections on ESC Congress 2023"
 subtitle: ""
 excerpt: "This is a write up of what I have learned during the [ESC Congress](https://www.escardio.org/Congresses-Events/ESC-Congress) 2023 Edition"
 format: hugo
-date: 2023-9-19
+date: 2023-09-19
 author: "Jeremy Selva"
 draft: true
 tags:
-  - ESC Congress 2023
-categories:
   - ESC Congress 2023
 layout: single-sidebar
 editor_options: 
@@ -18,11 +16,6 @@ csl: utils/esc.csl
 ---
 
 <a name="top"></a>
-
-## Table of Content
-
--   [Introduction](#introduction)
--   [p-values](#p-values)
 
 ## Introduction
 
@@ -72,8 +65,6 @@ The conference provides a summary and understanding of the p-values can or canno
     -   Smaller p-value suggests that results are less likely to have occured by chance.
     -   Small enough p-value: Rule out "chance" and assume "true effect".
 
-### Advice
-
 It is best to improve the interpretation of p values by creating a range table to help translate them into plain English. Below is an example from this [link](https://www.jcpcarchives.org/full/p-value-statistical-significance-and-clinical-significance-121.php)<sup>3</sup> from the Journal of Clinical and Preventive Cardiology.
 
 | Values of p         | Inference                                     |
@@ -87,6 +78,8 @@ It is best to improve the interpretation of p values by creating a range table t
 
 Include other parameters like effect size to provide additional evidence if the treatment is truly working.
 
+<a href="#top">Back to top</a>
+
 ## Treatment Effect in Complicated Clinical Trials
 
 Most clinical trials usually examine a patient's time to the first occurrence of an event alone or in a composite outcome. A limitation with this approach is that given a patient with only one but early non-fatal morbidity event and a patient with a later but multiple morbidity events and subsequent death. The approach to look just at the first occurrence will wrongly identify that the former patient in a worse state the latter.
@@ -96,29 +89,68 @@ Failure to consider recurrent/multiple events and event types may lead to bias t
 ### correcting for Multiple or Recurrent Events
 
 Fortunately there are statistical tools that are available for such complicated analysis.
-For recurrent event data, the Cox proportional hazards model, used to model time to the first event can be expanded with the Lin, Wei, Yang, and Ying (LWYY) and a joint frailty model. A paper from Claggett et al. recommended some model-free approaches to quantify a patient's temporal recurrent-event profile and treatment effects using an area under the curve (AUC) approach.
+For recurrent event data, the Cox proportional hazards model, used to model time to the first event can be expanded with the [Lin, Wei, Yang, and Ying](https://doi.org/10.1111/1467-9868.00259)<sup>4</sup> (LWYY) and a [joint frailty](https://onlinelibrary.wiley.com/doi/abs/10.1002/sim.6853)<sup>5</sup> model. A paper from [Claggett et al.](https://evidence.nejm.org/doi/abs/10.1056/EVIDoa2200047)<sup>6</sup> recommended some model-free approaches to quantify a patient's temporal recurrent-event profile and treatment effects using an area under the curve (AUC) approach.
 
-An application of this can be found in this DELIVER Trial paper which uses the three methods to investigate the effect of SGLT2 inhibitor dapagliflozin on total heart failure events and cardiovascular death.
+An application of this can be found in this [DELIVER](https://doi.org/10.1001/jamacardio.2023.0711)<sup>7</sup> trial paper which uses the three methods to investigate the effect of SGLT2 inhibitor dapagliflozin on total heart failure events and cardiovascular death.
 
 ### Correcting for Mortality Endpoints
 
 We may be interested in understanding the effect of a drug on surrogate markers like the estimated glomerular filtration rate (eGFR), blood pressure and biomarkers. The Cox proportional hazards model has its limitation because these variables are measured with error (due to biological variation) and only observable when the measured subject is alive. As such, we do not know the exact underlying value of the variable between measurements or at death (time of specific endpoint).
 
-The Joint Model helps to mitigate the issue by bringing the survival model (modelling the mortality outcome) and the linear mixed-effects model (modelling the longitudinal outcome) together, allowing us to model the change of surrogate markers between measurements and at death (time of event). It is basically a mixed linear model that is corrected for drop-out events like death.
-
-More information can be found in https://academic.oup.com/ckj/article/13/2/143/5818093?login=false and
+The [Joint Model](https://doi.org/10.1093/ckj/sfaa024)<sup>8</sup> helps to mitigate the issue by bringing the survival model (modelling the mortality outcome) and the linear mixed-effects model (modelling the longitudinal outcome) together, allowing us to model the change of surrogate markers between measurements and at death (time of event). It is basically a mixed linear model that is corrected for drop-out events like death.
 
 ### Correcting for both groups of outcomes
 
-Unfortunately, both groups of outcomes may be measured in a clinical trial and they should not be treated as separate (independent) outcomes. The key is to create hierarchical composite endpoints to combine different clinical outcomes of patients into a composite so as to preserve their different natures. The endpoints can later be analysed using win statistics (win ratio, win odds and net benefit).
+However, both groups of outcomes may be measured in a clinical trial and they should not be treated as separate (independent) outcomes. The key is to create hierarchical composite endpoints to combine different clinical outcomes of patients into a composite so as to preserve their different natures. The endpoints can later be analysed using win statistics (win ratio, win odds and net benefit).
 
-An application of this technique can be found in this Heart failure design paper.
+An application of this technique can be found in this Heart failure design paper by [Kosiborod et al.](https://www.sciencedirect.com/science/article/pii/S2213177923002457)<sup>9</sup>.
 
-https://www.sciencedirect.com/science/article/pii/S2213177923002457#mmc1
+More information on win statistics can be found in [Ajufo et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10322884/)<sup>10</sup>.
 
-More information on win statistics can be found in
+<a href="#top">Back to top</a>
 
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10322884/
+## Questions to Ask regarding AI
+
+I had attended a talk from [Maarten van Smeden](https://twitter.com/MaartenvSmeden?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor) which summarised the [original paper](https://doi.org/10.1093/eurheartj/ehac238)<sup>11</sup> on what questions to raise when appraising the development and validation of AI prediction models. It went down to a few simple questions.
+
+### Where is the model ?
+
+While AI systems are mainly computer code, most of the AI systems are live only on the hard drive of the developer. This makes external validation by others almost impossible. The speaker believed that sharing of computer code should be the standard procedure to allow a fair evaluation of the AI prediction model.
+
+### What Information is used to build the model ?
+
+A [model](https://www.sciencedirect.com/science/article/pii/S1936879819313123?via%3Dihub)<sup>12</sup> using logistic regression to predict in-hospital mortality after Transcatheter Aortic Valve Replacement (TAVR) was met with some [skepticism](https://www.tctmd.com/news/machine-learning-helps-predict-hospital-mortality-post-tavr-skepticism-abounds) on its usefulness. While the model had the highest area under the curve (AUC) score of 0.92 compared to other published models, it was built using both preprocedural and postoperative factors. This means that the model could only be used to predict in-hospital mortality after the patient was discharged. By then, the doctors would have already known if in-hospital mortality has occurred.
+
+The above incident shows that the right kind of information needs to be provided for the model to be effective in what it was meant to be built for. The speaker advised developers to ensure proper reporting of AI systems by using the [TRIPOD checklist](https://www.equator-network.org/reporting-guidelines/tripod-statement/)<sup>13</sup>.
+
+### Has it been well developed/evaluated ?
+
+Researchers have evaluated different kind of models over the past few years for risk of bias and use of external validation. Unfortunately, the overall result of the review has been poor.
+
+-   [Wynants et al.](https://www.bmj.com/content/369/bmj.m1328.long)<sup>14</sup> reviewed 606 models for prognosis of Covid-19 and found only 7 newly developed models and 22 external validations of existing models were at low risk of bias.
+-   [Navarro et al.](https://www.sciencedirect.com/science/article/pii/S0895435623000756)<sup>15</sup> reported that 74 out of 133 (55.6% of) diagnostic and prognostic prediction model studies made recommendations of its models for clinical use but did not have any external validation.
+-   [Dhiman et al.](https://doi.org/10.1186/s41512-022-00126-w)<sup>16</sup> investigated 152 developed prognostic models in the oncology domain and found that 84% were at high risk of bias.
+
+### Other questions not covered
+
+A summary of other important questions were stated but not in detail due to limited time.
+
+-   How do we ensure implemented AI models remain safe and effective over time and place ?
+    -   Model updating, monitoring, transfer learning
+-   How do we ensure AI models are not leading to disadvantage for certain groups of patients ?
+    -   Algorithmic bias, fairness
+-   How do we let the AI tell us when a prediction is uncertain ?
+    -   Conformal prediction
+-   How do we increase trust and transparency of AI models ?
+    -   Trustworthy AI, explainable AI
+
+### Is there any chance for a model to become implemented ?
+
+[Sculley et al.](https://papers.nips.cc/paper_files/paper/2015/hash/86df7dcfd896fcaf2674f757a2463eba-Abstract.html)<sup>17</sup> pointed out that machine Learning code is only a small fraction in a real-world machine learning architecture. The required surrounding infrastructure like automation, process and resource Management can be complicated. The risk of failure is very high. [Royen et al.](https://osf.io/sc2pz)<sup>18</sup> provided a nice overview of how implementation can go wrong in the below [leaky pipeline example](https://twitter.com/MaartenvSmeden/status/1539485495809409025).
+
+To make the task of machine learning implementation less daunting, a [guidance article](https://www.datavoorgezondheid.nl/documenten/publicaties/2021/12/17/guideline-for-high-quality-diagnostic-and-prognostic-applications-of-ai-in-healthcare) is available.
+
+<a href="#top">Back to top</a>
 
 ## References
 
@@ -127,3 +159,33 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10322884/
 <span class="csl-left-margin">2. </span><span class="csl-right-inline">Teerlink JR, Diaz R, Felker GM, McMurray JJV, Metra M, Solomon SD, Adams KF, Anand I, Arias-Mendoza A, Biering-Sørensen T, Böhm M, Bonderman D, Cleland JGF, Corbalan R, Crespo-Leiro MG, Dahlström U, Echeverria LE, Fang JC, Filippatos G, Fonseca C, Goncalvesova E, Goudev AR, Howlett JG, Lanfear DE, Li J, Lund M, Macdonald P, Mareev V, Momomura S, O'Meara E, Parkhomenko A, Ponikowski P, Ramires FJA, Serpytis P, Sliwa K, Spinar J, Suter TM, Tomcsanyi J, Vandekerckhove H, Vinereanu D, Voors AA, Yilmaz MB, Zannad F, Sharpsten L, Legg JC, Varin C, Honarpour N, Abbasi SA, Malik FI, Kurtz CE. [Cardiac myosin activation with omecamtiv mecarbil in systolic heart failure](https://doi.org/10.1056/NEJMoa2025797). *New England Journal of Medicine* 2021;**384**:105--116. </span>
 
 <span class="csl-left-margin">3. </span><span class="csl-right-inline">Padam S. [P value, statistical significance and clinical significance](https://www.jcpcarchives.org/full/p-value-statistical-significance-and-clinical-significance-121.php). *Journal of Clinical and Preventive Cardiology* 2013;**2**:202--204. </span>
+
+<span class="csl-left-margin">4. </span><span class="csl-right-inline">Lin DY, Wei LJ, Yang I, Ying Z. [<span class="nocase">Semiparametric Regression for the Mean and Rate Functions of Recurrent Events</span>](https://doi.org/10.1111/1467-9868.00259). *Journal of the Royal Statistical Society Series B: Statistical Methodology* 2002;**62**:711--730. </span>
+
+<span class="csl-left-margin">5. </span><span class="csl-right-inline">Rogers JK, Yaroshinsky A, Pocock SJ, Stokar D, Pogoda J. [Analysis of recurrent events with an associated informative dropout time: Application of the joint frailty model](https://doi.org/10.1002/sim.6853). *Statistics in Medicine* 2016;**35**:2195--2205. </span>
+
+<span class="csl-left-margin">6. </span><span class="csl-right-inline">Claggett BL, McCaw ZR, Tian L, McMurray JJV, Jhund PS, Uno H, Pfeffer MA, Solomon SD, Wei L-J. [Quantifying treatment effects in trials with multiple event-time outcomes](https://doi.org/10.1056/EVIDoa2200047). *NEJM Evidence* 2022;**1**:EVIDoa2200047. </span>
+
+<span class="csl-left-margin">7. </span><span class="csl-right-inline">Jhund PS, Claggett BL, Talebi A, Butt JH, Gasparyan SB, Wei L-J, McCaw ZR, Wilderäng U, Bengtsson O, Desai AS, Petersson M, Langkilde AM, Boer RA de, Hernandez AF, Inzucchi SE, Kosiborod MN, Lam CSP, Martinez FA, Shah SJ, Vaduganathan M, Solomon SD, McMurray JJV. [<span class="nocase">Effect of Dapagliflozin on Total Heart Failure Events in Patients With Heart Failure With Mildly Reduced or Preserved Ejection Fraction: A Prespecified Analysis of the DELIVER Trial</span>](https://doi.org/10.1001/jamacardio.2023.0711). *JAMA Cardiology* 2023;**8**:554--563. </span>
+
+<span class="csl-left-margin">8. </span><span class="csl-right-inline">Chesnaye NC, Tripepi G, Dekker FW, Zoccali C, Zwinderman AH, Jager KJ. [<span class="nocase">An introduction to joint models---applications in nephrology</span>](https://doi.org/10.1093/ckj/sfaa024). *Clinical Kidney Journal* 2020;**13**:143--149. </span>
+
+<span class="csl-left-margin">9. </span><span class="csl-right-inline">Kosiborod MN, Abildstrøm SZ, Borlaug BA, Butler J, Christensen L, Davies M, Hovingh KG, Kitzman DW, Lindegaard ML, Møller DV, Shah SJ, Treppendahl MB, Verma S, Petrie MC. [Design and baseline characteristics of STEP-HFpEF program evaluating semaglutide in patients with obesity HFpEF phenotype](https://doi.org/10.1016/j.jchf.2023.05.010). *JACC: Heart Failure* 2023;**11**:1000--1010. </span>
+
+<span class="csl-left-margin">10. </span><span class="csl-right-inline">Ajufo E, Nayak A, Mehra MR. [Fallacies of using the win ratio in cardiovascular trials: Challenges and solutions](https://doi.org/10.1016/j.jacbts.2023.05.004). *JACC: Basic to Translational Science* 2023;**8**:720--727. </span>
+
+<span class="csl-left-margin">11. </span><span class="csl-right-inline">Smeden M van, Heinze G, Van Calster B, Asselbergs FW, Vardas PE, Bruining N, Jaegere P de, Moore JH, Denaxas S, Boulesteix AL, Moons KGM. [Critical appraisal of artificial intelligence-based prediction models for cardiovascular disease](https://doi.org/10.1093/eurheartj/ehac238). *European Heart Journal* 2022;**43**:2921--2930. </span>
+
+<span class="csl-left-margin">12. </span><span class="csl-right-inline">Hernandez-Suarez DF, Kim Y, Villablanca P, Gupta T, Wiley J, Nieves-Rodriguez BG, Rodriguez-Maldonado J, Feliu Maldonado R, da Luz Sant'Ana I, Sanina C, Cox-Alomar P, Ramakrishna H, Lopez-Candales A, O'Neill WW, Pinto DS, Latib A, Roche-Lima A. [Machine learning prediction models for in-hospital mortality after transcatheter aortic valve replacement](https://doi.org/10.1016/j.jcin.2019.06.013). *JACC: Cardiovascular Interventions* 2019;**12**:1328--1338. </span>
+
+<span class="csl-left-margin">13. </span><span class="csl-right-inline">Collins GS, Reitsma JB, Altman DG, Moons KG. [<span class="nocase">Transparent reporting of a multivariable prediction model for individual prognosis or diagnosis (TRIPOD): the TRIPOD Statement</span>](https://doi.org/10.1186/s12916-014-0241-z). *BMC Medicine* 2015;**13**:1. </span>
+
+<span class="csl-left-margin">14. </span><span class="csl-right-inline">Wynants L, Van Calster B, Collins GS, Riley RD, Heinze G, Schuit E, Albu E, Arshi B, Bellou V, Bonten MMJ, Dahly DL, Damen JA, Debray TPA, Jong VMT de, De Vos M, Dhiman P, Ensor J, Gao S, Haller MC, Harhay MO, Henckaerts L, Heus P, Hoogland J, Hudda M, Jenniskens K, Kammer M, Kreuzberger N, Lohmann A, Levis B, Luijken K, Ma J, Martin GP, McLernon DJ, Navarro CLA, Reitsma JB, Sergeant JC, Shi C, Skoetz N, Smits LJM, Snell KIE, Sperrin M, Spijker R, Steyerberg EW, Takada T, Tzoulaki I, Kuijk SMJ van, Bussel BCT van, Horst ICC van der, Reeve K, Royen FS van, Verbakel JY, Wallisch C, Wilkinson J, Wolff R, Hooft L, Moons KGM, Smeden M van. [Prediction models for diagnosis and prognosis of covid-19: Systematic review and critical appraisal](https://doi.org/10.1136/bmj.m1328). *BMJ* 2020;**369**. </span>
+
+<span class="csl-left-margin">15. </span><span class="csl-right-inline">Andaur Navarro CL, Damen JAA, Takada T, Nijman SWJ, Dhiman P, Ma J, Collins GS, Bajpai R, Riley RD, Moons KGM, Hooft L. [Systematic review finds 'spin' practices and poor reporting standards in studies on machine learning-based prediction models](https://doi.org/10.1016/j.jclinepi.2023.03.024). *Journal of Clinical Epidemiology* 2023;**158**:99--110. </span>
+
+<span class="csl-left-margin">16. </span><span class="csl-right-inline">Dhiman P, Ma J, Andaur Navarro CL, Speich B, Bullock G, Damen JAA, Hooft L, Kirtley S, Riley RD, Van Calster B, Moons KGM, Collins GS. [Risk of bias of prognostic models developed using machine learning: A systematic review in oncology](https://doi.org/10.1186/s41512-022-00126-w). *Diagnostic and Prognostic Research* 2022;**6**:13. </span>
+
+<span class="csl-left-margin">17. </span><span class="csl-right-inline">Sculley D, Holt G, Golovin D, Davydov E, Phillips T, Ebner D, Chaudhary V, Young M, Crespo J-F, Dennison D. [Hidden technical debt in machine learning systems](https://proceedings.neurips.cc/paper_files/paper/2015/file/86df7dcfd896fcaf2674f757a2463eba-Paper.pdf). Cortes C, Lawrence N, Lee D, Sugiyama M, Garnett R, eds. *Advances in neural information processing systems*. Curran Associates, Inc.; 2015. </span>
+
+<span class="csl-left-margin">18. </span><span class="csl-right-inline">Royen FS van, Moons KGM, Geersing G-J, Smeden M van. [Developing, validating, updating and judging the impact of prognostic models for respiratory diseases](https://doi.org/10.1183/13993003.00250-2022). *European Respiratory Journal* 2022. </span>

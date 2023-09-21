@@ -5,9 +5,9 @@ excerpt: "This is a write up of what I have learned during the [ESC Congress](ht
 format: hugo
 date: 2023-09-19
 author: "Jeremy Selva"
-draft: true
+draft: false
 tags:
-  - ESC Congress 2023
+  - ESC Congress 2023 
 layout: single-sidebar
 editor_options: 
   chunk_output_type: console
@@ -16,6 +16,25 @@ csl: utils/esc.csl
 ---
 
 <a name="top"></a>
+
+## Table of Content
+
+- [Introduction]
+- [p-values]
+    - [What p-values cannot do]
+    - [What p-values can do]
+- [Risk Scores for Cardiovascular diseases]
+- [Correcting for Multiple or Recurrent Events]
+    - [Correcting for Multiple or Recurrent Events]
+    - [Correcting for Mortality Endpoints]
+    - [Correcting for both groups of outcomes]
+- [Questions to ask regarding AI]
+    - [Where is the model]
+    - [What Information is used to build the model]
+    - [Has the model been well developed/evaluated]
+    - [Other questions not covered]
+    - [Is there any chance for a model to become implemented]
+
 
 ## Introduction
 
@@ -80,13 +99,31 @@ Include other parameters like effect size to provide additional evidence if the 
 
 <a href="#top">Back to top</a>
 
+## Risk Scores for Cardiovascular diseases
+
+Prevention is usually better than cure. An accurate estimate a healthy individual's risk of developing cardiovascular diseases (CVD) and future CVD events can help identify/prioritise those who may benefit from prevention programmes like lifestyle change and/or pharmacological treatment.
+
+In 2003, the [Systematic COronary Risk Evaluation (SCORE)](https://academic.oup.com/eurheartj/article/24/11/987/427645) [@SCORE] project was created to calculating an European individual 10-year risk estimates for fatal CVD over an age range of 40-65. The model was built from a pooled dataset of 12 European cohorts.
+
+However, there were several limitations to the SCORE model. As it was used to only estimate fatal CVD, it underestimates the total CVD burden which came largely from non-fatal CVD events. The cohorts used to build the model were people who were recruited before 1986 which was no longer a decent representation of the European population.
+
+As such, in 2021, the [SCORE2](https://doi.org/10.1093/eurheartj/ehab309) [@SCORE2] project was launched using 45 more recent cohorts from 13 countries to allow the model to recalibrate and expand its prediction to both fatal and non-fatal CVD outcomes. External validation was also done to ensure that the SCORE2 model is reliable.
+
+While the SCORE2 risk models are intended for use in people aged 40–69 years, there is a need to have a 10-year CVD risk prediction model for those age 70 and above. This is because traditional risk prediction models usually overestimates CVD risk for people in this age group leading to unnecessary treatment and lower quality of life. [SCORE2-Older Persons (SCORE2-OP)](https://doi.org/10.1093/eurheartj/ehab312) [@SCORE2-OP] was created, in parallel to SCORE2, to estimate 5- and 10-year risk of incident CVD in European people aged over 70 years.
+
+Recently in 2023, a new algorithm is developed called [SCORE2-Diabetes](https://doi.org/10.1093/eurheartj/ehad260) [@SCORE2-Diabetes]. This algorithm expands the SCORE2 algorithm using diabetes-related information like age at diagnosis of diabetes and glycated haemoglobin (HbA1c) to predict 10-year risk of CVD in European individuals with type 2 diabetes.
+
+The evolution of the SCORE project shows that human variation cannot be completely explained by risk predictors in the model. This is because model derived in one or more populations may severely under or over estimates risk in a new population. Risk prediction models needs to be recalibrated with recent nationally representative incidence data so that it can work well across different populations and time points. In addition, while risk scoring has its advantages, it is not a replacement of usual care as there are no evidence to say that it is better.
+
+<a href="#top">Back to top</a>
+
 ## Treatment Effect in Complicated Clinical Trials
 
 Most clinical trials usually examine a patient's time to the first occurrence of an event alone or in a composite outcome. A limitation with this approach is that given a patient with only one but early non-fatal morbidity event and a patient with a later but multiple morbidity events and subsequent death. The approach to look just at the first occurrence will wrongly identify that the former patient in a worse state the latter. 
 
 Failure to consider recurrent/multiple events and event types may lead to bias that can mask the true effect of a treatment. There is a need for clinical trial analysis to go beyond the first event such as recurrent and total events to better understand the total impact of a treatment and reveal changes in important biomarkers.
 
-### correcting for Multiple or Recurrent Events
+### Correcting for Multiple or Recurrent Events
 
 Fortunately there are statistical tools that are available for such complicated analysis. 
 For recurrent event data, the Cox proportional hazards model, used to model time to the first event can be expanded with the [Lin, Wei, Yang, and Ying](https://doi.org/10.1111/1467-9868.00259) [@LWYY-Model] (LWYY) and a [joint frailty](https://onlinelibrary.wiley.com/doi/abs/10.1002/sim.6853) [@Rogers-Joint-Model] model. A paper from [Claggett et al.](https://evidence.nejm.org/doi/abs/10.1056/EVIDoa2200047) [@Brian-AOC] recommended some model-free approaches to quantify a patient's temporal recurrent-event profile and treatment effects using an area under the curve (AUC) approach.
@@ -109,21 +146,21 @@ More information on win statistics can be found in [Ajufo et al.](https://www.nc
 
 <a href="#top">Back to top</a>
 
-## Questions to Ask regarding AI
+## Questions to ask regarding AI
 
 I had attended a talk from [Maarten van Smeden](https://twitter.com/MaartenvSmeden?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor) which summarised the [original paper](https://doi.org/10.1093/eurheartj/ehac238) [@Maarten-Questions-AI] on what questions to raise when appraising the development and validation of AI prediction models. It went down to a few simple questions.
 
-### Where is the model ?
+### Where is the model
 
 While AI systems are mainly computer code, most of the AI systems are live only on the hard drive of the developer. This makes external validation by others almost impossible. The speaker believed that sharing of computer code should be the standard procedure to allow a fair evaluation of the AI prediction model.
 
-### What Information is used to build the model ?
+### What Information is used to build the model
 
 A [model](https://www.sciencedirect.com/science/article/pii/S1936879819313123?via%3Dihub) [@Hernandez] using logistic regression to predict in-hospital mortality after Transcatheter Aortic Valve Replacement (TAVR) was met with some [skepticism](https://www.tctmd.com/news/machine-learning-helps-predict-hospital-mortality-post-tavr-skepticism-abounds) on its usefulness. While the model had the highest area under the curve (AUC) score of 0.92 compared to other published models, it was built using both preprocedural and postoperative factors. This means that the model could only be used to predict in-hospital mortality after the patient was discharged. By then, the doctors would have already known if in-hospital mortality has occurred.
 
 The above incident shows that the right kind of information needs to be provided for the model to be effective in what it was meant to be built for. The speaker advised developers to ensure proper reporting of AI systems by using the [TRIPOD checklist](https://www.equator-network.org/reporting-guidelines/tripod-statement/) [@Collins].  
 
-### Has it been well developed/evaluated ?
+### Has the model been well developed/evaluated
 
 Researchers have evaluated different kind of models over the past few years for risk of bias and use of external validation. Unfortunately, the overall result of the review has been poor.
 
@@ -144,9 +181,13 @@ A summary of other important questions were stated but not in detail due to limi
 -  How do we increase trust and transparency of AI models ?
     - Trustworthy AI, explainable AI
 
-### Is there any chance for a model to become implemented ?
+### Is there any chance for a model to become implemented
 
 [Sculley et al.](https://papers.nips.cc/paper_files/paper/2015/hash/86df7dcfd896fcaf2674f757a2463eba-Abstract.html) [@Sculley] pointed out that machine Learning code is only a small fraction in a real-world machine learning architecture. The required surrounding infrastructure like automation, process and resource Management can be complicated. The risk of failure is very high. [Royen et al.](https://osf.io/sc2pz) [@Royen2200250] provided a nice overview of how implementation can go wrong in the below [leaky pipeline example](https://twitter.com/MaartenvSmeden/status/1539485495809409025).
+
+``` {shortcodes=false}
+{{< tweet user="MaartenvSmeden" id="1539485495809409025" >}}
+```
 
 To make the task of machine learning implementation less daunting, a [guidance article](https://www.datavoorgezondheid.nl/documenten/publicaties/2021/12/17/guideline-for-high-quality-diagnostic-and-prognostic-applications-of-ai-in-healthcare) is available.
 

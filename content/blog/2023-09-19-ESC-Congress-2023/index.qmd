@@ -107,7 +107,7 @@ In 2003, the [Systematic COronary Risk Evaluation (SCORE)](https://academic.oup.
 
 However, there were several limitations to the SCORE model. As it was used to only estimate fatal CVD, it underestimates the total CVD burden which came largely from non-fatal CVD events. The cohorts used to build the model were people who were recruited before 1986 which was no longer a decent representation of the European population.
 
-As such, in 2021, the [SCORE2](https://doi.org/10.1093/eurheartj/ehab309) [@SCORE2] project was launched using 45 more recent cohorts from 13 countries to allow the model to recalibrate and expand its prediction to both fatal and non-fatal CVD outcomes. External validation was also done to ensure that the SCORE2 model is reliable.
+As such, in 2021, the [SCORE2](https://doi.org/10.1093/eurheartj/ehab309) [@SCORE2] project was launched using 45 recent cohorts from 13 countries to allow the model to recalibrate and expand its prediction to both fatal and non-fatal CVD outcomes. External validation was also done to ensure that the SCORE2 model is reliable.
 
 While the SCORE2 risk models are intended for use in people aged 40–69 years, there is a need to have a 10-year CVD risk prediction model for those age 70 and above. This is because traditional risk prediction models usually overestimates CVD risk for people in this age group leading to unnecessary treatment and lower quality of life. [SCORE2-Older Persons (SCORE2-OP)](https://doi.org/10.1093/eurheartj/ehab312) [@SCORE2-OP] was created, in parallel to SCORE2, to estimate 5- and 10-year risk of incident CVD in European people aged over 70 years.
 

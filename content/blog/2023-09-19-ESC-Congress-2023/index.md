@@ -69,7 +69,7 @@ The conference provides a summary and understanding of the p-values can or canno
 
 -   Cannot inform if a regulatory agency will approve the treatment.
 
-    -   A [clinical trail](https://www.nejm.org/doi/full/10.1056/NEJMoa1908655)<sup>1</sup> on Sacubitril-Valsartan did not have a statistically significantly result in lowering rate of total hospitalizations for heart failure and death from cardiovascular causes among patients with heart failure but it was later [approved](https://www.medscape.com/viewarticle/945936) by the FDA to treat preserved ejection fraction (HFpEF). On the other hand, a [clinical trial](https://www.nejm.org/doi/full/10.1056/NEJMoa2025797)<sup>2</sup> on Omecamtiv Mecarbil had a statistically significantly result but was later [declined](https://www.medscape.com/viewarticle/988948) by the FDA to treat preserved ejection fraction (HFpEF)
+    -   A [clinical trail](https://www.nejm.org/doi/full/10.1056/NEJMoa1908655)<sup>1</sup> on Sacubitril-Valsartan did not have a statistically significantly result in lowering rate of total hospitalizations for heart failure and death from cardiovascular causes among patients with heart failure but it was later [approved](https://www.medscape.com/viewarticle/945936) by the FDA to treat heart failure with preserved ejection fraction (HFpEF). On the other hand, a [clinical trial](https://www.nejm.org/doi/full/10.1056/NEJMoa2025797)<sup>2</sup> on Omecamtiv Mecarbil had a statistically significantly result but was later [declined](https://www.medscape.com/viewarticle/988948) by the FDA to treat heart failure with preserved ejection fraction (HFpEF)
 
 ### What p-values can do
 
@@ -161,7 +161,7 @@ The above incident shows that the right kind of information needs to be provided
 
 ### Has the model been well developed/evaluated
 
-Researchers have evaluated different kind of models over the past few years for risk of bias and use of external validation. Unfortunately, the overall result of the review has been poor.
+Researchers had evaluated different kind of models over the past few years for risk of bias and use of external validation. Unfortunately, the overall results of the reviews were poor.
 
 -   [Wynants et al.](https://www.bmj.com/content/369/bmj.m1328.long)<sup>18</sup> reviewed 606 models for prognosis of Covid-19 and found only 7 newly developed models and 22 external validations of existing models were at low risk of bias.
 -   [Navarro et al.](https://www.sciencedirect.com/science/article/pii/S0895435623000756)<sup>19</sup> reported that 74 out of 133 (55.6% of) diagnostic and prognostic prediction model studies made recommendations of its models for clinical use but did not have any external validation.
@@ -182,7 +182,7 @@ A summary of other important questions were stated but not in detail due to limi
 
 ### Is there any chance for a model to become implemented
 
-[Sculley et al.](https://papers.nips.cc/paper_files/paper/2015/hash/86df7dcfd896fcaf2674f757a2463eba-Abstract.html)<sup>21</sup> pointed out that machine Learning code is only a small fraction in a real-world machine learning architecture. The required surrounding infrastructure like automation, process and resource Management can be complicated. The risk of failure is very high. [Royen et al.](https://osf.io/sc2pz)<sup>22</sup> provided a nice overview of how implementation can go wrong in the below [leaky pipeline example](https://twitter.com/MaartenvSmeden/status/1539485495809409025).
+[Sculley et al.](https://papers.nips.cc/paper_files/paper/2015/hash/86df7dcfd896fcaf2674f757a2463eba-Abstract.html)<sup>21</sup> pointed out that machine learning code is only a small fraction in a real-world machine learning architecture. The required surrounding infrastructure like automation, process and resource management can be complicated. The risk of failure is very high. [Royen et al.](https://osf.io/sc2pz)<sup>22</sup> provided a nice overview of how implementation can go wrong in the below [leaky pipeline example](https://twitter.com/MaartenvSmeden/status/1539485495809409025).
 
 ```
 {{< tweet user="MaartenvSmeden" id="1539485495809409025" >}}

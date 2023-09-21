@@ -15,6 +15,8 @@ bibliography: utils/bibliography.bib
 csl: utils/esc.csl
 ---
 
+![ESC](featured.jpg)
+
 <a name="top"></a>
 
 ## Table of Content

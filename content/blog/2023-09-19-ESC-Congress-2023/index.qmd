@@ -2,7 +2,7 @@
 title: "Reflections on ESC Congress 2023"
 subtitle: ""
 excerpt: "This is a write up of what I have learned during the [ESC Congress](https://www.escardio.org/Congresses-Events/ESC-Congress) 2023 Edition"
-format: hugo
+format: hugo-md
 date: 2023-09-19
 author: "Jeremy Selva"
 draft: false
@@ -15,7 +15,7 @@ bibliography: utils/bibliography.bib
 csl: utils/esc.csl
 ---
 
-![ESC](featured.jpg)
+![](featured.jpg){fig-alt="A picture of an ESC Congress 2023 programme booklet."}
 
 <a name="top"></a>
 

@@ -1,0 +1,42 @@
+---
+title: "Chapter 13: Numbers"
+subtitle: ""
+excerpt: "Here is a talk I gave for a book club on R for Data Science Second Edition."
+format: hugo
+date: 2023-11-19T09:00:00
+show_post_time: false
+event: "R for Data Science R4DS Book Club Cohort 9"
+event_url: https://www.youtube.com/playlist?list=PL3x6DOfs2NGjVMs1NtbWu4s_ZgGhGKnrN
+author: "Jeremy Selva"
+location: ""
+draft: false
+# layout options: single, single-sidebar
+layout: single
+categories:
+- talk
+links:
+- icon: door-open
+  icon_pack: fas
+  name: website
+  url: https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13
+- icon: github
+  icon_pack: fab
+  name: code
+  url: https://github.com/JauntyJJS/r4ds-bookclub-cohort9-chapter13
+---
+
+Here are the video and slides.
+
+For this video, I was going through Chapter 13 of the book [R4DS 2nd edition](https://r4ds.hadley.nz/).
+
+<iframe width="710" height="390" src="https://www.youtube.com/embed/_UW5c-iDro4" frameborder="0" allowfullscreen></iframe>
+
+```{r, echo=FALSE}
+
+xaringanExtra::embed_xaringan(
+  url = "https://jauntyjjs.github.io/r4ds-bookclub-cohort9-chapter13",
+  ratio = "16:9"
+)
+
+```
+

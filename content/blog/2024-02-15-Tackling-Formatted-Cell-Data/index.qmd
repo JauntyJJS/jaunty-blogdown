@@ -5,7 +5,7 @@ excerpt: "An article on how to deal with formatted cells in Excel"
 format: hugo-md
 date: 2024-02-15
 author: "Jeremy Selva"
-draft: true
+draft: false
 layout: single-sidebar
 editor_options: 
   chunk_output_type: console

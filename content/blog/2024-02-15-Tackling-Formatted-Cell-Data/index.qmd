@@ -30,6 +30,10 @@ Reading data in formatted cell in excel can be really tricky. In this post, I wi
 
 ## Data Set
 
+The data set can be found in this link:
+
+<https://raw.githubusercontent.com/JauntyJJS/jaunty-blogdown/main/content/blog/2024-02-15-Tackling-Formatted-Cell-Data/sample_excel.xlsx>
+
 Here is a peak view of the excel file with some problematic columns.
 
 ![](images/peak_view.png){fig-alt="A peak view of the data set used."}

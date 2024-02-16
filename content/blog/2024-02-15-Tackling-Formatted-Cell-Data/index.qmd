@@ -295,7 +295,7 @@ At this point of time, many of my colleagues actually gave up using R in their d
 There are limited resources to deal with formatted cells in Excel.
 -  https://nacnudus.github.io/spreadsheet-munging-strategies/tidy-formatted-cells.html 
 
-I will provide try to provide some ways to deal with these formatted columns mainly using `collateral`, `pointblank`, `tidyxl`.
+I will provide try to provide some ways to deal with these formatted columns mainly using [`collateral`](https://collateral.jamesgoldie.dev/), [`pointblank`](https://rstudio.github.io/pointblank/index.html), [`tidyxl`](https://nacnudus.github.io/tidyxl/index.html).
 
 
 ## Read Data Attempt 3
@@ -357,7 +357,9 @@ convert_dmy_text_to_date <- function(input) {
 
 ```
 
-However, creating function can lead to unexpected warnings and errors. To view these issues, I use some functions from the `collateral` R package.
+However, creating function can lead to unexpected warnings and errors. To view these issues, I use some functions from the [`collateral`](https://collateral.jamesgoldie.dev/) R package. [collateral::map_peacefully](https://collateral.jamesgoldie.dev/reference/collateral_mappers) is able to capture various warnings and errors if any and summarised them as a tibble. [collateral::has_warnings](https://collateral.jamesgoldie.dev/reference/has) and [collateral::has_errors](https://collateral.jamesgoldie.dev/reference/has) returns a logical vector indicating which row has a warning.
+
+To get the output is a little tricky, I actually have to the developer of [`collateral`](https://collateral.jamesgoldie.dev/) for help in this by opening [a GitHub issue](https://github.com/jimjam-slam/collateral/issues/20). For my case, the [`purrr::map_vec`](https://purrr.tidyverse.org/reference/map.html) works for me.
 
 ```{r}
 #| label: clean date
@@ -380,8 +382,7 @@ fixed_date <- sample_excel_attempt_3 |>
 
 ```
 
-
-I then use the function from the `pointblank` package to detect if there are any issues.
+I then use the function [`pointblank::test_col_vals_in_set`](https://rstudio.github.io/pointblank/reference/col_vals_in_set.html) from the [`pointblank`](https://rstudio.github.io/pointblank/index.html) package to detect if there are any issues by setting `no_issue` to be either `TRUE` or `FALSE`. 
 
 ```{r}
 #| label: date issue check
@@ -467,7 +468,7 @@ fixed_date <- sample_excel_attempt_3 |>
 
 ## Fix weight 
 
-We use `tidyxl` functions to read the excel file in cells.
+We use [`tidyxl`](https://nacnudus.github.io/tidyxl/) function [`tidyxl::xlsx_cells`](https://nacnudus.github.io/tidyxl/reference/xlsx_cells.html) to read the excel cell content (data values and some meta data of the cell).
 
 ```{r}
 #| label: read cells
@@ -498,7 +499,7 @@ cells |>
 
 ```
 
-We use `tidyxl` functions to read the excel file in formats.
+We use [`tidyxl`](https://nacnudus.github.io/tidyxl/) function [`tidyxl::xlsx_formats`](https://nacnudus.github.io/tidyxl/reference/xlsx_formats.html) to read the excel file in formats.
 
 ```{r}
 #| label: read format
@@ -512,7 +513,11 @@ formats <- tidyxl::xlsx_formats(
 
 ```
 
-We identify the `local format id` accordingly.
+Using green as the running example, first in excel, extract the hex code say #00B050 for green. Next, use https://www.schemecolor.com/?getcolor={hex code} (<https://www.schemecolor.com/sample?getcolor=00B050> in our running example) to find out what the Hex8 code is for green.   
+
+![](images/green_hex_code.png){fig-alt="Figure showing how to get the Hex code."}
+
+As such, we can identify the `local format id` accordingly with the black and green Hex8 code, #FF000000 and #FF00B050 respectively.
 
 ```{r}
 #| label: local format id 
@@ -665,7 +670,7 @@ The warnings inform the user that it sees "54", "33", "35" and "53" in cells D3,
 
 It may be safer to check if the column truly contain only positive integers even though they are in text, rather than relying on the long warning messages.
 
-We continue with `sample_excel_attempt_3` which reads the `text_integer_issue` column as text instead. We use some functions from the `pointblank` package to ensure that the text are positive integers.
+We continue with `sample_excel_attempt_3` which reads the `text_integer_issue` column as text instead. We use some functions from the [`pointblank`](https://rstudio.github.io/pointblank/index.html) package like [`pointblank::col_vals_regex`](https://rstudio.github.io/pointblank/reference/col_vals_regex.html) and [`pointblank::col_vals_gt`](https://rstudio.github.io/pointblank/reference/col_vals_gt.html) to ensure that the text are positive integers.
 
 ```{r}
 #| label: integer check
@@ -702,7 +707,7 @@ When we tried to read the excel data earlier (sample_excel_attempt_2) using `col
 
 The warnings inform the user that it sees "0.96", "0.02", "0.23" in cells E4, E5 and E6 respectively as "text" and it is forced to be converted to numeric.
 
-Similarly, we can use `pointblank` to ensure that the text are positive numbers. Do note that when numeric are read as text in this dataset. It can be of the form 
+Similarly, we can use the same functions [`pointblank::col_vals_regex`](https://rstudio.github.io/pointblank/reference/col_vals_regex.html) and [`pointblank::col_vals_gt`](https://rstudio.github.io/pointblank/reference/col_vals_gt.html) to ensure that the text are positive numbers. Do note that when numeric are read as text in this dataset. It can be of the form 
 
 -  "0.140"
 -  "7.07E-2"
@@ -733,7 +738,7 @@ numeric_check <- sample_excel_attempt_3 |>
 
 ## Check integers in numeric
 
-It may be necessary to check if a column only has integers. However, when using the function `readxl::read_excel` with `col_types` set to "numeric". There is no way to check if the column truly contain integers, even when no warning is displayed. We also cannot use `pointblank::col_vals_regex` because the column is not in text.
+It may be necessary to check if a column only has integers. However, when using the function `readxl::read_excel` with `col_types` set to "numeric". There is no way to check if the column truly contain integers, even when no warning is displayed. We also cannot use [`pointblank::col_vals_regex`](https://rstudio.github.io/pointblank/reference/col_vals_regex.html) because the column is not in text.
 
 We create some functions to check if a numeric vector only has integers. The `is_integer_vector` returns FALSE when at least one of its element is not an integer.
 
@@ -781,7 +786,7 @@ is_integer_vector <- function(input_vector,
 
 ```
 
-We use `pointblank::col_vals_expr` to do a validation using the `is_integer_vector` function. 
+We use [`pointblank::col_vals_expr`](https://rstudio.github.io/pointblank/reference/col_vals_expr.html) to do a validation using our custom made `is_integer_vector` function. 
 
 Here is a case when it fails.
 
@@ -820,7 +825,7 @@ integer_check_from_numeric <- sample_excel_attempt_3 |>
 
 ## Check values in set
 
-For the column `one_or_zero_issue`, we use the function `pointblank::col_vals_in_set` to check if the column contains 0, 1 or NA.
+For the column `one_or_zero_issue`, we use the function [`pointblank::col_vals_in_set`](https://rstudio.github.io/pointblank/reference/col_vals_in_set.html) to check if the column contains 0, 1 or NA.
 
 ```{r}
 #| label: one or zero check

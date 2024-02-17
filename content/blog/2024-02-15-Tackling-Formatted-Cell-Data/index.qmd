@@ -44,7 +44,11 @@ The column `date_issue` has two number format. One in General and the other in D
 
 The column `colour_weight` has two colour format. The one in black is weight in pounds and the one in green is weight in kilogram.
 
+![](images/colour_weights.png){fig-alt="Picture showing 92 in green for 92kg and 165 in black for 165 pounds."}
+
 The columns `text_integer_issue` and `text_numeric_issue` are numeric columns but some cells were formatted as text. These cells are indicated by the green triangle.
+
+![](images/green_triangles.png){fig-alt="Picture showing the green triangles for cells formatted as text."}
 
 The column `numeric_integer_issue` is an integer column.
 
@@ -362,7 +366,7 @@ However, creating function can lead to unexpected warnings and errors. To view t
 To get the output is a little tricky, I actually have to the developer of [collateral](https://collateral.jamesgoldie.dev/) for help in this by opening [a GitHub issue](https://github.com/jimjam-slam/collateral/issues/20). For my case, the [purrr::map_vec](https://purrr.tidyverse.org/reference/map.html) works for me.
 
 ```{r}
-#| label: clean date
+#| label: fixed date before
 
 fixed_date <- sample_excel_attempt_3 |>
   dplyr::select(c("id","date_issue")) |> 
@@ -379,6 +383,20 @@ fixed_date <- sample_excel_attempt_3 |>
     error_check = collateral::has_errors(.data[["converted_date_log"]]),
 
   )
+
+```
+
+```{r}
+#| label: fixed date before html
+#| code-fold: true
+
+fixed_date |>
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    paginationType = "jump",
+  )
+
 
 ```
 
@@ -466,6 +484,20 @@ fixed_date <- sample_excel_attempt_3 |>
 
 ```
 
+```{r}
+#| label: fixed date html
+#| code-fold: true
+
+fixed_date |>
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    paginationType = "jump",
+  )
+
+
+```
+
 ## Fix weight 
 
 We use [tidyxl](https://nacnudus.github.io/tidyxl/) function [tidyxl::xlsx_cells](https://nacnudus.github.io/tidyxl/reference/xlsx_cells.html) to read the excel cell content (data values and some meta data of the cell).
@@ -513,11 +545,25 @@ formats <- tidyxl::xlsx_formats(
 
 ```
 
-Using green as the running example, first in excel, extract the hex code say #00B050 for green. Next, use https://www.schemecolor.com/?getcolor={hex code} (<https://www.schemecolor.com/sample?getcolor=00B050> in our running example) to find out what the Hex8 code is for green.   
+Using green as the running example, first in excel, click on a cell with green font. Next, click on the drop down button beside the font colour button.
+
+![](images/font_dropdown.png){fig-alt="Figure showing where the drop down button beside the font colour button is."}
+
+This will give the following output. Next click on More Colors...
+
+![](images/more_colours.png){fig-alt="Figure showing where the More Colors... button is."}
+
+Go to the Custom tab and extract the hex code saying #00B050 for green. 
 
 ![](images/green_hex_code.png){fig-alt="Figure showing how to get the Hex code."}
 
-As such, we can identify the `local format id` accordingly with the black and green Hex8 code, #FF000000 and #FF00B050 respectively.
+Next, use https://www.schemecolor.com/?getcolor={hex code} (<https://www.schemecolor.com/sample?getcolor=00B050> in our running example) to find out what the Hex8 code is for the green font.
+
+![](images/green_hex8_code.png){fig-alt="Figure showing how to get the Hex8 code from www.schemecolor.com."}
+
+We can do a similar step to obtain the Hex8 code for the black font.
+
+As such, we can identify the `local format id` accordingly with the black and green Hex8 code as #FF000000 and #FF00B050 respectively.
 
 ```{r}
 #| label: local format id 
@@ -653,6 +699,20 @@ fixed_weight <- id_cells |>
     remove = TRUE,
     na.rm = TRUE) |> 
   dplyr::select(c("id", "weight_fixed_kg"))
+
+```
+
+```{r}
+#| label: fixed weight before html
+#| code-fold: true
+
+fixed_weight |>
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    paginationType = "jump",
+  )
+
 
 ```
 

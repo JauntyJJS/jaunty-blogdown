@@ -297,7 +297,8 @@ From our previous failed attempt, it is also hard to convince ourselves and othe
 At this point of time, many of my colleagues actually gave up using R in their data analysis workflow because it is not working for them. For me, manually formatting these excel sheets does not work for me, especially when the data set is large.
 
 There are limited resources to deal with formatted cells in Excel.
--  https://nacnudus.github.io/spreadsheet-munging-strategies/tidy-formatted-cells.html 
+-  https://nacnudus.github.io/spreadsheet-munging-strategies/tidy-formatted-cells.html
+-  [unheadr::annotate_mf](https://unheadr.liomys.mx/reference/annotate_mf.html) and [unheadr::annotate_mf_all](https://unheadr.liomys.mx/reference/annotate_mf_all.html) function from R package [unheadr](https://unheadr.liomys.mx/index.html).
 
 I will provide try to provide some ways to deal with these formatted columns mainly using [collateral](https://collateral.jamesgoldie.dev/), [pointblank](https://rstudio.github.io/pointblank/index.html), [tidyxl](https://nacnudus.github.io/tidyxl/index.html).
 
@@ -324,7 +325,6 @@ sample_excel_attempt_3 <- readxl::read_excel(
     columns = "id",
   )
   
-
 ```
 
 ```{r}

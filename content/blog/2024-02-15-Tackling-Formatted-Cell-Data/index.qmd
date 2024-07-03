@@ -82,6 +82,7 @@ library("tibble")
 
 library("pointblank")
 library("reactable")
+library("unheadr")
 
 ```
 
@@ -498,7 +499,7 @@ fixed_date |>
 
 ```
 
-## Fix weight 
+## Fix weight (Method 1)
 
 We use [tidyxl](https://nacnudus.github.io/tidyxl/) function [tidyxl::xlsx_cells](https://nacnudus.github.io/tidyxl/reference/xlsx_cells.html) to read the excel cell content (data values and some meta data of the cell).
 
@@ -711,6 +712,63 @@ fixed_weight |>
     filterable = TRUE,
     defaultPageSize = 5,
     paginationType = "jump",
+  )
+
+
+```
+
+## Fix weight (Method 2)
+
+An alternative method is to use [unheadr::annotate_mf_all](https://unheadr.liomys.mx/reference/annotate_mf_all.html) from the [unheadr](https://unheadr.liomys.mx/) package. However the last column `one_or_zero_issue` must be removed. 
+
+![](images/remove_last.png){fig-alt="Figure showing the contents in sample_excel.xlsx with the last column crossed out, indicating it needs to be removed."}
+
+If not, the following error will be displayed
+
+```{r}
+#| label: unheadr fail
+#| echo: true
+#| eval: true
+#| error: true
+
+sample_excel_attempt_4 <- unheadr::annotate_mf_all(
+  xlfilepath = here::here("content",
+                          "blog", 
+                          "2024-02-15-Tackling-Formatted-Cell-Data", 
+                          "sample_excel.xlsx")
+)
+
+```
+
+Here is the file with the last column removed:
+
+<https://raw.githubusercontent.com/JauntyJJS/jaunty-blogdown/main/content/blog/2024-02-15-Tackling-Formatted-Cell-Data/sample_excel_remove_last.xlsx>
+
+and the output of reading this file with [unheadr::annotate_mf_all](https://unheadr.liomys.mx/reference/annotate_mf_all.html).
+
+```{r}
+#| label: unheadr success
+#| echo: true
+#| eval: true
+
+sample_excel_attempt_4 <- unheadr::annotate_mf_all(
+  xlfilepath = here::here("content",
+                          "blog", 
+                          "2024-02-15-Tackling-Formatted-Cell-Data", 
+                          "sample_excel_remove_last.xlsx")
+)
+
+```
+
+```{r}
+#| label: unheadr success print
+#| code-fold: true
+
+sample_excel_attempt_4 |>
+  reactable::reactable(
+    filterable = TRUE,
+    defaultPageSize = 5,
+    paginationType = "jump"
   )
 
 

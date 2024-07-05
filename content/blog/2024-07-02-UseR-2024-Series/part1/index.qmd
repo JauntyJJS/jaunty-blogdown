@@ -1,0 +1,246 @@
+---
+title: "Learning Journey and Reflections on useR! 2024 Conference Part 1"
+subtitle: ""
+excerpt: "This narrative is a write up on my learning journey in the [useR! 2024 Conference](https://events.linuxfoundation.org/user/) virtual session."
+format: hugo-md
+date: 2024-07-02
+author: "Jeremy Selva"
+draft: true
+images:
+series:
+  - useR! 2024
+tags:
+  - useR! 2024
+categories:
+  - useR! 2024
+layout: single-sidebar
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(fig.align = "center")
+
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i> Copy Code",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i> Copied!",
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
+
+## Introduction
+
+The [useR! 2024 Conference](https://events.linuxfoundation.org/user/) has returned after two years since its last launch in 2022. This year's programme consist of a virtual session on 2nd July 2024 followed by an in-person session from 8th to 11th July 2024. 
+
+Here is a small write up of the talks presented during the virtual session on 2nd July 2024.
+
+### Streamlining Cohort Analysis with [cohortBuilder](https://r-world-devs.github.io/cohortBuilder/) and [shinyCohortBuilder](https://r-world-devs.github.io/shinyCohortBuilder/)
+
+Cohort analysis comes with many challenges such as the need to work with various data sources like (data.frames and SQL DB) and the need to be robust against complex workflow and requirements that needs multi-stage filtering. This makes it hard to keep on its progress and report the current status or results.
+
+Adam Forys & Krystian Igras presented the R package [`cohortBuilder`](https://r-world-devs.github.io/cohortBuilder/) that is created to ensure the process of reading and filtering cohort data from multiple data sources can be done easily with a few lines of code (instead of using many different R packages like [`dplyr`](https://dplyr.tidyverse.org/), [`dtplyr`](https://dtplyr.tidyverse.org/), [`data.table`](https://rdatatable.gitlab.io/data.table/) to handle data from multiple sources). To ensure that the application is more accessible for people with limited coding experience, the R package [`shinyCohortBuilder`](https://r-world-devs.github.io/shinyCohortBuilder/) is created as a user-friendly Shiny application tool for people to perform cohort analysis using [`cohortBuilder`](https://r-world-devs.github.io/cohortBuilder/) in a point and click fashion. Plots and reproducible code can be exported from the Shiny application tool to update on the cohort's current status and results. 
+
+
+### R-Ladies Paris 
+
+The [R-Ladies](https://rladies.org/) organisation is well-known for supporting and empowering minority genders to be able to showcase their R programming expertise and to take on more leadership roles in the R ecosystem, building a more diversified R community in the long term.
+
+Chaima Boughanmi from the [R-Ladies Paris](https://www.meetup.com/rladies-paris/) community presented the progress and achievements that [R-Ladies Paris](https://www.meetup.com/rladies-paris/) have made since its founding in 2016. She then shared some helpful guides in maintaining an R-Ladies Chapter. Below is a small summary
+
+- Use survey to identify topics that are relevant for your community and to find potential speakers.
+- Use the [R-Ladies Directory](https://rladies.org/directory/) or [R-Ladies Slack](https://guide.rladies.org/comm/slack/) to look for speakers that support the cause of [R-Ladies](https://rladies.org/)
+- Make meetups accessible to attract new members
+- Collect testimonies from speakers to receive authentic feedback about your community
+- Meetup with mentors or people with more experience to gain valuable support and advice on how to run an organisation.
+- Ask for a grant for [R Consortium](https://www.r-consortium.org/) if you need financial support.
+- Share your chapter activites in the [R-Ladies Blogs](https://rladies.org/activities/rladies-blogs/)
+
+Motivated individuals who are interested in starting a new R-Ladies chapter can contact via this email address <chapters@rladies.org>.
+
+* 📹[Video](https://www.youtube.com/watch?v=KqokszC42Uc)
+* 📝[Slides](https://rladiesparis.github.io/rladies_paris_talk_useR2024/rladies_paris_talk_useR2024.html)
+
+### Tips for Writing Better R Code
+
+Writing code that is human readable and understandable allows code to be shared easily with others, preventing duplicate work and make work easier to replicate important results. It is also a requirement for some journals for codes to be shared. However, it is always hard for PhD students or someone with a limited programming background to apply good software development practices and avoid writing [spaghetti code](https://en.wikipedia.org/wiki/Spaghetti_code). These individuals usually do not have mentors or supervisors that are able to help them as well and are force to learn things on the job. 
+
+Nicola Rennie shared that as learning to write decent R code can be daunting, it is best to do this one step at a time rather than to do everything at once. 
+
+Here are the tips to ensure individual scripts are styled and structured well
+
+- Write comments to explain not what your code does but to explain why the code is implemented or written in a specific way.
+- Use comments to add [section and subsections](https://docs.posit.co/ide/user/ide/guide/code/code-sections.html) to the R scripts, just like writing a paper.
+- Avoid writing codes that are too wide that it requires left and right scrolling.
+- Use a [linting](https://www.perforce.com/blog/qac/what-is-linting) tools like [`lintr`](https://lintr.r-lib.org/) and [`styler`](https://styler.r-lib.org/) to standardise coding style across projects.
+
+Here are the tips to ensure individual projects are styled and structured well
+
+- Break up a single R script with thousands of lines of code into many files with shorter R scripts instead.
+- Name the R script files based on what the R script is doing (usually one file name is given for one specific data workflow task)
+- Add number as prefix to your file name to tell others the order of the files the R scripts need to run.
+- Remember to also organise the other files as well (data, results and plots) by creating different folders with sensible names.
+- Try out the R package [`targets`](https://books.ropensci.org/targets/) to manage your data workflow.
+- Use code version control tools like [Git](https://git-scm.com/) to keep track of different versions of R scripts
+- Use code repositories like [GitHub](https://github.com/)/[GitLab](https://about.gitlab.com/)/[BitBucket](https://bitbucket.org/product/) to allow people in different locations to work together on the code.
+
+* 📹[Video](https://www.youtube.com/watch?v=wbhWl5-xR10)
+* 📝[Slides](https://nrennie.rbind.io/talks/user-spaghetti-code/)
+
+### Data Pipeline to Analyse FODESAF's Cash Flow
+
+[FODESAF](https://fodesaf.go.cr/) is a public financial institution that conduct social programs to address the housing, education, health and social protection needs of Costa Ricans and foreign legal residents of the country, especially minors who are in a situation of poverty or extreme poverty.
+
+Roberto Castro highlighted that FODESAF is in need of a way to
+-  visualise and follow up a US$13,000 million cash flow from 2005 to 2022
+-  consolidate financial, budgetary and social programmatic data in one single ecosystem
+-  build an online Data Informative Center for public-open consultation
+
+To achieve these tasks, a data pipeline is created with three major parts: Inputs, Processing and Outputs.
+
+For the input, there were three main databases. One to handle financial and budgetary data, one to handle data from social programs and one to handle data from social security institutions. For the Processing stage, R was used to tidy, clean and unify the raw data and then classify the raw data correctly based on the provided requirements. For the Outputs, [Power BI](https://www.microsoft.com/en-us/power-platform/products/power-bi) to then used to output visualisations and relevant processed dataframes for users while [Quarto](https://quarto.org/) is used to create HTML reports. In addition, four data warehouses are created to store different types of outputs. One for Budget (FODESAF's cash flow), Evaluation, Collections (debts from past-due employers) and Trusts.
+
+An example of such a report can be found in this [Quarto Pub link](https://robertodelgadocastro.quarto.pub/cash_flow_fodesaf-2005-2021/)
+
+* 📹[Video](https://www.youtube.com/watch?v=jPgOL6Bu1y8)
+
+### Learning Together at the Data Science Learning Community (DSLC)
+
+Jon Harmon provides an introduction of the [Data Science Learning Community (DSLC)](https://dslc.io/). DSLC is a community that aims to provide tools and resources to create a diverse, friendly and inclusive environment for new data science learners and experts alike. It has conducted many activities such as book clubs, a safe and nurturing platform for asking data science related questions and [`TidyTuesday`](https://github.com/rfordatascience/tidytuesday) to give participants a chance to work on real-world datasets. Currently, they are conducting a [survey](DSLC.io/ttsurvey23) to gather feedback from people who have used [`TidyTuesday`](https://github.com/rfordatascience/tidytuesday) as a teacher or a student to find out ways to increase the usage of #TidyTuesday in Education.
+
+The speaker then encourages others to step up and contribute to DSLC by
+- Facilitating book club cohorts
+- Answering questions on Slack: dslc.io/mentordash
+- Helping out with DSLC-related Shiny apps (contact the speaker <https://fosstodon.org/@jonthegeek> for more information on this)
+
+DSLC is also seeking a new fiscal host so that the organisation can legally accept monetary assistance from donations, grants and sponsorships.
+
+* 📹[Video](https://www.youtube.com/watch?v=8jH5wfuDx-g)
+* 📝[Slides](https://dslc-io.github.io/useR2024)
+
+### Detection Abnormal Fish Behaviours With Isolation Forest.
+
+Abnormal fish behaviours is critical for marine biologist as it is an indicator used to detect environmental changes caused by pollution or climate change. Fish behaviours are measured by the path they use and time they take to travel from one place to another. This path is called a trajectory consisting of two components: coordinates and time steps. The [Fish4Knowledge](https://github.com/Callmewuxin/fish4konwledge) project ensures that fish trajectories data are measured correctly.
+
+Enrique Ceja introduced how trajectories data are processed using the R package [`trajr`](https://github.com/JimMcL/trajr) and then fitted into an [isolation forest model](https://dl.acm.org/doi/10.1145/2133360.2133363) using [`solitude`](https://talegari.github.io/solitude/index.html) to identify abnormal fish behaviours.
+
+Enrique Ceja is also the author of the book [Behavior Analysis with Machine Learning Using R](https://enriquegit.github.io/behavior-free/). 
+
+* 📹[Video](https://www.youtube.com/watch?v=P6f29SskS1g)
+* 📝[Slides](https://github.com/enriquegit/fish-behaviors)
+
+### Overcoming Challenges in Primary School Educational Data Analysis
+
+Learning Management Systems (LMS) can generate a lot of raw data in relation to education. However, extracting and converting such raw data into useful information for decision-making is challenging because of the large volume and complex data structure in the LMS and it is in general, difficult to summarize the learning process based on this dataset, especially in a primary school setting which is uncommon.
+
+Despite the challenging task ahead, Natalia da Silva and her team was determined to find ways to
+
+- monitor/evaluate the use of the LMS in primary school from Uruguay
+- identify key drivers that promote students' engagement with the LMS 
+- predict students' performance in English tests based on their engagement with the LMS.
+
+The presentation mainly focus on the techniques to achieve the first and last task.
+
+For the first task, R [Shiny](https://shiny.posit.co/) application is used to create the monitoring system (called LMS Monitor) that is scalable, modular, flexible to changes, produce reproducible results, and can be used my many people at the same time. This is achieved using a [`rhino`](https://appsilon.github.io/rhino/) framework connected to a [PostgreSQL](https://www.postgresql.org/) database.
+
+For the last task, [`tidymodels`](https://www.tidymodels.org/) and [`dbarts`])(https://github.com/vdorie/dbarts) are heavily used to generate Bayesian Additive Regression Tree (BART) models to predict numerous outcomes like a student's final test results, average points at class level, if a primary student is able to graduate from school. 
+
+* 📹[Video](https://www.youtube.com/watch?v=nm5M4dF9aLs)
+
+### ExoLabel: Community Detection for Big Biological Networks
+
+One aspect that people are interested in large networks analysis is to identify different communities (highly dense nodes) in a given network. From the perspective of geneticists, they are curious to identify a common group of genes that are the same across different organisms or families. 
+
+To do this, geneticists calculate how similar each gene sequence are to another and a build a large sequence similarity network (gene as nodes and similarity as edges) out of it. Genes that are highly similar will share a large edge between them. Genes that are highly similar to each other will be clustered/grouped together as a community. A community detection algorithm is then use to isolate one gene community from another. The problem is that there are many community detection algorithm used for different applications and use-cases. This can cause the same dataset to give highly varied results. 
+
+Aidan Lakshman from the [Wright Laboratory](https://wrightlabscience.com/) presented how the lab compare popular community detection algorithms in R to measure their accuracy, runtime and memory usage on synthetic and real datasets. The lab discovered that most community detection algorithms for gene analysis used a lot of computational memory and could only be used by analyst who have access to a high performance computer. Hence, they create a community detection algorithm `ExoLabel` that has a decent runtime, works well as other popular community detection algorithms and most importantly, consume a constant amount of memory. `ExoLabel` is available in the Bioconductor package [`SynExtend`](https://github.com/npcooley/SynExtend/).
+
+* 📹[Video](https://www.youtube.com/watch?v=9eRAv-ouJmk)
+
+### Benchmarking Performance For The [`data.table`](https://rdatatable.gitlab.io/data.table/) Package
+
+[`data.table`](https://rdatatable.gitlab.io/data.table/) is a highly popular because it is one of the first few R packages that have the capabilities to read and wrangle large datasets quickly without compromising memory space. 
+
+Doris Amoakohene is curious to see how well [`data.table`](https://rdatatable.gitlab.io/data.table/) does when compared to other R packages and Python libraries in performing various data analysis related task. To perform the benchmarking task, she uses the R package [`atime`](https://github.com/tdhock/atime) because the package is able to calculate the runtime and memory usage for a sequence of dataset of increasing size automatically and even plot the results. Here are some results:
+
+-  When writing real numbers to a csv file, [`data.table::fwrite`](https://rdatatable.gitlab.io/data.table/reference/fwrite.html) perform better than [`pandas::to_csv`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html).It also performed better when compared to other R packages like [`readr::write_csv`](https://readr.tidyverse.org/reference/write_delim.html) or [`arrow::write_csv_arrow`](https://arrow.apache.org/docs/r/reference/write_csv_arrow.html)
+
+-  When converting data from wide to long format, [`data.table::melt`](https://rdatatable.gitlab.io/data.table/reference/melt.data.table.html) did not perform as well as [`tidyr::pivot_longer`](https://tidyr.tidyverse.org/reference/pivot_longer.html)
+
+An interesting observation made is that the function [`data.table::setDT`](https://rdatatable.gitlab.io/data.table/reference/setDT.html) does not work well on wide dataset. This issue was then reported in [data.table GitHub page](https://github.com/Rdatatable/data.table/pull/5427) and was fixed when a new version is released.
+
+In addition, Doris wanted to evaluate the performance of [`data.table`](https://rdatatable.gitlab.io/data.table/) across different versions to better understand the progress made in this highly used R package.
+
+To do this efficiently, a [GitHub action for continuous performance testing](https://github.com/tdhock/atime?tab=readme-ov-file#github-action-for-continuous-performance-testing) using [`atime`](https://github.com/tdhock/atime) was implemented to ensure [`data.table`](https://rdatatable.gitlab.io/data.table/) is properly evaluated for every pull request and the visual results are displayed as a pull request comment.
+
+* 📹[Video](https://www.youtube.com/watch?v=AuuGzUSSjpI)
+
+### WHO's Health Economic Assessment Tool (HEAT)
+
+The WHO's [Health Economic Assessment Tool](https://www.heatwalkingcycling.org/) or HEAT for short is an online calculator to easily quantify, report and conduct economic assessments (like benefit-cost ratio) of the health impacts of walking or cycling for policy makers to make better decisions in urban/transportation planning and healthcare.
+
+The speaker explains that the HEAT ecosystem is mainly made of a data cleaning process, the model and codes to create a user interface (UI).
+
+For the data cleaning process, they use 
+- [`qs`](https://cran.r-project.org/web/packages/qs/index.html) to read the large data
+- [`data.table`](https://rdatatable.gitlab.io/data.table/) to match/standardise countries names
+- [`tidyverse`](https://www.tidyverse.org/) to conduct [ETL](https://en.wikipedia.org/wiki/Extract,_transform,_load)
+- [`targets`](https://books.ropensci.org/targets/) to create a standardise and reproducible workflow
+- [`assertr`](https://docs.ropensci.org/assertr/) to do data validation on processed data
+
+For the UI process, they use the R [Shiny](https://shiny.posit.co/) framework to build the web application. The inheritance feature from the [`R6`](https://r6.r-lib.org/index.html) package was used to simplify the modification process of generic [Shiny](https://shiny.posit.co/) inputs.
+
+During the process of making the web application, they also developed two new R packages called `translator` and `templater`. `translator` is built to resolve common translation problems such as different line-endings from different operating systems. `templater` is meant to create conditioned templates for R, similar to [`Nunjucks`](https://mozilla.github.io/nunjucks/) for JavaScript and [`Jinja`](https://palletsprojects.com/p/jinja/) for Python, to reduce errors as a result of copy and paste of very similar for HTML and PDF export templates. Both packages will be open-sourced in the future.
+
+* 📹[Video](https://www.youtube.com/watch?v=hf92pZ98dlo)
+
+
+### Submission of Analysis using R to health authority reviewers
+
+In order to gain market support for a novel medical treatment, companies, hospitals and/or sponsors need to submit analysis reports, datasets, software codes and programs to the relevant health authorities for evaluation of the treatment's efficacy and safety. The reviewers usually not only review the reports but also rerun the software on the provided dataset to check that the results generated are reproducible. Recently, there has been a large interest on using codes from open source software like [R](https://www.r-project.org/) as part of the submission. 
+
+Joel Laxamana from [Genentech](https://www.gene.com/) gave a brief introduction to the [R Consortium R Submission Work Group](https://rconsortium.github.io/submissions-wg/), which was created to promote the use of R in regulatory processes. One of the challenges faced was to provide the reviewers the correct R package versions as they do not have access to [container technologies](https://www.solarwinds.com/resources/it-glossary/container) like [Docker](https://www.docker.com/). Things get harder when the analysis uses an R package that is not publicly available as some submission gateways reserved compressed files to only large datasets. Submission of computer files also needs to follow a strict file structure to ensure relevant documents are accessible to the reviewers.
+
+To date, the [R Consortium R Submission Work Group](https://rconsortium.github.io/submissions-wg/) has completed three pilot submissions and is currently working on a 4th pilot submission. The speaker then proceed to elaborate more on the [Pilot 3](https://github.com/RConsortium/submissions-pilot3-adam) submission. In short, [Pilot 3](https://github.com/RConsortium/submissions-pilot3-adam) is an extension of [Pilot 1](https://rconsortium.github.io/submissions-pilot1/) which uses [R](https://www.r-project.org/) to generate the [ADaM](https://www.cdisc.org/standards/foundational/adam) datasets and then uses the same R codes from [Pilot 1](https://rconsortium.github.io/submissions-pilot1/) to regenerate the tables, listings, and figures (TLFs). The talk then proceeds with a demonstration on how to reproduce the results using the [Analysis Data Reviewer’s Guide](https://raw.githubusercontent.com/JauntyJJS/jaunty-blogdown/main/content/blog/2024-07-02-UseR-2024-Series/part1/adrg.pdf).
+
+Taking a look at the [Analysis Data Reviewer’s Guide](https://raw.githubusercontent.com/JauntyJJS/jaunty-blogdown/main/content/blog/2024-07-02-UseR-2024-Series/part1/adrg.pdf), there are a lot of things that we can learn in creating a decent user friendly guide for people who are unfamiliar to [R](https://www.r-project.org/).
+
+* 📹[Video](https://www.youtube.com/watch?v=vPmNdHTVYm8)
+
+### Democratizing Access to Water Treatment Models with `tidywater`
+
+Sierra Johnson from [Brown and Caldwell](https://brownandcaldwell.com/) introduced how water treatment models are useful in helping engineers optimise clean water treatment protocols that are affordable, sustainable and efficient in the long run.
+
+However, doing this was a challenge because 
+-  the data collected were mainly used in one-off studies and lack standardisation and harmonisation.
+-  current water treatment modelling tools are dispersed (found in different academic papers/websites/software), -  current water treatment modelling tools can only run very specific water treatment processes and scenarios
+-  current water treatment models lacks transparency as most are black box models.
+-  analysis on model outputs are done manually.
+
+Sierra's goal in creating the R package `tidywater` is to ensure 
+
+- Water treatment models are centralised in one tool.
+- Water treatment models can be applied to different water treatment processes in different scenarios.
+- Model outputs analysis can be done automatically.
+
+Despite her success in convincing her managers and other colleagues that investing in R was the right way forward, Sierra shared that the process needed to reach to this stage was not easy.
+
+She highlighted that because she and most of her team members do not have experience in making software, several time costly mistakes were made. A lot of time was needed to 
+
+-  document complicated models in a user friendly way.
+-  simplify complex functions that other developers can understand.
+-  fix failed test involving complex functions because the team only started to writing codes to test the model only when the package is "more or less complete".
+-  rewrite R scripts in different project because they did not tag/record different version of the package used during analysis.
+
+The last part of the talk consist of a small roadmap on how she managed to convince her stakeholders and managers that it is better in the long term to make the R package `tidywater` open source and to get the relevant approvals to make it happen in a risk adverse company. 
+
+One nice tip shared is to use clear and exciting terms like "Thought Leadership", "Industry Collaboration", "Access to new research" that help people understand the many opportunities and potential an open source product can bring. Another tip is to be try to more communicative and confidence about the sharing the tool towards people who are less technical or software-savvy than you. This is because they are the ones who usually knows the relevant people in authority that could give you useful advice or the final approval needed to keep the project going.
+
+* 📹[Video](https://www.youtube.com/watch?v=ZF5V4PbvfXQ)
+
+
+
+
+-   📝[Slides](https://tengku-hanis.github.io/bibliometrics_Nov2022/#1)
+-   👨‍💻 [Codes](https://github.com/tengku-hanis/bibliometrics_Nov2022)

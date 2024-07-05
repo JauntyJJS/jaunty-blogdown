@@ -35,6 +35,100 @@ The [useR! 2024 Conference](https://events.linuxfoundation.org/user/) has return
 
 Here is a small write up of the talks presented during the virtual session on 2nd July 2024.
 
+### One Container to Rule Them All
+
+Magnus Mengelbier gave a brief introduction about containers defined as a cheap and easily accessible virtual machine. The general workflow is that a script file (for example a Docker script) is used to create a container image. A container image is like a big zip file that contains all the operating systems files, files needed to run R and files needed for your R packages. Putting the container image into a host and running it will give a container instance that users can interact with. In a Docker file example, it usually starts with a command to build s base image like Ubuntu. The next set of commands is used to build the container image. The last set of commands will only run once the container image is built and launched as container instance in the host.
+
+In most cases, container images are built one for an interactive development environment (IDE) like Posit workbench and another for web application. If there is a need to validate an R package for both containers, the validation needs to be done individually for each container. The problem comes when certain workflow or applications requires validation of an R package in multiple containers. Magnus showed that there is a more efficient way to this. The key is to make use a technique called container providence.
+
+The idea is to first build a container with contain the R software. Let's call it Container R. Next add the validated packages to a new container that is based on Container R. Let call it Container R Batch. When Container R Batch is verified, it can be use as a source to create new containers of whatever interface is needed like IDE or web applications. Container R Batch can be updated if the list of validated R packages needs to be changed. This approach ensures that the R packages are installed and validated once until a new R version is released.
+
+-   📹[Video](https://www.youtube.com/watch?v=48-cHmKzrhY)
+
+### Minimum Viable Good Practices for High Quality Statistical Software Packages
+
+This presentation is presented by Daniel Bové from [RCONIS](https://www.rconis.com/).
+
+While there are many courses, books and peer review programmes that can help one to create a decent R package, it can be a overwhelming task for many as most of us who started using R do not have software development experience. [openstatsguide](https://www.openstatsware.org/guide.html) aims to provide small, concise and minimal set of recommendations to encourage developers to make better R packages. These recommendations can be used on other functional data science languages like Python and Julia as well.
+
+The content of [openstatsguide](https://www.openstatsware.org/guide.html) revloves around these six principles.
+
+"Documentation, Vignettes, Tests, Functions, Style, Life cycle"
+
+These keywords can be easily remembered with the mnemonic bridge sentence:
+
+"Developers Value Tests For Software Longevity"
+
+The presentation that provides details of these six principles which can also be found in the [openstatsguide](https://www.openstatsware.org/guide.html) link
+
+-   📹[Video](https://www.youtube.com/watch?v=_BKCey-8008)
+-   📝[Slides](https://rconis.github.io/openstatsguide-user2024)
+
+### How to Quickly Mock-up and Test Your Application User Interface Designs in Web Application
+
+In this presentation, Barbara Mikulasova presented some great tip and advice for people who want to start implementing [Shiny](https://shiny.posit.co/) applications in their workflow but have little experience in full stack or web application development.
+
+The general advice is the need to present an initial design/prototype of the Shiny application to users. This is to receive users' feedback on the interactive experience and to have a better understanding of the users needs and what they like or dislike about the user interface (UI). This stage also ensures that the users have a clear idea of how the Shiny application looks like, suppose to work and most importantly, are satisfied with the implementation. After all, we do want to avoid developing features that users will not use in the long run and undo applications which takes a long time to implement and can potentially break the application when removed.
+
+Developing a prototype can be done in three main stages:
+- First stage is to work with the users to design the front-end or the user interface (UI) first. This process will help to gather users' feedback quickly on the UI layout, users' experience when they interact with the application. From there, it will be easier to identify essential and nice to have features, conceptualize the end-product and estimate the Shiny application complexity.
+- Second stage is to work on adding interactive input elements (like data input and filtering). This is also the stage to discuss the data workflow with the users as this will provide some ideas on which elements should be reactive or non-reactive and what business logic or application needs to be turned into modules.
+- Third stage is then to develop the back-end (or the rest) of prototype
+
+It is worth noting that the three main stages may not always be a linear process (Stage 2 can lead back to Stage 1) if not managed well. Thankfully, there exists R packages like [`fakir`](https://thinkr-open.github.io/fakir/) and [`shinipsum`](https://github.com/ThinkR-open/shinipsum) to speed up the Shiny prototyping process.
+
+[`shinipsum`](https://github.com/ThinkR-open/shinipsum) provides an easy way to create random shiny elements like data.frame, ggplot objects and dygraph objects on the front-end for users to view and give their feedback. On the other hand, [`fakir`](https://thinkr-open.github.io/fakir/) provides a quick way to create fake datasets that can be useful to test certain features like table design, filters and plots.
+
+The presentation then proceeds with a use-case example on how [`fakir`](https://thinkr-open.github.io/fakir/) and [`shinipsum`](https://github.com/ThinkR-open/shinipsum) are applied in creating the prototype design. Though the prototype may not look pretty at this point, it is more important at this stage to get the layout right. Once this is done, we can make the prototype look nice with some [CSS](https://unleash-shiny.rinterface.com/beautify-css) code or styling R packages like [`shinythemes`](https://github.com/rstudio/shinythemes) for Shiny.
+
+After finalising the prototype design, it is time to translate the prototype into an actionable minimum viable product (MVP). At this point, it is important to have a good understanding of the users' behaviour and expectations to anticipate potential pain points in the developmental stage. Barbara suggests that it is important to
+
+-   Choose a framework for building production-grade shiny applications (Should I go with [shiny module](https://mastering-shiny.org/scaling-modules.html), [`golem`](https://thinkr-open.github.io/golem/) or [`rhino`](https://appsilon.github.io/rhino/))
+
+-   Decide which feature to develop first and the order in which to develop them. Remember to identify essential and nice to have features
+
+-   Build the application in modules so that it is easier to test and grow the application, assign resources and assess the project's progress. Keep the UI and Server code light.
+
+-   Maintain a concise visual representation of the UI and Server logic workflow to keep track on features and the overall development process. It will also help to see how new features can be added to minimise risk of having an application breakdown.
+
+-   📹[Video](https://www.youtube.com/watch?v=Syu3LlteOfA)
+
+### hpfilter: An R Implementation of the One- and Two-Sided Hodrick-Prescott Filter
+
+Time series fluctuation curve is a common trend seen in finance and economics. The Hodrick--Prescott (HP) filter is a widely used tool for to remove short term fluctuation associated with the business cycle by data-smoothing. The purpose is to be able to reveal underlying long term trends hidden in the fluctuation curve. To date, there is a one-sided and two-sided versions of the Hodrick-Prescott filter.
+
+Alexandru Monahov shared that that implementation of the HP filter in R is limited to the two-sided version. The motivation of creating the R package [`hpfilter`](https://cran.r-project.org/web/packages/hpfilter/index.html) was to fill this gap and allows user to be able to use both the one-sided and two-sided versions of the Hodrick-Prescott filter. In addition, the package uses sparse matrices in its calculations. This ensures that results can be produced in a shorter running time, especially with large datasets. [`hpfilter`](https://cran.r-project.org/web/packages/hpfilter/index.html) is also allow the HP filter to be applied on multiple time series fluctuation curves in a few lines of code. The presentation then proceeds with the use of the [`hpfilter`](https://cran.r-project.org/web/packages/hpfilter/index.html) a case study involving Ireland's Countercyclical Capital Buffer (CCyB).
+
+-   📹[Video](https://www.youtube.com/watch?v=AkEafUs8-R8)
+
+### Dandelion Hub: A Central Repository For De-central Civil Non-Violent Political Actions (CNPA) For Eco-social Justice
+
+It is not surprising to acknowledge that the world had faced multiple crises during last few years. With the lack of political will from major decision makers, environmental/ecological degradation and social injustice continues to be main reason for individuals to conduct non-violent resistance or protests to not only raise awareness but also to persuade policy makers to correct ineffective policies. The [Dandelion Hub](https://dhub.global/) is implemented as a platform to store records of CNPA events from around the world. It is also able to create an action map and summary report of the protests made to better understanding how activist groups behave and spread its influence from one place to another.
+
+Details on how it is implemented using R can be found in the video link below.
+
+-   📹[Video](https://www.youtube.com/watch?v=F1Lrz5mdgeo)
+
+### Rix: Reproducible Environments with Nix
+
+[Nix](https://nixos.org/) is a package manager that allows users to install and manage many kinds of software (from the [Nixpkgs collection](https://github.com/nixos/nixpkgs)) by creating complex project-specific sandbox environments. When installing a software using the Nix package manager, Nix will install all the dependencies required. Once the development environment is successfully built using Nix, it can be deployed in any operating system. Hence, it can be seen as a powerful tool for reproducibility of projects. However, it is not easy to learn and utilise Nix as it comes with its own programming language, which is also called *Nix*. As such, Bruno Rodrigues and his team developed an R package called [`rix`](https://b-rodrigues.github.io/rix/) that provides functions that allows R users to generate *Nix* programming codes to build development environment easily.
+
+In the presentation, Bruno gave a short demonstration on how to use [`rix`](https://b-rodrigues.github.io/rix/) to create a development environment with R, RStudio and some specific R packages and Python libraries installed and later deploy the same environment using the `nix-build` command. Another demonstration was done this time creating a development environment with the [`targets`](https://books.ropensci.org/targets/) pipeline.
+
+Bruno Rodrigues is also the author of the book [Building reproducible analytical pipelines with R](https://raps-with-r.dev/).
+
+-   📹[Video](https://www.youtube.com/watch?v=tM4JrCWZpwA)
+
+### SDTM Automation with MINT+ ecosystem
+
+Created by the Clinical Data Interchange Standards Consortium (CDISC), a global not-for-profit organization that develops data standards for the pharmaceutical industry, a Study Data Tabulation Model (SDTM) is a standard specification for organising and harmonising human clinical trials tabular data prior to it submission to regulatory authorities such as the United States Food and Drug Administration (FDA). This is to make things easier for the reviewers to compare data across different studies. An SDTM dataset usually contains information about the demographic, visits, treatments, observations of the clinical trial patients.
+
+As clinical trials generate large amount of raw data, it can be time-consuming and inefficient to convert the data manually that meets the standards of a SDTM. Therefore, [`MINT+`](https://www.lexjansen.com/phuse/2023/ad/PAP_AD13.pdf) is created as a web application to automate the creation of SDTM datasets from raw clinical data.
+
+In greater detail, the MINT+ frontend is developed with the [ReactJS](https://react.dev/) framework. The backend of MINT+ consists of a REST API application called "rsaffron.api" and an Amazon DocumentDB called "Saffron" for SDTM data storage. "rsaffron.api" is developed using the R package [`plumber`](https://www.rplumber.io/), which does the heavy work of handling any action triggered on the front end, such as fetching from and writing data to the Saffron database.
+
+-   📹[Video](https://www.youtube.com/watch?v=LeG2DM6jH80)
+
 ### Streamlining Cohort Analysis with [cohortBuilder](https://r-world-devs.github.io/cohortBuilder/) and [shinyCohortBuilder](https://r-world-devs.github.io/shinyCohortBuilder/)
 
 Cohort analysis comes with many challenges such as the need to work with various data sources like (data.frames and SQL DB) and the need to be robust against complex workflow and requirements that needs multi-stage filtering. This makes it hard to keep on its progress and report the current status or results.

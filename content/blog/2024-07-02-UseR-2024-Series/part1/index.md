@@ -41,6 +41,8 @@ Cohort analysis comes with many challenges such as the need to work with various
 
 Adam Forys & Krystian Igras presented the R package [`cohortBuilder`](https://r-world-devs.github.io/cohortBuilder/) that is created to ensure the process of reading and filtering cohort data from multiple data sources can be done easily with a few lines of code (instead of using many different R packages like [`dplyr`](https://dplyr.tidyverse.org/), [`dtplyr`](https://dtplyr.tidyverse.org/), [`data.table`](https://rdatatable.gitlab.io/data.table/) to handle data from multiple sources). To ensure that the application is more accessible for people with limited coding experience, the R package [`shinyCohortBuilder`](https://r-world-devs.github.io/shinyCohortBuilder/) is created as a user-friendly Shiny application tool for people to perform cohort analysis using [`cohortBuilder`](https://r-world-devs.github.io/cohortBuilder/) in a point and click fashion. Plots and reproducible code can be exported from the Shiny application tool to update on the cohort's current status and results.
 
+-   📹[Video](https://www.youtube.com/watch?v=i5K4VDLrHIU)
+
 ### R-Ladies Paris
 
 The [R-Ladies](https://rladies.org/) organisation is well-known for supporting and empowering minority genders to be able to showcase their R programming expertise and to take on more leadership roles in the R ecosystem, building a more diversified R community in the long term.

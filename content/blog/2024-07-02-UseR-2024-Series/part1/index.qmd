@@ -36,6 +36,30 @@ The [useR! 2024 Conference](https://events.linuxfoundation.org/user/) has return
 
 Here is a small write up of the talks presented during the virtual session on 2nd July 2024.
 
+### Making Better Error Messages with cli
+
+Software can be hard for when you are working on it for the first time. It is highly likely that you will come across an error message. More often, we sometimes wish that these error messages could have be more clear, informative, helpful and even kinder. 
+
+Emil Hvitfeldt who is working in the development of [`tidymodels`](https://tidymodels.org/) shared how error, warnings and other messages from R packages can be improved using the [`cli`](https://cli.r-lib.org/) and [`rlang`](https://rlang.r-lib.org/) R packages.
+
+One tip is to make use of the` call` parameter in [`cli::cli_abort`](https://cli.r-lib.org/reference/cli_abort.html) function to indicate which function that is available to the user is causing an error, rather than an internal function.
+
+Another tip is to use [`glue`](https://glue.tidyverse.org/) interpolation to capture the user's input and display this input in an error message to indicate that the user's input is invalid. [`cli`](https://cli.r-lib.org/) has inline text formatting which can be useful to indicate which variable is a function parameter and which variable is a user's input.
+
+When writing user-facing functions, it is advised that error messages as a results of a failed validation check should happen as early or fast as possible. Try also to not just indicate the cause of the error but also some suggestions to avoid this error from appearing.
+
+* 📹[Video](https://www.youtube.com/watch?v=uu8KHXgagug)
+
+### Connecting Shiny Apps to Chemotion-ELN
+
+The [NFDI~4~Chem](https://www.nfdi4chem.de/) is a non-commercial consortium that aims to build a national research data infrastructure for the research domain of chemistry in Germany. One of its projects to improve its Electronic Lab Notebook (ELN) workflow by providing a platform to transform decentralised ELN-instances from different working groups into a central (published) data collections on a repository.
+
+[Chemotion-ELN](https://chemotion.net/) is developed by several software developers at different NFDI4Chem sites to facilitate the publication of research data by transferring data from a user's ELN account to a central research data repository. This reduces the scientist's effort in allowing access to research data. It will be nice if [Chemotion-ELN](https://chemotion.net/) is able to communicate with other Third Party Applications (TPA).
+
+Konrad Krämer gave a presentation showing how this could be done using R [Shiny](https://shiny.posit.co/). He then provided an example on how with the use of R [Shiny](https://shiny.posit.co/), [Chemotion-ELN](https://chemotion.net/) is able to send data to another Shiny application called [Biostats](https://github.com/ComPlat/shinychem), which helps scientists perform data wrangling, visualization, and statistical tests on chemistry related data. The results were then sent back to [Chemotion-ELN](https://chemotion.net/).
+
+* 📹[Video](https://www.youtube.com/watch?v=HaG5lRrFQuE)
+
 ### One Container to Rule Them All
 
 Magnus Mengelbier gave a brief introduction about containers defined as a cheap and easily accessible virtual machine. The general workflow is that a script file (for example a Docker script) is used to create a container image. A container image is like a big zip file that contains all the operating systems files, files needed to run R and files needed for your R packages. Putting the container image into a host and running it will give a container instance that users can interact with. In a Docker file example, it usually starts with a command to build s base image like Ubuntu. The next set of commands is used to build the container image. The last set of commands will only run once the container image is built and launched as container instance in the host.

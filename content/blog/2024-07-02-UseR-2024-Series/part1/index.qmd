@@ -36,6 +36,82 @@ The [useR! 2024 Conference](https://events.linuxfoundation.org/user/) has return
 
 Here is a small write up of the talks presented during the virtual session on 2nd July 2024.
 
+### Decomposition Based Deep Learning Model For Forecasting Agricultural Commodity Prices with decompDL
+
+Agricultural commodity prices forecasting is useful for farmers to manage price risk of agricultural goods. A stable price of agricultural commodity brings greater welfare for the farmers. However, agricultural commodity prices series tend to behave differently from most financial time series. This is because the price trend tends to be more fluctuating due to seasonality, inelastic demand, production uncertainty and perishability. As artificial neural network (ANN) tend to work poorly with non-stationary time series, it needs to be improved.
+
+Kapil Choudhary proposed a decomposition (smoothing technique) and ensemble method that first decompose a complex time series into a set of simple modes (known as intrinsic mode functions or IMFs) in which each mode contains a simple structure and more important, have a stationary fluctuation. The number of modes to decompose is determined by the minimum number of modes that provides a signal difference average that is close to zero. 
+These modes are individually predicted using LSTM deep learning model. These predictions are then ensembled to give a final forecasting prediction for the complex time series.
+
+The implementation of the proposed model can be found in the R package [`decompDL`](https://cran.r-project.org/web/packages/decompDL/index.html). Kapil Choudhary is also the maintainer of other decomposition based neural network models implemented as an R package such as [`eemdTDNN`](https://cran.r-project.org/web/packages/eemdTDNN/index.html), [`vmdTDNN`](https://cran.r-project.org/web/packages/vmdTDNN/index.html), [`EEMDelm`](https://cran.r-project.org/web/packages/EEMDelm/index.html) and [`eemdARIMA`](https://cran.r-project.org/web/packages/eemdARIMA/index.html)
+
+* 📹[Video](https://www.youtube.com/watch?v=8obzmBflLyo)
+
+### Modeling Antimicrobial Resistance Rate Data using DeβARMA
+
+The misuse of antimicrobial medications and poor health facilities have led to an increase in antimicrobial resistance (AMR) cases in patients which can lead to an increase in health cost. There is a need of an decent antimicrobial resistance (AMR) model to predict the rate of antimicrobial resistance to assist healthcare providers and policy makers to develop effective and yet cost-effective antimicrobial management policies.
+
+Traditionally, forecasting of AMR rates is done using the autoregressive moving average (ARMA) model, ARMA model with a Transfer function, also called ARMAX, exponential smoothing or logistic regression. However, some bacteria are either susceptible or resistant to the antibiotics, causing the AMR rate to contains a lot of zeros or ones in the time series. This requires the need of very specific ARMA models which is limited in R. Jevitha Lobo presented a novel time series model called Degenerate Beta Auto-regressive moving average or DeβARMA in short, that fits data in unit interval including zeros or ones.
+
+The DeβARMA model is implemented in R and was tested on a real like **E.coli** dataset that is resistant to some antibiotics in blood collected from Jan 2011 to Dec 2019. A [R Shiny Application](https://jevithalobo.shinyapps.io/DBARMA_updated/) is also implemented for other researchers to try out the DeβARMA model for themselves.
+
+* 📹[Video](https://www.youtube.com/watch?v=70u3K1xPzQY)
+
+### Share your R with Quarto 
+
+The third presentation in the virtual conference is an application of using [Quarto](https://quarto.org/) to share your R contents to others.
+
+Inspired by the [Data Science Learning Community](https://dslc.io/) group
+Jinhwan Kim had created a Quarto website in Korean named [R Education for Clinical Researchers](https://education.zarathu.com/) or R4CR in short.
+
+In clinical research, R has been increasing in popularity as it is able to provide data management, statistical analysis and give outputs like tabular results and plots that is suited for a variety of audiences, like regulators and academics. However, more and more clinical researchers are doing the coding themselves instead of relying on professional statistical programmers or statisticians. To reduce the learning curve of R, [Zarathu](https://www.zarathu.com/), a research support organisation in Korea, had to provide a number of R contents (slides and tutorials) to clinical researchers. The problem is that these R contents existed in several locations (or [GitHub](https://github.com/) repositories) and it can be hard to find where things are.
+This provides the motivation to create a learning website using [Quarto](https://quarto.org/) and publish the website using [GitHub Pages](https://pages.github.com/). The fact that [Quarto](https://quarto.org/) is able to work well with RStudio, output presentations, dashboards, short tutorials make it the ideal choice.
+
+Jinhwan Kim then presented some [Quarto](https://quarto.org/)-related information that may not be so intuitive to new users. 
+
+The first part shared is that the creation of a small [Quarto](https://quarto.org/) website can be done using Rstudio's "New Project" -> "Quarto Website". He then shared four essential files that make a [Quarto](https://quarto.org/) website called `index.qmd`, `about.qmd`, `_quarto.yml` and `styles.css`.
+
+The next part is that [Quarto](https://quarto.org/) has a feature that creates a navigation bar in the website. This can be done by typing some `navbar` content in the `_quarto.yml` file. The navigation bar will be useful in organising large amount of content without the need to create a long list of README.
+
+The third part is about ways to embed a slide deck that was created using [Quarto](https://quarto.org/). Suppose we have a slide deck in [Quarto](https://quarto.org/) called `slide.baseR.qmd`. It can be embedded into a [Quarto](https://quarto.org/) webpage using the [iframe frame elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe). He also shared how the size of the embedded presentation (slide container) can be modified by adjusting the `.slide-deck` parameters in the `styles.css` file.
+
+The last part to add a [slick](https://github.com/kenwheeler/slick) in the [Quarto](https://quarto.org/) webpage. This is not a trivial task but the key is to create a html file called `slider.html` that contains the slick code and class called `slider`. In the [Quarto](https://quarto.org/) file that requires to display the slick, first set the yaml parameter `include-in-header` to include `slider.html` and in places where the slider needs to be displayed, create a `div` frame element to show the slider.   
+
+Jinhwan Kim then showed how [Quarto](https://quarto.org/) can be connected to external services (such as chat service and payment platforms) using some Javascript code as well as some limitations of [Quarto](https://quarto.org/).
+
+* 📝[Slides](https://jhk0530.github.io/useR2024-R4CR)
+* 📹[Video](https://www.youtube.com/watch?v=a2InR6nbIuE)
+
+### Enhancing the R Development Guide
+
+In this presentation, Saranjeet Kaur gives an brief introduction about the [R Development Guide](https://contributor.r-project.org/rdevguide/) (R Dev Guide), its current status and progress to make R a better programming language to use.
+
+The [R Development Guide](https://contributor.r-project.org/rdevguide/) started as an initiative from some members from [R Ladies](https://rladies.org/) community after a discussion during the useR! 2020 conference that there is a need to reach out to a wider group of programmers to contribute to base R regardless on how seasoned they are with the programming language. After receiving a seed grant from the [R Foundation](https://www.r-project.org/foundation/), The [R Development Guide](https://contributor.r-project.org/rdevguide/) was born and developed by Saranjeet Kaur under the mentorship of Heather Turner and Michael Lawrence. Subsequently, a community dedicated to the maintenance of [R Development Guide](https://contributor.r-project.org/rdevguide/). During the Google Season of Docs (GSoD) 2022, the [R Development Guide](https://contributor.r-project.org/rdevguide/) gave a [proposal](https://github.com/rstats-gsod/gsod2022/wiki/GSOD-2022-Proposal) to expand the guide by
+
+-  Expanding existing chapter with beginner-friendly examples
+-  Adding a chapter on how to install R from source files. 
+-  Adding a chapter on translation
+-  Adding a chapter on how to contribute tests for base R
+-  Adding a chapter on how to use a git workflow to submit a new R patch
+
+To date, the following new contents are added.
+
+-  [Introduction](https://contributor.r-project.org/rdevguide/introduction.html)
+   - Quick start guide on how to contribute to base R
+   - The different ways to contribute to base R
+   - How to contribute to the [R Development Guide](https://contributor.r-project.org/rdevguide/) itself
+-  [Message Translation](https://contributor.r-project.org/rdevguide/message-translations.html)
+   - How translation work in R with `.pot`, `po` and `mo` files.
+   - How to contribute new translation using [Weblate](https://translate.rx.studio/)
+-  [Installing R from source](https://contributor.r-project.org/rdevguide/GetStart.html)
+
+With the current improvements made on the [R Development Guide](https://contributor.r-project.org/rdevguide/), contribution to base R has become more accessible to newcomers, creating a more supportive environment for those who wish to help out.
+
+While there is still a lot of work that needs to be done, the speaker ensures that they will be more opportunities to people to make contributions such as the [R Dev Day @ Paris Lodron University of Salzburg (PLUS), Austria on 12 July 2024](
+https://contributor.r-project.org/r-dev-day-plus-2024/) and [R Development Hackaton @ RSECon24, UK on 5 Sept 2024](https://rsecon24.society-rse.org/)
+
+* 📹[Video](https://www.youtube.com/watch?v=vit06hXFw3M)
+
 ### Making Better Error Messages with cli
 
 Software can be hard for when you are working on it for the first time. It is highly likely that you will come across an error message. More often, we sometimes wish that these error messages could have be more clear, informative, helpful and even kinder. 

@@ -1,5 +1,5 @@
 ---
-title: Learning Journey and Reflections on useR! 2024 Conference
+title: Learning Journey in the useR! 2024 Conference
 description: |
   A series of narratives about my experience in [useR! 2024 Conference](https://events.linuxfoundation.org/user/).
 author: "Jeremy Selva"
@@ -13,7 +13,7 @@ layout: list-sidebar # list, list-sidebar, list-grid
 
 # for list-sidebar layout
 sidebar: 
-  title: Learning Journey and Reflections on useR! 2024 Conference
+  title: Learning Journey in the useR! 2024 Conference
   description: |
     A series of narratives about my experience in [useR! 2024 Conference](https://events.linuxfoundation.org/user/)
   author: "Jeremy Selva"

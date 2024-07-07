@@ -407,7 +407,7 @@ The presentation mainly focus on the techniques to achieve the first and last ta
 
 For the first task, R [Shiny](https://shiny.posit.co/) application is used to create the monitoring system (called LMS Monitor) that is scalable, modular, flexible to changes, produce reproducible results, and can be used my many people at the same time. This is achieved using a [`rhino`](https://appsilon.github.io/rhino/) framework connected to a [PostgreSQL](https://www.postgresql.org/) database.
 
-For the last task, [`tidymodels`](https://www.tidymodels.org/) and [`dbarts`])(https://github.com/vdorie/dbarts) are heavily used to generate Bayesian Additive Regression Tree (BART) models to predict numerous outcomes like a student's final test results, average points at class level, if a primary student is able to graduate from school. 
+For the last task, [`tidymodels`](https://www.tidymodels.org/) and [`dbarts`](https://github.com/vdorie/dbarts) are heavily used to generate Bayesian Additive Regression Tree (BART) models to predict numerous outcomes like a student's final test results, average points at class level, if a primary student is able to graduate from school. 
 
 * 📹[Video](https://www.youtube.com/watch?v=nm5M4dF9aLs)
 

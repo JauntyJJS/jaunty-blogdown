@@ -1,13 +1,13 @@
 ---
-title: Learning Journey and Reflections on useR! 2024 Conference Part 1
+title: Learning Journey in the useR! 2024 Conference Part 1
 subtitle: ''
 excerpt: >-
-  This narrative is a write up on my learning journey in the [useR! 2024
-  Conference](https://events.linuxfoundation.org/user/) virtual session.
+  This narrative is a write up of my learning journey in the [useR! 2024
+  Conference](https://events.linuxfoundation.org/user/).
 format: hugo-md
-date: 2024-07-02T00:00:00.000Z
+date: 2024-07-07T00:00:00.000Z
 author: Jeremy Selva
-draft: true
+draft: false
 images: null
 series:
   - useR! 2024
@@ -29,13 +29,46 @@ editor_options:
 <link href="index_files/libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 
 
+<a name="top"></a>
+
+## Table of Content
+
+-   [Introduction](#introduction)
+-   [Decomposition Based Deep Learning Model For Forecasting Agricultural Commodity Prices with decompDL](#decomposition-based-deep-learning-model-for-forecasting-agricultural-commodity-prices-with-decompdl)
+-   [Modeling Antimicrobial Resistance Rate Data using DeβARMA](#modeling-antimicrobial-resistance-rate-data-using-deβarma)
+-   [Share your R with Quarto](#share-your-r-with-quarto)
+-   [Enhancing the R Development Guide](#enhancing-the-r-development-guide)
+-   [Making Better Error Messages with cli](#making-better-error-messages-with-cli)
+-   [Connecting Shiny Apps to Chemotion-ELN](#connecting-shiny-apps-to-chemotion-eln)
+-   [One Container to Rule Them All](#one-container-to-rule-them-all)
+-   [Minimum Viable Good Practices for High Quality Statistical Software Packages](#minimum-viable-good-practices-for-high-quality-statistical-software-packages)
+-   [How to Quickly Mock-Up and Test Your Application User Interface Designs in Web Application](#how-to-quickly-mock-up-and-test-your-application-user-interface-designs-in-web-application)
+-   [hpfilter: An R Implementation of the One- and Two-Sided Hodrick-Prescott Filter](#hpfilter-an-r-implementation-of-the-one--and-two-sided-hodrick-prescott-filter)
+-   [Dandelion Hub: A Central Repository For De-central Civil Non-Violent Political Actions (CNPA) For Eco-social Justice](#dandelion-hub-a-central-repository-for-de-central-civil-non-violent-political-actions-cnpa-for-eco-social-justice)
+-   [Rix: Reproducible Environments with Nix](#rix-reproducible-environments-with-nix)
+-   [SDTM Automation with MINT+ ecosystem](#sdtm-automation-with-mint-ecosystem)
+-   [Streamlining Cohort Analysis with cohortBuilder and shinyCohortBuilder](#streamlining-cohort-analysis-with-cohortbuilder-and-shinycohortbuilder)
+-   [R-Ladies Paris](#r-ladies-paris)
+-   [Tips for Writing Better R Code](#tips-for-writing-better-r-code)
+-   [Data Pipeline to Analyse FODESAF's Cash Flow](#data-pipeline-to-analyse-fodesafs-cash-flow)
+-   [Learning Together at the Data Science Learning Community (DSLC)](#learning-together-at-the-data-science-learning-community-dslc)
+-   [Detection Abnormal Fish Behaviours With Isolation Forest](#detection-abnormal-fish-behaviours-with-isolation-forest)
+-   [Overcoming Challenges in Primary School Educational Data Analysis](#overcoming-challenges-in-primary-school-educational-data-analysis)
+-   [ExoLabel: Community Detection for Big Biological Networks](#exolabel-community-detection-for-big-biological-networks)
+-   [Benchmarking Performance For The data.table Package](#benchmarking-performance-for-the-data.table-package)
+-   [WHO's Health Economic Assessment Tool (HEAT)](#whos-health-economic-assessment-tool-heat)
+-   [Submission Of Analysis Using R To Health Authority Reviewers](#submission-of-analysis-using-r-to-health-authority-reviewers)
+-   [Democratizing Access to Water Treatment Models with tidywater](#democratizing-access-to-water-treatment-models-with-tidywater)
+
 ## Introduction
 
 The [useR! 2024 Conference](https://events.linuxfoundation.org/user/) has returned after two years since its last launch in 2022. This year's programme consist of a virtual session on 2nd July 2024 followed by an in-person session from 8th to 11th July 2024.
 
 Here is a small write up of the talks presented during the virtual session on 2nd July 2024.
 
-### Decomposition Based Deep Learning Model For Forecasting Agricultural Commodity Prices
+<a href="#top">Back to top</a>
+
+### Decomposition Based Deep Learning Model For Forecasting Agricultural Commodity Prices with decompDL
 
 Agricultural commodity prices forecasting is useful for farmers to manage price risk of agricultural goods. A stable price of agricultural commodity brings greater welfare for the farmers. However, agricultural commodity prices series tend to behave differently from most financial time series. This is because the price trend tends to be more fluctuating due to seasonality, inelastic demand, production uncertainty and perishability. As artificial neural network (ANN) tend to work poorly with non-stationary time series, it needs to be improved.
 
@@ -46,6 +79,8 @@ The implementation of the proposed model can be found in the R package [`decompD
 
 -   📹[Video](https://www.youtube.com/watch?v=8obzmBflLyo)
 
+<a href="#top">Back to top</a>
+
 ### Modeling Antimicrobial Resistance Rate Data using DeβARMA
 
 The misuse of antimicrobial medications and poor health facilities have led to an increase in antimicrobial resistance (AMR) cases in patients which can lead to an increase in health cost. There is a need of an decent antimicrobial resistance (AMR) model to predict the rate of antimicrobial resistance to assist healthcare providers and policy makers to develop effective and yet cost-effective antimicrobial management policies.
@@ -55,6 +90,8 @@ Traditionally, forecasting of AMR rates is done using the autoregressive moving 
 The DeβARMA model is implemented in R and was tested on a real like **E.coli** dataset that is resistant to some antibiotics in blood collected from Jan 2011 to Dec 2019. A [R Shiny Application](https://jevithalobo.shinyapps.io/DBARMA_updated/) is also implemented for other researchers to try out the DeβARMA model for themselves.
 
 -   📹[Video](https://www.youtube.com/watch?v=70u3K1xPzQY)
+
+<a href="#top">Back to top</a>
 
 ### Share your R with Quarto
 
@@ -80,6 +117,8 @@ Jinhwan Kim then showed how [Quarto](https://quarto.org/) can be connected to ex
 
 -   📝[Slides](https://jhk0530.github.io/useR2024-R4CR)
 -   📹[Video](https://www.youtube.com/watch?v=a2InR6nbIuE)
+
+<a href="#top">Back to top</a>
 
 ### Enhancing the R Development Guide
 
@@ -110,6 +149,8 @@ While there is still a lot of work that needs to be done, the speaker ensures th
 
 -   📹[Video](https://www.youtube.com/watch?v=vit06hXFw3M)
 
+<a href="#top">Back to top</a>
+
 ### Making Better Error Messages with cli
 
 Software can be hard for when you are working on it for the first time. It is highly likely that you will come across an error message. More often, we sometimes wish that these error messages could have be more clear, informative, helpful and even kinder.
@@ -124,6 +165,8 @@ When writing user-facing functions, it is advised that error messages as a resul
 
 -   📹[Video](https://www.youtube.com/watch?v=uu8KHXgagug)
 
+<a href="#top">Back to top</a>
+
 ### Connecting Shiny Apps to Chemotion-ELN
 
 The [NFDI<sub>4</sub>Chem](https://www.nfdi4chem.de/) is a non-commercial consortium that aims to build a national research data infrastructure for the research domain of chemistry in Germany. One of its projects to improve its Electronic Lab Notebook (ELN) workflow by providing a platform to transform decentralised ELN-instances from different working groups into a central (published) data collections on a repository.
@@ -134,6 +177,8 @@ Konrad Krämer gave a presentation showing how this could be done using R [Shiny
 
 -   📹[Video](https://www.youtube.com/watch?v=HaG5lRrFQuE)
 
+<a href="#top">Back to top</a>
+
 ### One Container to Rule Them All
 
 Magnus Mengelbier gave a brief introduction about containers defined as a cheap and easily accessible virtual machine. The general workflow is that a script file (for example a Docker script) is used to create a container image. A container image is like a big zip file that contains all the operating systems files, files needed to run R and files needed for your R packages. Putting the container image into a host and running it will give a container instance that users can interact with. In a Docker file example, it usually starts with a command to build s base image like Ubuntu. The next set of commands is used to build the container image. The last set of commands will only run once the container image is built and launched as container instance in the host.
@@ -143,6 +188,8 @@ In most cases, container images are built one for an interactive development env
 The idea is to first build a container with contain the R software. Let's call it Container R. Next add the validated packages to a new container that is based on Container R. Let call it Container R Batch. When Container R Batch is verified, it can be use as a source to create new containers of whatever interface is needed like IDE or web applications. Container R Batch can be updated if the list of validated R packages needs to be changed. This approach ensures that the R packages are installed and validated once until a new R version is released.
 
 -   📹[Video](https://www.youtube.com/watch?v=48-cHmKzrhY)
+
+<a href="#top">Back to top</a>
 
 ### Minimum Viable Good Practices for High Quality Statistical Software Packages
 
@@ -163,7 +210,9 @@ The presentation that provides details of these six principles which can also be
 -   📹[Video](https://www.youtube.com/watch?v=_BKCey-8008)
 -   📝[Slides](https://rconis.github.io/openstatsguide-user2024)
 
-### How to Quickly Mock-up and Test Your Application User Interface Designs in Web Application
+<a href="#top">Back to top</a>
+
+### How to Quickly Mock-Up and Test Your Application User Interface Designs in Web Application
 
 In this presentation, Barbara Mikulasova presented some great tip and advice for people who want to start implementing [Shiny](https://shiny.posit.co/) applications in their workflow but have little experience in full stack or web application development.
 
@@ -182,7 +231,7 @@ The presentation then proceeds with a use-case example on how [`fakir`](https://
 
 After finalising the prototype design, it is time to translate the prototype into an actionable minimum viable product (MVP). At this point, it is important to have a good understanding of the users' behaviour and expectations to anticipate potential pain points in the developmental stage. Barbara suggests that it is important to
 
--   Choose a framework for building production-grade shiny applications (Should I go with [shiny module](https://mastering-shiny.org/scaling-modules.html), [`golem`](https://thinkr-open.github.io/golem/) or [`rhino`](https://appsilon.github.io/rhino/))
+-   Choose a framework for building production-grade shiny applications (Should I go with [shiny module](https://mastering-shiny.org/scaling-modules.html), [`golem`](https://thinkr-open.github.io/golem/) or [`rhino`](https://appsilon.github.io/rhino/) ?)
 
 -   Decide which feature to develop first and the order in which to develop them. Remember to identify essential and nice to have features
 
@@ -192,6 +241,8 @@ After finalising the prototype design, it is time to translate the prototype int
 
 -   📹[Video](https://www.youtube.com/watch?v=Syu3LlteOfA)
 
+<a href="#top">Back to top</a>
+
 ### hpfilter: An R Implementation of the One- and Two-Sided Hodrick-Prescott Filter
 
 Time series fluctuation curve is a common trend seen in finance and economics. The Hodrick--Prescott (HP) filter is a widely used tool for to remove short term fluctuation associated with the business cycle by data-smoothing. The purpose is to be able to reveal underlying long term trends hidden in the fluctuation curve. To date, there is a one-sided and two-sided versions of the Hodrick-Prescott filter.
@@ -200,6 +251,8 @@ Alexandru Monahov shared that that implementation of the HP filter in R is limit
 
 -   📹[Video](https://www.youtube.com/watch?v=AkEafUs8-R8)
 
+<a href="#top">Back to top</a>
+
 ### Dandelion Hub: A Central Repository For De-central Civil Non-Violent Political Actions (CNPA) For Eco-social Justice
 
 It is not surprising to acknowledge that the world had faced multiple crises during last few years. With the lack of political will from major decision makers, environmental/ecological degradation and social injustice continues to be main reason for individuals to conduct non-violent resistance or protests to not only raise awareness but also to persuade policy makers to correct ineffective policies. The [Dandelion Hub](https://dhub.global/) is implemented as a platform to store records of CNPA events from around the world. It is also able to create an action map and summary report of the protests made to better understanding how activist groups behave and spread its influence from one place to another.
@@ -207,6 +260,8 @@ It is not surprising to acknowledge that the world had faced multiple crises dur
 Details on how it is implemented using R can be found in the video link below.
 
 -   📹[Video](https://www.youtube.com/watch?v=F1Lrz5mdgeo)
+
+<a href="#top">Back to top</a>
 
 ### Rix: Reproducible Environments with Nix
 
@@ -218,6 +273,8 @@ Bruno Rodrigues is also the author of the book [Building reproducible analytical
 
 -   📹[Video](https://www.youtube.com/watch?v=tM4JrCWZpwA)
 
+<a href="#top">Back to top</a>
+
 ### SDTM Automation with MINT+ ecosystem
 
 Created by the Clinical Data Interchange Standards Consortium (CDISC), a global not-for-profit organization that develops data standards for the pharmaceutical industry, a Study Data Tabulation Model (SDTM) is a standard specification for organising and harmonising human clinical trials tabular data prior to it submission to regulatory authorities such as the United States Food and Drug Administration (FDA). This is to make things easier for the reviewers to compare data across different studies. An SDTM dataset usually contains information about the demographic, visits, treatments, observations of the clinical trial patients.
@@ -228,13 +285,17 @@ In greater detail, the MINT+ frontend is developed with the [ReactJS](https://re
 
 -   📹[Video](https://www.youtube.com/watch?v=LeG2DM6jH80)
 
-### Streamlining Cohort Analysis with [cohortBuilder](https://r-world-devs.github.io/cohortBuilder/) and [shinyCohortBuilder](https://r-world-devs.github.io/shinyCohortBuilder/)
+<a href="#top">Back to top</a>
+
+### Streamlining Cohort Analysis with cohortBuilder and shinyCohortBuilder
 
 Cohort analysis comes with many challenges such as the need to work with various data sources like (data.frames and SQL DB) and the need to be robust against complex workflow and requirements that needs multi-stage filtering. This makes it hard to keep on its progress and report the current status or results.
 
 Adam Forys & Krystian Igras presented the R package [`cohortBuilder`](https://r-world-devs.github.io/cohortBuilder/) that is created to ensure the process of reading and filtering cohort data from multiple data sources can be done easily with a few lines of code (instead of using many different R packages like [`dplyr`](https://dplyr.tidyverse.org/), [`dtplyr`](https://dtplyr.tidyverse.org/), [`data.table`](https://rdatatable.gitlab.io/data.table/) to handle data from multiple sources). To ensure that the application is more accessible for people with limited coding experience, the R package [`shinyCohortBuilder`](https://r-world-devs.github.io/shinyCohortBuilder/) is created as a user-friendly Shiny application tool for people to perform cohort analysis using [`cohortBuilder`](https://r-world-devs.github.io/cohortBuilder/) in a point and click fashion. Plots and reproducible code can be exported from the Shiny application tool to update on the cohort's current status and results.
 
 -   📹[Video](https://www.youtube.com/watch?v=i5K4VDLrHIU)
+
+<a href="#top">Back to top</a>
 
 ### R-Ladies Paris
 
@@ -254,6 +315,8 @@ Motivated individuals who are interested in starting a new R-Ladies chapter can 
 
 -   📹[Video](https://www.youtube.com/watch?v=KqokszC42Uc)
 -   📝[Slides](https://rladiesparis.github.io/rladies_paris_talk_useR2024/rladies_paris_talk_useR2024.html)
+
+<a href="#top">Back to top</a>
 
 ### Tips for Writing Better R Code
 
@@ -288,6 +351,8 @@ Here are the tips to ensure individual projects are styled and structured well
 
 -   📝[Slides](https://nrennie.rbind.io/talks/user-spaghetti-code/)
 
+<a href="#top">Back to top</a>
+
 ### Data Pipeline to Analyse FODESAF's Cash Flow
 
 [FODESAF](https://fodesaf.go.cr/) is a public financial institution that conduct social programs to address the housing, education, health and social protection needs of Costa Ricans and foreign legal residents of the country, especially minors who are in a situation of poverty or extreme poverty.
@@ -305,6 +370,8 @@ An example of such a report can be found in this [Quarto Pub link](https://rober
 
 -   📹[Video](https://www.youtube.com/watch?v=jPgOL6Bu1y8)
 
+<a href="#top">Back to top</a>
+
 ### Learning Together at the Data Science Learning Community (DSLC)
 
 Jon Harmon provides an introduction of the [Data Science Learning Community (DSLC)](https://dslc.io/). DSLC is a community that aims to provide tools and resources to create a diverse, friendly and inclusive environment for new data science learners and experts alike. It has conducted many activities such as book clubs, a safe and nurturing platform for asking data science related questions and [`TidyTuesday`](https://github.com/rfordatascience/tidytuesday) to give participants a chance to work on real-world datasets. Currently, they are conducting a [survey](DSLC.io/ttsurvey23) to gather feedback from people who have used [`TidyTuesday`](https://github.com/rfordatascience/tidytuesday) as a teacher or a student to find out ways to increase the usage of #TidyTuesday in Education.
@@ -319,7 +386,9 @@ DSLC is also seeking a new fiscal host so that the organisation can legally acce
 -   📹[Video](https://www.youtube.com/watch?v=8jH5wfuDx-g)
 -   📝[Slides](https://dslc-io.github.io/useR2024)
 
-### Detection Abnormal Fish Behaviours With Isolation Forest.
+<a href="#top">Back to top</a>
+
+### Detection Abnormal Fish Behaviours With Isolation Forest
 
 Abnormal fish behaviours is critical for marine biologist as it is an indicator used to detect environmental changes caused by pollution or climate change. Fish behaviours are measured by the path they use and time they take to travel from one place to another. This path is called a trajectory consisting of two components: coordinates and time steps. The [Fish4Knowledge](https://github.com/Callmewuxin/fish4konwledge) project ensures that fish trajectories data are measured correctly.
 
@@ -329,6 +398,8 @@ Enrique Ceja is also the author of the book [Behavior Analysis with Machine Lear
 
 -   📹[Video](https://www.youtube.com/watch?v=P6f29SskS1g)
 -   📝[Slides](https://github.com/enriquegit/fish-behaviors)
+
+<a href="#top">Back to top</a>
 
 ### Overcoming Challenges in Primary School Educational Data Analysis
 
@@ -348,6 +419,8 @@ For the last task, [`tidymodels`](https://www.tidymodels.org/) and \[`dbarts`\])
 
 -   📹[Video](https://www.youtube.com/watch?v=nm5M4dF9aLs)
 
+<a href="#top">Back to top</a>
+
 ### ExoLabel: Community Detection for Big Biological Networks
 
 One aspect that people are interested in large networks analysis is to identify different communities (highly dense nodes) in a given network. From the perspective of geneticists, they are curious to identify a common group of genes that are the same across different organisms or families.
@@ -358,7 +431,9 @@ Aidan Lakshman from the [Wright Laboratory](https://wrightlabscience.com/) prese
 
 -   📹[Video](https://www.youtube.com/watch?v=9eRAv-ouJmk)
 
-### Benchmarking Performance For The [`data.table`](https://rdatatable.gitlab.io/data.table/) Package
+<a href="#top">Back to top</a>
+
+### Benchmarking Performance For The data.table Package
 
 [`data.table`](https://rdatatable.gitlab.io/data.table/) is a highly popular because it is one of the first few R packages that have the capabilities to read and wrangle large datasets quickly without compromising memory space.
 
@@ -375,6 +450,8 @@ In addition, Doris wanted to evaluate the performance of [`data.table`](https://
 To do this efficiently, a [GitHub action for continuous performance testing](https://github.com/tdhock/atime?tab=readme-ov-file#github-action-for-continuous-performance-testing) using [`atime`](https://github.com/tdhock/atime) was implemented to ensure [`data.table`](https://rdatatable.gitlab.io/data.table/) is properly evaluated for every pull request and the visual results are displayed as a pull request comment.
 
 -   📹[Video](https://www.youtube.com/watch?v=AuuGzUSSjpI)
+
+<a href="#top">Back to top</a>
 
 ### WHO's Health Economic Assessment Tool (HEAT)
 
@@ -395,7 +472,9 @@ During the process of making the web application, they also developed two new R 
 
 -   📹[Video](https://www.youtube.com/watch?v=hf92pZ98dlo)
 
-### Submission of Analysis using R to health authority reviewers
+<a href="#top">Back to top</a>
+
+### Submission Of Analysis Using R To Health Authority Reviewers
 
 In order to gain market support for a novel medical treatment, companies, hospitals and/or sponsors need to submit analysis reports, datasets, software codes and programs to the relevant health authorities for evaluation of the treatment's efficacy and safety. The reviewers usually not only review the reports but also rerun the software on the provided dataset to check that the results generated are reproducible. Recently, there has been a large interest on using codes from open source software like [R](https://www.r-project.org/) as part of the submission.
 
@@ -407,7 +486,9 @@ Taking a look at the [Analysis Data Reviewer's Guide](https://raw.githubusercont
 
 -   📹[Video](https://www.youtube.com/watch?v=vPmNdHTVYm8)
 
-### Democratizing Access to Water Treatment Models with `tidywater`
+<a href="#top">Back to top</a>
+
+### Democratizing Access to Water Treatment Models with tidywater
 
 Sierra Johnson from [Brown and Caldwell](https://brownandcaldwell.com/) introduced how water treatment models are useful in helping engineers optimise clean water treatment protocols that are affordable, sustainable and efficient in the long run.
 
@@ -438,6 +519,4 @@ One nice tip shared is to use clear and exciting terms like "Thought Leadership"
 
 -   📹[Video](https://www.youtube.com/watch?v=ZF5V4PbvfXQ)
 
--   📝[Slides](https://tengku-hanis.github.io/bibliometrics_Nov2022/#1)
-
--   👨‍💻 [Codes](https://github.com/tengku-hanis/bibliometrics_Nov2022)
+<a href="#top">Back to top</a>

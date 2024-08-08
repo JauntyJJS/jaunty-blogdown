@@ -1,0 +1,89 @@
+---
+title: "Learning Journey in the useR! 2024 Conference Part 2"
+subtitle: ""
+excerpt: "This narrative is a write up of my learning journey in the [useR! 2024 Conference](https://events.linuxfoundation.org/user/)."
+format: hugo-md
+date: 2024-07-07
+author: "Jeremy Selva"
+draft: true
+images:
+series:
+  - useR! 2024
+tags:
+  - useR! 2024
+categories:
+  - useR! 2024
+layout: single-sidebar
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(fig.align = "center")
+
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i> Copy Code",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i> Copied!",
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
+
+<a name="top"></a>
+
+## Table of Content
+
+- [Introduction]
+- [Formal Debugging in R]
+- [Building Effective Docker Images: R Edition]
+
+
+## Introduction
+
+On the first day of the [useR! 2024 Conference](https://events.linuxfoundation.org/user/), I had attending two tutorial sessions. Here are my thoughts about them.
+
+<a href="#top">Back to top</a>
+
+### Formal Debugging in R
+
+What I have always done when R has an error is to comment everything and run the code one line at a time in a painstaking way. If an error occurs in my custom made functions, I usually copy the source code into my R script and then test them line by line. If an error occurs during the for loop, I usually just print the output and the iteration number to see where the issue is. I never knew that R has many functions that can be used for debugging errors in a less tedious way.
+
+The tutorial started light with some tips on basic troubleshooting, such as 
+
+*  Samantha Csik's [talk](https://www.youtube.com/watch?v=93WsFQUuxvA) and [slides](https://samanthacsik.github.io/teach-me-how-to-google/slides/RLadiesSTL-2022-02-22.html) on how to effectively use search engines like Google to find solutions. 
+
+*  Learning how to restarting R in  a [blank state](https://rstats.wtf/source-and-blank-slates) without saving the workspace and without restoring a saved workspace.
+
+*  Using a [reprex](https://reprex.tidyverse.org/). The tutorial did not go through how to create one, though I wish they do because I personally find it non-trivial and can be challenging for new R users based on my experience with the [R4DS Book Club Cohort 9 Chapter 8](https://www.youtube.com/watch?v=m3XatUM9qBE). Most of us from the cohort group shared that they have issues creating a minimal reproduce example when trying to run `reprex::reprex()` on the console and it gives an error: `#> Error: attempt to use zero-length variable name` that they don't understand. (The error appeared because they did not run any code in the console before running `reprex::reprex()`) I prefer the reprex demo session by [JD Long](https://www.youtube.com/watch?v=0zNPgGa-Cu0) because the presenter shows how to do this step by step or [1littlecoder](https://www.youtube.com/watch?v=hnzrDLf9anw) who showed how to copy and paste the reprex on Github and Stack Overflow.
+
+
+[Shannon Pileggi](https://www.pipinghotdata.com/) and [Maëlle Salmon](https://masalmon.eu/)
+
+https://robjhyndman.com/hyndsight/debugging-in-r/index.html
+https://shiny.abdn.ac.uk/Stats/debugging/
+https://cosimameyer.com/post/mastering-debugging-in-r/
+https://support.posit.co/hc/en-us/articles/200713843-Debugging-R-code-with-the-RStudio-IDE
+
+https://web.archive.org/web/20170623214306/http://www.stats.uwo.ca/faculty/murdoch/software/debuggingR/pmd.shtml
+
+* 📝[Slides](https://rstats-wtf.github.io/wtf-debugging-slides/)
+* 💻[RStudio Session](bit.ly/useR-debugging)
+
+<a href="#top">Back to top</a>
+
+### Building Effective Docker Images: R Edition
+
+Linux - https://datawookie.dev/blog/2024/06/installing-docker-on-linux/
+macOS - https://datawookie.dev/blog/2024/06/installing-docker-on-macos/
+Windows - https://datawookie.dev/blog/2024/06/installing-docker-on-windows/
+
+[Andrew Collier](https://www.datawookie.dev/blog/)
+
+https://bit.ly/user-salzburg-building-effective-docker-images.
+
+* 📝[Slides](https://bit.ly/user-salzburg-building-effective-docker-images)
+
+<a href="#top">Back to top</a>
+
+https://www.restaurant-stieglkeller.at/en/eventlocation/raeumlichkeiten-eventlocation/

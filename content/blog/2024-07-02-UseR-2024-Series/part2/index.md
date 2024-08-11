@@ -45,7 +45,7 @@ On the first day of the [useR! 2024 Conference](https://events.linuxfoundation.o
 
 ## Formal Debugging in R
 
-What I have always done when R has an error is to comment everything and run the code one line at a time in a painstaking way. If an error occurs in my custom made functions, I usually copy the source code into my R script and then test them line by line. If an error occurs during the for loop, I usually just `print()/cat()/message()` the output and the iteration number to see where the issue is. I never knew that R has some useful functions that can be used for debugging errors in a less tedious way.
+What I have always done when R has an error is to comment everything and run the code one line at a time in a painstaking way. If an error occurs in my custom made functions, I usually copy the source code into my R script and then test them line by line. If an error occurs during the for loop, I usually just `print()/cat()/message()` the output and the iteration number to see where the issue is. I never knew that R has some useful functions that can be used for debugging errors in a less tedious way until I attended this session from [Shannon Pileggi](https://www.pipinghotdata.com/) and [Maëlle Salmon](https://masalmon.eu/)
 
 The tutorial started light with some tips on basic troubleshooting, such as
 
@@ -119,36 +119,20 @@ However, it the source codes from the inaccessible function is very long or is b
 
 One simple way to handle this is to use `options(error=recover)`. When an error occurred, R will let you choose which function in the call stack you want to debug (start from line 1).
 
-A more complicated but flexible option is to use `trace()` which allows users to open the interactive debugger at any location in a function, even under specific conditions.
+A more complicated but flexible option is to use `trace()` which allows users to open the interactive debugger at any location in a function. `trace()` can also be used to [debug methods (in japanese)](https://kohske.wordpress.com/2011/05/14/debug-in-r-6-debug-in-s4r5-classes/) from S4 or R6 classes.
 
 The basic syntax is as follows:
 
 ``` r
 trace(what = some_inaccessible_function,
-      tracer = some_R_expression, 
+      tracer = some_R_expression usually browser, 
       at = code_line_number)
 ```
 
-So in the case of
-
-``` r
-trace(what = function3,
-      tracer = quote(if (is.na(r)) browser()), 
-      at = 4)
-```
-
-it tells R that each time `function3` is called, open the interactive debugger only when the value of `r`
-
 Like `debug`, after calling `trace({some_inaccessible_function})` in the console, the interactive debugger will **always be initiated** each time the inaccessible function is called. To resume calling the inaccessible function without starting the interactive debugger, use `untrace({some_inaccessible_function})`.
 
-[Shannon Pileggi](https://www.pipinghotdata.com/) and [Maëlle Salmon](https://masalmon.eu/)
-
-https://robjhyndman.com/hyndsight/debugging-in-r/index.html
 https://shiny.abdn.ac.uk/Stats/debugging/
 https://cosimameyer.com/post/mastering-debugging-in-r/
-https://support.posit.co/hc/en-us/articles/200713843-Debugging-R-code-with-the-RStudio-IDE
-
-https://web.archive.org/web/20170623214306/http://www.stats.uwo.ca/faculty/murdoch/software/debuggingR/pmd.shtml
 
 -   📝[Slides](https://rstats-wtf.github.io/wtf-debugging-slides/)
 -   💻[RStudio Session](bit.ly/useR-debugging)

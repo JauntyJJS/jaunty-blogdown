@@ -33,9 +33,9 @@ editor_options:
 
 ## Table of Content
 
--   [Introduction](#introduction)
--   [Formal Debugging in R](#formal-debugging-in-r)
--   [Building Effective Docker Images: R Edition](#building-effective-docker-images-r-edition)
+-   \[Introduction\]
+-   \[Formal Debugging in R\]
+-   \[Building Effective Docker Images: R Edition\]
 
 ## Introduction
 
@@ -45,7 +45,7 @@ On the first day of the [useR! 2024 Conference](https://events.linuxfoundation.o
 
 ## Formal Debugging in R
 
-What I have always done when R has an error is to comment everything and run the code one line at a time in a painstaking way. If an error occurs in my custom made functions, I usually copy the source code into my R script and then test them line by line. If an error occurs during the for loop, I usually just `print()/cat()/message()` the output and the iteration number to see where the issue is. I never knew that R has some useful functions that can be used for debugging errors in a less tedious way until I attended this session from [Shannon Pileggi](https://www.pipinghotdata.com/) and [Maëlle Salmon](https://masalmon.eu/)
+What I have always done when R has an error is to comment everything and run the code one line at a time in a painstaking way. If an error occurs in my custom made functions, I usually copy the source code into my R script and then test them line by line. If an error occurs during the for loop, I usually just `print()/cat()/message()` the output and the iteration number to see where the issue is. I never knew that R has some useful functions that can be used for debugging errors in a less tedious way until I attended this morning session from [Shannon Pileggi](https://www.pipinghotdata.com/) and [Maëlle Salmon](https://masalmon.eu/)
 
 The tutorial started light with some tips on basic troubleshooting, such as
 
@@ -53,7 +53,9 @@ The tutorial started light with some tips on basic troubleshooting, such as
 
 -   Learning how to restarting R in a [blank state](https://rstats.wtf/source-and-blank-slates) without saving the workspace and without restoring a saved workspace.
 
--   Using a [reprex](https://reprex.tidyverse.org/). The tutorial did not go through how to create one, though I wish they do because I personally find it non-trivial and can be challenging for new R users based on my experience with the [R4DS Book Club Cohort 9 Chapter 8](https://www.youtube.com/watch?v=m3XatUM9qBE). Most of us from the cohort group shared that they have issues creating a minimal reproduce example when trying to run `reprex::reprex()` on the console and it gives an error: `#> Error: attempt to use zero-length variable name` that they don't understand. (The error appeared because they did not run any code in the console before running `reprex::reprex()`) I prefer the reprex demo session by [JD Long](https://www.youtube.com/watch?v=0zNPgGa-Cu0) because the presenter shows how to do this step by step or [1littlecoder](https://www.youtube.com/watch?v=hnzrDLf9anw) who showed how to copy and paste the reprex on Github and Stack Overflow.
+-   Using a [reprex](https://reprex.tidyverse.org/).
+
+The tutorial did not go through how to create one, though I wish they do because I personally find it non-trivial and can be challenging for new R users based on my experience with the [R4DS Book Club Cohort 9 Chapter 8](https://www.youtube.com/watch?v=m3XatUM9qBE). Most of us from the cohort group shared that they have issues creating a minimal reproduce example when trying to run `reprex::reprex()` on the console and it gives an error: `#> Error: attempt to use zero-length variable name` that they don't understand. (The error appeared because they did not run any code in the console before running `reprex::reprex()`) I prefer the reprex demo session by [JD Long](https://www.youtube.com/watch?v=0zNPgGa-Cu0) because the presenter shows how to do this step by step or [1littlecoder](https://www.youtube.com/watch?v=hnzrDLf9anw) who showed how to copy and paste the reprex on Github and Stack Overflow.
 
 Due to the limited time, the tutorial could only the following themes:
 
@@ -131,8 +133,19 @@ trace(what = some_inaccessible_function,
 
 Like `debug`, after calling `trace({some_inaccessible_function})` in the console, the interactive debugger will **always be initiated** each time the inaccessible function is called. To resume calling the inaccessible function without starting the interactive debugger, use `untrace({some_inaccessible_function})`.
 
-https://shiny.abdn.ac.uk/Stats/debugging/
-https://cosimameyer.com/post/mastering-debugging-in-r/
+### Other Debugging Techniques
+
+As I was visiting the booth from [Cynkra](https://www.cynkra.com/), some of the team members shared that they have used the R package [`flow`](https://moodymudskipper.github.io/flow/index.html) to assist in the debugging process because the R package is able to convert the logic of a given R function into a flow diagram. For a mini summary of how the [`flow`](https://moodymudskipper.github.io/flow/index.html) package is used, check out this [blog post](https://cosimameyer.com/post/mastering-debugging-in-r/) from [Cosima Meyer](https://github.com/cosimameyer).
+
+The tutorial is heavily focused on debugging R functions. A question was raised if there are any useful tips for debugging in a Quarto Document or Shiny Application. Below are some links that can help.
+
+-   Quarto
+    -   <https://docs.posit.co/ide/user/ide/guide/code/debugging.html#debugging-in-quarto-documents>
+    -   <https://qmd4sci.njtierney.com/common-problems.html>
+-   Shiny
+    -   <https://docs.posit.co/ide/user/ide/guide/code/debugging.html#debugging-in-shiny-applications>
+
+### Tutorial Resources
 
 -   📝[Slides](https://rstats-wtf.github.io/wtf-debugging-slides/)
 -   💻[RStudio Session](bit.ly/useR-debugging)
@@ -140,18 +153,186 @@ https://cosimameyer.com/post/mastering-debugging-in-r/
 
 <a href="#top">Back to top</a>
 
-## Building Effective Docker Images: R Edition
+## Building Effective Docker 🐳 Images: R Edition
 
-Linux - https://datawookie.dev/blog/2024/06/installing-docker-on-linux/
-macOS - https://datawookie.dev/blog/2024/06/installing-docker-on-macos/
-Windows - https://datawookie.dev/blog/2024/06/installing-docker-on-windows/
+The afternoon session was conducted by [Andrew Collier](https://www.datawookie.dev/blog/) from [Fathom Data](https://www.fathomdata.dev/), which covered the basics of Docker so that an R user, with limited programming experience, is able to create an image, that contains R, RStudio (if needed), R packages with their corresponding system dependencies installed, such that the image is able to run some R scripts. I have to commend that Andrew's slides are very eye-catching and have a lot of pictorial analogies are used to describe what the docker command actually does.
 
-[Andrew Collier](https://www.datawookie.dev/blog/)
+### Images and Containers Management
 
-https://bit.ly/user-salzburg-building-effective-docker-images.
+Andrew provides a useful analogy that a Docker image is like a cookie cutter which provides a template to create many Docker containers (or cookies of similar shape to the cookie cutter but can come various sizes). The images (cookie cutter) come from a [registry](https://hub.docker.com/search?image_filter=official) (bakery shop).
+
+The command `docker pull <image_name>[:tag]` downloads a copy of the image while `docker run` creates a container from the image and runs it. There are optional commands for `docker run` such as `-d` that tells Docker to run the container in the background, `-it` to run the container in an interactive terminal and `--name <some_container_name>` to give the running container a memorable name. If we forget to give a container name, Docker will give the container a random name.
+
+To stop a running container, we must first identify the running container's name by listing all container (including stopped containers) using the command `docker ps -a`. Once the name is identified, we can stop the container using the command `docker stop <some_container_name>`
+
+A practical session was conducted for users to pull and run different version of the `r-base` Docker image.
+
+### Ports and Volumes
+
+By default, a Docker container is a sealed environment. It is not possible for host files (or other inputs) to enter the container and results (or other outputs) generated in the Docker container to leave the container. We need to create ports (gates) for both the host and containers and map (connect) them so that they can communicate with each other. This can be done using `-p <host port>:<container port>` option in the `docker run` command.
+
+Next, as the Docker container has a different file system from the host, there is a need to mount the host files or folders in order for the Docker container to have access to them. This can be done using `-v <host file>:<container file>` option in the `docker run` command.
+
+A practical session was conducted for users to pull and run different version of the `r-base` Docker image.
+
+A practical session was conducted for users to pull and run an `r-base` Docker image with R package [crayon](https://r-lib.github.io/crayon/).
+
+### Dockerfile
+
+A `Dockerfile` is a text file that contains a list of commands to create Docker images. The command `docker build [-t <image_name>[:tag]] <output_image_file_path>` tries to find the file `Dockerfile` in the directory the command has been called and build a Docker image called `<image_name>[:tag]` in `<output_image_file_path>`. The tutorial also went through some basic `Dockerfile` commands.
+
+| Commands | Description                                |
+|----------|--------------------------------------------|
+| `FROM`   | Specify the base image.                    |
+| `LABEL`  | Add metadata.                              |
+| `RUN`    | Execute a command at build time.           |
+| `COPY`   | Copy file or directory from host to image. |
+| `ENV`    | Create an environment variable.            |
+| `CMD`    | Execute a command at run time.             |
+
+A practical session was conducted for users to pull and run an RStudio Docker image.
+
+### Installing Packages
+
+Andrew then highlighted a few ways to install R packages in the Docker command.
+
+#### System Package management system
+
+According to the [Rocker Project](https://rocker-project.org/use/extending.html#system-package-management-system), there are Linux distributions that allows installation of binary R packages with the system package management system. R packages (like [jsonlite](https://cran.r-project.org/web/packages/jsonlite/index.html)) can be installed with the `apt-get-install` command.
+
+    FROM rocker/r-ver:latest
+
+    RUN apt-get update && \
+        apt-get install -y --no-install-recommends \
+        r-cran-jsonlite && \
+        rm -rf /var/lib/apt/lists/*
+
+    ENV R_LIBS_USER /usr/lib/R/site-library/
+
+A downside is that there is a need to specify an installation folder and the R package installed can lag quite behind its latest version.
+
+#### Posit Pubic Package Manager and littler
+
+Another way is to make use of the [Posit Public Package Manager](https://packagemanager.posit.co/client/) (P3M) as CRAN mirror to install binary version of packages.
+
+    FROM rocker/r-ver:latest
+
+    # If you want to install from source.
+    #
+    # RUN R -e "options(repos = 'https://cloud.r-project.org/')"
+
+    RUN R -e 'install.packages(c("jsonlite", "remotes"))'
+    RUN R -e 'remotes::install_github("datawookie/emayili")'
+
+Another way is to use the [littler](https://eddelbuettel.github.io/littler/) package.
+
+    FROM rocker/r-ver:latest
+
+    RUN install2.r jsonlite remotes
+
+    RUN installGithub.r datawookie/emayili
+
+Do note that some packages (e.g. [rvest](https://rvest.tidyverse.org/) and [Rcpp](https://www.rcpp.org/)) will fail to load if the required additional system prerequisites libraries for the package are not installed.
+
+    FROM rocker/r-base:latest
+
+    RUN apt-get update -q && \ 
+        apt-get install -qq -y \ 
+        libssl-dev \ 
+        libxml2-dev \ 
+        libcurl4-openssl-dev
+        
+    RUN install2.r rvest
+
+### Docker Registry
+
+The tutorial also teaches users how to push a Docker image into the [Docker Hub](https://hub.docker.com/). The first step is to log into [Docker Hub](https://hub.docker.com/) using the command `docker login [-u USERNAME] [-p PASSWORD]`. Assuming that we have built a Docker image called `<image_name>[:tag]`, [change the image name](https://stackoverflow.com/questions/25211198/docker-how-to-change-repository-name-or-rename-image) of the form `<image_name>[:tag]` to `<user_name/image_name>[:tag]`, using the command `docker image tag <image_name>[:tag] <user_name/image_name>[:tag]`. Lastly, push the image to [Docker Hub](https://hub.docker.com/) using the command `docker push <user_name/image_name>[:tag]`
+
+### Optimising Build Speed
+
+Recall that the command `docker build [-t <image_name>[:tag]] <output_image_file_path>` tries to find the file `Dockerfile` in the directory the command has been called and build a Docker image called `<image_name>[:tag]` in `<output_image_file_path>`. During the building phase, all files in the directory where the command has been called will also be copied into the Docker image. TO reduce the build time, it is recommended to exclude unnecessary files by listing them in the `.dockerignore` file, especially files that contain sensitive information.
+
+Unnecessary files includes
+
+-   data files (*.csv, *.xlsx, \*.rds or data/)
+-   documentation (*.doc, *.pdf)
+-   hidden files (.Renviron, .Rprofile)
+-   session files (.RData, .Rhistory)
+
+Each command in `Dockerfile` creates a new building layer. Though the layers are cached, if a layer needs to be rebuilt, then all subsequent layers will also need to be rebuilt. This means the order of how the layers are built matters. It is advised to start building layers from the most stable (or layers that do not change often) to the least.
+
+    # Base image will hardly change
+    FROM alpine:latest
+
+    # System dependecies will seldom change
+    RUN apk add --no-cache nginx
+
+    # NINX configuration may change
+    COPY default.conf /etc/nginx/http.d/
+
+    # Page content and command will change frequently
+    COPY index.html /usr/share/nginx/html/
+
+    CMD ["nginx", "-g", "daemon off;"]
+
+### Optimising Image Size
+
+There are several factors that can affect the image.
+
+The first one is the size of the base image. It is advised to choose a minimal base image and avoid having an image with software, like RStudio or R packages that you do not need.
+
+-   Prefer rocker/r-base to rocker/r-ver
+-   Prefer rocker/r-ver to rocker/rstudio
+-   Prefer rocker/rstudio to rocker/cuda
+
+The next tip is to consolidate layers that have a similar command.
+
+✅ Do this:
+
+    RUN R -e "install.packages('forcats')" && \
+        R -e "install.packages('here')" && \
+        R -e "install.packages('httr')"
+
+⛔Avoid this:
+
+    RUN R -e "install.packages('forcats')"
+    RUN R -e "install.packages('here')"
+    RUN R -e "install.packages('httr')"
+
+The last tip is to avoid installing unnecessary system dependencies and documentations and have code that cleans up after installation of system dependencies and R packages.
+
+Here are some ways on how this can be done in the `RUN` command.
+
+`apt-get install -qq -y --no-install-recommends`
+
+This command skips the installation of [some ubuntu recommended packages](https://ubuntu.com/blog/we-reduced-our-docker-images-by-60-with-no-install-recommends). It is important to note that doing this could result in some missing system libraries that needs to be added back.
+
+`rm -rf /var/lib/apt/lists/*`
+
+This command removes cached package lists.
+
+`rm -rf /tmp/downloaded_packages/`
+
+This command removes downloaded packages.
+
+`strip /usr/local/lib/R/site-library/*/libs/*.so`
+
+This command will [strip the dynamic libraries](https://github.com/rocker-org/rocker-versioned2/issues/340) after installation of binary R packages, reducing the image size.
+
+`"install.packages('plumber', INSTALL_opts = c('--no-docs'))"`
+
+This command will install the R packages without the documentation or vignette files.
+
+### Metadata
+
+The `LABEL` command (of the form `LABEL <key-string>=<value-string>`) in `Dockerfile` helps to add metadata about the Docker image. Here are some examples.
+
+LABEL maintainer="Your Name <email_address>"
+LABEL version="Version Number"
+LABEL description="Your description"
+
+### Tutorial Resources
 
 -   📝[Slides](https://bit.ly/user-salzburg-building-effective-docker-images)
 
 <a href="#top">Back to top</a>
-
-https://www.restaurant-stieglkeller.at/en/eventlocation/raeumlichkeiten-eventlocation/

@@ -3,9 +3,9 @@ title: "Learning Journey in the useR! 2024 Conference Part 2"
 subtitle: ""
 excerpt: "This narrative is a write up of my learning journey during Day 1 of the [useR! 2024 Conference](https://events.linuxfoundation.org/user/)."
 format: hugo-md
-date: 2024-07-07
+date: 2024-08-20
 author: "Jeremy Selva"
-draft: true
+draft: false
 images:
 series:
   - useR! 2024
@@ -35,8 +35,29 @@ htmltools::tagList(
 ## Table of Content
 
 -  [Introduction]
--  [Formal Debugging in R]
--  [Building Effective Docker Images: R Edition]
+-  [Formal Debugging 🐛 in R]
+   -  [Debugging your code]
+       -  [traceback]
+       -  [rlang::entrace and rlang::last_trace]
+       -  [browser]
+       -  [RStudio IDE Breakpoints and Error Handler]
+   -  [Debugging other people's code]
+       -  [debug, undebug and debugonce]
+       -  [options(error=recover) and trace]
+   -  [Other Debugging Techniques]
+   -  [Tutorial Resources]
+-  [Building Effective Docker 🐳 Images: R Edition]
+   -  [Images and Containers Management]
+   -  [Ports and Volumes]
+   -  [Dockerfile]
+   -  [Installing Packages]
+       - [System Package Management System]
+       - [Posit Pubic Package Manager and littler]
+   -  [Metadata]
+   -  [Docker Registry]
+   -  [Optimising Build Speed]
+   -  [Optimising Image Size]
+   -  [Tutorial Resources]
 
 ## Introduction
 
@@ -44,9 +65,11 @@ On the first day of the [useR! 2024 Conference](https://events.linuxfoundation.o
 
 <a href="#top">Back to top</a>
 
-## Formal Debugging in R
+## Formal Debugging 🐛 in R
 
-What I have always done when R has an error is to comment everything and run the code one line at a time in a painstaking way. If an error occurs in my custom made functions, I usually copy the source code into my R script and then test them line by line. If an error occurs during the for loop, I usually just `print()/cat()/message()` the output and the iteration number to see where the issue is. I never knew that R has some useful functions that can be used for debugging errors in a less tedious way until I attended this morning session from [Shannon Pileggi](https://www.pipinghotdata.com/) and [Maëlle Salmon](https://masalmon.eu/)
+What I have always done when R has an error is to comment everything and run the code one line at a time in a painstaking way. If an error occurs in my custom made functions, I usually copy the source code into my R script and then test them line by line. If an error occurs during the for loop, I usually just `print()/cat()/message()` the output and the iteration number to see where the issue is. 
+
+I never knew that R has some useful functions that can be used for debugging errors in a less tedious way until I attended this morning session from [Shannon Pileggi](https://www.pipinghotdata.com/) and [Maëlle Salmon](https://masalmon.eu/)
 
 The tutorial started light with some tips on basic troubleshooting, such as
 
@@ -56,7 +79,13 @@ The tutorial started light with some tips on basic troubleshooting, such as
 
 -   Using a [reprex](https://reprex.tidyverse.org/).
 
-The tutorial did not go through how to create one, though I wish they do because I personally find it non-trivial and can be challenging for new R users based on my experience with the [R4DS Book Club Cohort 9 Chapter 8](https://www.youtube.com/watch?v=m3XatUM9qBE). Most of us from the cohort group shared that they have issues creating a minimal reproduce example when trying to run `reprex::reprex()` on the console and it gives an error: `#> Error: attempt to use zero-length variable name` that they don't understand. (The error appeared because they did not run any code in the console before running `reprex::reprex()`) I prefer the reprex demo session by [JD Long](https://www.youtube.com/watch?v=0zNPgGa-Cu0) because the presenter shows how to do this step by step or [1littlecoder](https://www.youtube.com/watch?v=hnzrDLf9anw) who showed how to copy and paste the reprex on Github and Stack Overflow.
+The tutorial did not go through how to create one, though I wished they did because I personally found the process non-trivial and could be challenging for new R users. Based on my experience with the [R4DS Book Club Cohort 9 Chapter 8](https://www.youtube.com/watch?v=m3XatUM9qBE), most of us from the cohort group shared that they have issues creating a minimal reproduce example when trying to run `reprex::reprex()` on the console and it gives an error that they don't understand: 
+
+`#> Error: attempt to use zero-length variable name` 
+
+The error appeared because they did not run any code in the console before running [`reprex::reprex()`](https://reprex.tidyverse.org/reference/reprex.html). I prefer the reprex demo session by [JD Long](https://www.youtube.com/watch?v=0zNPgGa-Cu0) because the presenter shows how to do this step by step or [1littlecoder](https://www.youtube.com/watch?v=hnzrDLf9anw) who showed how to copy and paste the reprex on Github and Stack Overflow.
+
+<iframe width="710" height="390" src="https://www.youtube.com/embed/hnzrDLf9anw" frameborder="0" allowfullscreen></iframe>
 
 Due to the limited time, the tutorial could only the following themes:
 
@@ -64,9 +93,13 @@ Due to the limited time, the tutorial could only the following themes:
 
 Below are some tips to debug functions that you have access to the source codes.
 
-#### traceback()
+#### traceback
 
-`traceback()` is useful in locating which function, its corresponding R script name and code line number where the error has occurred. This is a good starting point for beginners. The catch is that the users must remember to `source` all the R scripts that contain the functions to get an effective message from `traceback`. If the project contains a lot of R scripts with functions, it is better to organise them as a [R package structure](https://r-pkgs.org/structure.html) and run [`devtools::load_all`](https://devtools.r-lib.org/reference/load_all.html). In addition, if the function contains a variable that is assigned from a long pipe(line) and an error comes from the long pipe(line), it can be hard to identify which code line of the pipeline is causing the issue. This is because `traceback()` will treat code in pipes like
+[`traceback()`](https://rdrr.io/r/base/traceback.html) is useful in locating which function, its corresponding R script name and code line number where the error has occurred. This is a good starting point for beginners. The catch is that the users must remember to [`source`](https://rdrr.io/r/base/source.html) all the R scripts that contain the functions to get an effective message from [`traceback`](https://rdrr.io/r/base/traceback.html). 
+
+If the project contains a lot of R scripts with functions, it is better to organise them as a [R package structure](https://r-pkgs.org/structure.html) and run [`devtools::load_all`](https://devtools.r-lib.org/reference/load_all.html). 
+
+In addition, if the function contains a variable that is assigned from a long pipe(line) and an error comes from the long pipe(line), it can be hard to identify which code line of the pipeline is causing the issue like the following below:
 
 ``` r
 results <- data |> 
@@ -74,35 +107,66 @@ results <- data |>
   task2
 ```
 
-as `task2(task1(data))` and will inform you that code line number where the error has occurred is the first line the pipe was utilised.
+This is because [`traceback()`](https://rdrr.io/r/base/traceback.html) will treat code in the above pipe as `task2(task1(data))` and will inform you that code line number where the error has occurred is the first line the pipe was utilised.
 
-#### rlang::entrace() and rlang::last_trace()
+<a href="#top">Back to top</a>
 
-If the project has many R scripts with custom-made functions, it can be hard to locate the right R script. `options(error = rlang::entrace)` handler with `rlang::last_trace()` can be utilised instead as it not only provides the function, its corresponding R script name and code line number where the error has occurred but also the file path to the R script as well. In RStudio, the file path can be left clicked directly and it brings you to the file and line number where the error happened. This is made possible because `options(error = rlang::entrace)` handler converts the base errors to an `rlang` object. Like `traceback()`, users must remember to `source` all the R scripts that contain the functions to get an effective message.
+#### rlang::entrace and rlang::last_trace
 
-The main disadvantage of `options(error = rlang::entrace)` handler method, as indicated in this [rlang documentation](https://rlang.r-lib.org/reference/global_entrace.html), is that RStudio could only handle one handler per session. If there is a need to use other handlers like `options(error = recover)` or `options(error = browser)`, you will need to manually switch between `options(error = rlang::entrace)`. Thankfully, there is a workaround function to handle this issue called [`rlang::global_entrace`](https://rlang.r-lib.org/reference/global_entrace.html) for people using R version 4.0 and above.
+If the project has many R scripts with custom-made functions, it can be hard to locate the right R script. [`options(error = rlang::entrace)`](https://rlang.r-lib.org/reference/entrace.html) handler with [`rlang::last_trace()`](https://rlang.r-lib.org/reference/last_error.html) can be utilised instead as it not only provides the function, its corresponding R script name and code line number where the error has occurred but also the file path to the R script as well. In RStudio, the file path can be left clicked directly and it brings you to the file and line number where the error happened. This is made possible because [`options(error = rlang::entrace)`]((https://rlang.r-lib.org/reference/entrace.html)) handler converts the base errors to an `rlang` object. Like [`traceback()`](https://rdrr.io/r/base/traceback.html), users must remember to [`source`](https://rdrr.io/r/base/source.html) all the R scripts that contain the functions to get an effective message.
 
-#### browser()
+The main disadvantage of [`options(error = rlang::entrace)`](https://rlang.r-lib.org/reference/entrace.html) handler method, as indicated in this [rlang documentation](https://rlang.r-lib.org/reference/global_entrace.html), is that RStudio could only handle one handler per session. If there is a need to use other handlers like [`options(error = recover)`](https://rdrr.io/r/utils/recover.html) or [`options(error = browser)`](https://rdrr.io/r/base/browser.html), you will need to manually switch between [`options(error = rlang::entrace)`](https://rlang.r-lib.org/reference/entrace.html). Thankfully, there is a workaround function to handle this issue called [`rlang::global_entrace`](https://rlang.r-lib.org/reference/global_entrace.html) for people using R version 4.0 and above.
 
-In some cases, we may need to troubleshoot because the custom-made function is giving a logical error (or NA or +/-Inf) and there may be a need to investigate how the input value changes overtime in the custom-made function. Instead of copy and pasting the source code into and R script to debug, it may be easier to type the `browser()` function as a breakpoint inside the custom-made function where you are interested to find out the status/value of the input value as well as other variables declared before `browser()` function. With the `browser()` function breakpoint in place, running the custom-made function will open an interactive debugging session where we can list all available variables (using `ls.str()`) and print their assigned values.
+<a href="#top">Back to top</a>
+
+#### browser
+
+In some cases, we may need to troubleshoot because the custom-made function is giving a logical error (or `NA` or `+/-Inf`) and there may be a need to investigate how the input value changes overtime in the custom-made function. Instead of copy and pasting the source code into and R script to debug, it may be easier to type the [`browser()`](https://rdrr.io/r/base/browser.html) function as a breakpoint inside the custom-made function where you are interested to find out the status/value of the input value as well as other variables declared before [`browser()`](https://rdrr.io/r/base/browser.html) function. With the [`browser()`](https://rdrr.io/r/base/browser.html) function breakpoint in place, running the custom-made function will open an interactive debugging session where we can list all available variables (using [`ls.str()`](https://rdrr.io/r/utils/ls_str.html)) and print their assigned values.
 
 In the interactive debugger, there are some [reserved commands like n, s, f, c, Q](https://docs.posit.co/ide/user/ide/guide/code/debugging.html#debugging-commands). If there is a need to call a variable that is the same as the reserved commands like `n`, please type `print(n)` instead of `n` in the `Browse[{some_number}]>` prompt.
 
-`browser()` is also useful for creating conditional breakpoints. Here is an example from a [Posit Article](https://docs.posit.co/ide/user/ide/guide/code/debugging.html#stopping-on-a-line) and [Stack Overflow question](https://stackoverflow.com/questions/49008890/how-to-start-debugger-only-when-condition-is-met) showing how to debug after many loop iterations.
+[`browser()`](https://rdrr.io/r/base/browser.html) is also useful for creating conditional breakpoints. Here is an example from a [Posit Article](https://docs.posit.co/ide/user/ide/guide/code/debugging.html#stopping-on-a-line) and [Stack Overflow question](https://stackoverflow.com/questions/49008890/how-to-start-debugger-only-when-condition-is-met) showing how to debug after many loop iterations.
 
-However, to use `browser()` within a pipe requires the tee pipe [`%T>%`](https://magrittr.tidyverse.org/reference/tee.html). For a short but detailed use of `browser()` in a complex function with pipes, check out this example [video](https://www.youtube.com/watch?v=ATIl_JlM9ko) from Bruno Rodrigues.
+However, to use [`browser()`](https://rdrr.io/r/base/browser.html) within a pipe requires the tee pipe [`%T>%`](https://magrittr.tidyverse.org/reference/tee.html). 
 
-#### RStudio IDE Breakpoints
+``` r
+results <- mtcars |> 
+  dplyr::select(dplyr::all_of(c("mpg", "cyl"))) %T>%  
+  browser() |> 
+  dplyr::pull(.data[["mpg"]]) %T>% 
+  browser() |>
+  log() %T>%
+  browser() |> 
+  mean(na.rm = TRUE)
+```
+
+![](images/pipe-debug.png){fig-align="center" fig-alt="Debugging in pipe operator."}
+
+For a short but detailed use of [`browser()`](https://rdrr.io/r/base/browser.html) in a complex function with pipes, check out this example [video](https://www.youtube.com/watch?v=ATIl_JlM9ko) from Bruno Rodrigues.
+
+<iframe width="710" height="390" src="https://www.youtube.com/embed/ATIl_JlM9ko" frameborder="0" allowfullscreen></iframe>
+
+<a href="#top">Back to top</a>
+
+#### RStudio IDE Breakpoints and Error Handler
 
 The RStudio IDE also have some useful features for debugging as well.
 
-One of them is by creating multiple breakpoints (without explicitly typing the `browser()` function) denoted by a red circle on the left of the code line number of an R script containing functions. This can be done by clicking on the left of the code line number, giving a red hollow circle and then clicking on the source button to turn from a red hollow circle to a filled hollow circle. If the project is structured as an R package, `devtools::load_all()` can be used instead of `source()`.
+One of them is by creating multiple breakpoints (without explicitly typing the [`browser()`](https://rdrr.io/r/base/browser.html) function) denoted by a red circle on the left of the code line number of an R script containing functions. This can be done by clicking on the left of the code line number, giving a red hollow circle and then clicking on the source button to turn from a red hollow circle to a filled hollow circle. 
+
+![](images/hollow_circle.png){fig-align="center" fig-alt="Breakpoint in hollow circle."} 
+
+![](images/full_circle.png){fig-align="center" fig-alt="Breakpoint in full circle."}
+
+If the project is structured as an R package, [`devtools::load_all()`]((https://devtools.r-lib.org/reference/load_all.html)) can be used instead of [`source()`](https://rdrr.io/r/base/source.html).
 
 While this feature is convenient, do note that [not all types of R codes support the red circle breakpoints](https://support.posit.co/hc/en-us/articles/200534337-Breakpoint-Troubleshooting-in-the-RStudio-IDE) and the RStudio IDE [does not support conditional breakpoints](https://adv-r.hadley.nz/debugging.html#alternatives).
 
-#### RStudio IDE Error Handler
+The RStudio IDE can also allow users to create different error handler options when an error occurred. This is done by clicking `Debug`, `On Error` and users can choose between `Message Only`, `Error Inspector` or `Break in Code`. Do note that RStudio could only handle one handler per session and if there may be a need to manually change the handler like retyping [`options(error = rlang::entrace)`](https://rlang.r-lib.org/reference/entrace.html).
 
-The RStudio IDE can also allow users to create different error handler options when an error occurred. This is done by clicking `Debug`, `On Error` and users can choose between `Message Only`, `Error Inspector` or `Break in Code`. Do note that RStudio could only handle one handler per session and if there may be a need to manually change the handler like retyping `options(error = rlang::entrace)`.
+![](images/debug_options.png){fig-align="center" fig-alt="RStudio IDE error handler options: Message Only, Error Inspector and Break in Code."}
+
+<a href="#top">Back to top</a>
 
 ### Debugging other people's code
 
@@ -110,19 +174,21 @@ Below are some tips to debug functions that you do not have access to the script
 
 #### debug, undebug and debugonce
 
-`debug` and `debugonce` can allow users to at least enter an interactive debugger to view and walkthrough line by line from the beginning (line 1) of source code that runs a given inaccessible function.
+[`debug`](https://rdrr.io/r/base/debug.html) and [`debugonce`](https://rdrr.io/r/base/debug.html) can allow users to at least enter an interactive debugger to view and walkthrough line by line from the beginning (line 1) of source code that runs a given inaccessible function.
 
-The `debug({some_inaccessible_function})` function is equivalence to forcefully run a `broswer()` breakpoint on the first line of the inaccessible function. In another words, when `debug({some_inaccessible_function})` is executed in the console, the interactive debugger will **always be initiated** each time the inaccessible function is called. To resume calling the inaccessible function without starting the interactive debugger, use `undebug({some_inaccessible_function})`.
+The `debug({some_inaccessible_function})` function is equivalence to forcefully run a [`browser()`](https://rdrr.io/r/base/browser.html) breakpoint on the first line of the inaccessible function. In another words, when `debug({some_inaccessible_function})` is executed in the console, the interactive debugger will **always be initiated** each time the inaccessible function is called. To resume calling the inaccessible function without starting the interactive debugger, use `undebug({some_inaccessible_function})`.
 
 An alternative is to type `debugonce({some_inaccessible_function})` so that calling the `some_inaccessible_function` will enter the interactive debugger the next time it runs, but not after that.
+
+<a href="#top">Back to top</a>
 
 #### options(error=recover) and trace
 
 However, it the source codes from the inaccessible function is very long or is built with many nested functions (or in R terms have a large [call stack](https://swcarpentry.github.io/r-novice-inflammation/14-supp-call-stack.html)), it can be tedious to always start the interactive debugger from line 1 of the inaccessible function source codes.
 
-One simple way to handle this is to use `options(error=recover)`. When an error occurred, R will let you choose which function in the call stack you want to debug (start from line 1).
+One simple way to handle this is to use [`options(error = recover)`](https://rdrr.io/r/utils/recover.html). When an error occurred, R will let you choose which function in the call stack you want to debug (start from line 1).
 
-A more complicated but flexible option is to use `trace()` which allows users to open the interactive debugger at any location in a function. `trace()` can also be used to [debug methods (in japanese)](https://kohske.wordpress.com/2011/05/14/debug-in-r-6-debug-in-s4r5-classes/) from S4 or R6 classes.
+A more complicated but flexible option is to use [`trace()`](https://rdrr.io/r/base/trace.html) which allows users to open the interactive debugger at any location in a function. [`trace()`](https://rdrr.io/r/base/trace.html) can also be used to [debug methods (in japanese)](https://kohske.wordpress.com/2011/05/14/debug-in-r-6-debug-in-s4r5-classes/) from S4 or R6 classes.
 
 The basic syntax is as follows:
 
@@ -132,7 +198,9 @@ trace(what = some_inaccessible_function,
       at = code_line_number)
 ```
 
-Like `debug`, after calling `trace({some_inaccessible_function})` in the console, the interactive debugger will **always be initiated** each time the inaccessible function is called. To resume calling the inaccessible function without starting the interactive debugger, use `untrace({some_inaccessible_function})`.
+Like [`debug`](https://rdrr.io/r/base/debug.html), after calling `trace({some_inaccessible_function})` in the console, the interactive debugger will **always be initiated** each time the inaccessible function is called. To resume calling the inaccessible function without starting the interactive debugger, use `untrace({some_inaccessible_function})`.
+
+<a href="#top">Back to top</a>
 
 ### Other Debugging Techniques
 
@@ -145,6 +213,8 @@ The tutorial is heavily focused on debugging R functions. A question was raised 
     -   <https://qmd4sci.njtierney.com/common-problems.html>
 -   Shiny
     -   <https://docs.posit.co/ide/user/ide/guide/code/debugging.html#debugging-in-shiny-applications>
+    
+<a href="#top">Back to top</a>
 
 ### Tutorial Resources
 
@@ -168,6 +238,8 @@ To stop a running container, we must first identify the running container's name
 
 A practical session was conducted for users to pull and run different version of the `r-base` Docker image.
 
+<a href="#top">Back to top</a>
+
 ### Ports and Volumes
 
 By default, a Docker container is a sealed environment. It is not possible for host files (or other inputs) to enter the container and results (or other outputs) generated in the Docker container to leave the container. We need to create ports (gates) for both the host and containers and map (connect) them so that they can communicate with each other. This can be done using `-p <host port>:<container port>` option in the `docker run` command.
@@ -177,6 +249,8 @@ Next, as the Docker container has a different file system from the host, there i
 A practical session was conducted for users to pull and run different version of the `r-base` Docker image.
 
 A practical session was conducted for users to pull and run an `r-base` Docker image with R package [crayon](https://r-lib.github.io/crayon/).
+
+<a href="#top">Back to top</a>
 
 ### Dockerfile
 
@@ -193,11 +267,13 @@ A `Dockerfile` is a text file that contains a list of commands to create Docker 
 
 A practical session was conducted for users to pull and run an RStudio Docker image.
 
+<a href="#top">Back to top</a>
+
 ### Installing Packages
 
 Andrew then highlighted a few ways to install R packages in the Docker command.
 
-#### System Package management system
+#### System Package Management System
 
 According to the [Rocker Project](https://rocker-project.org/use/extending.html#system-package-management-system), there are Linux distributions that allows installation of binary R packages with the system package management system. R packages (like [jsonlite](https://cran.r-project.org/web/packages/jsonlite/index.html)) can be installed  with the `apt-get-install` command.
 
@@ -256,6 +332,8 @@ RUN install2.r rvest
 
 A practical session was conducted for users to pull and run an RStudio Docker image that scrape USD exchange rates.
 
+<a href="#top">Back to top</a>
+
 ### Metadata
 
 The `LABEL` command (of the form `LABEL <key-string>=<value-string>`) in `Dockerfile` helps to add metadata about the Docker image. Here are some examples.
@@ -265,10 +343,13 @@ LABEL maintainer="Your Name <email_address>"
       version="Version Number"
       description="Your description"
 ```
+<a href="#top">Back to top</a>
 
 ### Docker Registry
 
 The tutorial also teaches users how to push a Docker image into the [Docker Hub](https://hub.docker.com/). The first step is to log into [Docker Hub](https://hub.docker.com/) using the command `docker login [-u USERNAME] [-p PASSWORD]`. Assuming that we have built a Docker image called `<image_name>[:tag]`, [change the image name](https://stackoverflow.com/questions/25211198/docker-how-to-change-repository-name-or-rename-image) of the form `<image_name>[:tag]` to `<user_name/image_name>[:tag]`, using the command `docker image tag <image_name>[:tag] <user_name/image_name>[:tag]`. Lastly, push the image to [Docker Hub](https://hub.docker.com/) using the command `docker push <user_name/image_name>[:tag]`
+
+<a href="#top">Back to top</a>
 
 ### Optimising Build Speed
 
@@ -299,6 +380,7 @@ COPY index.html /usr/share/nginx/html/
 CMD ["nginx", "-g", "daemon off;"]
 
 ```
+<a href="#top">Back to top</a>
 
 ### Optimising Image Size
 
@@ -355,7 +437,7 @@ This command will install the R packages without the documentation or vignette f
 
 A practical session was conducted for users to pull and run an RStudio Docker image that has a simple API that extract text from an uploaded image using Optical Character Recognition.
 
-Here is the difference in image size for the following Docker command for this practical session.
+Here is the difference in image size for the following Docker commands (ocr-api-default vs ocr-api-clean) for this practical session.
 
 #### ocr-api-default
 
@@ -383,7 +465,7 @@ COPY api.R run.R ./
 CMD ["Rscript", "run.R"]
 ```
 
-![](images/ocr-api-default-size.png)
+![](images/ocr-api-default-size.png){fig-align="center" fig-alt="Layer size of RUN command is 473.73 MB."}
 
 #### ocr-api-clean
 
@@ -413,7 +495,9 @@ COPY api.R run.R ./
 CMD ["Rscript", "run.R"]
 ```
 
-![](images/ocr-api-clean-size.png)
+![](images/ocr-api-clean-size.png){fig-align="center" fig-alt="Layer size of RUN command is 392.03 MB."}
+
+<a href="#top">Back to top</a>
 
 ### Tutorial Resources
 

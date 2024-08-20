@@ -44,7 +44,7 @@ editor_options:
         -   [debug, undebug and debugonce](#debug-undebug-and-debugonce)
         -   [options(error=recover) and trace](#optionserrorrecover-and-trace)
     -   [Other Debugging Techniques](#other-debugging-techniques)
-    -   [Tutorial Resources](#tutorial-resources)
+    -   [Debugging Tutorial Resources](#debugging-tutorial-resources)
 -   [Building Effective Docker 🐳 Images: R Edition](#building-effective-docker-images-r-edition)
     -   [Images and Containers Management](#images-and-containers-management)
     -   [Ports and Volumes](#ports-and-volumes)
@@ -56,7 +56,7 @@ editor_options:
     -   [Docker Registry](#docker-registry)
     -   [Optimising Build Speed](#optimising-build-speed)
     -   [Optimising Image Size](#optimising-image-size)
-    -   [Tutorial Resources](#tutorial-resources)
+    -   [Docker Tutorial Resources](#docker-tutorial-resources)
 
 ## Introduction
 
@@ -217,7 +217,7 @@ The tutorial is heavily focused on debugging R functions. A question was raised 
 
 <a href="#top">Back to top</a>
 
-### Tutorial Resources
+### Debugging Tutorial Resources
 
 -   📝[Slides](https://rstats-wtf.github.io/wtf-debugging-slides/)
 -   💻[RStudio Session](bit.ly/useR-debugging)
@@ -477,7 +477,7 @@ Here is the difference in image size for the following Docker commands (ocr-api-
 
 <a href="#top">Back to top</a>
 
-### Tutorial Resources
+### Docker Tutorial Resources
 
 -   📝[Slides](https://bit.ly/user-salzburg-building-effective-docker-images)
 

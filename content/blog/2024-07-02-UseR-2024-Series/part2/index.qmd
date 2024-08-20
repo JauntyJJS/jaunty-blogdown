@@ -45,7 +45,7 @@ htmltools::tagList(
        -  [debug, undebug and debugonce]
        -  [options(error=recover) and trace]
    -  [Other Debugging Techniques]
-   -  [Tutorial Resources]
+   -  [Debugging Tutorial Resources]
 -  [Building Effective Docker 🐳 Images: R Edition]
    -  [Images and Containers Management]
    -  [Ports and Volumes]
@@ -57,7 +57,7 @@ htmltools::tagList(
    -  [Docker Registry]
    -  [Optimising Build Speed]
    -  [Optimising Image Size]
-   -  [Tutorial Resources]
+   -  [Docker Tutorial Resources]
 
 ## Introduction
 
@@ -216,7 +216,7 @@ The tutorial is heavily focused on debugging R functions. A question was raised 
     
 <a href="#top">Back to top</a>
 
-### Tutorial Resources
+### Debugging Tutorial Resources
 
 -   📝[Slides](https://rstats-wtf.github.io/wtf-debugging-slides/)
 -   💻[RStudio Session](bit.ly/useR-debugging)
@@ -497,7 +497,7 @@ CMD ["Rscript", "run.R"]
 
 <a href="#top">Back to top</a>
 
-### Tutorial Resources
+### Docker Tutorial Resources
 
 -   📝[Slides](https://bit.ly/user-salzburg-building-effective-docker-images)
 

@@ -246,8 +246,6 @@ By default, a Docker container is a sealed environment. It is not possible for h
 
 Next, as the Docker container has a different file system from the host, there is a need to mount the host files or folders in order for the Docker container to have access to them. This can be done using `-v <host file>:<container file>` option in the `docker run` command.
 
-A practical session was conducted for users to pull and run different version of the `r-base` Docker image.
-
 A practical session was conducted for users to pull and run an `r-base` Docker image with R package [crayon](https://r-lib.github.io/crayon/).
 
 <a href="#top">Back to top</a>

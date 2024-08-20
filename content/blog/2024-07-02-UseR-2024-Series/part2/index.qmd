@@ -79,7 +79,7 @@ The tutorial started light with some tips on basic troubleshooting, such as
 
 -   Using a [reprex](https://reprex.tidyverse.org/).
 
-The tutorial did not go through how to create one, though I wished they did because I personally found the process non-trivial and could be challenging for new R users. Based on my experience with the [R4DS Book Club Cohort 9 Chapter 8](https://www.youtube.com/watch?v=m3XatUM9qBE), most of us from the cohort group shared that they have issues creating a minimal reproduce example when trying to run `reprex::reprex()` on the console and it gives an error that they don't understand: 
+The tutorial did not go through how to create one, though I wished they did because I personally found the process non-trivial and could be challenging for new R users. Based on my experience with the [R4DS Book Club Cohort 9 Chapter 8](https://www.youtube.com/watch?v=m3XatUM9qBE), most of us from the cohort group shared that they had issues creating a minimal reproduce example when trying to run `reprex::reprex()` on the console and it gave an error that they don't understand: 
 
 `#> Error: attempt to use zero-length variable name` 
 

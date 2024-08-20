@@ -1,7 +1,7 @@
 ---
 title: "Learning Journey in the useR! 2024 Conference Part 2"
 subtitle: ""
-excerpt: "This narrative is a write up of my learning journey in the [useR! 2024 Conference](https://events.linuxfoundation.org/user/)."
+excerpt: "This narrative is a write up of my learning journey during Day 1 of the [useR! 2024 Conference](https://events.linuxfoundation.org/user/)."
 format: hugo-md
 date: 2024-07-07
 author: "Jeremy Selva"
@@ -34,9 +34,9 @@ htmltools::tagList(
 
 ## Table of Content
 
--   \[Introduction\]
--   \[Formal Debugging in R\]
--   \[Building Effective Docker Images: R Edition\]
+-  [Introduction]
+-  [Formal Debugging in R]
+-  [Building Effective Docker Images: R Edition]
 
 ## Introduction
 
@@ -254,6 +254,18 @@ RUN install2.r rvest
 
 ```
 
+A practical session was conducted for users to pull and run an RStudio Docker image that scrape USD exchange rates.
+
+### Metadata
+
+The `LABEL` command (of the form `LABEL <key-string>=<value-string>`) in `Dockerfile` helps to add metadata about the Docker image. Here are some examples.
+
+```
+LABEL maintainer="Your Name <email_address>"
+      version="Version Number"
+      description="Your description"
+```
+
 ### Docker Registry
 
 The tutorial also teaches users how to push a Docker image into the [Docker Hub](https://hub.docker.com/). The first step is to log into [Docker Hub](https://hub.docker.com/) using the command `docker login [-u USERNAME] [-p PASSWORD]`. Assuming that we have built a Docker image called `<image_name>[:tag]`, [change the image name](https://stackoverflow.com/questions/25211198/docker-how-to-change-repository-name-or-rename-image) of the form `<image_name>[:tag]` to `<user_name/image_name>[:tag]`, using the command `docker image tag <image_name>[:tag] <user_name/image_name>[:tag]`. Lastly, push the image to [Docker Hub](https://hub.docker.com/) using the command `docker push <user_name/image_name>[:tag]`
@@ -294,9 +306,9 @@ There are several factors that can affect the image.
 
 The first one is the size of the base image. It is advised to choose a minimal base image and avoid having an image with software, like RStudio or R packages that you do not need.
 
-*  Prefer rocker/r-base to rocker/r-ver
-*  Prefer rocker/r-ver to rocker/rstudio
-*  Prefer rocker/rstudio to rocker/cuda
+*  Prefer `rocker/r-base` to `rocker/r-ver`
+*  Prefer `rocker/r-ver` to `rocker/rstudio`
+*  Prefer `rocker/rstudio` to `rocker/cuda`
 
 The next tip is to consolidate layers that have a similar command.
 
@@ -341,13 +353,67 @@ This command will [strip the dynamic libraries](https://github.com/rocker-org/ro
 
 This command will install the R packages without the documentation or vignette files.
 
-### Metadata
+A practical session was conducted for users to pull and run an RStudio Docker image that has a simple API that extract text from an uploaded image using Optical Character Recognition.
 
-The `LABEL` command (of the form `LABEL <key-string>=<value-string>`) in `Dockerfile` helps to add metadata about the Docker image. Here are some examples.
+Here is the difference in image size for the following Docker command for this practical session.
 
-LABEL maintainer="Your Name <email_address>"
-LABEL version="Version Number"
-LABEL description="Your description"
+#### ocr-api-default
+
+```
+FROM rocker/r-base
+
+LABEL maintainer="Jeremy Selva"
+LABEL version="0.1.0"
+LABEL description="An API for Optical Character Recognition (OCR)"
+
+RUN apt-get update -q && \ 
+    apt-get install -qq -y \ 
+        libmagick++-dev \ 
+        libtesseract-dev \ 
+        libpoppler-cpp-dev \
+        libsodium-dev \ 
+        tesseract-ocr-eng && \
+    install2.r -e \ 
+      plumber \ 
+      tesseract \ 
+      magick
+
+COPY api.R run.R ./
+
+CMD ["Rscript", "run.R"]
+```
+
+![](images/ocr-api-default-size.png)
+
+#### ocr-api-clean
+
+```
+FROM rocker/r-base
+
+LABEL maintainer="Jeremy Selva" \
+      version="0.1.0" \
+      description="An API for Optical Character Recognition (OCR)"
+
+RUN apt-get update -qq && \ 
+    apt-get install -qq -y --no-install-recommends \
+        libmagick++-dev \ 
+        libtesseract-dev \ 
+        libpoppler-cpp-dev \
+        libsodium-dev \ 
+        tesseract-ocr-eng && \
+    rm -rf /var/lib/apt/lists/* && \
+    R -q -e "install.packages('plumber', INSTALL_opts = c('--no-docs'))"  && \
+    R -q -e "install.packages('tesseract', INSTALL_opts = c('--no-docs'))"  && \
+    R -q -e "install.packages('magick', INSTALL_opts = c('--no-docs'))"  && \
+    rm -rf /tmp/downloaded_packages/ && \
+    strip /usr/local/lib/R/site-library/*/libs/*.so
+
+COPY api.R run.R ./
+
+CMD ["Rscript", "run.R"]
+```
+
+![](images/ocr-api-clean-size.png)
 
 ### Tutorial Resources
 

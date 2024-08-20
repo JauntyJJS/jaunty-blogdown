@@ -2,8 +2,8 @@
 title: Learning Journey in the useR! 2024 Conference Part 1
 subtitle: ''
 excerpt: >-
-  This narrative is a write up of my learning journey in the [useR! 2024
-  Conference](https://events.linuxfoundation.org/user/).
+  This narrative is a write up of my learning journey in the virtual seesion of
+  the [useR! 2024 Conference](https://events.linuxfoundation.org/user/).
 format: hugo-md
 date: 2024-07-07T00:00:00.000Z
 author: Jeremy Selva

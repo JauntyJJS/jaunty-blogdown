@@ -10,7 +10,7 @@ show_post_time: false
 event: R User Group Singapore (RUGS) meetup
 event_url: https://www.meetup.com/r-user-group-sg/
 author: Jeremy Selva
-location: innovation 4.0 Level 01-03 Seminar Room,  3 Research Link, Singapore 117602
+location: innovation 4.0 Level 01-03 Seminar Room, 3 Research Link, Singapore 117602
 draft: false
 layout: single
 categories:

@@ -1,0 +1,28 @@
+---
+title: "Looking Back At 2024"
+subtitle: ""
+excerpt: "A [scrollytelling](https://closeread.netlify.app/) write up about my life's journey and reflection for 2024."
+format: hugo-md
+date: 2024-12-27
+author: "Jeremy Selva"
+draft: false
+layout: single
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(fig.align = "center")
+
+```
+
+## Introduction
+
+I have created this [scrollytelling](https://closeread.netlify.app/){target="_blank"} article below in [Quarto](https://quarto.org/){target="_blank"} about my life's journey and reflection for 2024. It is best viewed on a desktop, rather than a mobile device.
+
+Here is the link <https://jauntyjjs.github.io/reflection_2024/>{target="_blank"} to access it.
+
+![](preview.png){fig-alt="A preview of my life's journey and reflection for 2024."}
+
+The source code used to generate this reflection can be found in this [GitHub page](https://github.com/JauntyJJS/reflection_2024){target="_blank"}.
+

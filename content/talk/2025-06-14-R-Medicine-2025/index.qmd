@@ -27,5 +27,5 @@ links:
 
 Here are the slides.
 
-<iframe width="1000" height="580" src="https://jauntyjjs.github.io/RMedicine2025_pretestcad/" frameborder="0" allowfullscreen></iframe>
+<iframe width="1150" height="650" src="https://jauntyjjs.github.io/RMedicine2025_pretestcad/" frameborder="0" allowfullscreen></iframe>
 

@@ -25,7 +25,9 @@ links:
   url: https://github.com/JauntyJJS/RMedicine2025_pretestcad
 ---
 
-Here are the slides.
+Here are the video and slides.
 
 <iframe width="1150" height="650" src="https://jauntyjjs.github.io/RMedicine2025_pretestcad/" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="710" height="390" src="https://www.youtube.com/embed/5hpTlmKvRU8" frameborder="0" allowfullscreen></iframe>
 

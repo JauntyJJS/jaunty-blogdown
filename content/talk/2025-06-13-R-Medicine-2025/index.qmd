@@ -25,7 +25,9 @@ links:
   url: https://github.com/JauntyJJS/RMedicine2025_harmonisation
 ---
 
-Here are the slides.
+Here are the video and slides.
 
 <iframe width="1150" height="650" src="https://jauntyjjs.github.io/RMedicine2025_harmonisation/" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="710" height="390" src="https://www.youtube.com/embed/0rUcKR4fylw" frameborder="0" allowfullscreen></iframe>
 

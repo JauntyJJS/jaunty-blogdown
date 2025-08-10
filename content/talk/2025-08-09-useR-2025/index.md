@@ -1,0 +1,31 @@
+---
+title: Retrospective Clinical Data Harmonisation Reporting Using R and Quarto
+subtitle: ''
+excerpt: Here is a talk I gave on useR! 2025 – 9th August.
+format: hugo
+date: 2025-08-09T11:30:00.000Z
+show_post_time: false
+event: useR! 2025
+event_url: https://user2025.r-project.org/
+author: Jeremy Selva
+location: ''
+draft: false
+layout: single
+categories:
+  - talk
+links:
+  - icon: door-open
+    icon_pack: fas
+    name: website
+    url: https://jauntyjjs.github.io/useR-2025_harmonisation
+  - icon: github
+    icon_pack: fab
+    name: code
+    url: https://github.com/JauntyJJS/useR-2025_harmonisation
+---
+
+
+Here are the slides.
+
+<iframe width="1000" height="540" src="https://jauntyjjs.github.io/useR-2025_harmonisation" frameborder="0" allowfullscreen>
+</iframe>

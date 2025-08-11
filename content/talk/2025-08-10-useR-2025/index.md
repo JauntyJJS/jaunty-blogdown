@@ -1,7 +1,7 @@
 ---
 title: 'pretestcad: An R Package For Pretest Probability For Coronary Artery Disease'
 subtitle: ''
-excerpt: Here is a talk I gave on useR! 2025
+excerpt: Here is a lightning talk I gave on useR! 2025
 format: hugo
 date: 2025-08-10T11:15:00.000Z
 show_post_time: false

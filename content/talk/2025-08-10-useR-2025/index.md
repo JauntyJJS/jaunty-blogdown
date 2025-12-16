@@ -29,3 +29,5 @@ Here are the slides.
 
 <iframe width="1000" height="540" src="https://jauntyjjs.github.io/useR-2025_pretestcad" frameborder="0" allowfullscreen>
 </iframe>
+<iframe width="710" height="390" src="https://www.youtube.com/embed/Jw9AqrhA2lM" frameborder="0" allowfullscreen>
+</iframe>

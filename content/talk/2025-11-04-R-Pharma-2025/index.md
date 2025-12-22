@@ -1,0 +1,33 @@
+---
+title: An R package to consolidate pretest probability models and guidelines for CAD
+subtitle: ''
+excerpt: Here is a talk I gave on R Pharma 2025 – 4th November.
+format: hugo
+date: 2025-11-04T14:10:00.000Z
+show_post_time: false
+event: R Pharma 2025
+event_url: https://rinpharma.com/docs/events/
+author: Jeremy Selva
+location: ''
+draft: false
+layout: single
+categories:
+  - talk
+links:
+  - icon: door-open
+    icon_pack: fas
+    name: website
+    url: https://jauntyjjs.github.io/RPharma2025_pretestcad
+  - icon: github
+    icon_pack: fab
+    name: code
+    url: https://github.com/JauntyJJS/RPharma2025_pretestcad
+---
+
+
+Here are the slides.
+
+<iframe width="1150" height="650" src="https://jauntyjjs.github.io/RPharma2025_pretestcad" frameborder="0" allowfullscreen>
+</iframe>
+<iframe width="710" height="390" src="https://www.youtube.com/embed/008bBfihSwM" frameborder="0" allowfullscreen>
+</iframe>

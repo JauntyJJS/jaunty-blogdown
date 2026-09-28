@@ -18,4 +18,8 @@ categories:
 ---
 
 
-Here are the slides.
+Here is the link to slides
+
+-   <a href="https://github.com/JauntyJJS/jaunty-blogdown/blob/main/content/talk/2026-09-26-SDEC-2026/Education_Conference_Slides.pdf" target="_blank">https://github.com/JauntyJJS/jaunty-blogdown/blob/main/content/talk/2026-09-26-SDEC-2026/Education_Conference_Slides.pdf</a>
+
+<img src="featured.png" data-fig-alt="Title Slide of Enhancing programming learning experience using quarto-live." />
